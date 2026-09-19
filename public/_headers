@@ -14,7 +14,7 @@
   Cache-Control: public, max-age=3600
 
 /portfolio/thumbs/*
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600
 
 /favicon.svg
   Cache-Control: public, max-age=86400
