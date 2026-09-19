@@ -189,7 +189,8 @@ body.hide-placeholder-flags .t-note,body.hide-placeholder-flags .ph-tag{display:
 .tc-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:1.15rem;cursor:pointer;color:var(--ink)}
 .tc-btn:hover{border-color:var(--orange);color:var(--orange-d)}
 .tc-dots{display:flex;gap:8px;align-items:center}
-.tc-dots button{width:9px;height:9px;padding:0;border:0;border-radius:9px;background:#C7D2DE;cursor:pointer;transition:width .2s,background .2s}
+.tc-dots button{position:relative;width:9px;height:9px;padding:0;border:0;border-radius:9px;background:#C7D2DE;cursor:pointer;transition:width .2s,background .2s}
+.tc-dots button::after{content:"";position:absolute;inset:-14px -5px}
 .tc-dots button[aria-current="true"]{width:24px;background:var(--orange)}
 .hero-note{font-size:.92rem;color:#B9C8D9;margin-top:16px;max-width:52ch}.hero-note b{color:#fff}
 .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:16px}
@@ -245,6 +246,8 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
+<link rel="stylesheet" href="assets/motion.css?v=1">
+<script src="assets/motion-init.js"></script>
 </head>
 <body>
 
@@ -555,6 +558,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
         <p class="fine">Free, no obligation. We reply within 1 business day and never share your info.</p>
       </div>
       <div class="thanks" id="thanks" role="status" aria-live="polite">
+        <svg class="tick" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28"/><circle class="ring" cx="32" cy="32" r="28"/><path d="M20 33l8 8 16-17"/></svg>
         <h3>Thanks, you're on the list!</h3>
         <p>We'll be in touch within one business day with your free preview.</p>
       </div>
