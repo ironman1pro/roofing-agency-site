@@ -92,6 +92,14 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .next .card p{margin-top:2px}
 .linkrow{margin-top:34px;text-align:center}.linkrow a{font-weight:700;color:var(--accent);text-decoration:none}
 .foot a{text-decoration:none;opacity:.85}.foot a:hover{opacity:1}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media(max-width:900px){.rv-grid{grid-template-columns:1fr}}
+.rv-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:28px;display:flex;flex-direction:column;gap:14px}
+.rv-stars{color:#F5A623;letter-spacing:2px;font-size:1.05rem}
+.rv-card blockquote{font-size:1rem}
+.rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
+.rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
+.rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
@@ -119,8 +127,9 @@ form.lead-form .btn{width:100%;margin-top:18px}
 <div class="claim"><div><h3>We meet your adjuster</h3><p>We're on the roof with them so nothing gets missed.</p></div></div>
 <div class="claim"><div><h3>We fix it right</h3><p>Once approved, most roofs are done in 1–2 days.</p></div></div></div></div></section>
 <section id="areas"><div class="wrap center"><span class="eyebrow">Service areas</span><h2>Serving the Front Range.</h2><div class="chips"><span>Northglenn</span><span>Westminster</span><span>Thornton</span><span>Arvada</span><span>Broomfield</span><span>Lakewood</span><span>Aurora</span><span>+ surrounding areas</span></div></div></section>
+<section id="reviews" ><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Homeowners who called us first.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Hail took out half our shingles overnight. They had a tarp on the roof by lunch and walked our adjuster through every bit of the damage.”</blockquote><div class="rv-who">Dana K.<span>Arvada</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Straight answers, no pressure. The inspection report had photos of everything, and the new roof was done in two days.”</blockquote><div class="rv-who">Marcus T.<span>Thornton</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I'd never dealt with an insurance claim before. They handled the paperwork and kept me updated the whole way.”</blockquote><div class="rv-who">Priya S.<span>Westminster</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
 <section class="cta-band"><div class="wrap"><h2>Think you have storm damage?</h2><p class="lead">Get a free inspection before your claim window closes.</p><a class="btn" style="background:#14171C;color:#FFC42E" href="contact/">Book my free inspection</a></div></section></main>
-<footer><div class="wrap foot"><span>© Northline Roofing. Concept design by Ridgeline Web Co.</span>
+<footer><div class="wrap foot"><span>© Northline Roofing. Concept design by Adaptify</span>
 <span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../assets/demo.js" defer></script>

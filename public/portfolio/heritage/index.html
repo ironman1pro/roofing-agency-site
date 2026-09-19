@@ -104,6 +104,14 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .next .card p{margin-top:2px}
 .linkrow{margin-top:34px;text-align:center}.linkrow a{font-weight:700;color:var(--accent);text-decoration:none}
 .foot a{text-decoration:none;opacity:.85}.foot a:hover{opacity:1}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media(max-width:900px){.rv-grid{grid-template-columns:1fr}}
+.rv-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:28px;display:flex;flex-direction:column;gap:14px}
+.rv-stars{color:#F5A623;letter-spacing:2px;font-size:1.05rem}
+.rv-card blockquote{font-size:1rem}
+.rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
+.rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
+.rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
@@ -139,8 +147,9 @@ form.lead-form .btn{width:100%;margin-top:18px}
 <section id="materials" style="background:#F3ECDD;border-block:1px solid var(--line)"><div class="wrap"><div class="center"><span class="eyebrow">Materials</span><h2>Chosen for character and longevity.</h2></div><div class="mats"><div class="mat"><div class="sw s1"></div><h3>Natural slate</h3><p>The century roof. Timeless, fireproof and unmatched in beauty.</p></div><div class="mat"><div class="sw s2"></div><h3>Cedar shake</h3><p>Warm, natural texture that weathers into a soft silver.</p></div><div class="mat"><div class="sw s3"></div><h3>Standing-seam metal</h3><p>Clean lines and decades of maintenance-free protection.</p></div></div><div class="linkrow"><a href="services/">Explore our services →</a></div></div></section>
 <section id="process"><div class="wrap"><div class="center"><span class="eyebrow">Our process</span><h2>Unhurried. Precise. Documented.</h2></div>
 <div class="steps4 steps"><div class="step"><h3>Consultation</h3><p>We walk the property and listen to what you want.</p></div><div class="step"><h3>Proposal</h3><p>Detailed scope, materials and a fixed price.</p></div><div class="step"><h3>Installation</h3><p>Master-led crew, daily photo updates, clean site.</p></div><div class="step"><h3>Final inspection</h3><p>Walkthrough and your written guarantee.</p></div></div></div></section>
+<section id="reviews" style="background:#F3ECDD;border-block:1px solid var(--line)"><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Kind words from homeowners.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Our 1920s home needed a roof that matched its character. The slate work is beautiful and the crew treated the house with real care.”</blockquote><div class="rv-who">Margaret H.<span>Wash Park</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Daily photo updates and a spotless site. You can tell these are craftsmen.”</blockquote><div class="rv-who">Thomas &amp; Ellen B.<span>Cherry Hills</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Worth every penny for the standing-seam roof. Precise work from start to finish.”</blockquote><div class="rv-who">Robert L.<span>Boulder</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
 <section class="cta-band"><div class="wrap"><div class="orn"></div><h2>Let's talk about your roof.</h2><p class="lead">Tell us about your home. We'll arrange a private consultation.</p><a class="btn"  href="contact/">Request a consultation</a></div></section></main>
-<footer><div class="wrap foot"><span>© Heritage Roofing Co.. Concept design by Ridgeline Web Co.</span>
+<footer><div class="wrap foot"><span>© Heritage Roofing Co.. Concept design by Adaptify</span>
 <span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../assets/demo.js" defer></script>

@@ -1,4 +1,4 @@
-# Ridgeline Web Co. — agency site
+# Adaptify — agency site
 
 Static site (no build step) hosted on **Cloudflare Workers (static assets)**, source on **GitHub**.
 The lead form runs on a small **Cloudflare Worker** that forwards to your automation webhook.
@@ -8,13 +8,14 @@ public/                     ← everything published (Cloudflare "build output d
   index.html                ← agency landing page
   assets/main.js            ← landing form logic (external so the CSP can block inline scripts)
   portfolio/
-    northline/  brightpeak/  heritage/     ← 3 concept sites, 3 pages each (home, services/, contact/)
+    northline/  brightpeak/  heritage/  fairwind/   ← 4 concept sites, 3 pages each (home, services/, contact/)
     thumbs/                 ← portfolio screenshots
     assets/demo.js          ← demo-form behaviour
   _headers                  ← security headers + caching (Cloudflare reads this file)
   404.html  robots.txt  sitemap.xml  favicon.svg
 src/worker.js               ← POST /api/lead → forwards to LEAD_WEBHOOK_URL
 scripts/set-domain.sh       ← swaps example.com for your real domain
+brand/                      ← Adaptify logo files (SVG + PNG); not published
 wrangler.toml               ← Worker + static-assets config (used by `npx wrangler deploy`)
 ```
 
@@ -58,7 +59,7 @@ The form posts JSON like this to your webhook:
 
 - [ ] Run `./scripts/set-domain.sh yourdomain.com` (updates canonical tag, robots.txt, sitemap) and change `hello@example.com` in `public/index.html` (the form error message and footer).
 - [ ] Replace the 3 placeholder testimonials in `public/index.html` (search `TODO: swap`) with real ones, then add `class="hide-placeholder-flags"` to the `<body>` tag.
-- [ ] Confirm the agency name (`Ridgeline Web Co.` is a placeholder) and the pricing/founding-client offer.
+- [ ] Confirm the agency name (`Adaptify` is a placeholder) and the pricing/founding-client offer.
 - [ ] Submit a test lead and confirm it reaches your webhook.
 - [ ] Run PageSpeed Insights on the live URL, and only then keep the "under 1 second" / "90+ Lighthouse" wording.
 - [ ] Add the domain to Google Search Console and submit `sitemap.xml`.
@@ -66,6 +67,6 @@ The form posts JSON like this to your webhook:
 
 ## Notes
 
-- **Concept sites** in `public/portfolio/` use fictional company names and carry `noindex` so they don't compete with your real site in search. Swap in real client sites as you win them.
+- **Concept sites** in `public/portfolio/` use fictional company names, sample reviews (labelled as samples) and carry `noindex` so they don't compete with your real site in search. Swap in real client sites as you win them.
 - **Security headers** are in `public/_headers`. The CSP allows only your own scripts (no inline JS). If you add analytics or a chat widget later, add its domain to `script-src` / `connect-src`.
 - **Costs**: Workers static-asset hosting (static files are free and unlimited) and Worker requests on the free plan are enough to start; check Cloudflare's current limits before scaling.

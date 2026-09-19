@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fairwind Heating &amp; Cooling | Heating &amp; Cooling Repair, Installation and Maintenance</title><meta name="description" content="Same-day heating and cooling service, installation and maintenance plans.">
+<meta name="robots" content="noindex"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>:root{--bg:#F5FAFB;--ink:#0B2530;--muted:#4E6874;--accent:#0A7F8B;--on-accent:#fff;--card:#fff;--line:#D9E7EB;--r:12px;--r2:20px;--ico-bg:#E0F4F6;--ico:#0A7F8B;--nav-bg:rgba(255,255,255,.94);--nav-ink:#0B2530;--nav-line:#D9E7EB;--cta-bg:linear-gradient(100deg,#0B5E69,#0A7F8B 45%,#F97316);--cta-ink:#fff;--foot:#0B2530;--foot-ink:#8FA9B4;--head:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--hw:800}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:var(--ls,-.02em);font-weight:var(--hw,800)}
+h1{font-size:clamp(2.3rem,5.4vw,4rem)}h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}h3{font-size:1.15rem}
+section{padding:84px 0}
+.eyebrow{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:58ch}.center{text-align:center}.center .lead{margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:1rem;padding:15px 26px;border-radius:var(--r);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,filter .15s;font-family:inherit}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor;opacity:.9}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+header.top{position:sticky;top:0;z-index:50;background:var(--nav-bg);color:var(--nav-ink);border-bottom:1px solid var(--nav-line);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--head);font-weight:800;font-size:1.15rem;white-space:nowrap}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;align-items:center;gap:26px}.nav-links a{text-decoration:none;font-size:.93rem;font-weight:500;opacity:.85}.nav-links a:hover{opacity:1}
+.nav-links a.btn{opacity:1;padding:10px 18px;font-size:.92rem;white-space:nowrap}
+.hero-grid>*,.split>*,.craft>*,.grid>*{min-width:0}
+.grid{display:grid;gap:22px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.g3,.g4,.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:28px}
+.card p{color:var(--muted);font-size:.96rem;margin-top:8px}
+.ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--ico-bg);color:var(--ico);margin-bottom:16px}
+.steps{counter-reset:s}.step{counter-increment:s}.step::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.chips span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 18px;font-size:.93rem;font-weight:500}
+.reviews{border:2px dashed var(--line);border-radius:var(--r2);padding:34px;text-align:center;color:var(--muted);background:var(--card)}
+.reviews b{display:block;color:var(--ink);font-family:var(--head);font-size:1.15rem;margin-bottom:6px}
+.faq-list{max-width:780px;margin:38px auto 0;display:grid;gap:12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 22px}
+summary{cursor:pointer;font-weight:700;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--accent)}details[open] summary::after{content:"–"}
+details p{padding:0 0 18px;color:var(--muted)}
+.cta-band{background:var(--cta-bg);color:var(--cta-ink);text-align:center}
+.cta-band .lead{color:inherit;opacity:.8;margin:14px auto 28px}
+footer{background:var(--foot);color:var(--foot-ink);padding:34px 0;font-size:.9rem}
+.foot{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:center}
+.concept{position:fixed;left:14px;bottom:14px;z-index:80;background:#111;color:#fff;font:600 .72rem/1 system-ui;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;border-radius:999px;opacity:.85}
+.sticky{display:none}
+@media(max-width:760px){section{padding:60px 0}.sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 14px;background:var(--nav-bg);border-top:1px solid var(--nav-line)}.sticky .btn{width:100%}.concept{bottom:70px}footer{padding-bottom:90px}}
+form.lead-form{background:var(--card);color:var(--ink);border-radius:var(--r2);padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+form.lead-form h3{margin-bottom:4px}form.lead-form .sub{color:var(--muted);font-size:.9rem;margin-bottom:6px}
+form.lead-form label{display:block;font-weight:600;font-size:.84rem;margin:12px 0 5px}
+form.lead-form input,form.lead-form select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.lead-form .btn{width:100%;margin-top:18px}
+.thanks{display:none;padding:30px 6px;text-align:center}
+.roofline{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:150px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.hero{padding:74px 0 84px;background:linear-gradient(120deg,#E3F5F7 0%,#F5FAFB 48%,#FFF0E2 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hero h1 span{background:linear-gradient(90deg,#0A7F8B,#F97316);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin:20px 0 30px}.hero-cta{display:flex;flex-wrap:wrap;gap:14px}.hero .btn.ghost{color:var(--ink)}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);padding:7px 16px;border-radius:999px;font-size:.84rem;font-weight:700;margin-bottom:20px}
+.pill i{width:8px;height:8px;border-radius:50%;background:#12A150;box-shadow:0 0 0 4px rgba(18,161,80,.2)}
+.dial{position:relative;background:#fff;border-radius:28px;padding:26px;box-shadow:0 26px 60px rgba(11,37,48,.14);border:1px solid var(--line);max-width:460px;width:100%;margin-inline:auto}
+.chip-float{position:absolute;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 12px 30px rgba(11,37,48,.16);font-size:.85rem;font-weight:700;display:flex;gap:10px;align-items:center}
+.chip-float small{display:block;font-weight:500;color:var(--muted)}.chip-float svg{color:var(--accent)}
+.chip-float.c1{left:-22px;bottom:34px}.chip-float.c2{right:-16px;top:26px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.chip-float.c1{left:6px}.chip-float.c2{right:6px}}
+.strip{background:#fff;border-block:1px solid var(--line);padding:22px 0}
+.strip .grid{gap:12px}.strip .grid>div{display:flex;gap:10px;align-items:center;font-weight:600;font-size:.94rem}.strip svg{color:var(--accent);flex:none}
+.page-hero{background:linear-gradient(120deg,#E3F5F7,#FFF0E2);padding:70px 0 54px}
+.svc{display:flex;flex-direction:column}
+.plan-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.plan-split{grid-template-columns:1fr}}
+.plan-box{background:linear-gradient(140deg,#0B5E69,#0A7F8B);color:#fff;border-radius:24px;padding:38px}
+.plan-box h3{font-size:1.4rem;margin-bottom:6px}.plan-box p{opacity:.85}
+.plan-box .ticks{margin-top:20px}.plan-box .ticks li::before{color:#FDBA74}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media(max-width:800px){.steps3{grid-template-columns:1fr}}
+
+.nav-links a.on{opacity:1;box-shadow:0 2px 0 var(--accent);padding-bottom:2px}
+@media(max-width:860px){.nav-links{gap:18px}}
+@media(max-width:620px){.nav{height:auto;flex-wrap:wrap;padding:10px 0 8px;row-gap:4px}.nav-links{width:100%;gap:22px}.nav-links a.btn{display:none}}
+.page-hero h1{font-size:clamp(2rem,4.6vw,3.2rem)}.page-hero .lead{margin-top:16px}
+.ticks{list-style:none;display:grid;gap:8px;margin-top:14px;font-size:.93rem}
+.ticks li{display:flex;gap:9px}.ticks li::before{content:"\2713";color:var(--accent);font-weight:800}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid>*{min-width:0}
+.info{display:flex;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.info b{display:block;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.info a,.info .v{font-size:1.12rem;font-weight:700;text-decoration:none}
+.info .ico{margin:0;flex:none}.info>div{min-width:0}.info a,.info .v{overflow-wrap:anywhere}
+.next{margin-top:34px;display:grid;gap:14px;counter-reset:s}
+.next .card{display:flex;gap:16px;align-items:flex-start;padding:20px}
+.next .card::before{content:counter(s);counter-increment:s;flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:800}
+.next .card p{margin-top:2px}
+.linkrow{margin-top:34px;text-align:center}.linkrow a{font-weight:700;color:var(--accent);text-decoration:none}
+.foot a{text-decoration:none;opacity:.85}.foot a:hover{opacity:1}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media(max-width:900px){.rv-grid{grid-template-columns:1fr}}
+.rv-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:28px;display:flex;flex-direction:column;gap:14px}
+.rv-stars{color:#F5A623;letter-spacing:2px;font-size:1.05rem}
+.rv-card blockquote{font-size:1rem}
+.rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
+.rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
+.rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+</style></head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="./"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0 0 26z" fill="#38BDF8"/><path d="M16 3a13 13 0 0 1 0 26z" fill="#FB923C"/><path d="M9 18l7-6 7 6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fairwind Heating &amp; Cooling</span></a>
+<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="contact/">Contact</a><a class="btn" href="tel:5550102211">Call (555) 010-2211</a></nav></div></header>
+<main id="top">
+<section class="hero"><div class="wrap hero-grid"><div>
+<span class="pill"><i></i> Same-day service available</span>
+<h1>Comfort, restored. <span>Same day.</span></h1>
+<p class="lead">Heating and cooling repair, installation and maintenance from technicians who show up on time, explain the fix, and price it before they start.</p>
+<div class="hero-cta"><a class="btn" href="contact/">Schedule service</a><a class="btn ghost" href="tel:5550102211">Call (555) 010-2211</a></div></div>
+<div class="dial"><svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Thermostat dial set to 72 degrees">
+<defs><linearGradient id="dg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#38BDF8"/><stop offset=".55" stop-color="#FBBF24"/><stop offset="1" stop-color="#F97316"/></linearGradient>
+<radialGradient id="dbg" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#EEF6F8"/></radialGradient></defs>
+<circle cx="200" cy="200" r="184" fill="url(#dbg)"/>
+<path d="M94 306A150 150 0 1 1 306 306" fill="none" stroke="#DCE9ED" stroke-width="22" stroke-linecap="round"/>
+<path d="M94 306A150 150 0 1 1 306 306" fill="none" stroke="url(#dg)" stroke-width="22" stroke-linecap="round" stroke-dasharray="470 1000"/>
+<circle cx="268" cy="66" r="17" fill="#fff" stroke="#F97316" stroke-width="6"/>
+<text x="200" y="222" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="108" font-weight="800" fill="#0B2530">72°</text>
+<text x="200" y="262" text-anchor="middle" font-family="system-ui,-apple-system,Segoe UI,Roboto,sans-serif" font-size="20" font-weight="600" fill="#4E6874" letter-spacing="2">COMFORT MODE</text>
+</svg><div class="chip-float c1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><div>24/7 emergency<small>No heat? No cooling?</small></div></div><div class="chip-float c2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div>Upfront pricing<small>No surprises</small></div></div></div></div></section>
+<div class="strip"><div class="wrap grid g4"><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Same-day service</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg>Upfront pricing</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11M9 4l3 2 3-2M9 20l3-2 3 2"/></svg>24/7 emergency dispatch</div></div></div>
+<section id="services"><div class="wrap"><div class="center"><span class="eyebrow">Services</span><h2>Heating and cooling, handled.</h2></div>
+<div class="grid g3" style="margin-top:42px"><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.5 6.5l15 11M19.5 6.5l-15 11M9 4l3 2 3-2M9 20l3-2 3 2"/></svg></div><h3>AC repair &amp; installation</h3><p>Cool again fast, with equipment sized correctly for your home.</p></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z"/></svg></div><h3>Heating &amp; furnace service</h3><p>Reliable heat when you need it most.</p></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg></div><h3>Maintenance plans</h3><p>Catch small problems before they become breakdowns.</p></div></div><div class="linkrow"><a href="services/">See all services →</a></div></div></section>
+<section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap plan-split"><div><span class="eyebrow">Maintenance plans</span><h2>Skip the surprise breakdown.</h2>
+<p class="lead" style="margin-top:16px">Two tune-ups a year keep your system efficient and catch small problems early, so you're never stuck with no heat in January or no AC in July.</p>
+<a class="btn" style="margin-top:26px" href="contact/">Ask about a plan</a></div>
+<div class="plan-box"><h3>What's included</h3><p>Everything your system needs, twice a year.</p><ul class="ticks"><li>Spring cooling and fall heating tune-ups</li><li>Priority scheduling for repairs</li><li>Filter, safety and airflow checks</li><li>A written report after every visit</li></ul></div></div></section>
+<section id="process"><div class="wrap"><div class="center"><span class="eyebrow">How it works</span><h2>Simple from call to comfort.</h2></div>
+<div class="steps3 steps"><div class="card step"><h3>Call or book online</h3><p>Tell us what's happening and pick a time that works.</p></div><div class="card step"><h3>Diagnose and quote</h3><p>We find the problem and give you a clear price upfront.</p></div><div class="card step"><h3>Fixed, tested, explained</h3><p>We repair it, test it, and walk you through what we did.</p></div></div></div></section>
+<section id="reviews" style="padding-top:0"><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Homeowners who stayed comfortable.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Our furnace died on the coldest night of the year. A technician arrived within the hour and we were warm again by midnight.”</blockquote><div class="rv-who">Carla M.<span>Northglenn</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Fair pricing, and they explained repair versus replace without any upsell.”</blockquote><div class="rv-who">Devin O.<span>Thornton</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The maintenance plan means we haven't had a surprise breakdown since we signed up.”</blockquote><div class="rv-who">Lisa &amp; Paul A.<span>Westminster</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
+<section id="areas" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap center"><span class="eyebrow">Service areas</span><h2>Serving the Front Range.</h2><div class="chips"><span>Northglenn</span><span>Westminster</span><span>Thornton</span><span>Arvada</span><span>Broomfield</span><span>Lakewood</span><span>Aurora</span><span>+ surrounding areas</span></div></div></section>
+<section class="cta-band"><div class="wrap"><h2>Is your system acting up?</h2><p class="lead">Book a visit today. We'll get you comfortable again.</p><a class="btn"  href="contact/">Schedule service</a></div></section></main>
+<footer><div class="wrap foot"><span>© Fairwind Heating &amp; Cooling. Concept design by Adaptify</span>
+<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
+<script src="../assets/demo.js" defer></script>
+</body></html>

@@ -101,6 +101,14 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .next .card p{margin-top:2px}
 .linkrow{margin-top:34px;text-align:center}.linkrow a{font-weight:700;color:var(--accent);text-decoration:none}
 .foot a{text-decoration:none;opacity:.85}.foot a:hover{opacity:1}
+.rv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media(max-width:900px){.rv-grid{grid-template-columns:1fr}}
+.rv-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:28px;display:flex;flex-direction:column;gap:14px}
+.rv-stars{color:#F5A623;letter-spacing:2px;font-size:1.05rem}
+.rv-card blockquote{font-size:1rem}
+.rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
+.rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
+.rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
@@ -136,8 +144,9 @@ form.lead-form .btn{width:100%;margin-top:18px}
 <div class="opt win"><span class="tag">Bright Peak bundle</span><h3>One team, one project</h3><ul><li>One quote and one schedule</li><li>Roof built to carry your panels</li><li>Single warranty covering both</li></ul></div></div></div></section>
 <section id="process"><div class="wrap"><div class="center"><span class="eyebrow">How it works</span><h2>Simple from start to finish.</h2></div>
 <div class="steps3 steps"><div class="card step"><h3>Free assessment</h3><p>We check your roof and your solar potential in one visit.</p></div><div class="card step"><h3>Clear, fixed quote</h3><p>You get an itemized price with no surprises.</p></div><div class="card step"><h3>Installed and inspected</h3><p>Most projects finish within days, and we clean up after.</p></div></div></div></section>
+<section id="reviews" style="padding-top:0"><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Roofs and solar, done right.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Doing the roof and solar together meant one crew, one schedule and one bill. Our panels went on the same week.”</blockquote><div class="rv-who">Elena R.<span>Lakewood</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“They told us our old roof wasn't ready for panels and explained exactly why. We appreciated the honesty.”</blockquote><div class="rv-who">Jordan P.<span>Broomfield</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Clear quote, clean install, and a crew that respected our yard. We'd recommend them to any neighbor.”</blockquote><div class="rv-who">Sam W.<span>Arvada</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
 <section class="cta-band"><div class="wrap"><h2>Ready to see what your roof could do?</h2><p class="lead">Free assessment. Clear pricing. No pressure.</p><a class="btn"  href="contact/">Get my free quote</a></div></section></main>
-<footer><div class="wrap foot"><span>© Bright Peak. Concept design by Ridgeline Web Co.</span>
+<footer><div class="wrap foot"><span>© Bright Peak. Concept design by Adaptify</span>
 <span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../assets/demo.js" defer></script>
