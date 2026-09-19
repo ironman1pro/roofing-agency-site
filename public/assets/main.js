@@ -33,65 +33,22 @@ form.addEventListener('submit', function (e) {
     });
 });
 
-/* Testimonial carousel: loops, auto-advances, pauses on hover/focus, respects reduced motion */
+/* Testimonials: endless marquee. Cards are cloned once; CSS moves the strip left by exactly one set, so the loop is seamless. */
 (function () {
   var track = document.getElementById('tc-track');
   if (!track) return;
-  var cards = track.children, n = cards.length;
-  var dotsEl = document.getElementById('tc-dots');
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var idx = 0, timer = null, paused = false;
-
-  function stepPx() {
-    var gap = parseFloat(getComputedStyle(track).columnGap) || 22;
-    return cards[0].offsetWidth + gap;
-  }
-  function perView() { return Math.max(1, Math.round(track.clientWidth / stepPx())); }
-  function maxIdx() { return Math.max(0, n - perView()); }
-
-  function drawDots() {
-    dotsEl.textContent = '';
-    for (var i = 0; i <= maxIdx(); i++) {
-      (function (i) {
-        var b = document.createElement('button');
-        b.type = 'button';
-        b.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
-        b.addEventListener('click', function () { go(i); restart(); });
-        dotsEl.appendChild(b);
-      })(i);
-    }
-    mark();
-  }
-  function mark() {
-    var ds = dotsEl.children;
-    for (var i = 0; i < ds.length; i++) ds[i].setAttribute('aria-current', i === idx ? 'true' : 'false');
-  }
-  function go(i) {
-    var max = maxIdx();
-    idx = i > max ? 0 : (i < 0 ? max : i);
-    track.scrollTo({ left: idx * stepPx(), behavior: reduce ? 'auto' : 'smooth' });
-    mark();
-  }
-  function start() {
-    if (reduce || timer) return;
-    timer = setInterval(function () { if (!paused && !document.hidden) go(idx + 1); }, 6000);
-  }
-  function restart() { clearInterval(timer); timer = null; start(); }
-
-  document.getElementById('tc-prev').addEventListener('click', function () { go(idx - 1); restart(); });
-  document.getElementById('tc-next').addEventListener('click', function () { go(idx + 1); restart(); });
-  ['mouseenter', 'focusin', 'touchstart'].forEach(function (ev) { track.parentNode.addEventListener(ev, function () { paused = true; }, { passive: true }); });
-  ['mouseleave', 'focusout', 'touchend'].forEach(function (ev) { track.parentNode.addEventListener(ev, function () { paused = false; }, { passive: true }); });
-
-  var t;
-  track.addEventListener('scroll', function () {
-    clearTimeout(t);
-    t = setTimeout(function () { idx = Math.min(maxIdx(), Math.round(track.scrollLeft / stepPx())); mark(); }, 120);
-  }, { passive: true });
-  window.addEventListener('resize', function () { idx = Math.min(idx, maxIdx()); drawDots(); });
-
-  drawDots();
-  start();
+  var cards = Array.prototype.slice.call(track.children);
+  var set = document.createElement('div'); set.className = 'tc-set';
+  cards.forEach(function (c) { set.appendChild(c); });
+  var clone = set.cloneNode(true); clone.setAttribute('aria-hidden', 'true');
+  var move = document.createElement('div'); move.className = 'tc-move';
+  move.appendChild(set); move.appendChild(clone);
+  track.textContent = ''; track.appendChild(move);
+  track.classList.add('marquee');
+  track.style.setProperty('--tc-dur', (cards.length * 12) + 's');
+  // touch: hold to pause
+  track.addEventListener('touchstart', function () { track.classList.add('held'); }, { passive: true });
+  ['touchend', 'touchcancel'].forEach(function (ev) { track.addEventListener(ev, function () { setTimeout(function () { track.classList.remove('held'); }, 1500); }, { passive: true }); });
 })();
 
 /* Motion system: scroll reveal, header state, progress bar, active nav, count-up */
@@ -165,4 +122,14 @@ form.addEventListener('submit', function (e) {
     }, { threshold: 0.6 });
     b.textContent = '0' + suffix; cio.observe(b);
   });
+})();
+
+/* Mobile sticky CTA: hidden over the hero CTA and the form, visible in between */
+(function () {
+  var bar = document.getElementById('sticky'), hero = document.querySelector('.hero-cta'), form = document.getElementById('start');
+  if (!bar || !hero || !form || !('IntersectionObserver' in window)) { if (bar) bar.classList.add('show'); return; }
+  var heroSeen = true, formSeen = false;
+  function update() { bar.classList.toggle('show', !heroSeen && !formSeen); }
+  new IntersectionObserver(function (es) { heroSeen = es[0].isIntersecting; update(); }).observe(hero);
+  new IntersectionObserver(function (es) { formSeen = es[0].isIntersecting; update(); }, { threshold: 0.15 }).observe(form);
 })();

@@ -1,0 +1,57 @@
+/* Mobile-first refinements and CTA placement */
+.mid-cta{display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:36px}
+.mid-cta span{font-size:.85rem;color:var(--muted)}
+.sticky span{display:none}
+input,select{font-size:16px;min-height:48px}
+@media(max-width:760px){
+  html{scroll-padding-top:72px}
+  .wrap{width:calc(100% - 32px)}
+  section{padding:56px 0}
+  h2{font-size:clamp(1.55rem,6.4vw,1.9rem);line-height:1.15}
+  .lead{font-size:1.02rem}
+  header .nav{height:60px}
+  header .nav-links .btn{padding:10px 16px;font-size:.9rem;min-height:44px}
+
+  /* hero: shorter, thumb-friendly, primary CTA first */
+  .hero{padding:36px 0 44px}
+  .hero h1{font-size:clamp(2rem,9vw,2.4rem);line-height:1.08}
+  .hero .lead{margin:16px 0 22px}
+  .hero-cta{flex-direction:column;gap:10px}
+  .hero-cta .btn{width:100%;min-height:54px}
+  .hero .hero-note{font-size:.88rem}
+  .hero-points{gap:8px 16px;margin-top:20px;font-size:.9rem}
+  .hm{margin-top:14px}
+
+  /* tap targets */
+  .btn{min-height:50px}
+  summary{padding:20px 0;min-height:56px;align-items:center}
+  .tc-btn{width:48px;height:48px}
+  .tc-dots{gap:10px}
+  .nav-links a:not(.btn){min-height:44px}
+
+  /* cards */
+  .card,.feat,.step,.tcard{padding:22px}
+  .plan{padding:26px 22px}
+  .plan .badge{left:22px}
+  .addon{padding:22px}
+  .cards3,.steps,.grid2,.work-grid{gap:16px;margin-top:32px}
+  .specs-grid{grid-template-columns:repeat(2,1fr);gap:26px 12px}
+  .work .meta{padding:18px 18px 22px}
+  .cta{padding:56px 0}
+  .cta-grid{gap:28px}
+  #lead-form{padding:24px 20px}
+
+  /* quicker, shorter reveals on phones */
+  .js [data-reveal]{transform:translateY(16px);transition-duration:.5s;transition-delay:calc(var(--d,0s) * .5)}
+  .hero .eyebrow,.hero h1,.hero .lead,.hero-cta,.hero .hero-note,.hero-points{animation-duration:.5s}
+
+  /* sticky CTA: only after the hero, never over the form; slides in and out */
+  .sticky{display:block;transform:translateY(110%);transition:transform .3s var(--ease);padding:10px 16px calc(10px + env(safe-area-inset-bottom));text-align:center}
+  .sticky.show{transform:none}
+  .sticky .btn{width:100%;min-height:52px;padding:14px}
+  .sticky span{display:block;font-size:.72rem;color:#B9C8D9;margin-top:6px}
+  footer{padding-bottom:110px}
+}
+@media(max-width:380px){.hero h1{font-size:1.9rem}}
+.nav-links a.btn{color:#fff}
+@media(max-width:760px){.hero-cta .btn{font-size:1rem;padding-inline:16px}}

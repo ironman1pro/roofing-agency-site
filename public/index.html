@@ -182,16 +182,18 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,31,51,.96);backdrop-f
 /* Testimonials */
 .t-note{max-width:760px;margin:22px auto 0;background:#FFF8DB;border:1px dashed #D9B92E;color:#6B5600;border-radius:10px;padding:10px 16px;font-size:.88rem;text-align:center}
 body.hide-placeholder-flags .t-note,body.hide-placeholder-flags .ph-tag{display:none}
-.tc-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 10px;margin-top:40px;scrollbar-width:none}
+.tc-track{overflow-x:auto;margin-top:40px;padding:6px 0 10px;scrollbar-width:none}
 .tc-track::-webkit-scrollbar{display:none}
-.tc-track .tcard{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start}
-.tc-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px}
-.tc-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:1.15rem;cursor:pointer;color:var(--ink)}
-.tc-btn:hover{border-color:var(--orange);color:var(--orange-d)}
-.tc-dots{display:flex;gap:8px;align-items:center}
-.tc-dots button{position:relative;width:9px;height:9px;padding:0;border:0;border-radius:9px;background:#C7D2DE;cursor:pointer;transition:width .2s,background .2s}
-.tc-dots button::after{content:"";position:absolute;inset:-14px -5px}
-.tc-dots button[aria-current="true"]{width:24px;background:var(--orange)}
+.tc-track:not(.marquee){display:flex;gap:22px}
+.tc-track:not(.marquee) .tcard{flex:0 0 340px}
+.tc-track.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.tc-move{display:flex;width:max-content;animation:tc-scroll var(--tc-dur,70s) linear infinite;will-change:transform}
+.tc-set{display:flex;gap:22px;padding-right:22px}
+.tc-set .tcard{flex:0 0 360px;width:360px}
+@keyframes tc-scroll{to{transform:translateX(-50%)}}
+.tc-track.marquee:hover .tc-move,.tc-track.marquee:focus-within .tc-move,.tc-track.marquee.held .tc-move{animation-play-state:paused}
+@media(max-width:860px){.tc-set .tcard{flex-basis:290px;width:290px}.tc-set{gap:16px;padding-right:16px}}
+@media(prefers-reduced-motion:reduce){.tc-track.marquee{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.tc-move{animation:none}.tc-set[aria-hidden]{display:none}}
 .hero-note{font-size:.92rem;color:#B9C8D9;margin-top:16px;max-width:52ch}.hero-note b{color:#fff}
 .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:16px}
 .stars{color:#F5A623;letter-spacing:2px}
@@ -201,7 +203,6 @@ body.hide-placeholder-flags .t-note,body.hide-placeholder-flags .ph-tag{display:
 .who b{display:block;font-size:.95rem}
 .who span{font-size:.85rem;color:var(--muted)}
 .ph-tag{display:inline-block;margin-top:6px;font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#FFF1B8;color:#6B5600;padding:2px 8px;border-radius:999px}
-@media(max-width:860px){.tc-track .tcard{flex-basis:88%}}
 
 /* FAQ */
 .faq{background:var(--soft)}
@@ -247,6 +248,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 <link rel="stylesheet" href="assets/motion.css?v=1">
+<link rel="stylesheet" href="assets/mobile.css?v=1">
 <script src="assets/motion-init.js"></script>
 </head>
 <body>
@@ -395,6 +397,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
         <div class="meta"><small>Inspections &amp; repairs</small><h3>Fairwind Roofing</h3><p>A fresh, approachable design built around free photo inspections, fixed pricing and yearly roof care plans.</p><span class="go">View live demo ↗</span></div>
       </a>
     </div>
+    <div class="mid-cta"><a class="btn" href="#start">Get my free preview →</a><span>Free, no obligation</span></div>
     <p class="work-note">These are concept designs we built to show our style, and the reviews on them are samples. Company names are fictional. Yours will be built around your business, your photos and your reviews.</p>
   </div>
 </section>
@@ -409,7 +412,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     <div class="steps">
       <div class="step"><h3>See it first, free</h3><p>Send us your current site. We'll mock up your new homepage and show you side by side, at no cost and with no obligation.</p></div>
       <div class="step"><h3>We build everything</h3><p>You send logos, photos and a few details. We handle design, copy, SEO, hosting and setup, and launch in about two weeks.</p></div>
-      <div class="step"><h3>It keeps working for you</h3><p>Launch sites are yours and host free for life. Growth adds 6 blog posts a month, AI search optimization, edits and performance reports, and lead automation can be added any time. You do roofs, we handle the website.</p></div>
+      <div class="step"><h3>It keeps working for you</h3><p>Launch sites are yours and host free for life, with 3 small edits a month. Growth adds 6 blog posts a month, AI search optimization, edits and performance reports, and lead automation can be added any time. You do roofs, we handle the website.</p></div>
     </div>
   </div>
 </section>
@@ -420,21 +423,22 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     <div class="center">
       <span class="eyebrow">Simple pricing</span>
       <h2>Priced for a roofing company, not a big agency.</h2>
-      <p class="lead">Launch is a one-time fee with free hosting for life. Add Growth when you want us bringing in more leads every month.</p>
+      <p class="lead">Launch is a one-time build fee, free hosting for life and a small monthly plan for edits. Add Growth when you want us bringing in more leads every month.</p>
     </div>
     <div style="height:34px"></div>
     <div class="founding"><b>Founding-client rate:</b> we're taking on our first 5 roofing companies at <b>$600 setup</b> (normally $1,200). Limited spots.</div>
     <div class="plans">
       <div class="plan">
         <h3>Launch</h3>
-        <p class="sub">Your new site, yours to keep. No monthly fee.</p>
+        <p class="sub">Your new site, yours to keep, with edits when you need them.</p>
         <div class="price"><span class="strike">$1,200</span>$600 <small>one-time</small></div>
-        <p class="price-note">No monthly fee. Free hosting for life.</p>
+        <p class="price-note">+ $29/month for 3 edits. Free hosting for life.</p>
         <ul>
           <li>Custom 5-page roofing website</li>
           <li>Mobile-first, sub-1-second loading</li>
           <li>Local SEO and AI-search setup</li>
           <li>Free hosting for life, with SSL and security</li>
+          <li>3 small edits per month, 48-hour turnaround</li>
           <li>You only pay for your domain name</li>
           <li>Delivered in your own Cloudflare and GitHub accounts</li>
         </ul>
@@ -458,7 +462,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       </div>
     </div>
     <div class="addon"><div><h3>Lead automation add-on <span>Add it any time, to Launch or Growth</span></h3><p>Instant text-back to new leads, smart lead routing to the right crew, and automatic follow-up on old quotes. Not needed on day one: add it when you are ready. Pricing on request.</p></div><a class="btn alt" href="#start">Ask about the add-on</a></div>
-    <p class="guarantee"><b>Preview first, pay later.</b> You pay nothing until you have seen and approved your homepage preview. <b>No lock-in.</b> Launch has no recurring fee, and Growth can be cancelled any time. Every site is built in your own Cloudflare and GitHub accounts, so you keep your site, domain and content.</p>
+    <p class="guarantee"><b>Preview first, pay later.</b> You pay nothing until you have seen and approved your homepage preview. <b>No lock-in.</b> The monthly plans on Launch and Growth can be cancelled any time, and your site stays live with free hosting either way. Every site is built in your own Cloudflare and GitHub accounts, so you keep your site, domain and content.</p>
   </div>
 </section>
 
@@ -469,8 +473,8 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <span class="eyebrow">What clients say</span>
       <h2>Kind words from past clients.</h2>
     </div>
-    <div class="tc" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
-      <div class="tc-track" id="tc-track" tabindex="0">
+    <div class="tc" role="region" aria-label="Client testimonials">
+      <div class="tc-track" id="tc-track">
       <div class="tcard">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote>“Efficient, knowledgeable, and incredibly easy to work with. Redesigned our website, added an SEO sitemap, and made everything responsive across devices.”</blockquote>
@@ -502,11 +506,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
         <div class="who"><div class="avatar">A</div><div><b>Ali A.</b><span>CTO, Saudi Aramco</span></div></div>
       </div>
       </div>
-      <div class="tc-ctrl">
-        <button class="tc-btn" id="tc-prev" type="button" aria-label="Previous testimonial">←</button>
-        <div class="tc-dots" id="tc-dots"></div>
-        <button class="tc-btn" id="tc-next" type="button" aria-label="Next testimonial">→</button>
-      </div>
+      <div class="mid-cta" style="margin-top:34px"><a class="btn" href="#start">Get my free preview →</a><span>Preview first, pay later</span></div>
     </div>
   </div>
 </section>
@@ -520,9 +520,9 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     </div>
     <div class="faq-list">
       <details><summary>Do I really get to see the design before I pay?</summary><p>Yes. We mock up your homepage for free and show it next to your current site. If you don't love it, you owe nothing.</p></details>
-      <details><summary>Why is hosting free? What's the catch?</summary><p>There's no catch. Your site is built on modern static infrastructure (Cloudflare) that costs very little to run and is faster than most website builders. Hosting is free for life on every plan, and the only thing you pay for yourself is your domain name (usually around $10 to $15 a year).</p></details>
+      <details><summary>Why is hosting free? What's the catch?</summary><p>There's no catch. Your site is built on modern static infrastructure (Cloudflare) that costs very little to run and is faster than most website builders. Hosting is free for life on every plan, and the only things you pay for yourself are your domain name (usually around $10 to $15 a year) and, if you want them, the monthly edit plans.</p></details>
       <details><summary>Who owns the website and domain?</summary><p>You do. The site is built in accounts under your name, so you can take it anywhere at any time. We never hold your site hostage.</p></details>
-      <details><summary>What if I want to change something later?</summary><p>Message us any time. Growth includes unlimited small edits with a 48-hour turnaround. On Launch, one-off changes are quoted per request, and because the site lives in your own accounts you can also edit it yourself or hire anyone you like.</p></details>
+      <details><summary>What if I want to change something later?</summary><p>Message us any time. Launch includes 3 small edits a month (text, photos, hours, pricing) for $29/month, and Growth includes unlimited small edits, both with a 48-hour turnaround. Bigger changes are quoted up front, and because the site lives in your own accounts you can also edit it yourself or hire anyone you like.</p></details>
       <details><summary>Will this actually help me rank on Google?</summary><p>We build every site with the technical SEO fundamentals: speed, structure, local schema, service-area pages and AI-search-friendly answers. Nobody can honestly guarantee a #1 ranking, but a fast, well-structured site gives you a far better chance than an outdated one.</p></details>
       <details><summary>How long does it take?</summary><p>About 14 days from receiving your logo, photos and business details.</p></details>
       <details><summary>What is "lead automation"?</summary><p>When a homeowner submits a form or misses your call, they get an instant text-back, and the lead is routed to the right person. We can also follow up automatically on old quotes that never closed. It is an optional add-on you can attach to Launch or Growth at any time.</p></details>
@@ -575,7 +575,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
   </div>
 </footer>
 
-<div class="sticky"><a class="btn" href="#start">Get my free preview →</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#start">Get my free preview →</a><span>Free · no obligation · pay after you approve</span></div>
 
 <script src="assets/main.js" defer></script>
 </body>
