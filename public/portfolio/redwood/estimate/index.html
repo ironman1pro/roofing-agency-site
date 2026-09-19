@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | Fairwind Roofing</title><meta name="description" content="Request a free inspection, quote or consultation.">
+<title>Free Estimate Calculator | Redwood Roofing &amp; Exteriors</title><meta name="description" content="Get an instant ballpark price for a new roof with this simple estimate calculator.">
 <meta name="robots" content="noindex"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<style>:root{--bg:#F5FAFB;--ink:#0B2530;--muted:#4E6874;--accent:#0A7F8B;--on-accent:#fff;--card:#fff;--line:#D9E7EB;--r:12px;--r2:20px;--ico-bg:#E0F4F6;--ico:#0A7F8B;--nav-bg:rgba(255,255,255,.94);--nav-ink:#0B2530;--nav-line:#D9E7EB;--cta-bg:linear-gradient(100deg,#0B5E69,#0A7F8B 45%,#F97316);--cta-ink:#fff;--foot:#0B2530;--foot-ink:#8FA9B4;--head:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--hw:800}
+<style>:root{--bg:#FBF7F1;--ink:#231A16;--muted:#6B5D54;--accent:#B5472B;--on-accent:#fff;--card:#fff;--line:#E7DCCF;--r:4px;--r2:6px;--ico-bg:#F5E6DC;--ico:#B5472B;--nav-bg:rgba(251,247,241,.96);--nav-ink:#231A16;--nav-line:#E7DCCF;--cta-bg:#231A16;--cta-ink:#fff;--foot:#231A16;--foot-ink:#A8998D;--head:'Helvetica Neue',Helvetica,Arial,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--hw:700;--ls:-.03em}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 img,svg{max-width:100%;display:block}a{color:inherit}
@@ -54,33 +54,42 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .roofline{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:150px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-.hero{padding:74px 0 84px;background:linear-gradient(120deg,#E3F5F7 0%,#F5FAFB 48%,#FFF0E2 100%)}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
-.hero h1 span{background:linear-gradient(90deg,#0A7F8B,#F97316);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero .lead{margin:20px 0 30px}.hero-cta{display:flex;flex-wrap:wrap;gap:14px}.hero .btn.ghost{color:var(--ink)}
-.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);padding:7px 16px;border-radius:999px;font-size:.84rem;font-weight:700;margin-bottom:20px}
-.pill i{width:8px;height:8px;border-radius:50%;background:#12A150;box-shadow:0 0 0 4px rgba(18,161,80,.2)}
-.dial{position:relative;background:#fff;border-radius:28px;padding:22px 22px 20px;box-shadow:0 26px 60px rgba(11,37,48,.14);border:1px solid var(--line);max-width:460px;width:100%;margin-inline:auto}
-.dial svg{display:block;width:100%;height:auto;border-radius:18px}
-.rpt{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;font-size:.92rem;font-weight:600}
-.rpt li{display:flex;gap:10px;align-items:center;background:#F5FAFB;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
-.rpt b{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.78rem;color:#fff;background:#12A150}
-.rpt b.w{background:#F97316}
-.chip-float{position:absolute;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 12px 30px rgba(11,37,48,.16);font-size:.85rem;font-weight:700;display:flex;gap:10px;align-items:center}
-.chip-float small{display:block;font-weight:500;color:var(--muted)}.chip-float svg{color:var(--accent);width:22px;height:22px;flex:none;border-radius:0}
-.chip-float.c1{left:-22px;top:22px}.chip-float.c2{right:-16px;bottom:-40px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.chip-float.c1{left:6px}.chip-float.c2{right:6px}}
-.strip{background:#fff;border-block:1px solid var(--line);padding:22px 0}
-.strip .grid{gap:12px}.strip .grid>div{display:flex;gap:10px;align-items:center;font-weight:600;font-size:.94rem}.strip svg{color:var(--accent);flex:none}
-.page-hero{background:linear-gradient(120deg,#E3F5F7,#FFF0E2);padding:70px 0 54px}
-.svc{display:flex;flex-direction:column}
-.plan-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-@media(max-width:900px){.plan-split{grid-template-columns:1fr}}
-.plan-box{background:linear-gradient(140deg,#0B5E69,#0A7F8B);color:#fff;border-radius:24px;padding:38px}
-.plan-box h3{font-size:1.4rem;margin-bottom:6px}.plan-box p{opacity:.85}
-.plan-box .ticks{margin-top:20px}.plan-box .ticks li::before{color:#FDBA74}
+.hero{position:relative;color:#fff;min-height:680px;display:flex;align-items:center;background:#1a1410;padding:80px 0 130px;overflow:hidden}
+.hero .bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,17,11,.78) 0%,rgba(28,17,11,.45) 52%,rgba(28,17,11,.05) 100%)}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);max-width:12ch}
+.hero .lead{color:#F0E4D8;margin:22px 0 32px}.hero .eyebrow{color:#F2B79F}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}.hero .btn.ghost{color:#fff}
+.factbar{position:absolute;left:0;right:0;bottom:0;z-index:3;background:#FBF7F1;color:#231A16}
+.factbar .grid{gap:0}.factbar .grid>div{padding:22px 20px;border-left:1px solid var(--line);font-weight:700;font-size:.93rem}
+.factbar .grid>div:first-child{border-left:0}.factbar small{display:block;color:var(--muted);font-weight:500;font-size:.82rem;margin-top:2px}
+@media(max-width:900px){.hero{padding-bottom:40px}.factbar{position:static}.factbar .grid>div{border:0;border-top:1px solid var(--line)}}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+@media(max-width:900px){.intro{grid-template-columns:1fr}}
+.mosaic{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mosaic img{width:100%;height:100%;object-fit:cover;border-radius:6px}
+.mosaic .tall{grid-row:span 2}
+.mosaic .m1{aspect-ratio:3/4}.mosaic .m2{aspect-ratio:4/3}
+.list{margin-top:44px;border-top:1px solid var(--line)}
+.li{display:grid;grid-template-columns:70px 1fr 1.4fr;gap:24px;align-items:start;padding:28px 0;border-bottom:1px solid var(--line)}
+.li .num{font-weight:700;color:var(--accent);font-size:.95rem;letter-spacing:.08em}
+.li h3{font-size:1.5rem}.li p{color:var(--muted)}
+@media(max-width:800px){.li{grid-template-columns:1fr;gap:6px}}
+.feature{position:relative;min-height:460px;color:#fff;display:flex;align-items:flex-end;padding:0;overflow:hidden}
+.feature img.bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feature::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(28,17,11,.9),rgba(28,17,11,.25) 75%,rgba(28,17,11,.05))}
+.feature .wrap{position:relative;z-index:2;padding:56px 0}
+.feature h2{max-width:20ch}.feature p{color:#F0E4D8;max-width:52ch;margin-top:12px}
 .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
 @media(max-width:800px){.steps3{grid-template-columns:1fr}}
+.card{border-radius:6px}
+.lhero{padding:76px 0 52px;background:#F4EBDF}.lhero h1{font-size:clamp(2.2rem,5vw,3.6rem);max-width:18ch}
+.fsplit{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8px}
+.fsplit .card{padding:0;overflow:hidden}.fsplit .card img{height:auto;width:100%;aspect-ratio:3/2;object-fit:cover}.fsplit .card .pb{padding:26px}
+@media(max-width:860px){.fsplit{grid-template-columns:1fr}}
+.cta-photo{background-color:#231A16}
+.btn{border-radius:4px}
 
 .nav-links a.on{opacity:1;box-shadow:0 2px 0 var(--accent);padding-bottom:2px}
 @media(max-width:860px){.nav-links{gap:18px}}
@@ -136,22 +145,21 @@ form.calc .chk small{display:block;color:var(--muted);font-weight:500}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
-<a class="logo" href="../"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0 0 26z" fill="#38BDF8"/><path d="M16 3a13 13 0 0 1 0 26z" fill="#FB923C"/><path d="M9 18l7-6 7 6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fairwind Roofing</span></a>
-<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/">Services</a><a href="../estimate/">Estimate</a><a href="../contact/" class="on" aria-current="page">Contact</a><a class="btn" href="tel:5550102211">Call (555) 010-2211</a></nav></div></header>
+<a class="logo" href="../"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#B5472B"/><path d="M6 20 16 10l10 10" stroke="#fff" stroke-width="3" fill="none" stroke-linejoin="round"/><path d="M11 25h10" stroke="#fff" stroke-width="3"/></svg><span>Redwood Roofing &amp; Exteriors</span></a>
+<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/">Services</a><a href="../estimate/" class="on" aria-current="page">Estimate</a><a href="../contact/">Contact</a><a class="btn" href="../contact/">Free estimate</a></nav></div></header>
 <main id="top">
-<section class="page-hero"><div class="wrap"><span class="eyebrow">Contact</span><h1>Book your free inspection.</h1>
-<p class="lead">Tell us what's going on. If water is coming in right now, call us directly.</p></div></section>
-<section><div class="wrap contact-grid"><div><div>
-<div class="info"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><b>Call us</b><a href="tel:5550102211">(555) 010-2211</a></div></div>
-<div class="info"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg></div><div><b>Email</b><a href="mailto:hello@fairwindroofing.example">hello@fairwindroofing.example</a></div></div>
-<div class="info"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div><b>Hours</b><span class="v">Mon–Sat 7am–6pm · Emergency 24/7</span></div></div>
-<div class="chips" style="justify-content:flex-start;margin-top:26px"><span>Northglenn</span><span>Westminster</span><span>Thornton</span><span>Arvada</span><span>Broomfield</span><span>Lakewood</span><span>Aurora</span></div></div><h3 style="margin-top:38px">What happens next</h3><div class="next"><div class="card"><div><h3>We call you back</h3><p>A real person confirms the problem and a visit time.</p></div></div><div class="card"><div><h3>We inspect and photograph</h3><p>You get a clear photo report and a fixed quote.</p></div></div><div class="card"><div><h3>Your roof, sorted</h3><p>Repaired or replaced, cleaned up, and explained.</p></div></div></div></div><div><form class="lead-form" novalidate><div class="fields"><h3>Book a free inspection</h3><p class="sub">We'll call you within one business day, or sooner for leaks.</p>
-<label for="n">Name</label><input id="n" autocomplete="name"><label for="p">Phone</label><input id="p" type="tel" autocomplete="tel">
-<label for="a">Property address</label><input id="a" autocomplete="street-address">
-<label for="i">What's going on?</label><select id="i"><option>Free roof inspection</option><option>Leak or storm damage</option><option>Full roof replacement</option><option>Gutters</option><option>Something else</option></select>
-<button class="btn" type="submit">Request an inspection →</button></div>
-<div class="thanks" role="status"><h3>Demo form</h3><p>This is a concept site, so nothing was sent. On a live site, this goes straight to your phone.</p></div></form></div></div></section></main>
-<footer><div class="wrap foot"><span>© Fairwind Roofing. Concept design by Adaptify</span>
+<section class="lhero"><div class="wrap"><span class="eyebrow">Estimate</span><h1 style="font-size:clamp(2rem,4.6vw,3.2rem)">Estimate your new roof.</h1><p class="lead" style="margin-top:16px">A simple, no-obligation range for the most common roof types. Your free estimate visit makes it exact.</p></div></section>
+<section><div class="wrap calc-wrap">
+<form class="calc card" data-round="100" novalidate><h3>Tell us about your roof</h3><p class="sub">Four quick inputs. Nothing is sent or stored.</p>
+<div class="row"><label class="l" for="size">Home size <output id="size-out">2,000 sq ft</output></label><input id="size" name="size" type="range" min="800" max="4500" step="100" value="2000"></div>
+<div class="row"><label class="l" for="stories">Stories</label><select id="stories" name="stories"><option value="1">1 story</option><option value="0.55" selected>2 stories</option><option value="0.4">3 stories</option></select></div>
+<div class="row"><label class="l" for="pitch">Roof steepness</label><select id="pitch" name="pitch"><option value="1.05">Low slope</option><option value="1.2" selected>Standard</option><option value="1.4">Steep</option></select></div>
+<div class="row"><label class="l" for="material">Roofing material</label><select id="material" name="material"><option value="0" data-min="5" data-max="8" data-name="Architectural shingles" selected>Architectural shingles</option><option value="1" data-min="10" data-max="16" data-name="Standing-seam metal">Standing-seam metal</option><option value="2" data-min="11" data-max="19" data-name="Concrete or clay tile">Concrete or clay tile</option></select></div>
+<div class="row"><span class="l" style="display:block;font-weight:700;font-size:.9rem;margin-bottom:8px">Add-ons</span><div class="opts"><label class="chk"><input type="checkbox" data-kind="flat" data-min="1200" data-max="2800" data-name="Gutters and downspouts"><span>Gutters and downspouts<small>Seamless aluminum</small></span></label><label class="chk"><input type="checkbox" data-kind="flat" data-min="1100" data-max="2600" data-name="Skylight installation"><span>Skylight installation<small>Per skylight</small></span></label><label class="chk"><input type="checkbox" data-kind="flat" data-min="800" data-max="1600" data-name="Solar-ready prep"><span>Solar-ready prep<small>Flashing and conduit</small></span></label></div></div></form>
+<aside class="calc-res" aria-live="polite"><span class="k">Your estimated range</span><div class="range" id="est-range">$0</div><p class="note">Financing options are available at your estimate.</p><ul id="est-lines"></ul>
+<a class="btn" href="../contact/">Get a free estimate</a><p class="fine">Concept demo. Prices shown are sample ranges for illustration, not a quote from any company.</p></aside></div></section>
+<script src="../../assets/estimate.js" defer></script></main>
+<footer><div class="wrap foot"><span>© Redwood Roofing &amp; Exteriors. Concept design by Adaptify</span>
 <span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../estimate/">Estimate</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../../assets/demo.js" defer></script>

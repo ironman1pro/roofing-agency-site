@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | Redwood Roofing &amp; Exteriors</title><meta name="description" content="Request a free inspection or estimate.">
+<title>Contact | Redwood Roofing &amp; Exteriors</title><meta name="description" content="Request a free inspection, quote or consultation.">
 <meta name="robots" content="noindex"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>:root{--bg:#FBF7F1;--ink:#231A16;--muted:#6B5D54;--accent:#B5472B;--on-accent:#fff;--card:#fff;--line:#E7DCCF;--r:4px;--r2:6px;--ico-bg:#F5E6DC;--ico:#B5472B;--nav-bg:rgba(251,247,241,.96);--nav-ink:#231A16;--nav-line:#E7DCCF;--cta-bg:#231A16;--cta-ink:#fff;--foot:#231A16;--foot-ink:#A8998D;--head:'Helvetica Neue',Helvetica,Arial,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--hw:700;--ls:-.03em}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -118,11 +118,35 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
 .rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
 .rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+
+.calc-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.calc-wrap>*{min-width:0}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}.calc-res{position:static!important}}
+form.calc{padding:30px}
+form.calc h3{margin-bottom:2px}form.calc .sub{color:var(--muted);font-size:.92rem}
+form.calc .row{margin-top:20px}
+form.calc label.l{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:.9rem;margin-bottom:8px}
+form.calc output{color:var(--accent);font-weight:800}
+form.calc select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.calc input[type=range]{width:100%;accent-color:var(--accent)}
+form.calc .opts{display:grid;gap:10px}
+form.calc .chk{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600}
+form.calc .chk input{margin-top:4px;accent-color:var(--accent);flex:none}
+form.calc .chk small{display:block;color:var(--muted);font-weight:500}
+.calc-res{position:sticky;top:96px;background:var(--cta-bg);color:var(--cta-ink);border-radius:var(--r2);padding:32px}
+.calc-res .k{text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;opacity:.75;font-weight:700}
+.calc-res .range{font-family:var(--head);font-weight:var(--hw,800);font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.12;margin:10px 0 6px;overflow-wrap:anywhere}
+.calc-res .note{opacity:.8;font-size:.95rem}
+.calc-res ul{list-style:none;display:grid;gap:8px;margin:20px 0 24px;padding:0;font-size:.92rem}
+.calc-res li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.calc-res li span:last-child{text-align:right;font-weight:700}
+.calc-res .btn{width:100%;background:#fff;color:#111}
+.calc-res .fine{font-size:.78rem;opacity:.7;margin-top:14px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
 <a class="logo" href="../"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#B5472B"/><path d="M6 20 16 10l10 10" stroke="#fff" stroke-width="3" fill="none" stroke-linejoin="round"/><path d="M11 25h10" stroke="#fff" stroke-width="3"/></svg><span>Redwood Roofing &amp; Exteriors</span></a>
-<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/">Services</a><a href="../contact/" class="on" aria-current="page">Contact</a><a class="btn" href="../contact/">Free estimate</a></nav></div></header>
+<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/">Services</a><a href="../estimate/">Estimate</a><a href="../contact/" class="on" aria-current="page">Contact</a><a class="btn" href="../contact/">Free estimate</a></nav></div></header>
 <main id="top">
 <section class="lhero"><div class="wrap"><span class="eyebrow">Contact</span><h1>Get your free estimate.</h1>
 <p class="lead" style="margin-top:16px">Tell us about your roof. We reply within one business day.</p></div></section>
@@ -130,14 +154,14 @@ form.lead-form .btn{width:100%;margin-top:18px}
 <div class="info"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div><div><b>Call us</b><a href="tel:5550102211">(555) 010-2211</a></div></div>
 <div class="info"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg></div><div><b>Email</b><a href="mailto:hello@redwoodroofing.example">hello@redwoodroofing.example</a></div></div>
 <div class="info"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div><b>Hours</b><span class="v">Mon–Fri 7:30am–5:30pm · Sat by appointment</span></div></div>
-<div class="chips" style="justify-content:flex-start;margin-top:26px"><span>Charlotte</span><span>Matthews</span><span>Huntersville</span><span>Concord</span><span>Gastonia</span><span>Mint Hill</span><span>Cornelius</span></div></div><h3 style="margin-top:38px">What happens next</h3><div class="next"><div class="card"><div><h3>We call you back</h3><p>A real person confirms the details and a visit time.</p></div></div><div class="card"><div><h3>Inspection and estimate</h3><p>Photos, options and a fixed price in writing.</p></div></div><div class="card"><div><h3>Your new roof</h3><p>Installed, cleaned up and warrantied.</p></div></div></div></div><div><form class="lead-form" novalidate><div class="fields"><h3>Get a free estimate</h3><p class="sub">We'll call you within one business day.</p>
+<div class="chips" style="justify-content:flex-start;margin-top:26px"><span>Beaverton</span><span>Hillsboro</span><span>Lake Oswego</span><span>Tigard</span><span>Gresham</span><span>Milwaukie</span><span>Oregon City</span></div></div><h3 style="margin-top:38px">What happens next</h3><div class="next"><div class="card"><div><h3>We call you back</h3><p>A real person confirms the details and a visit time.</p></div></div><div class="card"><div><h3>Inspection and estimate</h3><p>Photos, options and a fixed price in writing.</p></div></div><div class="card"><div><h3>Your new roof</h3><p>Installed, cleaned up and warrantied.</p></div></div></div></div><div><form class="lead-form" novalidate><div class="fields"><h3>Get a free estimate</h3><p class="sub">We'll call you within one business day.</p>
 <label for="n">Name</label><input id="n" autocomplete="name"><label for="p">Phone</label><input id="p" type="tel" autocomplete="tel">
 <label for="a">Property address</label><input id="a" autocomplete="street-address">
 <label for="i">What's going on?</label><select id="i"><option>Free roof inspection</option><option>Roof replacement</option><option>Repair or leak</option><option>Storm damage</option><option>Something else</option></select>
 <button class="btn" type="submit">Request my estimate →</button></div>
 <div class="thanks" role="status"><h3>Demo form</h3><p>This is a concept site, so nothing was sent. On a live site, this goes straight to your phone.</p></div></form></div></div></section></main>
 <footer><div class="wrap foot"><span>© Redwood Roofing &amp; Exteriors. Concept design by Adaptify</span>
-<span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../estimate/">Estimate</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../../assets/demo.js" defer></script>
 </body></html>

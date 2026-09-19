@@ -109,11 +109,35 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
 .rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
 .rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+
+.calc-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.calc-wrap>*{min-width:0}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}.calc-res{position:static!important}}
+form.calc{padding:30px}
+form.calc h3{margin-bottom:2px}form.calc .sub{color:var(--muted);font-size:.92rem}
+form.calc .row{margin-top:20px}
+form.calc label.l{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:.9rem;margin-bottom:8px}
+form.calc output{color:var(--accent);font-weight:800}
+form.calc select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.calc input[type=range]{width:100%;accent-color:var(--accent)}
+form.calc .opts{display:grid;gap:10px}
+form.calc .chk{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600}
+form.calc .chk input{margin-top:4px;accent-color:var(--accent);flex:none}
+form.calc .chk small{display:block;color:var(--muted);font-weight:500}
+.calc-res{position:sticky;top:96px;background:var(--cta-bg);color:var(--cta-ink);border-radius:var(--r2);padding:32px}
+.calc-res .k{text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;opacity:.75;font-weight:700}
+.calc-res .range{font-family:var(--head);font-weight:var(--hw,800);font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.12;margin:10px 0 6px;overflow-wrap:anywhere}
+.calc-res .note{opacity:.8;font-size:.95rem}
+.calc-res ul{list-style:none;display:grid;gap:8px;margin:20px 0 24px;padding:0;font-size:.92rem}
+.calc-res li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.calc-res li span:last-child{text-align:right;font-weight:700}
+.calc-res .btn{width:100%;background:#fff;color:#111}
+.calc-res .fine{font-size:.78rem;opacity:.7;margin-top:14px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
 <a class="logo" href="./"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0 0 26z" fill="#38BDF8"/><path d="M16 3a13 13 0 0 1 0 26z" fill="#FB923C"/><path d="M9 18l7-6 7 6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fairwind Roofing</span></a>
-<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="contact/">Contact</a><a class="btn" href="tel:5550102211">Call (555) 010-2211</a></nav></div></header>
+<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="estimate/">Estimate</a><a href="contact/">Contact</a><a class="btn" href="tel:5550102211">Call (555) 010-2211</a></nav></div></header>
 <main id="top">
 <section class="hero"><div class="wrap hero-grid"><div>
 <span class="pill"><i></i> Free roof inspections this week</span>
@@ -150,9 +174,9 @@ form.lead-form .btn{width:100%;margin-top:18px}
 <div class="steps3 steps"><div class="card step"><h3>Book a free inspection</h3><p>Tell us what's happening and pick a time that works.</p></div><div class="card step"><h3>Photo report and fixed quote</h3><p>You see exactly what we found and what it costs, in writing.</p></div><div class="card step"><h3>Done right, cleaned up</h3><p>We do the work, sweep the yard, and walk you through it.</p></div></div></div></section>
 <section id="reviews" style="padding-top:0"><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Homeowners with dry attics.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“We had a leak after a hailstorm. They tarped it that night, sent photos, and had the new section on within the week.”</blockquote><div class="rv-who">Carla M.<span>Northglenn</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Free inspection, honest answer: a repair, not a whole new roof. Saved us thousands.”</blockquote><div class="rv-who">Devin O.<span>Thornton</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The yearly roof care plan means no more surprises. The crew was on time and left the yard spotless.”</blockquote><div class="rv-who">Lisa &amp; Paul A.<span>Westminster</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
 <section id="areas" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap center"><span class="eyebrow">Service areas</span><h2>Serving the Front Range.</h2><div class="chips"><span>Northglenn</span><span>Westminster</span><span>Thornton</span><span>Arvada</span><span>Broomfield</span><span>Lakewood</span><span>Aurora</span><span>+ surrounding areas</span></div></div></section>
-<section class="cta-band"><div class="wrap"><h2>Not sure what shape your roof is in?</h2><p class="lead">Book a free inspection. You'll get photos and a straight answer.</p><a class="btn"  href="contact/">Book a free inspection</a></div></section></main>
+<section class="cta-band"><div class="wrap"><h2>Not sure what shape your roof is in?</h2><p class="lead">Book a free inspection. You'll get photos and a straight answer.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn"  href="contact/">Book a free inspection</a><a class="btn ghost" href="estimate/">Instant estimate</a></div></div></section></main>
 <footer><div class="wrap foot"><span>© Fairwind Roofing. Concept design by Adaptify</span>
-<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="estimate/">Estimate</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../assets/demo.js" defer></script>
 </body></html>

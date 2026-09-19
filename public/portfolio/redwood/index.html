@@ -118,31 +118,55 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
 .rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
 .rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+
+.calc-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.calc-wrap>*{min-width:0}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}.calc-res{position:static!important}}
+form.calc{padding:30px}
+form.calc h3{margin-bottom:2px}form.calc .sub{color:var(--muted);font-size:.92rem}
+form.calc .row{margin-top:20px}
+form.calc label.l{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:.9rem;margin-bottom:8px}
+form.calc output{color:var(--accent);font-weight:800}
+form.calc select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.calc input[type=range]{width:100%;accent-color:var(--accent)}
+form.calc .opts{display:grid;gap:10px}
+form.calc .chk{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600}
+form.calc .chk input{margin-top:4px;accent-color:var(--accent);flex:none}
+form.calc .chk small{display:block;color:var(--muted);font-weight:500}
+.calc-res{position:sticky;top:96px;background:var(--cta-bg);color:var(--cta-ink);border-radius:var(--r2);padding:32px}
+.calc-res .k{text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;opacity:.75;font-weight:700}
+.calc-res .range{font-family:var(--head);font-weight:var(--hw,800);font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.12;margin:10px 0 6px;overflow-wrap:anywhere}
+.calc-res .note{opacity:.8;font-size:.95rem}
+.calc-res ul{list-style:none;display:grid;gap:8px;margin:20px 0 24px;padding:0;font-size:.92rem}
+.calc-res li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.calc-res li span:last-child{text-align:right;font-weight:700}
+.calc-res .btn{width:100%;background:#fff;color:#111}
+.calc-res .fine{font-size:.78rem;opacity:.7;margin-top:14px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
 <a class="logo" href="./"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="4" fill="#B5472B"/><path d="M6 20 16 10l10 10" stroke="#fff" stroke-width="3" fill="none" stroke-linejoin="round"/><path d="M11 25h10" stroke="#fff" stroke-width="3"/></svg><span>Redwood Roofing &amp; Exteriors</span></a>
-<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="contact/">Contact</a><a class="btn" href="contact/">Free estimate</a></nav></div></header>
+<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="estimate/">Estimate</a><a href="contact/">Contact</a><a class="btn" href="contact/">Free estimate</a></nav></div></header>
 <main id="top">
-<section class="hero"><img class="bgimg" src="../img/r-hero.jpg" alt="Tan shingle roofs on gabled dormers against a clear blue sky" width="1920" height="998" fetchpriority=high decoding="async"><div class="wrap"><span class="eyebrow">Roofing &amp; exteriors · Charlotte metro</span>
+<section class="hero"><img class="bgimg" src="../img/r-hero.jpg" alt="Tan shingle roofs on gabled dormers against a clear blue sky" width="1920" height="998" fetchpriority=high decoding="async"><div class="wrap"><span class="eyebrow">Roofing &amp; exteriors · Portland metro</span>
 <h1>Roofs built to outlast the weather.</h1>
 <p class="lead">Replacements, repairs and storm damage from a local crew that explains every option and puts the price in writing.</p>
-<div class="hero-cta"><a class="btn" href="contact/">Get a free estimate</a><a class="btn ghost" href="services/">Our services</a></div></div>
+<div class="hero-cta"><a class="btn" href="contact/">Get a free estimate</a><a class="btn ghost" href="estimate/">Instant estimate</a></div></div>
 <div class="factbar"><div class="wrap grid g4"><div>Free estimates<small>No obligation</small></div><div>Licensed &amp; insured<small>Fully covered crews</small></div><div>Written warranty<small>On every replacement</small></div><div>Financing options<small>Ask at your estimate</small></div></div></div></section>
 <section><div class="wrap intro"><div><span class="eyebrow">About Redwood</span><h2>A better roof starts with a straight answer.</h2>
 <p class="lead" style="margin-top:18px">We're a family-run roofing and exteriors company. We inspect first, photograph what we find, and only recommend the work your home actually needs.</p>
 <a class="btn" style="margin-top:28px" href="contact/">Book a free inspection</a></div>
-<div class="mosaic"><div class="tall"><img src="../img/tile.jpg" alt="Crew installing dark roof tiles over new battens" width="1100" height="787" loading=lazy decoding="async"></div><img src="../img/aerial.jpg" alt="Aerial view of a home with a new gray shingle roof" width="1200" height="900" loading=lazy decoding="async"><img src="../img/e-crew.jpg" alt="Roofer in a safety harness beside a large oak tree" width="1100" height="733" loading=lazy decoding="async"></div></div></section>
+<div class="mosaic"><div class="tall"><img src="../img/tile.jpg" alt="Crew installing dark roof tiles over new battens" width="1100" height="787" loading=lazy decoding="async"></div><img src="../img/aerial.jpg" alt="Aerial view of a home with a new gray shingle roof" width="1200" height="900" loading=lazy decoding="async"><img src="../img/r-dormer2.jpg" alt="Close view of gabled dormers with tan shingles" width="1000" height="727" loading=lazy decoding="async"></div></div></section>
 <section style="padding-top:0"><div class="wrap"><span class="eyebrow">Services</span><h2>What we do.</h2>
 <div class="list"><div class="li"><div class="num">01</div><h3>Roof replacement</h3><p>Full tear-off and new roof in shingle, tile or metal, installed cleanly and backed by a written warranty.</p></div><div class="li"><div class="num">02</div><h3>Repairs &amp; leak detection</h3><p>We trace the leak to its source and fix it properly, not just where the stain is.</p></div><div class="li"><div class="num">03</div><h3>Storm damage</h3><p>Documented for your insurer, tarped if urgent, and repaired once your claim is approved.</p></div><div class="li"><div class="num">04</div><h3>Inspections &amp; care plans</h3><p>A yearly checkup catches small problems while they are still cheap to fix.</p></div></div><div class="linkrow" style="text-align:left"><a href="services/">See all services →</a></div></div></section>
 <section class="feature"><img class="bgimg" src="../img/solar.jpg" alt="Two-story home at dusk with solar panels on the roof" width="1200" height="560" loading=lazy decoding="async"><div class="wrap"><span class="eyebrow" style="color:#F2B79F">Featured project</span><h2>A quiet re-roof, finished before sundown.</h2><p>Dark architectural shingles, new flashing and a roof ready for solar. Two days, one crew, zero mess.</p></div></section>
 <section id="process"><div class="wrap"><div class="center"><span class="eyebrow">How it works</span><h2>Simple from call to finished roof.</h2></div>
 <div class="steps3 steps"><div class="card step"><h3>Free inspection</h3><p>We visit, photograph the roof and explain what we find.</p></div><div class="card step"><h3>Written estimate</h3><p>Materials, timeline and a fixed price, in writing.</p></div><div class="card step"><h3>Installed and cleaned up</h3><p>Our crew does the work and leaves the yard spotless.</p></div></div></div></section>
-<section id="reviews" style="padding-top:0"><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Neighbors who chose Redwood.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“From the first call to the final walk-through, the team was professional. The new roof looks fantastic from the street.”</blockquote><div class="rv-who">Melissa D.<span>Cornelius</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“They explained every option without pushing the expensive one, and the price on the estimate was the price we paid.”</blockquote><div class="rv-who">Andre &amp; Kim W.<span>Mint Hill</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Roofers arrived when they said, cleaned the lawn thoroughly, and the inspection photos were a great touch.”</blockquote><div class="rv-who">Paul S.<span>Matthews</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
-<section id="areas" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap center"><span class="eyebrow">Service areas</span><h2>Serving the Charlotte metro.</h2><div class="chips"><span>Charlotte</span><span>Matthews</span><span>Huntersville</span><span>Concord</span><span>Gastonia</span><span>Mint Hill</span><span>Cornelius</span><span>+ surrounding areas</span></div></div></section>
-<section class="cta-band cta-photo" style="background:linear-gradient(rgba(35,26,22,.84),rgba(35,26,22,.84)),url(../img/tile-wide.jpg) center/cover"><div class="wrap"><h2>Let's take a look at your roof.</h2><p class="lead">Book a free inspection. You'll get photos and a straight answer.</p><a class="btn" href="contact/">Get a free estimate</a></div></section></main>
+<section id="reviews" style="padding-top:0"><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Neighbors who chose Redwood.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“From the first call to the final walk-through, the team was professional. The new roof looks fantastic from the street.”</blockquote><div class="rv-who">Melissa D.<span>Beaverton</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“They explained every option without pushing the expensive one, and the price on the estimate was the price we paid.”</blockquote><div class="rv-who">Andre &amp; Kim W.<span>Lake Oswego</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Roofers arrived when they said, cleaned the lawn thoroughly, and the inspection photos were a great touch.”</blockquote><div class="rv-who">Paul S.<span>Tigard</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
+<section id="areas" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap center"><span class="eyebrow">Service areas</span><h2>Serving the Portland metro.</h2><div class="chips"><span>Beaverton</span><span>Hillsboro</span><span>Lake Oswego</span><span>Tigard</span><span>Gresham</span><span>Milwaukie</span><span>Oregon City</span><span>+ surrounding areas</span></div></div></section>
+<section class="cta-band cta-photo" style="background:linear-gradient(rgba(35,26,22,.84),rgba(35,26,22,.84)),url(../img/tile-wide.jpg) center/cover"><div class="wrap"><h2>Let's take a look at your roof.</h2><p class="lead">Book a free inspection. You'll get photos and a straight answer.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn" href="contact/">Get a free estimate</a><a class="btn ghost" href="estimate/">Instant estimate</a></div></div></section></main>
 <footer><div class="wrap foot"><span>© Redwood Roofing &amp; Exteriors. Concept design by Adaptify</span>
-<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="estimate/">Estimate</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../assets/demo.js" defer></script>
 </body></html>

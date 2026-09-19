@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Northline Roofing | Storm Damage Repair &amp; Roof Replacement</title><meta name="description" content="Storm damage roof repair and replacement with insurance claim help. Free inspections.">
+<title>Free Estimate Calculator | Fairwind Roofing</title><meta name="description" content="Get an instant ballpark price for a new roof with this simple estimate calculator.">
 <meta name="robots" content="noindex"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<style>:root{--bg:#0F1216;--ink:#F3F5F7;--muted:#9AA5B1;--accent:#FFC42E;--on-accent:#14171C;--card:#181D24;--line:#262D37;--r:8px;--r2:14px;--ico-bg:rgba(255,196,46,.12);--ico:#FFC42E;--nav-bg:rgba(15,18,22,.95);--nav-ink:#fff;--nav-line:#222932;--cta-bg:#FFC42E;--cta-ink:#14171C;--foot:#0A0D10;--foot-ink:#7C8896;--head:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--ls:-.025em;--hw:900}
+<style>:root{--bg:#F5FAFB;--ink:#0B2530;--muted:#4E6874;--accent:#0A7F8B;--on-accent:#fff;--card:#fff;--line:#D9E7EB;--r:12px;--r2:20px;--ico-bg:#E0F4F6;--ico:#0A7F8B;--nav-bg:rgba(255,255,255,.94);--nav-ink:#0B2530;--nav-line:#D9E7EB;--cta-bg:linear-gradient(100deg,#0B5E69,#0A7F8B 45%,#F97316);--cta-ink:#fff;--foot:#0B2530;--foot-ink:#8FA9B4;--head:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--hw:800}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
 body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
 img,svg{max-width:100%;display:block}a{color:inherit}
@@ -54,24 +54,33 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .roofline{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:150px}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-.hero{padding:76px 0 84px;background:radial-gradient(900px 420px at 80% 0,#2A2312 0,transparent 60%),#0F1216}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
-.hero h1{text-transform:uppercase}.hero h1 em{font-style:normal;color:var(--accent)}
-.hero .lead{margin:20px 0 30px}.hero-cta{display:flex;flex-wrap:wrap;gap:14px}.hero .btn.ghost{color:#fff}
-.alert{display:inline-flex;align-items:center;gap:8px;background:rgba(255,196,46,.12);color:var(--accent);border:1px solid rgba(255,196,46,.35);padding:7px 14px;border-radius:999px;font-size:.82rem;font-weight:700;margin-bottom:20px}
-.alert i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,196,46,.25)}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
-.strip{background:#151A20;border-block:1px solid var(--line);padding:22px 0}
+.hero{padding:74px 0 84px;background:linear-gradient(120deg,#E3F5F7 0%,#F5FAFB 48%,#FFF0E2 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hero h1 span{background:linear-gradient(90deg,#0A7F8B,#F97316);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin:20px 0 30px}.hero-cta{display:flex;flex-wrap:wrap;gap:14px}.hero .btn.ghost{color:var(--ink)}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);padding:7px 16px;border-radius:999px;font-size:.84rem;font-weight:700;margin-bottom:20px}
+.pill i{width:8px;height:8px;border-radius:50%;background:#12A150;box-shadow:0 0 0 4px rgba(18,161,80,.2)}
+.dial{position:relative;background:#fff;border-radius:28px;padding:22px 22px 20px;box-shadow:0 26px 60px rgba(11,37,48,.14);border:1px solid var(--line);max-width:460px;width:100%;margin-inline:auto}
+.dial svg{display:block;width:100%;height:auto;border-radius:18px}
+.rpt{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;font-size:.92rem;font-weight:600}
+.rpt li{display:flex;gap:10px;align-items:center;background:#F5FAFB;border:1px solid var(--line);border-radius:10px;padding:9px 12px}
+.rpt b{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.78rem;color:#fff;background:#12A150}
+.rpt b.w{background:#F97316}
+.chip-float{position:absolute;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 12px 30px rgba(11,37,48,.16);font-size:.85rem;font-weight:700;display:flex;gap:10px;align-items:center}
+.chip-float small{display:block;font-weight:500;color:var(--muted)}.chip-float svg{color:var(--accent);width:22px;height:22px;flex:none;border-radius:0}
+.chip-float.c1{left:-22px;top:22px}.chip-float.c2{right:-16px;bottom:-40px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.chip-float.c1{left:6px}.chip-float.c2{right:6px}}
+.strip{background:#fff;border-block:1px solid var(--line);padding:22px 0}
 .strip .grid{gap:12px}.strip .grid>div{display:flex;gap:10px;align-items:center;font-weight:600;font-size:.94rem}.strip svg{color:var(--accent);flex:none}
-.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
-@media(max-width:900px){.split{grid-template-columns:1fr}}
-.claim-list{display:grid;gap:14px}.claim{display:flex;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:22px}
-.claim::before{content:counter(s);counter-increment:s;flex:none;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#14171C;display:grid;place-items:center;font-weight:900}
-.claim p{color:var(--muted);font-size:.95rem;margin-top:4px}.claim-list{counter-reset:s}
-
-.page-hero{background:radial-gradient(800px 300px at 80% 0,#2A2312 0,transparent 60%),#0F1216;padding:72px 0 60px;border-bottom:1px solid var(--line)}
-.page-hero h1{text-transform:uppercase}
-.svc{display:flex;flex-direction:column}.svc .ticks li::before{color:var(--accent)}
+.page-hero{background:linear-gradient(120deg,#E3F5F7,#FFF0E2);padding:70px 0 54px}
+.svc{display:flex;flex-direction:column}
+.plan-split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:900px){.plan-split{grid-template-columns:1fr}}
+.plan-box{background:linear-gradient(140deg,#0B5E69,#0A7F8B);color:#fff;border-radius:24px;padding:38px}
+.plan-box h3{font-size:1.4rem;margin-bottom:6px}.plan-box p{opacity:.85}
+.plan-box .ticks{margin-top:20px}.plan-box .ticks li::before{color:#FDBA74}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media(max-width:800px){.steps3{grid-template-columns:1fr}}
 
 .nav-links a.on{opacity:1;box-shadow:0 2px 0 var(--accent);padding-bottom:2px}
 @media(max-width:860px){.nav-links{gap:18px}}
@@ -127,34 +136,22 @@ form.calc .chk small{display:block;color:var(--muted);font-weight:500}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
-<a class="logo" href="./"><svg viewBox="0 0 32 32"><path d="M3 21 16 7l13 14" fill="none" stroke="#FFC42E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 27h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg><span>Northline Roofing</span></a>
-<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="estimate/">Estimate</a><a href="contact/">Contact</a><a class="btn" href="tel:5550102211">Call (555) 010-2211</a></nav></div></header>
+<a class="logo" href="../"><svg viewBox="0 0 32 32"><path d="M16 3a13 13 0 0 0 0 26z" fill="#38BDF8"/><path d="M16 3a13 13 0 0 1 0 26z" fill="#FB923C"/><path d="M9 18l7-6 7 6" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fairwind Roofing</span></a>
+<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/">Services</a><a href="../estimate/" class="on" aria-current="page">Estimate</a><a href="../contact/">Contact</a><a class="btn" href="tel:5550102211">Call (555) 010-2211</a></nav></div></header>
 <main id="top">
-<section class="hero"><div class="wrap hero-grid"><div>
-<span class="alert"><i></i> Storm season: inspection slots open this week</span>
-<h1>Roof damage doesn't wait. <em>Neither do we.</em></h1>
-<p class="lead">Hail, wind or a leak you can't find: we inspect, document and repair it fast, and we work with your insurance company so you don't have to fight for it.</p>
-<div class="hero-cta"><a class="btn" href="contact/">Get a free inspection</a><a class="btn ghost" href="tel:5550102211">Call (555) 010-2211</a></div></div>
-<div id="quote"><form class="lead-form" novalidate><div class="fields"><h3>Free roof inspection</h3><p class="sub">Takes 30 seconds. No obligation.</p>
-<label for="n">Name</label><input id="n" autocomplete="name"><label for="p">Phone</label><input id="p" type="tel" autocomplete="tel">
-<label for="a">Property address</label><input id="a" autocomplete="street-address">
-<label for="i">What's going on?</label><select id="i"><option>Storm or hail damage</option><option>Active leak</option><option>Roof is old, need replacement</option><option>Just want a second opinion</option></select>
-<button class="btn" type="submit">Book my free inspection →</button></div>
-<div class="thanks" role="status"><h3>Demo form</h3><p>This is a concept site, so nothing was sent. On a live site, this goes straight to your phone.</p></div></form></div></div></section>
-<div class="strip"><div class="wrap grid g4"><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg>Free inspections</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Same-day emergency tarping</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/></svg>Written workmanship warranty</div></div></div>
-<section id="services"><div class="wrap"><div class="center"><span class="eyebrow">Services</span><h2>Everything your roof needs, one crew.</h2></div>
-<div class="grid g3" style="margin-top:42px"><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 12 4l9 8M6 10v9h12v-9" /></svg></div><h3>Roof replacement</h3><p>A full tear-off and installation done to manufacturer spec.</p></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div><h3>Storm &amp; hail repair</h3><p>Fast response when weather hits, and permanent fixes that last.</p></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Insurance claim help</h3><p>We handle the paperwork and the adjuster so nothing gets missed.</p></div></div><div class="linkrow"><a href="services/">See all services →</a></div></div></section>
-<section id="claims" style="background:#12161B"><div class="wrap split"><div><span class="eyebrow">Insurance claims</span><h2>We deal with the adjuster. You deal with your life.</h2>
-<p class="lead" style="margin-top:16px">Storm claims are confusing and easy to underpay. We show up with photos, measurements and the right paperwork, so your claim reflects the real damage.</p>
-<a class="btn" style="margin-top:26px" href="contact/">Start with a free inspection</a></div>
-<div class="claim-list"><div class="claim"><div><h3>We inspect and document</h3><p>Drone and roof-level photos, plus a written damage report.</p></div></div>
-<div class="claim"><div><h3>We meet your adjuster</h3><p>We're on the roof with them so nothing gets missed.</p></div></div>
-<div class="claim"><div><h3>We fix it right</h3><p>Once approved, most roofs are done in 1–2 days.</p></div></div></div></div></section>
-<section id="areas"><div class="wrap center"><span class="eyebrow">Service areas</span><h2>Serving the Front Range.</h2><div class="chips"><span>Northglenn</span><span>Westminster</span><span>Thornton</span><span>Arvada</span><span>Broomfield</span><span>Lakewood</span><span>Aurora</span><span>+ surrounding areas</span></div></div></section>
-<section id="reviews" ><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Homeowners who called us first.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Hail took out half our shingles overnight. They had a tarp on the roof by lunch and walked our adjuster through every bit of the damage.”</blockquote><div class="rv-who">Dana K.<span>Arvada</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Straight answers, no pressure. The inspection report had photos of everything, and the new roof was done in two days.”</blockquote><div class="rv-who">Marcus T.<span>Thornton</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I'd never dealt with an insurance claim before. They handled the paperwork and kept me updated the whole way.”</blockquote><div class="rv-who">Priya S.<span>Westminster</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
-<section class="cta-band"><div class="wrap"><h2>Think you have storm damage?</h2><p class="lead">Get a free inspection before your claim window closes.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn" style="background:#14171C;color:#FFC42E" href="contact/">Book my free inspection</a><a class="btn ghost" href="estimate/">Instant estimate</a></div></div></section></main>
-<footer><div class="wrap foot"><span>© Northline Roofing. Concept design by Adaptify</span>
-<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="estimate/">Estimate</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<section class="page-hero"><div class="wrap"><span class="eyebrow">Free roof estimate</span><h1 style="font-size:clamp(2rem,4.6vw,3.2rem)">A quick estimate for your roof.</h1><p class="lead" style="margin-top:16px">Choose your home size and material for an instant range. Book a free inspection and we'll firm it up with photos.</p></div></section>
+<section><div class="wrap calc-wrap">
+<form class="calc card" data-round="100" novalidate><h3>Tell us about your roof</h3><p class="sub">Four quick inputs. Nothing is sent or stored.</p>
+<div class="row"><label class="l" for="size">Home size <output id="size-out">2,000 sq ft</output></label><input id="size" name="size" type="range" min="800" max="4500" step="100" value="2000"></div>
+<div class="row"><label class="l" for="stories">Stories</label><select id="stories" name="stories"><option value="1">1 story</option><option value="0.55" selected>2 stories</option><option value="0.4">3 stories</option></select></div>
+<div class="row"><label class="l" for="pitch">Roof steepness</label><select id="pitch" name="pitch"><option value="1.05">Low slope</option><option value="1.2" selected>Standard</option><option value="1.4">Steep</option></select></div>
+<div class="row"><label class="l" for="material">Roofing material</label><select id="material" name="material"><option value="0" data-min="4.5" data-max="7.0" data-name="Architectural asphalt shingles" selected>Architectural asphalt shingles</option><option value="1" data-min="6" data-max="10" data-name="Flat / low-slope TPO membrane">Flat / low-slope TPO membrane</option><option value="2" data-min="9.5" data-max="15" data-name="Standing-seam metal">Standing-seam metal</option></select></div>
+<div class="row"><span class="l" style="display:block;font-weight:700;font-size:.9rem;margin-bottom:8px">Add-ons</span><div class="opts"><label class="chk"><input type="checkbox" data-kind="flat" data-min="1000" data-max="2400" data-name="Seamless gutters"><span>Seamless gutters<small>Aluminum, colour matched</small></span></label><label class="chk"><input type="checkbox" data-kind="flat" data-min="500" data-max="1300" data-name="Attic ventilation upgrade"><span>Attic ventilation upgrade<small>Ridge vent and soffit</small></span></label><label class="chk"><input type="checkbox" data-kind="flat" data-min="900" data-max="2200" data-name="Skylight replacement"><span>Skylight replacement<small>Per skylight</small></span></label></div></div></form>
+<aside class="calc-res" aria-live="polite"><span class="k">Your estimated range</span><div class="range" id="est-range">$0</div><p class="note">Add a yearly roof care plan and small repairs are handled on the same visit.</p><ul id="est-lines"></ul>
+<a class="btn" href="../contact/">Book a free inspection</a><p class="fine">Concept demo. Prices shown are sample ranges for illustration, not a quote from any company.</p></aside></div></section>
+<script src="../../assets/estimate.js" defer></script></main>
+<footer><div class="wrap foot"><span>© Fairwind Roofing. Concept design by Adaptify</span>
+<span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../estimate/">Estimate</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
-<script src="../assets/demo.js" defer></script>
+<script src="../../assets/demo.js" defer></script>
 </body></html>

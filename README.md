@@ -8,10 +8,11 @@ public/                     ← everything published (Cloudflare "build output d
   index.html                ← agency landing page
   assets/main.js            ← landing form logic (external so the CSP can block inline scripts)
   portfolio/
-    summitridge/ redwood/ northline/ brightpeak/ heritage/ fairwind/   ← 6 concept sites, 3 pages each (home, services/, contact/)
+    summitridge/ redwood/ northline/ brightpeak/ heritage/ fairwind/   ← 6 concept sites, 4 pages each (home, services/, estimate/, contact/)
     img/                    ← photos used by the photo-led concept sites (Summit Ridge, Redwood)
     thumbs/                 ← portfolio screenshots
     assets/demo.js          ← demo-form behaviour
+    assets/estimate.js      ← estimate-calculator logic (shared by all 6 sites)
   _headers                  ← security headers + caching (Cloudflare reads this file)
   404.html  robots.txt  sitemap.xml  favicon.svg
 src/worker.js               ← POST /api/lead → forwards to LEAD_WEBHOOK_URL

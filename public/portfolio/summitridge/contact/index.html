@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact | Summit Ridge Roofing</title><meta name="description" content="Request a free inspection or estimate.">
+<title>Contact | Summit Ridge Roofing</title><meta name="description" content="Request a free inspection, quote or consultation.">
 <meta name="robots" content="noindex"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>:root{--bg:#F4F6F8;--ink:#0E1A2B;--muted:#56637A;--accent:#E4570B;--on-accent:#fff;--card:#fff;--line:#DDE3EA;--r:10px;--r2:16px;--ico-bg:#FFEBDD;--ico:#E4570B;--nav-bg:rgba(14,26,43,.97);--nav-ink:#fff;--nav-line:#1C2B44;--cta-bg:#0E1A2B;--cta-ink:#fff;--foot:#08111D;--foot-ink:#8C9BB3;--head:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--hw:800}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -113,11 +113,35 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
 .rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
 .rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+
+.calc-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.calc-wrap>*{min-width:0}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}.calc-res{position:static!important}}
+form.calc{padding:30px}
+form.calc h3{margin-bottom:2px}form.calc .sub{color:var(--muted);font-size:.92rem}
+form.calc .row{margin-top:20px}
+form.calc label.l{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:.9rem;margin-bottom:8px}
+form.calc output{color:var(--accent);font-weight:800}
+form.calc select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.calc input[type=range]{width:100%;accent-color:var(--accent)}
+form.calc .opts{display:grid;gap:10px}
+form.calc .chk{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600}
+form.calc .chk input{margin-top:4px;accent-color:var(--accent);flex:none}
+form.calc .chk small{display:block;color:var(--muted);font-weight:500}
+.calc-res{position:sticky;top:96px;background:var(--cta-bg);color:var(--cta-ink);border-radius:var(--r2);padding:32px}
+.calc-res .k{text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;opacity:.75;font-weight:700}
+.calc-res .range{font-family:var(--head);font-weight:var(--hw,800);font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.12;margin:10px 0 6px;overflow-wrap:anywhere}
+.calc-res .note{opacity:.8;font-size:.95rem}
+.calc-res ul{list-style:none;display:grid;gap:8px;margin:20px 0 24px;padding:0;font-size:.92rem}
+.calc-res li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.calc-res li span:last-child{text-align:right;font-weight:700}
+.calc-res .btn{width:100%;background:#fff;color:#111}
+.calc-res .fine{font-size:.78rem;opacity:.7;margin-top:14px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
 <a class="logo" href="../"><svg viewBox="0 0 32 32"><path d="M2 27 13 7l6 11 3-5 8 14z" fill="#F26A21"/><path d="M13 7l6 11H7z" fill="#fff"/></svg><span>Summit Ridge Roofing</span></a>
-<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/">Services</a><a href="../contact/" class="on" aria-current="page">Contact</a><a class="btn" href="../contact/">Free estimate</a></nav></div></header>
+<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/">Services</a><a href="../estimate/">Estimate</a><a href="../contact/" class="on" aria-current="page">Contact</a><a class="btn" href="../contact/">Free estimate</a></nav></div></header>
 <main id="top">
 <section class="dark-hero"><div class="wrap"><span class="eyebrow" style="color:#FF8A3D">Contact</span><h1 style="font-size:clamp(2rem,4.6vw,3.2rem)">Get your free estimate.</h1>
 <p class="lead" style="margin-top:16px">Tell us what's going on. If water is coming in right now, call us directly.</p></div></section>
@@ -132,7 +156,7 @@ form.lead-form .btn{width:100%;margin-top:18px}
 <button class="btn" type="submit">Request my estimate →</button></div>
 <div class="thanks" role="status"><h3>Demo form</h3><p>This is a concept site, so nothing was sent. On a live site, this goes straight to your phone.</p></div></form></div></div></section></main>
 <footer><div class="wrap foot"><span>© Summit Ridge Roofing. Concept design by Adaptify</span>
-<span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../estimate/">Estimate</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../../assets/demo.js" defer></script>
 </body></html>

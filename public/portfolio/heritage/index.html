@@ -112,11 +112,35 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
 .rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
 .rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+
+.calc-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.calc-wrap>*{min-width:0}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}.calc-res{position:static!important}}
+form.calc{padding:30px}
+form.calc h3{margin-bottom:2px}form.calc .sub{color:var(--muted);font-size:.92rem}
+form.calc .row{margin-top:20px}
+form.calc label.l{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:.9rem;margin-bottom:8px}
+form.calc output{color:var(--accent);font-weight:800}
+form.calc select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.calc input[type=range]{width:100%;accent-color:var(--accent)}
+form.calc .opts{display:grid;gap:10px}
+form.calc .chk{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600}
+form.calc .chk input{margin-top:4px;accent-color:var(--accent);flex:none}
+form.calc .chk small{display:block;color:var(--muted);font-weight:500}
+.calc-res{position:sticky;top:96px;background:var(--cta-bg);color:var(--cta-ink);border-radius:var(--r2);padding:32px}
+.calc-res .k{text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;opacity:.75;font-weight:700}
+.calc-res .range{font-family:var(--head);font-weight:var(--hw,800);font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.12;margin:10px 0 6px;overflow-wrap:anywhere}
+.calc-res .note{opacity:.8;font-size:.95rem}
+.calc-res ul{list-style:none;display:grid;gap:8px;margin:20px 0 24px;padding:0;font-size:.92rem}
+.calc-res li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.calc-res li span:last-child{text-align:right;font-weight:700}
+.calc-res .btn{width:100%;background:#fff;color:#111}
+.calc-res .fine{font-size:.78rem;opacity:.7;margin-top:14px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
 <a class="logo" href="./"><svg viewBox="0 0 32 32"><path d="M4 20 16 8l12 12" fill="none" stroke="#B8894B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 25h14M12 20v5M20 20v5" stroke="#1F3A2E" stroke-width="2.6" stroke-linecap="round"/></svg><span>Heritage Roofing Co.</span></a>
-<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="contact/">Contact</a><a class="btn" href="contact/">Request a consultation</a></nav></div></header>
+<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="estimate/">Estimate</a><a href="contact/">Contact</a><a class="btn" href="contact/">Request a consultation</a></nav></div></header>
 <main id="top">
 <section class="hero"><div class="wrap"><div class="orn"></div><span class="eyebrow">Premium residential roofing</span>
 <h1>A roof built to <em>outlast</em> the home beneath it.</h1>
@@ -148,9 +172,9 @@ form.lead-form .btn{width:100%;margin-top:18px}
 <section id="process"><div class="wrap"><div class="center"><span class="eyebrow">Our process</span><h2>Unhurried. Precise. Documented.</h2></div>
 <div class="steps4 steps"><div class="step"><h3>Consultation</h3><p>We walk the property and listen to what you want.</p></div><div class="step"><h3>Proposal</h3><p>Detailed scope, materials and a fixed price.</p></div><div class="step"><h3>Installation</h3><p>Master-led crew, daily photo updates, clean site.</p></div><div class="step"><h3>Final inspection</h3><p>Walkthrough and your written guarantee.</p></div></div></div></section>
 <section id="reviews" style="background:#F3ECDD;border-block:1px solid var(--line)"><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Kind words from homeowners.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Our 1920s home needed a roof that matched its character. The slate work is beautiful and the crew treated the house with real care.”</blockquote><div class="rv-who">Margaret H.<span>Wash Park</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Daily photo updates and a spotless site. You can tell these are craftsmen.”</blockquote><div class="rv-who">Thomas &amp; Ellen B.<span>Cherry Hills</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Worth every penny for the standing-seam roof. Precise work from start to finish.”</blockquote><div class="rv-who">Robert L.<span>Boulder</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
-<section class="cta-band"><div class="wrap"><div class="orn"></div><h2>Let's talk about your roof.</h2><p class="lead">Tell us about your home. We'll arrange a private consultation.</p><a class="btn"  href="contact/">Request a consultation</a></div></section></main>
+<section class="cta-band"><div class="wrap"><div class="orn"></div><h2>Let's talk about your roof.</h2><p class="lead">Tell us about your home. We'll arrange a private consultation.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn"  href="contact/">Request a consultation</a><a class="btn ghost" href="estimate/">Instant estimate</a></div></div></section></main>
 <footer><div class="wrap foot"><span>© Heritage Roofing Co.. Concept design by Adaptify</span>
-<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="estimate/">Estimate</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../assets/demo.js" defer></script>
 </body></html>

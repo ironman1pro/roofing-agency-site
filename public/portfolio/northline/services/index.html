@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services | Northline Roofing</title><meta name="description" content="Detailed roofing services, materials and answers to common questions.">
+<title>Services | Northline Roofing</title><meta name="description" content="Detailed roofing services and answers to common questions.">
 <meta name="robots" content="noindex"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <style>:root{--bg:#0F1216;--ink:#F3F5F7;--muted:#9AA5B1;--accent:#FFC42E;--on-accent:#14171C;--card:#181D24;--line:#262D37;--r:8px;--r2:14px;--ico-bg:rgba(255,196,46,.12);--ico:#FFC42E;--nav-bg:rgba(15,18,22,.95);--nav-ink:#fff;--nav-line:#222932;--cta-bg:#FFC42E;--cta-ink:#14171C;--foot:#0A0D10;--foot-ink:#7C8896;--head:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--ls:-.025em;--hw:900}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
@@ -100,19 +100,43 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
 .rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
 .rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+
+.calc-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.calc-wrap>*{min-width:0}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}.calc-res{position:static!important}}
+form.calc{padding:30px}
+form.calc h3{margin-bottom:2px}form.calc .sub{color:var(--muted);font-size:.92rem}
+form.calc .row{margin-top:20px}
+form.calc label.l{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:.9rem;margin-bottom:8px}
+form.calc output{color:var(--accent);font-weight:800}
+form.calc select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.calc input[type=range]{width:100%;accent-color:var(--accent)}
+form.calc .opts{display:grid;gap:10px}
+form.calc .chk{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600}
+form.calc .chk input{margin-top:4px;accent-color:var(--accent);flex:none}
+form.calc .chk small{display:block;color:var(--muted);font-weight:500}
+.calc-res{position:sticky;top:96px;background:var(--cta-bg);color:var(--cta-ink);border-radius:var(--r2);padding:32px}
+.calc-res .k{text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;opacity:.75;font-weight:700}
+.calc-res .range{font-family:var(--head);font-weight:var(--hw,800);font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.12;margin:10px 0 6px;overflow-wrap:anywhere}
+.calc-res .note{opacity:.8;font-size:.95rem}
+.calc-res ul{list-style:none;display:grid;gap:8px;margin:20px 0 24px;padding:0;font-size:.92rem}
+.calc-res li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.calc-res li span:last-child{text-align:right;font-weight:700}
+.calc-res .btn{width:100%;background:#fff;color:#111}
+.calc-res .fine{font-size:.78rem;opacity:.7;margin-top:14px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
 <a class="logo" href="../"><svg viewBox="0 0 32 32"><path d="M3 21 16 7l13 14" fill="none" stroke="#FFC42E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 27h14" stroke="#fff" stroke-width="4" stroke-linecap="round"/></svg><span>Northline Roofing</span></a>
-<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/" class="on" aria-current="page">Services</a><a href="../contact/">Contact</a><a class="btn" href="tel:5550102211">Call (555) 010-2211</a></nav></div></header>
+<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/" class="on" aria-current="page">Services</a><a href="../estimate/">Estimate</a><a href="../contact/">Contact</a><a class="btn" href="tel:5550102211">Call (555) 010-2211</a></nav></div></header>
 <main id="top">
 <section class="page-hero"><div class="wrap"><span class="eyebrow">Services</span><h1>Roofing services built for storm country.</h1>
 <p class="lead">From emergency tarping to full replacements and insurance claims, one licensed crew handles everything.</p></div></section>
 <section><div class="wrap"><div class="grid g2"><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 12 4l9 8M6 10v9h12v-9" /></svg></div><h3>Roof replacement</h3><p>A full tear-off and installation done to manufacturer spec.</p><ul class="ticks"><li>Full tear-off and deck inspection</li><li>Premium architectural shingles</li><li>Manufacturer and workmanship warranty</li><li>Magnet sweep and full cleanup</li></ul></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></div><h3>Storm &amp; hail repair</h3><p>Fast response when weather hits, and permanent fixes that last.</p><ul class="ticks"><li>Same-day emergency tarping</li><li>Hail and wind damage assessment</li><li>Photo-documented findings</li><li>Permanent repair or replacement</li></ul></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg></div><h3>Free inspections</h3><p>Know exactly what condition your roof is in, at no cost.</p><ul class="ticks"><li>Roof-level and drone photos</li><li>Plain-English written report</li><li>No obligation, no pressure</li><li>Honest repair-vs-replace advice</li></ul></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Insurance claim help</h3><p>We handle the paperwork and the adjuster so nothing gets missed.</p><ul class="ticks"><li>Claim documentation</li><li>On-roof adjuster meetings</li><li>Supplement requests when needed</li><li>Scope written to match real damage</li></ul></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zM7 14v6M17 14v6"/></svg></div><h3>Gutters &amp; flashing</h3><p>The small details that keep water where it belongs.</p><ul class="ticks"><li>Seamless aluminum gutters</li><li>Flashing and chimney sealing</li><li>Ventilation upgrades</li><li>Downspout drainage solutions</li></ul></div><div class="card svc"><div class="ico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/></svg></div><h3>Metal &amp; flat roofs</h3><p>Long-life systems for homes and commercial buildings.</p><ul class="ticks"><li>Standing-seam metal</li><li>TPO and EPDM flat roofing</li><li>Residential and commercial</li><li>Protective long-life coatings</li></ul></div></div></div></section>
 <section style="background:#12161B"><div class="wrap"><div class="center"><span class="eyebrow">FAQ</span><h2>Quick answers.</h2></div><div class="faq-list"><details><summary>How much does the inspection cost?</summary><p>Nothing. Inspections are free and come with a photo report.</p></details><details><summary>Do you work with insurance companies?</summary><p>Yes. We meet your adjuster on-site and help document the damage.</p></details><details><summary>How long does a roof replacement take?</summary><p>Most homes are completed in one to two days, weather permitting.</p></details><details><summary>Is there a warranty?</summary><p>Yes: the manufacturer's shingle warranty plus our written workmanship warranty.</p></details></div></div></section>
-<section class="cta-band"><div class="wrap"><h2>Not sure what you need?</h2><p class="lead">Start with a free inspection and we'll tell you honestly.</p><a class="btn" style="background:#14171C;color:#FFC42E" href="../contact/">Book my free inspection</a></div></section></main>
+<section class="cta-band"><div class="wrap"><h2>Not sure what you need?</h2><p class="lead">Start with a free inspection and we'll tell you honestly.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn" style="background:#14171C;color:#FFC42E" href="../contact/">Book my free inspection</a><a class="btn ghost" href="../estimate/">Instant estimate</a></div></div></section></main>
 <footer><div class="wrap foot"><span>© Northline Roofing. Concept design by Adaptify</span>
-<span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../estimate/">Estimate</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../../assets/demo.js" defer></script>
 </body></html>

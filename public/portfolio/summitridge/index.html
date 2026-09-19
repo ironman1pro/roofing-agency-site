@@ -113,37 +113,61 @@ form.lead-form .btn{width:100%;margin-top:18px}
 .rv-who{margin-top:auto;font-weight:700;font-size:.92rem}.rv-who span{display:block;font-weight:500;color:var(--muted);font-size:.85rem}
 .rv-note{text-align:center;color:var(--muted);font-size:.82rem;margin-top:22px}
 .rv-note b{background:var(--ico-bg);color:var(--ico);border-radius:999px;padding:2px 9px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;margin-right:8px}
+
+.calc-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.calc-wrap>*{min-width:0}
+@media(max-width:900px){.calc-wrap{grid-template-columns:1fr}.calc-res{position:static!important}}
+form.calc{padding:30px}
+form.calc h3{margin-bottom:2px}form.calc .sub{color:var(--muted);font-size:.92rem}
+form.calc .row{margin-top:20px}
+form.calc label.l{display:flex;justify-content:space-between;gap:12px;font-weight:700;font-size:.9rem;margin-bottom:8px}
+form.calc output{color:var(--accent);font-weight:800}
+form.calc select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.calc input[type=range]{width:100%;accent-color:var(--accent)}
+form.calc .opts{display:grid;gap:10px}
+form.calc .chk{display:flex;align-items:flex-start;gap:10px;font-size:.93rem;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;cursor:pointer;font-weight:600}
+form.calc .chk input{margin-top:4px;accent-color:var(--accent);flex:none}
+form.calc .chk small{display:block;color:var(--muted);font-weight:500}
+.calc-res{position:sticky;top:96px;background:var(--cta-bg);color:var(--cta-ink);border-radius:var(--r2);padding:32px}
+.calc-res .k{text-transform:uppercase;letter-spacing:.12em;font-size:.74rem;opacity:.75;font-weight:700}
+.calc-res .range{font-family:var(--head);font-weight:var(--hw,800);font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.12;margin:10px 0 6px;overflow-wrap:anywhere}
+.calc-res .note{opacity:.8;font-size:.95rem}
+.calc-res ul{list-style:none;display:grid;gap:8px;margin:20px 0 24px;padding:0;font-size:.92rem}
+.calc-res li{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:8px}
+.calc-res li span:last-child{text-align:right;font-weight:700}
+.calc-res .btn{width:100%;background:#fff;color:#111}
+.calc-res .fine{font-size:.78rem;opacity:.7;margin-top:14px}
 </style></head>
 <body>
 <header class="top"><div class="wrap nav">
 <a class="logo" href="./"><svg viewBox="0 0 32 32"><path d="M2 27 13 7l6 11 3-5 8 14z" fill="#F26A21"/><path d="M13 7l6 11H7z" fill="#fff"/></svg><span>Summit Ridge Roofing</span></a>
-<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="contact/">Contact</a><a class="btn" href="contact/">Free estimate</a></nav></div></header>
+<nav class="nav-links" aria-label="Main"><a href="./" class="on" aria-current="page">Home</a><a href="services/">Services</a><a href="estimate/">Estimate</a><a href="contact/">Contact</a><a class="btn" href="contact/">Free estimate</a></nav></div></header>
 <main id="top">
 <section class="hero"><div class="wrap hero-grid"><div>
 <span class="eyebrow" style="color:#FF8A3D">Roofing · Charlotte metro</span>
 <h1>Built on the roof. <em>Backed in writing.</em></h1>
 <p class="lead">Replacements, repairs and storm damage handled by a safety-first crew that shows up when they say, photographs everything, and prices the job before starting.</p>
-<div class="hero-cta"><a class="btn" href="contact/">Get a free estimate</a><a class="btn ghost" href="tel:5550102211">Call (555) 010-2211</a></div></div>
+<div class="hero-cta"><a class="btn" href="contact/">Get a free estimate</a><a class="btn ghost" href="estimate/">Instant estimate</a></div></div>
 <div class="hero-photo"><img src="../img/e-hero.jpg" alt="Roofer sealing a fastener on a shingle roof against a clear blue sky" width="900" height="937" fetchpriority=high decoding="async">
 <div class="hbadge b2"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div>Fully harnessed crews<small>Safety on every job</small></div></div>
 <div class="hbadge b1"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg><div>Free inspection<small>Photo report in 24 hours</small></div></div></div></div></section>
 <div class="strip"><div class="wrap grid g4"><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.2 8 8 9 4.8-1 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Licensed &amp; insured</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg>Free inspections</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 12 4l9 8M6 10v9h12v-9" /></svg>Written warranty</div><div><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>Same-week scheduling</div></div></div>
 <section><div class="wrap"><div class="center"><span class="eyebrow">What we do</span><h2>Roofing, done properly.</h2></div>
-<div class="grid g3" style="margin-top:42px"><div class="pcard"><img src="../img/e-inspect.jpg" alt="Two roofers measuring an asphalt shingle roof" width="900" height="600" loading=lazy decoding="async"><div class="pb"><h3>Free roof inspections</h3><p>Know exactly what you have before you spend a dollar.</p></div></div><div class="pcard"><img src="../img/tile.jpg" alt="Crew installing dark roof tiles over new battens" width="1100" height="787" loading=lazy decoding="async"><div class="pb"><h3>Roof replacement</h3><p>Complete tear-off and re-roof, done cleanly and backed in writing.</p></div></div><div class="pcard"><img src="../img/e-repair.jpg" alt="Roofer sealing a fastener on an asphalt shingle roof" width="900" height="714" loading=lazy decoding="async"><div class="pb"><h3>Roof repair</h3><p>Leaks, flashing and storm damage fixed the right way.</p></div></div></div><div class="linkrow"><a href="services/">See all services →</a></div></div></section>
-<section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap split2"><div><img src="../img/e-crew.jpg" alt="Roofer in a safety harness working on a shingle roof beside a large oak tree" width="1100" height="733" loading=lazy decoding="async"></div>
+<div class="grid g3" style="margin-top:42px"><div class="pcard"><img src="../img/e-inspect.jpg" alt="Two roofers in safety harnesses measuring an asphalt shingle roof" width="900" height="600" loading=lazy decoding="async"><div class="pb"><h3>Free roof inspections</h3><p>Know exactly what you have before you spend a dollar.</p></div></div><div class="pcard"><img src="../img/e-crew.jpg" alt="Harnessed roofer clearing shingles beside a large oak tree" width="1100" height="733" loading=lazy decoding="async"><div class="pb"><h3>Roof replacement</h3><p>Complete tear-off and re-roof, done cleanly and backed in writing.</p></div></div><div class="pcard"><img src="../img/e-detail.jpg" alt="Gloved hand applying sealant to a shingle fastener" width="900" height="812" loading=lazy decoding="async"><div class="pb"><h3>Roof repair</h3><p>Leaks, flashing and storm damage fixed the right way.</p></div></div></div><div class="linkrow"><a href="services/">See all services →</a></div></div></section>
+<section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap split2"><div><img src="../img/e-measure.jpg" alt="Roofer in a safety harness standing on a shingle roof against a clear sky" width="800" height="1096" loading=lazy decoding="async"></div>
 <div><span class="eyebrow">Why homeowners choose us</span><h2>Crews that treat your home like their own.</h2>
 <p class="lead" style="margin-top:16px">Every member of the crew is harnessed, insured and briefed before the first shingle comes off. You get one point of contact from inspection to final walk-through.</p>
 <ul class="ticks"><li>Free, photo-documented inspection</li><li>Fixed price in writing before we start</li><li>Daily clean-up, magnet sweep every evening</li><li>Written workmanship warranty</li></ul>
 <a class="btn" style="margin-top:26px" href="contact/">Book an inspection</a></div></div></section>
-<section><div class="wrap"><div class="center"><span class="eyebrow">Recent work</span><h2>Roofs we're proud of.</h2></div>
-<div class="gal"><figure><img src="../img/aerial.jpg" alt="Aerial view of a home with a new gray asphalt shingle roof" width="1200" height="900" loading=lazy decoding="async"><figcaption>Architectural shingle re-roof<small>Matthews</small></figcaption></figure>
-<figure><img src="../img/dormers.jpg" alt="Tan shingle roofs on gabled dormers under a blue sky" width="1000" height="695" loading=lazy decoding="async"><figcaption>Multi-gable replacement<small>Charlotte</small></figcaption></figure>
-<figure><img src="../img/tile.jpg" alt="Roof tiles being installed on new battens" width="1100" height="787" loading=lazy decoding="async"><figcaption>Tile installation<small>Huntersville</small></figcaption></figure></div></div></section>
+<section><div class="wrap"><div class="center"><span class="eyebrow">On the job</span><h2>Our crews at work.</h2></div>
+<div class="gal"><figure><img src="../img/e-crew2.jpg" alt="Harnessed roofer walking a roof slope beside an oak tree" width="900" height="975" loading=lazy decoding="async"><figcaption>Clean-up after tear-off<small>Matthews</small></figcaption></figure>
+<figure><img src="../img/e-measure2.jpg" alt="Roofer crouching to take a measurement with a tape" width="800" height="847" loading=lazy decoding="async"><figcaption>Measuring for an exact quote<small>Charlotte</small></figcaption></figure>
+<figure><img src="../img/e-texture.jpg" alt="New dark architectural shingles in evening light" width="1200" height="422" loading=lazy decoding="async"><figcaption>Architectural shingles, finished<small>Concord</small></figcaption></figure></div></div></section>
 <section id="reviews" style="padding-top:0"><div class="wrap"><div class="center"><span class="eyebrow">Reviews</span><h2>Homeowners who slept through the storm.</h2></div><div class="rv-grid"><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“They found the leak nobody else could, fixed it in one visit, and sent photos of the work. Fair price too.”</blockquote><div class="rv-who">Alicia R.<span>Charlotte</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Two-day replacement, spotless yard. The crew wore harnesses the whole time, which is more than I can say for others.”</blockquote><div class="rv-who">Greg T.<span>Huntersville</span></div></div><div class="rv-card"><div class="rv-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Honest inspection: told us we could get five more years with a repair. Saved us thousands.”</blockquote><div class="rv-who">Nadia &amp; Chris P.<span>Concord</span></div></div></div><p class="rv-note"><b>Sample</b>Sample reviews shown for design purposes. A live site displays your real customer reviews.</p></div></section>
 <section id="areas" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap center"><span class="eyebrow">Service areas</span><h2>Serving the Charlotte metro.</h2><div class="chips"><span>Charlotte</span><span>Matthews</span><span>Huntersville</span><span>Concord</span><span>Gastonia</span><span>Mint Hill</span><span>Cornelius</span><span>+ surrounding areas</span></div></div></section>
-<section class="cta-band cta-photo" style="background:linear-gradient(rgba(14,26,43,.82),rgba(14,26,43,.82)),url(../img/aerial.jpg) center/cover"><div class="wrap"><h2>Not sure what shape your roof is in?</h2><p class="lead">Book a free inspection. You'll get photos and a straight answer.</p><a class="btn" href="contact/">Get a free estimate</a></div></section></main>
+<section class="cta-band cta-photo" style="background:linear-gradient(rgba(14,26,43,.84),rgba(14,26,43,.84)),url(../img/e-texture.jpg) center/cover"><div class="wrap"><h2>Not sure what shape your roof is in?</h2><p class="lead">Book a free inspection. You'll get photos and a straight answer.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a class="btn" href="contact/">Get a free estimate</a><a class="btn ghost" href="estimate/">Instant estimate</a></div></div></section></main>
 <footer><div class="wrap foot"><span>© Summit Ridge Roofing. Concept design by Adaptify</span>
-<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<span><a href="./">Home</a> &nbsp;·&nbsp; <a href="services/">Services</a> &nbsp;·&nbsp; <a href="estimate/">Estimate</a> &nbsp;·&nbsp; <a href="contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
 <div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
 <script src="../assets/demo.js" defer></script>
 </body></html>
