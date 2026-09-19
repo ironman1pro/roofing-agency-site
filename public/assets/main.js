@@ -8,9 +8,10 @@ form.addEventListener('submit', function (e) {
   errEl.hidden = true;
 
   var ok = true;
-  ['company', 'phone'].forEach(function (id) {
+  ['company', 'email'].forEach(function (id) {
     var el = document.getElementById(id);
-    if (!el.value.trim()) { el.style.borderColor = '#D93025'; ok = false; } else { el.style.borderColor = ''; }
+    var bad = !el.value.trim() || (id === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value.trim()));
+    if (bad) { el.style.borderColor = '#D93025'; ok = false; } else { el.style.borderColor = ''; }
   });
   if (!ok) return;
 

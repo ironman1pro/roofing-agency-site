@@ -36,13 +36,13 @@ async function handleLead(request, env) {
   const lead = {
     name: clean('name', 100),
     company: clean('company', 120),
-    phone: clean('phone', 40),
+    email: clean('email', 160),
     site: clean('site', 200),
     source: 'agency-landing-page',
     submitted_at: new Date().toISOString(),
   };
 
-  if (!lead.company || lead.phone.replace(/\D/g, '').length < 7) {
+  if (!lead.company || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(lead.email)) {
     return json({ ok: false, error: 'invalid' }, 422);
   }
   if (!env.LEAD_WEBHOOK_URL) {

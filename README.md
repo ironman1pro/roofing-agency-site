@@ -54,12 +54,12 @@ Every push to `main` redeploys automatically, and other branches get preview URL
 The form posts JSON like this to your webhook:
 
 ```json
-{ "name": "...", "company": "...", "phone": "...", "site": "...", "source": "agency-landing-page", "submitted_at": "2026-..." }
+{ "name": "...", "company": "...", "email": "...", "site": "...", "source": "agency-landing-page", "submitted_at": "2026-..." }
 ```
 
 ## 4. Before you go live
 
-- [ ] Run `./scripts/set-domain.sh yourdomain.com` (updates canonical tag, robots.txt, sitemap) and change `hello@example.com` in `public/index.html` (the form error message and footer).
+- [ ] Run `./scripts/set-domain.sh yourdomain.com` (updates canonical tag, robots.txt, sitemap) and change nothing else (email is already support@adaptify.com; in `public/index.html` (the form error message and footer).
 - [ ] Replace the 3 placeholder testimonials in `public/index.html` (search `TODO: swap`) with real ones, then add `class="hide-placeholder-flags"` to the `<body>` tag.
 - [ ] Confirm the agency name (`Adaptify` is a placeholder) and the pricing/founding-client offer.
 - [ ] Submit a test lead and confirm it reaches your webhook.
