@@ -8,7 +8,8 @@ public/                     ← everything published (Cloudflare "build output d
   index.html                ← agency landing page
   assets/main.js            ← landing form logic (external so the CSP can block inline scripts)
   portfolio/
-    northline/  brightpeak/  heritage/  fairwind/   ← 4 concept sites, 3 pages each (home, services/, contact/)
+    summitridge/ redwood/ northline/ brightpeak/ heritage/ fairwind/   ← 6 concept sites, 3 pages each (home, services/, contact/)
+    img/                    ← photos used by the photo-led concept sites (Summit Ridge, Redwood)
     thumbs/                 ← portfolio screenshots
     assets/demo.js          ← demo-form behaviour
   _headers                  ← security headers + caching (Cloudflare reads this file)
