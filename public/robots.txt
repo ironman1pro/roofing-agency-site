@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://example.com/sitemap.xml
+# AI answer engines are welcome
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://adaptify.tech/sitemap.xml

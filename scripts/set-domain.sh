@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Usage: ./scripts/set-domain.sh yourdomain.com
-# Replaces the placeholder domain (example.com) in the canonical tag, robots.txt and sitemap.
+# Replaces a placeholder domain (example.com) in the canonical tag, robots.txt and sitemap.
 set -euo pipefail
 if [ $# -ne 1 ]; then echo "Usage: $0 yourdomain.com"; exit 1; fi
 DOMAIN="$1"

@@ -14,7 +14,7 @@ public/                     ← everything published (Cloudflare "build output d
     assets/demo.js          ← demo-form behaviour
     assets/estimate.js      ← estimate-calculator logic (shared by all 6 sites)
   _headers                  ← security headers + caching (Cloudflare reads this file)
-  404.html  robots.txt  sitemap.xml  favicon.svg
+  404.html  robots.txt  sitemap.xml  llms.txt  favicon.svg
 src/worker.js               ← POST /api/lead → forwards to LEAD_WEBHOOK_URL
 scripts/set-domain.sh       ← swaps example.com for your real domain
 brand/                      ← Adaptify logo files (SVG + PNG); not published
@@ -38,7 +38,7 @@ git init -b main
 git add .
 git commit -m "Initial site"
 # create an empty PRIVATE repo on github.com first, then:
-git remote add origin git@github.com:YOUR-USER/ridgeline-web.git
+git remote add origin git@github.com:YOUR-USER/roofing-agency-site.git
 git push -u origin main
 ```
 
@@ -57,15 +57,15 @@ The form posts JSON like this to your webhook:
 { "name": "...", "company": "...", "email": "...", "site": "...", "source": "agency-landing-page", "submitted_at": "2026-..." }
 ```
 
-## 4. Before you go live
+## 4. Go-live checklist
 
-- [ ] Run `./scripts/set-domain.sh yourdomain.com` (updates canonical tag, robots.txt, sitemap) and change nothing else (email is already support@adaptify.com; in `public/index.html` (the form error message and footer).
-- [ ] Replace the 3 placeholder testimonials in `public/index.html` (search `TODO: swap`) with real ones, then add `class="hide-placeholder-flags"` to the `<body>` tag.
-- [ ] Confirm the agency name (`Adaptify` is a placeholder) and the pricing/founding-client offer.
-- [ ] Submit a test lead and confirm it reaches your webhook.
-- [ ] Run PageSpeed Insights on the live URL, and only then keep the "under 1 second" / "90+ Lighthouse" wording.
-- [ ] Add the domain to Google Search Console and submit `sitemap.xml`.
-- [ ] Optional: enable Cloudflare **Turnstile** on the form for stronger spam protection (the function already has a honeypot and same-origin check).
+- [x] Domain, canonical, Open Graph, sitemap, robots and structured data (Organization, WebSite, ProfessionalService, FAQPage) point to `adaptify.tech`. If you use a different domain, run `./scripts/set-domain.sh yourdomain.com` after replacing `adaptify.tech` with `example.com` in those files.
+- [ ] Connect `adaptify.tech` in Cloudflare (Worker > Settings > Domains & Routes) so the canonical URL resolves.
+- [ ] Add the `LEAD_WEBHOOK_URL` secret (Worker > Settings > Variables and Secrets) and submit a test lead.
+- [ ] Run PageSpeed Insights on the live URL, and only keep the "under 1 second" / "90+ Lighthouse" wording if it holds.
+- [ ] Add the domain to Google Search Console and Bing Webmaster Tools, and submit `sitemap.xml`.
+- [ ] Optional: Cloudflare **Turnstile** on the form (the Worker already has a honeypot and same-origin check).
+- [ ] Add Playground Medic and Altrady testimonials once you have exact quotes and permission.
 
 ## Notes
 

@@ -95,4 +95,7 @@ input:focus,select:focus{box-shadow:0 0 0 4px rgba(255,107,44,.18)}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js [data-reveal]{opacity:1;transform:none}
   .progress{display:none}
+  /* the testimonial strip is the one exception: it is a slow, hover-to-pause marquee the page relies on */
+  .tc-track.marquee .tc-move{animation:tc-scroll var(--tc-dur,70s) linear infinite!important}
+  .tc-track.marquee:hover .tc-move,.tc-track.marquee:focus-within .tc-move,.tc-track.marquee.held .tc-move{animation-play-state:paused!important}
 }
