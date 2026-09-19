@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services | Bright Peak</title><meta name="description" content="Detailed roofing services, materials and answers to common questions.">
+<meta name="robots" content="noindex"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>:root{--bg:#F6FAFF;--ink:#0B1B33;--muted:#526580;--accent:#0B6EF5;--on-accent:#fff;--card:#fff;--line:#DCE6F3;--r:999px;--r2:22px;--ico-bg:#E7F0FF;--ico:#0B6EF5;--nav-bg:rgba(246,250,255,.92);--nav-ink:#0B1B33;--nav-line:#DCE6F3;--cta-bg:linear-gradient(135deg,#0B6EF5,#0A4FBF);--cta-ink:#fff;--foot:#0B1B33;--foot-ink:#93A6C0;--head:ui-rounded,'SF Pro Rounded',system-ui,-apple-system,'Segoe UI',sans-serif;--body:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--hw:800}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--head);line-height:1.1;letter-spacing:var(--ls,-.02em);font-weight:var(--hw,800)}
+h1{font-size:clamp(2.3rem,5.4vw,4rem)}h2{font-size:clamp(1.8rem,3.5vw,2.6rem)}h3{font-size:1.15rem}
+section{padding:84px 0}
+.eyebrow{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:58ch}.center{text-align:center}.center .lead{margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:var(--on-accent);font-weight:700;font-size:1rem;padding:15px 26px;border-radius:var(--r);text-decoration:none;border:0;cursor:pointer;transition:transform .15s,filter .15s;font-family:inherit}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.btn.ghost{background:transparent;color:inherit;border:2px solid currentColor;opacity:.9}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+header.top{position:sticky;top:0;z-index:50;background:var(--nav-bg);color:var(--nav-ink);border-bottom:1px solid var(--nav-line);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--head);font-weight:800;font-size:1.15rem;white-space:nowrap}
+.logo svg{width:30px;height:30px}
+.nav-links{display:flex;align-items:center;gap:26px}.nav-links a{text-decoration:none;font-size:.93rem;font-weight:500;opacity:.85}.nav-links a:hover{opacity:1}
+.nav-links a.btn{opacity:1;padding:10px 18px;font-size:.92rem;white-space:nowrap}
+.hero-grid>*,.split>*,.craft>*,.grid>*{min-width:0}
+.grid{display:grid;gap:22px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.g3,.g4,.g2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:28px}
+.card p{color:var(--muted);font-size:.96rem;margin-top:8px}
+.ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--ico-bg);color:var(--ico);margin-bottom:16px}
+.steps{counter-reset:s}.step{counter-increment:s}.step::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--on-accent);font-weight:800;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.chips span{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 18px;font-size:.93rem;font-weight:500}
+.reviews{border:2px dashed var(--line);border-radius:var(--r2);padding:34px;text-align:center;color:var(--muted);background:var(--card)}
+.reviews b{display:block;color:var(--ink);font-family:var(--head);font-size:1.15rem;margin-bottom:6px}
+.faq-list{max-width:780px;margin:38px auto 0;display:grid;gap:12px}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0 22px}
+summary{cursor:pointer;font-weight:700;padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--accent)}details[open] summary::after{content:"–"}
+details p{padding:0 0 18px;color:var(--muted)}
+.cta-band{background:var(--cta-bg);color:var(--cta-ink);text-align:center}
+.cta-band .lead{color:inherit;opacity:.8;margin:14px auto 28px}
+footer{background:var(--foot);color:var(--foot-ink);padding:34px 0;font-size:.9rem}
+.foot{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between;align-items:center}
+.concept{position:fixed;left:14px;bottom:14px;z-index:80;background:#111;color:#fff;font:600 .72rem/1 system-ui;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;border-radius:999px;opacity:.85}
+.sticky{display:none}
+@media(max-width:760px){section{padding:60px 0}.sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px 14px;background:var(--nav-bg);border-top:1px solid var(--nav-line)}.sticky .btn{width:100%}.concept{bottom:70px}footer{padding-bottom:90px}}
+form.lead-form{background:var(--card);color:var(--ink);border-radius:var(--r2);padding:28px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+form.lead-form h3{margin-bottom:4px}form.lead-form .sub{color:var(--muted);font-size:.9rem;margin-bottom:6px}
+form.lead-form label{display:block;font-weight:600;font-size:.84rem;margin:12px 0 5px}
+form.lead-form input,form.lead-form select{width:100%;font:inherit;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;background:#fff;color:#111}
+form.lead-form .btn{width:100%;margin-top:18px}
+.thanks{display:none;padding:30px 6px;text-align:center}
+.roofline{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:150px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.hero{padding:70px 0 80px;background:linear-gradient(180deg,#EAF3FF,#F6FAFF)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero h1 span{color:var(--accent)}.hero .lead{margin:20px 0 30px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}.hero .btn.ghost{color:var(--ink)}
+.pill{display:inline-flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);color:var(--ink);padding:7px 16px;border-radius:999px;font-size:.84rem;font-weight:700;margin-bottom:20px;box-shadow:0 4px 14px rgba(11,110,245,.08)}
+.pill b{color:#12A150}
+.art{position:relative}.art svg{filter:drop-shadow(0 24px 40px rgba(11,110,245,.22))}
+.chip-float{position:absolute;background:#fff;border-radius:16px;padding:12px 16px;box-shadow:0 12px 30px rgba(11,27,51,.14);font-size:.85rem;font-weight:700;display:flex;gap:10px;align-items:center}
+.chip-float small{display:block;font-weight:500;color:var(--muted)}
+.chip-float.c1{left:-14px;bottom:44px}.chip-float.c2{right:-8px;top:24px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.chip-float.c1{left:8px}.chip-float.c2{right:8px}}
+.tile{border-radius:var(--r2);padding:30px;color:#fff;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.tile svg{position:absolute;top:22px;right:22px;opacity:.9}.tile p{opacity:.85;font-size:.95rem;margin-top:6px}
+.t1{background:linear-gradient(135deg,#0B6EF5,#0A4FBF)}.t2{background:linear-gradient(135deg,#12A150,#0B7A3B)}.t3{background:linear-gradient(135deg,#FFB020,#F08A00)}.t4{background:linear-gradient(135deg,#6C4DFF,#4A2FD6)}.t5{background:linear-gradient(135deg,#0B1B33,#22406B)}.t6{background:linear-gradient(135deg,#00A8C6,#0083A0)}
+.bundle{background:#fff;border-block:1px solid var(--line)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+@media(max-width:760px){.compare{grid-template-columns:1fr}}
+.opt{border:2px solid var(--line);border-radius:var(--r2);padding:30px;background:var(--bg)}
+.opt.win{border-color:var(--accent);background:#fff;box-shadow:0 18px 44px rgba(11,110,245,.14);position:relative}
+.opt .tag{position:absolute;top:-13px;left:26px;background:var(--accent);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.opt ul{list-style:none;margin:16px 0 0;display:grid;gap:10px}.opt li{display:flex;gap:10px;color:var(--muted)}.opt li::before{content:"✓";color:#12A150;font-weight:800}
+.opt:not(.win) li::before{content:"–";color:#98A8BD}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+@media(max-width:800px){.steps3{grid-template-columns:1fr}}
+
+.page-hero{background:linear-gradient(180deg,#EAF3FF,#F6FAFF);padding:70px 0 54px}
+.tile.big{min-height:0;justify-content:flex-start;padding-top:82px}.tile .ticks li::before{color:#fff}.tile .ticks{color:rgba(255,255,255,.92)}
+
+.nav-links a.on{opacity:1;box-shadow:0 2px 0 var(--accent);padding-bottom:2px}
+@media(max-width:860px){.nav-links{gap:18px}}
+@media(max-width:620px){.nav{height:auto;flex-wrap:wrap;padding:10px 0 8px;row-gap:4px}.nav-links{width:100%;gap:22px}.nav-links a.btn{display:none}}
+.page-hero h1{font-size:clamp(2rem,4.6vw,3.2rem)}.page-hero .lead{margin-top:16px}
+.ticks{list-style:none;display:grid;gap:8px;margin-top:14px;font-size:.93rem}
+.ticks li{display:flex;gap:9px}.ticks li::before{content:"\2713";color:var(--accent);font-weight:800}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:start}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid>*{min-width:0}
+.info{display:flex;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.info b{display:block;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.info a,.info .v{font-size:1.12rem;font-weight:700;text-decoration:none}
+.info .ico{margin:0;flex:none}.info>div{min-width:0}.info a,.info .v{overflow-wrap:anywhere}
+.next{margin-top:34px;display:grid;gap:14px;counter-reset:s}
+.next .card{display:flex;gap:16px;align-items:flex-start;padding:20px}
+.next .card::before{content:counter(s);counter-increment:s;flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:800}
+.next .card p{margin-top:2px}
+.linkrow{margin-top:34px;text-align:center}.linkrow a{font-weight:700;color:var(--accent);text-decoration:none}
+.foot a{text-decoration:none;opacity:.85}.foot a:hover{opacity:1}
+</style></head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="logo" href="../"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="6" fill="#FFB020"/><path d="M16 2v5M16 25v5M2 16h5M25 16h5M6 6l3.5 3.5M22.5 22.5 26 26M26 6l-3.5 3.5M9.5 22.5 6 26" stroke="#FFB020" stroke-width="2.6" stroke-linecap="round"/></svg><span>Bright Peak</span></a>
+<nav class="nav-links" aria-label="Main"><a href="../">Home</a><a href="../services/" class="on" aria-current="page">Services</a><a href="../contact/">Contact</a><a class="btn" href="../contact/">Get a free quote</a></nav></div></header>
+<main id="top">
+<section class="page-hero"><div class="wrap center"><span class="eyebrow">Services</span><h1>Everything for your roof, and the solar on it.</h1>
+<p class="lead">One team for the roof, the panels and the paperwork.</p></div></section>
+<section><div class="wrap"><div class="grid g3"><div class="tile big t1"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 12 4l9 8M6 10v9h12v-9" /></svg><h3>New roof installation</h3><p>Architectural shingles and metal, installed by a certified crew.</p><ul class="ticks"><li>Tear-off and deck repair</li><li>Shingle or metal options</li><li>Solar-ready layout</li><li>Single written warranty</li></ul></div><div class="tile big t2"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg><h3>Solar installation</h3><p>Panels sized to your usage, on a roof we know is solid.</p><ul class="ticks"><li>Usage-based system sizing</li><li>Permits and utility paperwork</li><li>Clean, code-compliant install</li><li>Monitoring app setup</li></ul></div><div class="tile big t3"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg><h3>Repairs &amp; leak fixes</h3><p>Fast, honest repairs. We'll tell you if you don't need a new roof.</p><ul class="ticks"><li>Leak tracing and fixes</li><li>Flashing and vent repair</li><li>Storm damage repair</li><li>Photo report of the fix</li></ul></div><div class="tile big t4"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5zM3 13l9 5 9-5"/></svg><h3>Roof + solar bundle</h3><p>Replace and go solar in one project, with one warranty.</p><ul class="ticks"><li>One quote, one schedule</li><li>Roof built to carry panels</li><li>No panel removal later</li><li>One team to call</li></ul></div><div class="tile big t5"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h18v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3zM7 14v6M17 14v6"/></svg><h3>Gutters &amp; ventilation</h3><p>Protect your investment and lower attic heat.</p><ul class="ticks"><li>Seamless gutters</li><li>Attic ventilation upgrades</li><li>Downspout drainage</li><li>Gutter guards</li></ul></div><div class="tile big t6"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h6v3H9zM6 6h12v15H6z"/><path d="m9 13 2 2 4-4"/></svg><h3>Free roof assessment</h3><p>See your roof's condition and solar potential, no pressure.</p><ul class="ticks"><li>Roof condition report</li><li>Solar potential estimate</li><li>Repair vs replace advice</li><li>No obligation</li></ul></div></div></div></section>
+<section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap"><div class="center"><span class="eyebrow">FAQ</span><h2>Common questions.</h2></div><div class="faq-list"><details><summary>Can I add solar later?</summary><p>Yes. We build the roof solar-ready so panels can go on whenever you choose.</p></details><details><summary>Do you offer financing?</summary><p>We can walk you through financing options during your free assessment.</p></details><details><summary>How long does a bundle take?</summary><p>Most projects take a few days for the roof, plus about a day for panels.</p></details><details><summary>Is the assessment really free?</summary><p>Yes, with no obligation and no pressure.</p></details></div></div></section>
+<section class="cta-band"><div class="wrap"><h2>Ready to see what your roof could do?</h2><p class="lead">Free assessment. Clear pricing. No pressure.</p><a class="btn"  href="../contact/">Get my free quote</a></div></section></main>
+<footer><div class="wrap foot"><span>© Bright Peak. Concept design by Ridgeline Web Co.</span>
+<span><a href="../">Home</a> &nbsp;·&nbsp; <a href="../services/">Services</a> &nbsp;·&nbsp; <a href="../contact/">Contact</a> &nbsp;·&nbsp; (555) 010-2211</span></div></footer>
+<div class="sticky"><a class="btn" href="tel:5550102211">Call now: (555) 010-2211</a></div>
+<script src="../../assets/demo.js" defer></script>
+</body></html>
