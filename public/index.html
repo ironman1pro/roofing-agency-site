@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roofing Websites That Book Estimates | Adaptify</title>
-<meta name="description" content="Fast, modern websites for roofing companies. Built to rank on Google and AI search, load in under a second, and turn visitors into estimate requests. Hosting, security and updates included.">
+<meta name="description" content="Fast, modern websites for roofing companies. Built to rank on Google and AI search, load in under a second, and turn visitors into estimate requests. Free hosting for life on every site.">
 <link rel="canonical" href="https://example.com/">
 <meta property="og:title" content="Roofing Websites That Book Estimates">
-<meta property="og:description" content="Modern, fast, SEO and AI-search-ready websites for roofing companies. Hosting, security and updates included.">
+<meta property="og:description" content="Modern, fast, SEO and AI-search-ready websites for roofing companies. Free hosting for life on every site.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0B1F33">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -29,6 +29,7 @@ a{color:inherit}
 .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
 h1,h2,h3{line-height:1.12;letter-spacing:-.02em;font-weight:800;text-wrap:balance}
 p,li,blockquote{text-wrap:pretty}
+h1+.lead,h2+.lead{margin-top:20px}
 h1{font-size:clamp(2.3rem,5.4vw,4rem)}
 h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}
 h3{font-size:1.2rem;letter-spacing:-.01em}
@@ -179,7 +180,16 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,31,51,.96);backdrop-f
 /* Testimonials */
 .t-note{max-width:760px;margin:22px auto 0;background:#FFF8DB;border:1px dashed #D9B92E;color:#6B5600;border-radius:10px;padding:10px 16px;font-size:.88rem;text-align:center}
 body.hide-placeholder-flags .t-note,body.hide-placeholder-flags .ph-tag{display:none}
-.tcards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.tc-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:6px 2px 10px;margin-top:40px;scrollbar-width:none}
+.tc-track::-webkit-scrollbar{display:none}
+.tc-track .tcard{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start}
+.tc-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px}
+.tc-btn{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:1.15rem;cursor:pointer;color:var(--ink)}
+.tc-btn:hover{border-color:var(--orange);color:var(--orange-d)}
+.tc-dots{display:flex;gap:8px;align-items:center}
+.tc-dots button{width:9px;height:9px;padding:0;border:0;border-radius:9px;background:#C7D2DE;cursor:pointer;transition:width .2s,background .2s}
+.tc-dots button[aria-current="true"]{width:24px;background:var(--orange)}
+.hero-note{font-size:.92rem;color:#B9C8D9;margin-top:16px;max-width:52ch}.hero-note b{color:#fff}
 .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;gap:16px}
 .stars{color:#F5A623;letter-spacing:2px}
 .tcard blockquote{font-size:1.02rem}
@@ -188,7 +198,7 @@ body.hide-placeholder-flags .t-note,body.hide-placeholder-flags .ph-tag{display:
 .who b{display:block;font-size:.95rem}
 .who span{font-size:.85rem;color:var(--muted)}
 .ph-tag{display:inline-block;margin-top:6px;font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#FFF1B8;color:#6B5600;padding:2px 8px;border-radius:999px}
-@media(max-width:860px){.tcards{grid-template-columns:1fr}}
+@media(max-width:860px){.tc-track .tcard{flex-basis:88%}}
 
 /* FAQ */
 .faq{background:var(--soft)}
@@ -258,14 +268,16 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     <div>
       <span class="eyebrow">Websites built only for roofers</span>
       <h1>Your roofing website should <span>book estimates</span> while you're on the roof.</h1>
-      <p class="lead">We build fast, modern, Google-and-AI-ready websites for roofing companies, then host, secure and update them for you. No tech headaches. No agency price tag.</p>
+      <p class="lead">We build fast, modern, Google-and-AI-ready websites for roofing companies, then host and secure them for you, free for life. No tech headaches. No agency price tag.</p>
       <div class="hero-cta">
         <a class="btn" href="#start">Get my free homepage preview →</a>
         <a class="btn btn-ghost" href="#pricing">See pricing</a>
       </div>
+      <p class="hero-note"><b>Preview first, pay later.</b> You pay nothing until you've seen your homepage. No contract, and you own your site.</p>
+      <p class="hero-note" style="margin-top:8px"><b>Founding rate:</b> $600 setup for our first 5 roofing companies (normally $1,200).</p>
       <ul class="hero-points">
         <li>Live in 14 days</li>
-        <li>Hosting included</li>
+        <li>Free hosting for life</li>
         <li>You own everything</li>
       </ul>
     </div>
@@ -321,9 +333,9 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <div class="feat"><div class="ck">✓</div><div><h3>Under-1-second load times</h3><p>Static, edge-delivered pages on Cloudflare's global network. Fast on a phone with two bars of signal.</p></div></div>
       <div class="feat"><div class="ck">✓</div><div><h3>Built to convert</h3><p>Click-to-call, a short estimate form, service pages, review sections and a sticky mobile call button on every page.</p></div></div>
       <div class="feat"><div class="ck">✓</div><div><h3>SEO and AI-search (AEO) optimization</h3><p>Service-area pages, local schema markup and structured answers so you show up on Google, Maps and AI assistants.</p></div></div>
-      <div class="feat"><div class="ck">✓</div><div><h3>Blog and content that ranks</h3><p>A built-in blog for storm-season posts, roof-type guides and local topics, so you keep earning traffic month after month.</p></div></div>
+      <div class="feat"><div class="ck">✓</div><div><h3>Blog and content that ranks</h3><p>Growth clients get 6 SEO blog posts every month on storm season, roof types and local topics, on top of service and city pages built around how homeowners search.</p></div></div>
       <div class="feat"><div class="ck">✓</div><div><h3>Enterprise-grade security</h3><p>HTTPS, DDoS protection and a locked-down setup. No plugins to hack and no outdated software to patch.</p></div></div>
-      <div class="feat"><div class="ck">✓</div><div><h3>Hosting that beats typical site builders</h3><p>Included in your plan, with no separate hosting bill and no surprise renewals. You own the domain and content.</p></div></div>
+      <div class="feat"><div class="ck">✓</div><div><h3>Free hosting, for life</h3><p>Faster than typical site builders, with no hosting bill and no surprise renewals. You only pay for your own domain name.</p></div></div>
       <div class="feat"><div class="ck">✓</div><div><h3>Lead automation (optional)</h3><p>Instant text-back to new leads, smart routing to the right crew and follow-up on old quotes, so no lead sits waiting.</p></div></div>
     </div>
   </div>
@@ -392,7 +404,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     <div class="steps">
       <div class="step"><h3>See it first, free</h3><p>Send us your current site. We'll mock up your new homepage and show you side by side, at no cost and with no obligation.</p></div>
       <div class="step"><h3>We build everything</h3><p>You send logos, photos and a few details. We handle design, copy, SEO, hosting and setup, and launch in about two weeks.</p></div>
-      <div class="step"><h3>We keep it running</h3><p>Updates, security, backups, new blog posts and monthly performance reports. You do roofs, we handle the website.</p></div>
+      <div class="step"><h3>It keeps working for you</h3><p>Launch sites are yours and host free for life. Growth adds 6 blog posts a month, lead automation, edits and performance reports. You do roofs, we handle the website.</p></div>
     </div>
   </div>
 </section>
@@ -403,7 +415,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     <div class="center">
       <span class="eyebrow">Simple pricing</span>
       <h2>Priced for a roofing company, not a big agency.</h2>
-      <p class="lead">One setup fee, then a monthly plan that keeps your site fast, secure and current.</p>
+      <p class="lead">Launch is a one-time fee with free hosting for life. Add Growth when you want us bringing in more leads every month.</p>
     </div>
     <div style="height:34px"></div>
     <div class="founding"><b>Founding-client rate:</b> we're taking on our first 5 roofing companies at <b>$600 setup</b> (normally $1,200). Limited spots.</div>
@@ -411,14 +423,15 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <div class="plan">
         <h3>Launch</h3>
         <p class="sub">Your new site, kept safe and up to date.</p>
-        <div class="price"><span class="strike">$1,200</span>$600 <small>setup</small></div>
-        <p class="price-note">+ $149/month care plan</p>
+        <div class="price"><span class="strike">$1,200</span>$600 <small>one-time</small></div>
+        <p class="price-note">No monthly fee. Free hosting for life.</p>
         <ul>
           <li>Custom 5-page roofing website</li>
           <li>Mobile-first, sub-1-second loading</li>
           <li>Local SEO and AI-search setup</li>
-          <li>Hosting, security and backups included</li>
-          <li>2 content edits per month</li>
+          <li>Free hosting for life, with SSL and security</li>
+          <li>You only pay for your domain name</li>
+          <li>Delivered in your own Cloudflare and GitHub accounts</li>
         </ul>
         <a class="btn alt" href="#start">Get my free preview</a>
       </div>
@@ -430,7 +443,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
         <p class="price-note">+ $349/month growth plan</p>
         <ul>
           <li>Everything in Launch</li>
-          <li>2 SEO blog posts per month</li>
+          <li>6 SEO blog posts per month</li>
           <li>Instant text-back and lead routing</li>
           <li>Old-quote follow-up automation</li>
           <li>Unlimited small edits, 48-hour turnaround</li>
@@ -439,7 +452,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
         <a class="btn" href="#start">Get my free preview</a>
       </div>
     </div>
-    <p class="guarantee"><b>No lock-in.</b> Cancel the plan any time and take your site, domain and content with you. Every site is built in your own Cloudflare and GitHub accounts.</p>
+    <p class="guarantee"><b>Preview first, pay later.</b> You pay nothing until you have seen and approved your homepage preview. <b>No lock-in.</b> Launch has no recurring fee, and Growth can be cancelled any time. Every site is built in your own Cloudflare and GitHub accounts, so you keep your site, domain and content.</p>
   </div>
 </section>
 
@@ -450,11 +463,22 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <span class="eyebrow">What clients say</span>
       <h2>Kind words from past clients.</h2>
     </div>
-    <div class="tcards">
+    <div class="tc" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
+      <div class="tc-track" id="tc-track" tabindex="0">
+      <div class="tcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Efficient, knowledgeable, and incredibly easy to work with. Redesigned our website, added an SEO sitemap, and made everything responsive across devices.”</blockquote>
+        <div class="who"><div class="avatar">A</div><div><b>Angela Cacace</b><span>Co-founder, Moveoverbob</span></div></div>
+      </div>
       <div class="tcard">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote>“The perfect combination of skills for our Webflow redesign. Experienced developer, custom code, beautiful designs across all devices, website accessibility, SEO. Our go-to Webflow developer for future projects.”</blockquote>
         <div class="who"><div class="avatar">C</div><div><b>Caroline Desrosiers</b><span>Founder, Scribely</span></div></div>
+      </div>
+      <div class="tcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Absolutely nailed it. The website turned out even better than I had envisioned. Fast, responsive, and super easy to work with.”</blockquote>
+        <div class="who"><div class="avatar">D</div><div><b>Dan D'Aquisto</b><span>Co-founder and CEO, 2ULaundry</span></div></div>
       </div>
       <div class="tcard">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
@@ -463,8 +487,19 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       </div>
       <div class="tcard">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>“Absolutely nailed it. The website turned out even better than I had envisioned. Fast, responsive, and super easy to work with.”</blockquote>
-        <div class="who"><div class="avatar">D</div><div><b>Dan D'Aquisto</b><span>Co-founder and CEO, 2ULaundry</span></div></div>
+        <blockquote>“Consistently exceptional quality with a level of attention to detail that is hard to find. Delivered everything ahead of schedule, exactly as promised.”</blockquote>
+        <div class="who"><div class="avatar">C</div><div><b>Chris Wright</b><span>Entrepreneur</span></div></div>
+      </div>
+      <div class="tcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Technical expertise in Webflow plus a sharp design sensibility that elevated the entire project. Delivered with precision, speed, and strong attention to detail.”</blockquote>
+        <div class="who"><div class="avatar">A</div><div><b>Ali A.</b><span>CTO, Saudi Aramco</span></div></div>
+      </div>
+      </div>
+      <div class="tc-ctrl">
+        <button class="tc-btn" id="tc-prev" type="button" aria-label="Previous testimonial">←</button>
+        <div class="tc-dots" id="tc-dots"></div>
+        <button class="tc-btn" id="tc-next" type="button" aria-label="Next testimonial">→</button>
       </div>
     </div>
   </div>
@@ -479,9 +514,9 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     </div>
     <div class="faq-list">
       <details><summary>Do I really get to see the design before I pay?</summary><p>Yes. We mock up your homepage for free and show it next to your current site. If you don't love it, you owe nothing.</p></details>
-      <details><summary>Why is hosting included? What's the catch?</summary><p>There's no catch. Sites are built on modern static infrastructure (Cloudflare) that costs very little to run and is faster than most website builders. We include it in your plan instead of nickel-and-diming you.</p></details>
+      <details><summary>Why is hosting free? What's the catch?</summary><p>There's no catch. Your site is built on modern static infrastructure (Cloudflare) that costs very little to run and is faster than most website builders. Hosting is free for life on every plan, and the only thing you pay for yourself is your domain name (usually around $10 to $15 a year).</p></details>
       <details><summary>Who owns the website and domain?</summary><p>You do. The site is built in accounts under your name, so you can take it anywhere at any time. We never hold your site hostage.</p></details>
-      <details><summary>What if I want to change something later?</summary><p>Just message us. Your plan includes edits (2 per month on Launch, unlimited small edits on Growth), and we handle the rest so you never touch code.</p></details>
+      <details><summary>What if I want to change something later?</summary><p>Message us any time. Growth includes unlimited small edits with a 48-hour turnaround. On Launch, one-off changes are quoted per request, and because the site lives in your own accounts you can also edit it yourself or hire anyone you like.</p></details>
       <details><summary>Will this actually help me rank on Google?</summary><p>We build every site with the technical SEO fundamentals: speed, structure, local schema, service-area pages and AI-search-friendly answers. Nobody can honestly guarantee a #1 ranking, but a fast, well-structured site gives you a far better chance than an outdated one.</p></details>
       <details><summary>How long does it take?</summary><p>About 14 days from receiving your logo, photos and business details.</p></details>
       <details><summary>What is "lead automation"?</summary><p>When a homeowner submits a form or misses your call, they get an instant text-back, and the lead is routed to the right person. We can also follow up automatically on old quotes that never closed.</p></details>
@@ -495,29 +530,26 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     <div>
       <span class="eyebrow">Free, no obligation</span>
       <h2>See your new roofing website before you pay a cent.</h2>
-      <p class="lead">Tell us where your site is today. Within 3 business days we'll send a homepage preview and a short video showing what we'd fix.</p>
+      <p class="lead">Send your company name or Google Maps link. Within 3 business days we'll send a homepage preview and a short video showing what we'd fix.</p>
       <ul>
         <li>Free homepage mockup</li>
         <li>Quick audit of your current site's speed and SEO</li>
-        <li>No pressure, no contracts</li>
+        <li>Pay nothing until you love it. No contract.</li>
+        <li>We reply within 1 business day</li>
       </ul>
     </div>
     <form id="lead-form" action="/api/lead" method="post" novalidate>
       <div id="form-fields">
         <h3>Get your free preview</h3>
-        <p class="sub">Takes 30 seconds.</p>
-        <label for="name">Your name</label>
-        <input id="name" name="name" autocomplete="name" required>
-        <label for="company">Company name</label>
-        <input id="company" name="company" autocomplete="organization" required>
-        <label for="phone">Phone</label>
-        <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-        <label for="site">Current website (if you have one)</label>
-        <input id="site" name="site" placeholder="yourcompany.com">
+        <p class="sub">Just two fields. Takes 15 seconds.</p>
+        <label for="company">Company name or Google Maps link</label>
+        <input id="company" name="company" autocomplete="organization" placeholder="ABC Roofing, or paste your Google Maps link" required>
+        <label for="phone">Best phone number</label>
+        <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 010-2211" required>
         <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
         <button class="btn" type="submit">Send me my free preview →</button>
         <p class="form-err" id="form-err" role="alert" hidden>Something went wrong. Please try again, or email us at hello@example.com.</p>
-        <p class="fine">We'll never spam you or share your info.</p>
+        <p class="fine">Free, no obligation. We reply within 1 business day and never share your info.</p>
       </div>
       <div class="thanks" id="thanks" role="status" aria-live="polite">
         <h3>Thanks, you're on the list!</h3>

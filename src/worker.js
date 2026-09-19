@@ -42,7 +42,7 @@ async function handleLead(request, env) {
     submitted_at: new Date().toISOString(),
   };
 
-  if (!lead.name || !lead.company || lead.phone.replace(/\D/g, '').length < 7) {
+  if (!lead.company || lead.phone.replace(/\D/g, '').length < 7) {
     return json({ ok: false, error: 'invalid' }, 422);
   }
   if (!env.LEAD_WEBHOOK_URL) {
