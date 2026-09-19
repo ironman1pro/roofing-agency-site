@@ -20,8 +20,14 @@ form.addEventListener('submit', function (e) {
   btn.disabled = true;
   btn.textContent = 'Sending...';
 
-  fetch('/api/lead', { method: 'POST', body: new FormData(form) })
-    .then(function (r) { if (!r.ok) throw new Error('bad response'); return r.json(); })
+  var fd = new FormData(form);
+  fd.append('_subject', 'New Adaptify lead: ' + document.getElementById('company').value.trim().slice(0, 80));
+  var trap = document.querySelector('[name=website]');
+  var send = (trap && trap.value.trim())
+    ? Promise.resolve()
+    : fetch('https://formspree.io/f/xvkgzgwd', { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error('bad response'); return r.json(); });
+  send
     .then(function () {
       document.getElementById('form-fields').style.display = 'none';
       var th = document.getElementById('thanks'); th.style.display = 'block'; th.classList.add('show');
