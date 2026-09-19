@@ -58,14 +58,15 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,31,51,.96);backdrop-f
 @media(max-width:420px){.nav .btn{padding:9px 12px;font-size:.85rem}.logo{font-size:1rem}}
 
 /* HERO */
-.hero{background:radial-gradient(1200px 500px at 85% -10%,#1B4A78 0,transparent 60%),var(--navy);color:#fff;padding:84px 0 96px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#1B4A78 0,transparent 60%),var(--navy);color:#fff;padding:84px 0 96px;overflow-x:clip}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+.hm{position:sticky!important;top:96px;margin-top:8px}
 .hero h1 span{color:var(--orange)}
 .hero .lead{color:#B9C8D9;margin:22px 0 32px}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
 .hero-points{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;color:#B9C8D9;font-size:.95rem;list-style:none}
 .hero-points li::before{content:"✓";color:var(--orange);font-weight:800;margin-right:8px}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding:56px 0 64px}}
+@media(max-width:900px){.hm{position:relative!important;top:0}.hero-grid{grid-template-columns:1fr}.hero{padding:56px 0 64px}}
 
 /* Hero visual */
 .hm{position:relative;padding:0 0 74px}
@@ -550,7 +551,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
         <input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourroofing.com" required>
         <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
         <button class="btn" type="submit">Send me my free preview →</button>
-        <p class="form-err" id="form-err" role="alert" hidden>Something went wrong. Please try again, or email us at support@adaptify.com.</p>
+        <p class="form-err" id="form-err" role="alert" hidden>Something went wrong. Please try again, or email us at info@adaptify.tech.</p>
         <p class="fine">Free, no obligation. We reply within 1 business day and never share your info.</p>
       </div>
       <div class="thanks" id="thanks" role="status" aria-live="polite">
@@ -566,7 +567,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 <footer>
   <div class="wrap foot">
     <span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span>
-    <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="mailto:support@adaptify.com">support@adaptify.com</a></span>
+    <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="mailto:info@adaptify.tech">info@adaptify.tech</a></span>
   </div>
 </footer>
 
