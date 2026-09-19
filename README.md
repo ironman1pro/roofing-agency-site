@@ -46,7 +46,7 @@ git push -u origin main
 
 1. Cloudflare dashboard → **Workers & Pages** → **Create application** → **Import a repository** → pick the repo.
 2. Leave **Build command empty** and **Deploy command** as `npx wrangler deploy`. Deploy.
-3. Open the new Worker → **Settings → Variables and Secrets** → add a **secret** named `LEAD_WEBHOOK_URL` (your n8n / Make / Zapier / CRM webhook URL).
+3. Open the new Worker → **Settings → Variables and Secrets** → add a **secret** named `LEAD_WEBHOOK_URL` (your Formspree form endpoint, e.g. `https://formspree.io/f/xxxxxxxx`; any n8n / Make / Zapier webhook works the same way).
 4. **Settings → Domains & Routes** → add your custom domain. If the domain's DNS is on Cloudflare this is one click.
 
 Every push to `main` redeploys automatically, and other branches get preview URLs.
@@ -61,7 +61,7 @@ The form posts JSON like this to your webhook:
 
 - [x] Domain, canonical, Open Graph, sitemap, robots and structured data (Organization, WebSite, ProfessionalService, FAQPage) point to `adaptify.tech`. If you use a different domain, run `./scripts/set-domain.sh yourdomain.com` after replacing `adaptify.tech` with `example.com` in those files.
 - [ ] Connect `adaptify.tech` in Cloudflare (Worker > Settings > Domains & Routes) so the canonical URL resolves.
-- [ ] Add the `LEAD_WEBHOOK_URL` secret (Worker > Settings > Variables and Secrets) and submit a test lead.
+- [ ] Create a form at formspree.io, copy its endpoint URL, add it as the `LEAD_WEBHOOK_URL` secret (Worker > Settings > Variables and Secrets), then submit a test lead. Formspree emails each submission to you; confirm the form's email address in their dashboard.
 - [ ] Run PageSpeed Insights on the live URL, and only keep the "under 1 second" / "90+ Lighthouse" wording if it holds.
 - [ ] Add the domain to Google Search Console and Bing Webmaster Tools, and submit `sitemap.xml`.
 - [ ] Optional: Cloudflare **Turnstile** on the form (the Worker already has a honeypot and same-origin check).
