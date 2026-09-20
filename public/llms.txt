@@ -3,7 +3,7 @@
 > Adaptify LLC builds fast, SEO- and AI-search-optimized websites only for roofing companies. Static sites on Cloudflare with free hosting for life, delivered in the client's own Cloudflare and GitHub accounts.
 
 ## Offer
-- Launch: $600 one-time founding rate for the first 5 roofing companies (normally $1,200), plus $29/month for 3 small edits. Custom 5-page site, local SEO and AI-search setup, free hosting, SSL and security.
+- Launch: $600 one-time, plus $29/month for 3 small edits. Custom 5-page site, local SEO and AI-search setup, free hosting, SSL and security.
 - Growth: $600 setup plus $349/month. Adds 6 SEO blog posts a month, AI search optimization, Google Business Profile optimization, unlimited small edits (48-hour turnaround) and a monthly performance report.
 - Lead automation add-on: instant text-back, lead routing and old-quote follow-up, available on any plan. Pricing on request.
 - Preview first, pay later: no payment until the homepage preview is approved. Clients keep their site, domain and content.
