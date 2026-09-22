@@ -20,6 +20,7 @@ Every Adaptify service is built once and deployed into infrastructure the client
 - [AI Powered Websites](https://adaptify.tech/websites/): websites offer, pricing, portfolio, FAQ and free preview request form
 - [AI Powered CRM](https://adaptify.tech/crm/): CRM build details, pricing, integrations and discovery call form
 - [AI Powered Automations](https://adaptify.tech/automations/): automation build details, pricing, integrations and discovery call form
+- [Contact](https://adaptify.tech/contact/): general contact form
 
 ## Contact
 info@adaptify.tech

@@ -39,6 +39,7 @@ async function handleLead(request, env) {
     company: clean('company', 120),
     email: clean('email', 160),
     site: clean('site', 200),
+    message: clean('message', 2000),
     source: `agency-landing-page:${service}`,
     submitted_at: new Date().toISOString(),
   };
