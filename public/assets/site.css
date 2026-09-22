@@ -259,6 +259,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 .svc-card .ico svg{width:24px;height:24px}
 .svc-card h3{font-size:1.2rem;margin-bottom:8px}
 .svc-card p{color:var(--muted);font-size:.95rem;flex:1}
+.svc-card .svc-price{flex:none;margin-top:14px;font-weight:700;font-size:.85rem;color:var(--navy)}
 .svc-card .go{margin-top:18px;font-weight:700;color:var(--navy);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .svc-card .go:hover{color:var(--orange)}
 .svc-card .svc-tag{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
