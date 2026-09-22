@@ -16,7 +16,8 @@
 Every Adaptify service is built once and deployed into infrastructure the client owns outright (their own Cloudflare account), not a tool they rent from Adaptify. The goal of every service is the same: bring the roofing company more customers and make running it easier.
 
 ## Pages
-- [Home](https://adaptify.tech/): overview of all three services, websites offer, pricing, FAQ and free preview request form
+- [Home](https://adaptify.tech/): short overview of all three services, linking to each
+- [AI Powered Websites](https://adaptify.tech/websites/): websites offer, pricing, portfolio, FAQ and free preview request form
 - [AI Powered CRM](https://adaptify.tech/crm/): CRM build details, pricing, integrations and discovery call form
 - [AI Powered Automations](https://adaptify.tech/automations/): automation build details, pricing, integrations and discovery call form
 
