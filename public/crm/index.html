@@ -49,7 +49,7 @@
 html{scroll-behavior:smooth}
 html,body{margin:0;padding:0}
 body{background:var(--paper-2);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
-#problem,#fulllist,#integrations,#pricing,#faq{background:var(--paper)}
+#problem,#fulllist,#integrations,#pricing,#faq,#proof{background:var(--paper)}
 img,svg{max-width:100%;display:block}
 h1,h2,h3{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:800;letter-spacing:-0.02em;text-wrap:balance;margin:0}
 .mono{font-family:ui-monospace,"SF Mono",Consolas,monospace}
@@ -342,6 +342,18 @@ section{padding-block:84px;scroll-margin-top:78px}
 /* faq */
 .faq{max-width:760px;margin:0 auto}
 .qa{border-bottom:1px solid var(--line)}
+
+/* testimonials */
+.testigrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+@media (max-width:900px){.testigrid{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.testigrid{grid-template-columns:1fr}}
+.testicard{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+.testicard .stars{color:var(--accent);font-size:13px;letter-spacing:2px;margin-bottom:10px}
+.testicard blockquote{margin:0 0 16px;font-size:14.5px;line-height:1.55;color:var(--text)}
+.testiwho{display:flex;align-items:center;gap:10px}
+.testiavatar{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:13px;display:grid;place-items:center;flex:none}
+.testiwho b{display:block;font-size:13.5px}
+.testiwho span{display:block;font-size:12px;color:var(--text-faint)}
 .qa summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-weight:700;font-size:16px}
 .qa summary::-webkit-details-marker{display:none}
 .qa summary .plus{flex:none;width:22px;height:22px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:15px;color:var(--text-soft);font-weight:400}
@@ -830,6 +842,48 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:640px;margin-top:18px;line
         <summary>Do you only build for roofing companies?<span class="plus">+</span></summary>
         <p>Roofing is where we've done the most builds and know the workflow cold: storm leads, quotes, crews, insurance claims. The same approach works for other local trades too, but roofing companies are who we build for first. Bring your workflow to the call and we'll tell you honestly if it's a fit.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS (real quotes from past web design clients) -->
+<section id="proof">
+  <div class="wrap">
+    <div class="sechead center">
+      <span class="eyebrow">What clients say</span>
+      <h2>Kind words from past clients.</h2>
+    </div>
+    <div class="testigrid">
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Efficient, knowledgeable, and incredibly easy to work with. Redesigned our website, added an SEO sitemap, and made everything responsive across devices.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">A</div><div><b>Angela Cacace</b><span>Co-founder, Moveoverbob</span></div></div>
+      </div>
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“The perfect combination of skills for our Webflow redesign. Experienced developer, custom code, beautiful designs across all devices, website accessibility, SEO. Our go-to Webflow developer for future projects.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">C</div><div><b>Caroline Desrosiers</b><span>Founder, Scribely</span></div></div>
+      </div>
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Absolutely nailed it. The website turned out even better than I had envisioned. Fast, responsive, and super easy to work with.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">D</div><div><b>Dan D'Aquisto</b><span>Co-founder and CEO, 2ULaundry</span></div></div>
+      </div>
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Seamless communication and a deep understanding of our vision. The best collaborative experience I have ever had with a designer.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">L</div><div><b>Lindsay Morton</b><span>Chief Growth Officer, Oncentive</span></div></div>
+      </div>
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Consistently exceptional quality with a level of attention to detail that is hard to find. Delivered everything ahead of schedule, exactly as promised.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">C</div><div><b>Chris Wright</b><span>Entrepreneur</span></div></div>
+      </div>
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Technical expertise in Webflow plus a sharp design sensibility that elevated the entire project. Delivered with precision, speed, and strong attention to detail.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">A</div><div><b>Ali A.</b><span>CTO, Saudi Aramco</span></div></div>
+      </div>
     </div>
   </div>
 </section>
