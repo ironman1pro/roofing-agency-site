@@ -3,6 +3,7 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 var form = document.getElementById('lead-form');
 var errEl = document.getElementById('form-err');
 
+if (form) {
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   errEl.hidden = true;
@@ -46,6 +47,7 @@ form.addEventListener('submit', function (e) {
       btn.textContent = label;
     });
 });
+}
 
 /* Testimonials: endless marquee. Cards are cloned once; CSS moves the strip left by exactly one set, so the loop is seamless. */
 (function () {
