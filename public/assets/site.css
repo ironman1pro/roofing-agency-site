@@ -41,7 +41,29 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,31,51,.96);backdrop-f
 @media(max-width:420px){.nav .btn{padding:9px 12px;font-size:.85rem}.logo{font-size:1rem}}
 
 /* HERO */
-.hero{background:radial-gradient(1200px 500px at 85% -10%,#1B4A78 0,transparent 60%),var(--navy);color:#fff;padding:84px 0 96px;overflow-x:clip}
+.hero{
+  position:relative;
+  background:
+    radial-gradient(1200px 500px at 85% -10%,#1B4A78 0,transparent 60%),
+    radial-gradient(760px 420px at 6% 108%,rgba(255,107,44,.16) 0,transparent 58%),
+    var(--navy);
+  color:#fff;padding:84px 0 96px;overflow-x:clip
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.09) 1px,transparent 1.4px);
+  background-size:28px 28px;
+  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.85),transparent 78%);
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.85),transparent 78%);
+  pointer-events:none;
+}
+.hero::after{
+  content:"";
+  position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(to right,transparent,rgba(255,255,255,.14),transparent);
+}
+.hero>.wrap{position:relative;z-index:1}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
 .hm{position:sticky!important;top:96px;margin-top:8px}
 .hero h1 span{color:var(--orange)}
