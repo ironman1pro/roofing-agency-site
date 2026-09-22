@@ -1,0 +1,21 @@
+name = "adaptify-crm"
+main = "src/worker.js"
+compatibility_date = "2025-09-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "adaptify-crm"
+database_id = "REPLACE_WITH_ID_FROM_wrangler_d1_create"
+
+[vars]
+FROM_EMAIL = "Damir at Adaptify <damir@damir-builds.com>"
+REPLY_TO = "info@adaptify.tech"
+BUSINESS_ADDRESS = "REPLACE WITH YOUR REAL MAILING ADDRESS"
+# Secrets (set with `npx wrangler secret put NAME`, never put them in this file):
+#   APP_PASSWORD, SESSION_SECRET  (required)
+#   GOOGLE_PLACES_KEY, RESEND_API_KEY  (optional)

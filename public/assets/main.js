@@ -26,13 +26,21 @@ form.addEventListener('submit', function (e) {
   var send = (trap && trap.value.trim())
     ? Promise.resolve()
     : fetch('https://formspree.io/f/xvkgzgwd', { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
-        .then(function (r) { if (!r.ok) throw new Error('bad response'); return r.json(); });
+        .then(function (r) {
+          if (r.ok) return r.json();
+          return r.json().catch(function () { return {}; }).then(function (j) {
+            var m = (j && (j.error || (j.errors && j.errors[0] && j.errors[0].message))) || '';
+            throw new Error(r.status + (m ? ' ' + m : ''));
+          });
+        });
   send
     .then(function () {
       document.getElementById('form-fields').style.display = 'none';
       var th = document.getElementById('thanks'); th.style.display = 'block'; th.classList.add('show');
     })
-    .catch(function () {
+    .catch(function (e) {
+      if (window.console) console.error('Form error:', e && e.message ? e.message : e);
+      errEl.textContent = 'Something went wrong (' + (e && e.message ? e.message.slice(0, 80) : 'network error') + '). Please try again, or email us at info@adaptify.tech.';
       errEl.hidden = false;
       btn.disabled = false;
       btn.textContent = label;

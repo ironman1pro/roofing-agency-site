@@ -33,12 +33,13 @@ async function handleLead(request, env) {
   if (String(data.get('website') || '').trim()) return json({ ok: true });
 
   const clean = (key, max) => String(data.get(key) || '').trim().slice(0, max);
+  const service = clean('service', 40) || 'websites';
   const lead = {
     name: clean('name', 100),
     company: clean('company', 120),
     email: clean('email', 160),
     site: clean('site', 200),
-    source: 'agency-landing-page',
+    source: `agency-landing-page:${service}`,
     submitted_at: new Date().toISOString(),
   };
 

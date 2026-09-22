@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Adaptify CRM</title>
+<style>
+:root{--bg:#0b1f33;--card:#12304d;--line:#1f4468;--tx:#eaf1f8;--mu:#8fa2b7;--or:#ff6b2c;--gr:#2fbf71;--rd:#ff5d5d}
+*{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,Segoe UI,sans-serif;background:var(--bg);color:var(--tx)}
+a{color:#7cc0ff}button,input,select,textarea{font:inherit;color:var(--tx);background:#0d2740;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+textarea{width:100%;min-height:140px}input,select{max-width:100%}button{cursor:pointer;background:var(--or);border:0;font-weight:600;color:#fff}
+button.g{background:#1a4066;font-weight:500}button.d{background:#7a2b2b}button:disabled{opacity:.5}
+nav{display:flex;gap:6px;padding:10px 16px;background:#08172a;position:sticky;top:0;z-index:5;flex-wrap:wrap;align-items:center}
+nav b{margin-right:14px}nav button{background:transparent;color:var(--mu);font-weight:500}nav button.on{background:#1a4066;color:#fff}
+main{padding:16px;max-width:1200px;margin:auto}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}.grow{flex:1}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--mu);font-weight:500;font-size:13px}
+tr.l{cursor:pointer}tr.l:hover{background:#163a5c}.pill{padding:2px 8px;border-radius:99px;background:#1a4066;font-size:12px}
+.sc{font-weight:700}.hi{color:var(--or)}.mu{color:var(--mu)}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.stat{background:#0d2740;border-radius:10px;padding:12px}.stat b{font-size:26px;display:block}
+.board{display:grid;grid-template-columns:repeat(6,minmax(170px,1fr));gap:10px;overflow:auto}.col{background:#0d2740;border-radius:10px;padding:8px;min-height:120px}
+.col h4{margin:2px 0 8px;font-size:13px;color:var(--mu)}.k{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px;margin-bottom:6px;cursor:pointer;font-size:13px}
+#dr{position:fixed;top:0;right:0;width:min(520px,100%);height:100%;background:#0e2941;border-left:1px solid var(--line);padding:16px;overflow:auto;transform:translateX(100%);transition:.2s;z-index:10}
+#dr.open{transform:none}label{display:block;font-size:12px;color:var(--mu);margin:8px 0 3px}label+input,label+select,label+textarea{width:100%}
+.tl div{border-left:2px solid var(--line);padding:2px 10px;margin:6px 0;font-size:13px;white-space:pre-wrap}
+#login{max-width:340px;margin:18vh auto;text-align:center}#login input{width:100%;margin:10px 0}.err{color:var(--rd)}
+.msg{white-space:pre-wrap;background:#0d2740;border-radius:8px;padding:10px;margin:8px 0;font-size:14px}
+@media(max-width:700px){.hide-s{display:none}}
+</style></head><body>
+<div id="app"></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ST=['new','contacted','replied','preview_sent','closed','not_fit'];
+const STL={new:'New',contacted:'Contacted',replied:'Replied',preview_sent:'Preview sent',closed:'Closed',not_fit:'Not a fit'};
+let leads=[],tpls=[],cfg={},view='dash',sel=null,filter={q:'',status:'',min:''};
+async function api(p,o={}){
+  const r=await fetch('/api/'+p,{method:o.m||'GET',headers:o.b?{'Content-Type':'application/json'}:{},body:o.b?JSON.stringify(o.b):undefined});
+  if(r.status===401){login();throw new Error('auth')}
+  const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.error||r.statusText);return d}
+function login(msg){
+  $('#app').innerHTML=`<div id="login" class="card"><h2>Adaptify CRM</h2><input id="pw" type="password" placeholder="Password" autofocus><button id="go" style="width:100%">Log in</button><p class="err">${esc(msg||'')}</p></div>`;
+  const go=async()=>{try{await api('login',{m:'POST',b:{password:$('#pw').value}});boot()}catch(e){if(e.message!=='auth')login(e.message)}};
+  $('#go').onclick=go;$('#pw').onkeydown=e=>e.key==='Enter'&&go()}
+async function boot(){
+  try{await api('me');[leads,tpls,cfg]=await Promise.all([api('leads'),api('templates'),api('config')])}catch(e){return}
+  if(!tpls.length){await seed();tpls=await api('templates')}
+  shell()}
+async function seed(){
+  const T=[
+  {name:'WhatsApp - first message',channel:'whatsapp',subject:'',body:"Hi, this is Damir from Adaptify. I looked at {{company}}'s website and noticed {{issue}}. We build fast roofing websites with built-in tools like instant estimate calculators that turn visitors into estimate requests. I can mock up your homepage for free so you can see it before deciding anything. Want me to send it over?"},
+  {name:'WhatsApp - follow-up',channel:'whatsapp',subject:'',body:"Hi, Damir from Adaptify again. Just checking if you had a chance to see my note about a free homepage preview for {{company}}. Happy to send it over, no obligation."},
+  {name:'SMS - first message',channel:'sms',subject:'',body:"Hi, Damir from Adaptify. I can mock up a free homepage for {{company}} so you can see the difference before paying anything. Want me to send it? Reply STOP to opt out."},
+  {name:'Email - first message',channel:'email',subject:"A free homepage preview for {{company}}",body:"Hi,\n\nI'm Damir from Adaptify. I came across {{company}} in {{city}} and noticed {{issue}}.\n\nWe build fast, search-optimized roofing websites with tools like an instant estimate calculator. I'd like to mock up your homepage for free so you can see it before deciding anything. You only pay if you love it.\n\nWant me to send it over?\n\nDamir\nAdaptify · adaptify.tech"},
+  {name:'Email - follow-up',channel:'email',subject:"Re: A free homepage preview for {{company}}",body:"Hi,\n\nFollowing up in case my last note got buried. I'm still happy to build a free homepage preview for {{company}}. No obligation.\n\nDamir\nAdaptify · adaptify.tech"}];
+  for(const t of T)await api('templates',{m:'POST',b:t})}
+function shell(){
+  const tabs=[['dash','Dashboard'],['leads','Leads'],['pipe','Pipeline'],['out','Outreach'],['tpl','Templates'],['add','Add / Import']];
+  $('#app').innerHTML=`<nav><b>Adaptify CRM</b>${tabs.map(t=>`<button data-v="${t[0]}" class="${view===t[0]?'on':''}">${t[1]}</button>`).join('')}<span class="grow"></span><button class="g" id="lo">Log out</button></nav><main id="m"></main><div id="dr"></div>`;
+  document.querySelectorAll('nav [data-v]').forEach(b=>b.onclick=()=>{view=b.dataset.v;shell()});
+  $('#lo').onclick=async()=>{await api('logout',{m:'POST',b:{}});login()};
+  ({dash,leads:vLeads,pipe,out,tpl,add})[view]();}
+const today=()=>new Date().toISOString().slice(0,10);
+const fmtIssue=l=>{const n=(l.site_notes||'');if(!l.website)return"you don't have a website customers can find";if(/CHECK/i.test(n))return'a few things on your site that could be bringing in more estimate requests';const f=n.split(';')[0].trim();return f?f.toLowerCase()+' on your current site':'a few quick wins on your current site'};
+function dash(){
+  const c=s=>leads.filter(l=>l.status===s).length,due=leads.filter(l=>l.next_followup&&l.next_followup<=today()&&!['closed','not_fit'].includes(l.status)&&!l.dnc);
+  $('#m').innerHTML=`<div class="stats">${ST.map(s=>`<div class="stat"><b>${c(s)}</b>${STL[s]}</div>`).join('')}<div class="stat"><b>${leads.length}</b>Total leads</div></div>
+  <div class="card" style="margin-top:14px"><h3>Follow-ups due (${due.length})</h3>${due.length?due.map(l=>`<div class="row"><a href="#" data-o="${l.id}">${esc(l.name)}</a><span class="mu">due ${esc(l.next_followup)}</span></div>`).join(''):'<span class="mu">Nothing due.</span>'}</div>`;
+  document.querySelectorAll('[data-o]').forEach(a=>a.onclick=e=>{e.preventDefault();open_(+a.dataset.o)})}
+function vLeads(){
+  $('#m').innerHTML=`<div class="row"><input id="q" placeholder="Search" value="${esc(filter.q)}"><select id="fs"><option value="">All statuses</option>${ST.map(s=>`<option value="${s}" ${filter.status===s?'selected':''}>${STL[s]}</option>`).join('')}</select>
+  <input id="mn" type="number" min="0" max="10" placeholder="Min site score" style="width:140px" value="${esc(filter.min)}"><span class="grow"></span><button class="g" id="en">Check websites (unchecked)</button><a href="/api/export.csv"><button class="g">Export CSV</button></a></div><div id="pg" class="mu"></div><div class="card"><table><thead><tr><th>Business</th><th class="hide-s">Phone</th><th>Score</th><th>Status</th><th class="hide-s">Follow-up</th></tr></thead><tbody id="tb"></tbody></table></div>`;
+  const draw=()=>{const f=leads.filter(l=>(!filter.q||(l.name+l.phone+l.email+l.website+l.address).toLowerCase().includes(filter.q.toLowerCase()))&&(!filter.status||l.status===filter.status)&&(filter.min===''||(l.site_score??-1)>=+filter.min));
+    $('#tb').innerHTML=f.map(l=>`<tr class="l" data-i="${l.id}"><td><b>${esc(l.name)}</b><div class="mu">${esc(l.website||'no website')}${l.dnc?' · DNC':''}</div></td><td class="hide-s">${esc(l.phone)}</td><td class="sc ${l.site_score>=6?'hi':''}">${l.site_score??'-'}</td><td><span class="pill">${STL[l.status]||l.status}</span></td><td class="hide-s">${esc(l.next_followup)}</td></tr>`).join('')||'<tr><td colspan=5 class="mu">No leads.</td></tr>';
+    document.querySelectorAll('tr.l').forEach(r=>r.onclick=()=>open_(+r.dataset.i))};
+  $('#q').oninput=e=>{filter.q=e.target.value;draw()};$('#fs').onchange=e=>{filter.status=e.target.value;draw()};$('#mn').oninput=e=>{filter.min=e.target.value;draw()};
+  $('#en').onclick=async()=>{const ids=leads.filter(l=>l.website&&l.site_score==null).map(l=>l.id);if(!ids.length){$('#pg').textContent='Nothing to check.';return}
+    $('#en').disabled=true;for(let i=0;i<ids.length;i+=3){$('#pg').textContent=`Checking ${Math.min(i+3,ids.length)} / ${ids.length}...`;try{await api('leads/enrich',{m:'POST',b:{ids:ids.slice(i,i+3)}})}catch(e){$('#pg').textContent=e.message;break}}
+    leads=await api('leads');vLeads()};
+  draw()}
+function pipe(){
+  $('#m').innerHTML=`<div class="board">${ST.map(s=>`<div class="col"><h4>${STL[s]} (${leads.filter(l=>l.status===s).length})</h4>${leads.filter(l=>l.status===s).map(l=>`<div class="k" data-i="${l.id}"><b>${esc(l.name)}</b><div class="mu">${esc(l.phone)}</div></div>`).join('')}</div>`).join('')}</div><p class="mu">Click a card to open it and change its status.</p>`;
+  document.querySelectorAll('.k').forEach(k=>k.onclick=()=>open_(+k.dataset.i))}
+async function open_(id){
+  sel=id;const d=await api('leads/'+id),l=d.lead,dr=$('#dr');
+  const f=(k,lab,t='input')=>`<label>${lab}</label>${t==='ta'?`<textarea data-f="${k}" style="min-height:70px">${esc(l[k])}</textarea>`:`<input data-f="${k}" value="${esc(l[k])}">`}`;
+  dr.classList.add('open');dr.innerHTML=`<div class="row"><h3 class="grow" style="margin:0">${esc(l.name)}</h3><button class="g" id="x">Close</button></div>
+  <label>Status</label><select data-f="status">${ST.map(s=>`<option value="${s}" ${l.status===s?'selected':''}>${STL[s]}</option>`).join('')}</select>
+  ${f('phone','Phone')}${f('email','Email')}${f('website','Website')}${f('address','Address')}${f('next_followup','Next follow-up (YYYY-MM-DD)')}${f('notes','Notes','ta')}
+  <label><input type="checkbox" id="dnc" style="width:auto" ${l.dnc?'checked':''}> Do Not Contact (they said stop)</label>
+  <div class="mu" style="margin-top:6px">Site score: ${l.site_score??'-'} ${esc(l.site_notes)}</div>
+  <div class="row" style="margin-top:10px"><button id="sv">Save</button><button class="g" id="ou">Outreach</button><button class="d" id="dl">Delete</button></div>
+  <h4>Log a note / reply</h4><textarea id="nt" style="min-height:60px"></textarea><div class="row"><select id="ch"><option>note</option><option>whatsapp</option><option>sms</option><option>call</option><option>email</option></select><button class="g" id="lg">Add to timeline</button></div>
+  <h4>Timeline</h4><div class="tl">${d.activities.map(a=>`<div><b>${esc(a.channel)}</b> <span class="mu">${esc(a.created_at)}</span><br>${esc(a.body)}</div>`).join('')||'<span class="mu">No activity yet.</span>'}</div>`;
+  $('#x').onclick=()=>dr.classList.remove('open');
+  $('#sv').onclick=async()=>{const b={dnc:$('#dnc').checked};dr.querySelectorAll('[data-f]').forEach(e=>b[e.dataset.f]=e.value);await api('leads/'+id,{m:'PATCH',b});leads=await api('leads');shell();open_(id)};
+  $('#lg').onclick=async()=>{if(!$('#nt').value.trim())return;await api(`leads/${id}/log`,{m:'POST',b:{channel:$('#ch').value,body:$('#nt').value}});open_(id)};
+  $('#dl').onclick=async()=>{if(confirm('Delete this lead?')){await api('leads/'+id,{m:'DELETE',b:{}});leads=await api('leads');dr.classList.remove('open');shell()}};
+  $('#ou').onclick=()=>{view='out';outSel=id;dr.classList.remove('open');shell()}}
+let outSel=null;
+const digits=p=>{let d=String(p||'').split(/[;,\/]/)[0].replace(/\D/g,'');if(d.length===10)d='1'+d;return d};
+const render=(t,l)=>t.replace(/\{\{company\}\}/g,l.name).replace(/\{\{city\}\}/g,(l.city||'San Antonio')).replace(/\{\{issue\}\}/g,fmtIssue(l));
+function out(){
+  const q=leads.filter(l=>!l.dnc&&!['closed','not_fit'].includes(l.status));
+  const cur=leads.find(l=>l.id===outSel)||q[0];
+  if(!cur){$('#m').innerHTML='<p class="mu">No leads to contact.</p>';return}
+  $('#m').innerHTML=`<div class="row"><select id="lp">${q.map(l=>`<option value="${l.id}" ${l.id===cur.id?'selected':''}>${esc(l.name)} (${STL[l.status]})</option>`).join('')}</select>
+  <select id="tp">${tpls.map(t=>`<option value="${t.id}">[${t.channel}] ${esc(t.name)}</option>`).join('')}</select>
+  <label style="margin:0">Follow-up in <input id="fd" type="number" value="3" style="width:64px"> days</label></div><div id="prev"></div>
+  <p class="mu">WhatsApp and SMS open a pre-filled message on your device and you press send yourself. That keeps your number safe and each message one-to-one. Only message businesses that could reasonably want this, and stop when someone asks.</p>`;
+  const draw=()=>{const l=leads.find(x=>x.id===+$('#lp').value),t=tpls.find(x=>x.id===+$('#tp').value),body=render(t.body,l),subj=render(t.subject||'',l),d=digits(l.phone);
+    const fu=()=>{const x=new Date();x.setDate(x.getDate()+(+$('#fd').value||3));return x.toISOString().slice(0,10)};
+    let act='';if(t.channel==='whatsapp')act=d?`<a href="https://wa.me/${d}?text=${encodeURIComponent(body)}" target="_blank" rel="noopener"><button>Open WhatsApp</button></a>`:'<span class="err">No phone</span>';
+    if(t.channel==='sms')act=d?`<a href="sms:+${d}?&body=${encodeURIComponent(body)}"><button>Open SMS</button></a>`:'<span class="err">No phone</span>';
+    if(t.channel==='email')act=l.email?`<button id="se">Send email now</button>`:'<span class="err">No email on this lead</span>';
+    $('#prev').innerHTML=`<div class="card"><b>${esc(l.name)}</b> <span class="mu">${esc(l.phone)} ${esc(l.email)}</span>${subj?`<div class="msg"><b>${esc(subj)}</b></div>`:''}<div class="msg">${esc(body)}</div><div class="row">${act}${t.channel!=='email'?'<button class="g" id="ms">I sent it - log it</button>':''}<button class="g" id="sk">Skip</button></div></div>`;
+    const done=async(ch)=>{await api(`leads/${l.id}/log`,{m:'POST',b:{channel:ch,body:body,mark_contacted:true,next_followup:fu()}});leads=await api('leads');outSel=null;out()};
+    if($('#ms'))$('#ms').onclick=()=>done(t.channel);
+    if($('#se'))$('#se').onclick=async()=>{if(!cfg.email||!cfg.addressSet){alert('Email needs RESEND_API_KEY set and BUSINESS_ADDRESS filled in wrangler.toml.');return}
+      try{await api(`leads/${l.id}/email`,{m:'POST',b:{subject:subj,body,next_followup:fu()}});leads=await api('leads');outSel=null;out()}catch(e){alert(e.message)}};
+    $('#sk').onclick=()=>{const i=q.findIndex(x=>x.id===l.id);outSel=q[(i+1)%q.length].id;out()}};
+  $('#lp').onchange=draw;$('#tp').onchange=draw;draw()}
+function tpl(){
+  $('#m').innerHTML=`<p class="mu">Variables: {{company}} {{city}} {{issue}}</p>${tpls.map(t=>`<div class="card" data-t="${t.id}"><div class="row"><input data-k="name" value="${esc(t.name)}" class="grow"><select data-k="channel">${['whatsapp','sms','email'].map(c=>`<option ${t.channel===c?'selected':''}>${c}</option>`).join('')}</select></div><input data-k="subject" placeholder="Subject (email only)" value="${esc(t.subject)}" style="width:100%;margin-bottom:8px"><textarea data-k="body">${esc(t.body)}</textarea><div class="row"><button data-s>Save</button><button class="d" data-x>Delete</button></div></div>`).join('')}<button id="nw" class="g">+ New template</button>`;
+  document.querySelectorAll('[data-t]').forEach(c=>{const id=c.dataset.t;
+    c.querySelector('[data-s]').onclick=async()=>{const b={};c.querySelectorAll('[data-k]').forEach(e=>b[e.dataset.k]=e.value);await api('templates/'+id,{m:'PATCH',b});tpls=await api('templates');tpl()};
+    c.querySelector('[data-x]').onclick=async()=>{await api('templates/'+id,{m:'DELETE',b:{}});tpls=await api('templates');tpl()}});
+  $('#nw').onclick=async()=>{await api('templates',{m:'POST',b:{name:'New template',channel:'whatsapp',body:''}});tpls=await api('templates');tpl()}}
+function parseCSV(t){const rows=[];let r=[],c='',q=false;for(let i=0;i<t.length;i++){const ch=t[i];if(q){if(ch=='"'&&t[i+1]=='"'){c+='"';i++}else if(ch=='"')q=false;else c+=ch}else if(ch=='"')q=true;else if(ch==','){r.push(c);c=''}else if(ch=='\n'||ch=='\r'){if(ch=='\r'&&t[i+1]=='\n')i++;r.push(c);c='';if(r.some(x=>x.trim()))rows.push(r);r=[]}else c+=ch}
+  if(c||r.length){r.push(c);rows.push(r)}return rows}
+function add(){
+  $('#m').innerHTML=`<div class="card"><h3>Add one lead</h3><div class="row"><input id="an" placeholder="Business name"><input id="ap" placeholder="Phone"><input id="ae" placeholder="Email"><input id="aw" placeholder="Website"><button id="ab">Add</button></div></div>
+  <div class="card"><h3>Import CSV</h3><p class="mu">Columns recognised: name, phone, email, website, address, city, notes.</p><input type="file" id="cf" accept=".csv"><div id="ci" class="mu"></div></div>
+  <div class="card"><h3>Find roofers (Google Places API)</h3>${cfg.places?`<div class="row"><input id="fc" placeholder="City" value="San Antonio"><input id="fst" value="TX" style="width:70px"><input id="ft" value="roofing contractor"><button id="fb">Find</button></div><div id="fi" class="mu"></div>`:'<p class="mu">Not set up. Add a GOOGLE_PLACES_KEY secret (see README) to search Google\'s official Places API from here.</p>'}</div>`;
+  $('#ab').onclick=async()=>{const r=await api('leads',{m:'POST',b:{name:$('#an').value,phone:$('#ap').value,email:$('#ae').value,website:$('#aw').value}});leads=await api('leads');$('#an').value='';alert(r.added?'Added':'Already exists / missing name')};
+  $('#cf').onchange=async e=>{const rows=parseCSV(await e.target.files[0].text()),h=rows[0].map(x=>x.trim().toLowerCase());
+    const g=(r,ks)=>{for(const k of ks){const i=h.findIndex(x=>x===k||x.includes(k));if(i>=0&&r[i])return r[i].trim()}return''};
+    const data=rows.slice(1).map(r=>({name:g(r,['name','business','company']),phone:g(r,['phone']),email:g(r,['email']),website:g(r,['website','url','site']),address:g(r,['address']),city:g(r,['city']),notes:g(r,['notes'])})).filter(x=>x.name);
+    const res=await api('leads/import',{m:'POST',b:{rows:data}});leads=await api('leads');$('#ci').textContent=`Read ${data.length} rows, added ${res.added} new.`};
+  if(cfg.places)$('#fb').onclick=async()=>{$('#fi').textContent='Searching...';try{const r=await api('leads/find',{m:'POST',b:{city:$('#fc').value,state:$('#fst').value,term:$('#ft').value}});leads=await api('leads');$('#fi').textContent=`Found ${r.found}, added ${r.added} new.`}catch(e){$('#fi').textContent=e.message}}}
+boot();
+</script></body></html>
