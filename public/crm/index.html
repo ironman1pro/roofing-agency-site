@@ -82,6 +82,8 @@ section{padding-block:84px;scroll-margin-top:78px}
 .navlinks a:hover{color:#fff}
 .navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:1.5px;background:var(--accent);transition:right .22s ease}
 .navlinks a:hover::after{right:0}
+.navlinks a.active{color:#fff}
+.navlinks a.active::after{right:0}
 @media (max-width:720px){.navlinks{display:none}}
 .nav .btn{white-space:nowrap}
 @media (max-width:480px){.nav .btn{padding:9px 12px;font-size:12.5px}.brand{font-size:15px}.brand small{display:none}}
@@ -411,9 +413,9 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:640px;margin-top:18px;line
       Adaptify <small>Builds</small>
     </a>
     <div class="navlinks">
-      <a href="#features">Features</a>
-      <a href="#integrations">Integrations</a>
-      <a href="#how">How it works</a>
+      <a href="/websites/">Websites</a>
+      <a href="/crm/" class="active">CRM</a>
+      <a href="/automations/">Automations</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
     </div>
