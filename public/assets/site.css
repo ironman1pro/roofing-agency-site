@@ -226,7 +226,10 @@ form .btn{width:100%;margin-top:20px}
 
 footer{background:#081726;color:#8FA3B8;padding:36px 0;font-size:.9rem}
 .foot{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
-.foot .footlinks{display:flex;gap:18px;flex-wrap:wrap}
+.foot .footlinks{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.foot .footlinks a{display:inline-flex;align-items:center}
+.foot .footsocial{display:inline-flex;align-items:center;gap:16px;margin-left:4px;padding-left:14px;border-left:1px solid rgba(255,255,255,.14)}
+.foot .footsocial svg{width:17px;height:17px;display:block}
 footer a{text-decoration:none}footer a:hover{color:#fff}
 
 /* mobile sticky CTA */
