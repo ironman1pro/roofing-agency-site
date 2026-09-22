@@ -1,15 +1,27 @@
 # Adaptify
 
-> Adaptify LLC builds fast, SEO- and AI-search-optimized websites only for roofing companies. Static sites on Cloudflare with free hosting for life, delivered in the client's own Cloudflare and GitHub accounts.
+> Adaptify LLC builds AI-powered infrastructure for roofing companies: websites, CRMs and lead automations. Every build is deployed to the client's own Cloudflare account and fully owned by them, never a rented SaaS tool.
 
-## Offer
+## Services
+- AI Powered Websites: fast, SEO- and AI-search-optimized static sites built only for roofing companies, free hosting for life, delivered in the client's own Cloudflare and GitHub accounts. Live in 7 days or it's free.
+- AI Powered CRM: a custom-coded CRM built from scratch around how a roofing company already works, deployed to the client's own Cloudflare account, delivered in 10 days. One-time build, $1,500 to $4,000 typical range, no subscription.
+- AI Powered Automations: instant text-back on new leads, smart routing to the right crew and automatic follow-up on old quotes. One-time build, $1,200 to $3,500 typical range, plus pass-through messaging costs, no subscription.
+
+## Websites offer
 - Launch: $1,000 one-time. Custom 5-page site, local SEO and AI-search setup, free hosting for life, SSL and security. Live in 7 days or it's free. Includes free domain setup, a Google Business Profile audit and a launch-week review-request system. Optional: +$90/month for 5 small edits.
-- Growth: $1,000 setup plus a required $600/month growth plan. Adds 6 SEO blog posts a month, AI search optimization, Google Business Profile optimization, unlimited small edits (48-hour turnaround) and a monthly performance report.
-- Lead automation add-on: instant text-back, lead routing and old-quote follow-up, available on any plan. Pricing on request.
+- Growth: $1,000 setup plus a required $600/month growth plan. Adds 6 SEO blog posts a month, AI search optimization, Google Business Profile optimization, 8 small edits per month (48-hour turnaround) and a monthly performance report.
+- Custom package: for anything outside Launch and Growth (multiple locations, bigger builds, lead automation, etc). Scoped on request.
 - Preview first, pay later: no payment until the homepage preview is approved. Clients keep their site, domain and content.
 
+## Ownership philosophy
+Every Adaptify service is built once and deployed into infrastructure the client owns outright (their own Cloudflare account), not a tool they rent from Adaptify. The goal of every service is the same: bring the roofing company more customers and make running it easier.
+
 ## Pages
-- [Home](https://adaptify.tech/): offer, pricing, FAQ and free preview request form
+- [Home](https://adaptify.tech/): short overview of all three services, linking to each
+- [AI Powered Websites](https://adaptify.tech/websites/): websites offer, pricing, portfolio, FAQ and free preview request form
+- [AI Powered CRM](https://adaptify.tech/crm/): CRM build details, pricing, integrations and discovery call form
+- [AI Powered Automations](https://adaptify.tech/automations/): automation build details, pricing, integrations and discovery call form
+- [Contact](https://adaptify.tech/contact/): general contact form
 
 ## Contact
 info@adaptify.tech
