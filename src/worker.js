@@ -70,11 +70,28 @@ async function handleLead(request, env) {
   return json({ ok: true });
 }
 
+// The site's public/_headers file sets a strict CSP (script-src 'self'), which
+// blocks inline <script> tags by default. Rather than weakening that with
+// 'unsafe-inline', each request gets a random nonce; every injected script is
+// tagged with it, and the same nonce is added to the CSP header below, so
+// only OUR injected scripts are allowed to run inline — nothing else is.
+function addNonce(scriptHtml, nonce) {
+  return scriptHtml.replace(/<script(?![^>]*\bnonce=)/gi, `<script nonce="${nonce}"`);
+}
+
+function addNonceToCsp(cspValue, nonce) {
+  if (!cspValue || !/script-src/i.test(cspValue)) return cspValue;
+  return cspValue.replace(/script-src([^;]*)/i, (_, rest) => `script-src${rest} 'nonce-${nonce}'`);
+}
+
 // Appends every entry in GLOBAL_SCRIPTS just before </head> on any HTML response.
 class HeadInjector {
+  constructor(nonce) {
+    this.nonce = nonce;
+  }
   element(head) {
     for (const script of GLOBAL_SCRIPTS) {
-      head.append(script, { html: true });
+      head.append(addNonce(script, this.nonce), { html: true });
     }
   }
 }
@@ -85,7 +102,19 @@ async function serveAsset(request, env) {
   if (!contentType.includes('text/html') || GLOBAL_SCRIPTS.length === 0) {
     return res;
   }
-  return new HTMLRewriter().on('head', new HeadInjector()).transform(res);
+
+  const nonce = crypto.randomUUID().replace(/-/g, '');
+  const rewritten = new HTMLRewriter().on('head', new HeadInjector(nonce)).transform(res);
+
+  const headers = new Headers(rewritten.headers);
+  const csp = headers.get('content-security-policy');
+  if (csp) headers.set('content-security-policy', addNonceToCsp(csp, nonce));
+
+  return new Response(rewritten.body, {
+    status: rewritten.status,
+    statusText: rewritten.statusText,
+    headers,
+  });
 }
 
 export default {
