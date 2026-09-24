@@ -34,7 +34,7 @@
   }
 
   if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.iv-tl').forEach(function (t) { t.classList.add('go'); });
+    document.querySelectorAll('.iv-tl, .iv-dash').forEach(function (t) { t.classList.add('go'); });
     return;
   }
 
@@ -47,13 +47,22 @@
     tio.observe(tl);
   }
 
+  /* ---------- Dashboard bars ---------- */
+  var dash = document.querySelector('.iv-dash');
+  if (dash) {
+    var dio = new IntersectionObserver(function (es) {
+      if (es[0].isIntersecting) { dash.classList.add('go'); dio.disconnect(); }
+    }, { threshold: 0.3 });
+    dio.observe(dash);
+  }
+
   /* ---------- Reveals for page-specific blocks ---------- */
   if (reduce) return;
   var els = [];
-  document.querySelectorAll('.iv-scen, .iv-tl, .iv-split').forEach(function (g) {
+  document.querySelectorAll('.iv-scen, .iv-tl, .iv-own, .iv-kpis').forEach(function (g) {
     Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty('--d', Math.min(i, 5) * 0.08 + 's'); els.push(c); });
   });
-  document.querySelectorAll('.iv-calc, .iv-vs, .iv-approve, .iv-works').forEach(function (e) { els.push(e); });
+  document.querySelectorAll('.iv-calc, .iv-approve, .iv-works, .iv-dash').forEach(function (e) { els.push(e); });
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
       if (!e.isIntersecting) return;

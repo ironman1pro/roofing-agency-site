@@ -177,3 +177,48 @@
   .iv-stage{max-width:340px}
 }
 @media(min-width:680px) and (max-width:1000px){#how .steps{grid-template-columns:repeat(3,1fr);gap:14px}#how .step{padding:22px}}
+
+/* ---------- Dashboard mock ---------- */
+.iv-dash{max-width:1000px;margin:40px auto 0;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 30px 70px rgba(11,31,51,.14);overflow:hidden}
+.iv-dash-bar{display:flex;align-items:center;gap:14px;padding:12px 18px;background:var(--navy);color:#fff;font-size:.88rem}
+.iv-dash-bar .dots{display:flex;gap:6px}.iv-dash-bar .dots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.22)}
+.iv-dash-bar .live{margin-left:auto;color:#5BE39A;font-size:.78rem;font-weight:700}
+.iv-dash-body{padding:22px}
+.iv-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.iv-kpi{background:var(--soft);border-radius:14px;padding:14px 16px}
+.iv-kpi small{display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.iv-kpi b{display:block;font-size:1.55rem;font-weight:900;margin:4px 0 2px;font-variant-numeric:tabular-nums}
+.iv-kpi span{font-size:.78rem;color:var(--muted)}
+.iv-kpi.good{background:#E8F7EE}.iv-kpi.good span{color:#0B6B35;font-weight:700}
+.iv-dash-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:14px;margin-top:14px}
+.iv-table{border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:.86rem}
+.iv-tr{display:grid;grid-template-columns:1.8fr .8fr 1fr;gap:10px;align-items:center;padding:11px 14px;border-top:1px solid var(--line)}
+.iv-th{border-top:0;background:var(--soft);font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.iv-tr span:nth-child(2){font-weight:700;font-variant-numeric:tabular-nums}
+.st{font-style:normal;font-size:.74rem;font-weight:800;border-radius:999px;padding:4px 9px;white-space:nowrap}
+.st.paid{background:#E8F7EE;color:#0B6B35}.st.prom{background:#EAF2FF;color:#1D4F91}.st.foll{background:#FFF1EA;color:#C2440F}.st.need{background:#FDECEC;color:#B42318}
+.iv-chart{border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column}
+.iv-chart small{font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.iv-chart .bars{flex:1;min-height:130px;display:flex;align-items:flex-end;gap:10px;margin-top:22px}
+.iv-chart .bars i{position:relative;flex:1;height:var(--h);border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#FF8A50,#E8551A);transform-origin:bottom;transition:transform 1s var(--ease)}
+.iv-chart .bars i:nth-child(2){transition-delay:.08s}.iv-chart .bars i:nth-child(3){transition-delay:.16s}.iv-chart .bars i:nth-child(4){transition-delay:.24s}.iv-chart .bars i:nth-child(5){transition-delay:.32s}
+.iv-chart .bars i span{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:.66rem;font-weight:700;color:var(--muted);white-space:nowrap}
+.js .iv-dash:not(.go) .bars i{transform:scaleY(0)}
+.iv-chart .wk{display:flex;gap:10px;margin-top:6px}.iv-chart .wk span{flex:1;text-align:center;font-size:.7rem;color:var(--muted)}
+.iv-cap{text-align:center;font-size:.8rem;color:var(--muted);margin-top:14px}
+@media(max-width:900px){.iv-kpis{grid-template-columns:repeat(2,1fr)}.iv-dash-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.iv-dash-body{padding:14px}.iv-kpi b{font-size:1.25rem}.iv-tr{grid-template-columns:1fr auto;row-gap:6px}.iv-tr span:first-child{grid-column:1/-1}.iv-th span:nth-child(3){display:none}.iv-th{display:none}.iv-dash-bar b{font-size:.8rem}}
+
+/* ---------- Ownership strip ---------- */
+.iv-own{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.iv-own div{background:var(--navy);color:#fff;border-radius:16px;padding:20px 22px;position:relative;overflow:hidden}
+.iv-own div::before{content:"";position:absolute;right:-30px;top:-30px;width:100px;height:100px;border-radius:50%;background:radial-gradient(circle,rgba(255,107,44,.35),transparent 70%)}
+.iv-own b{display:block;margin-bottom:4px}
+.iv-own span{color:#B9C8D9;font-size:.9rem}
+@media(max-width:760px){.iv-own{grid-template-columns:1fr}}
+
+/* ---------- Form select ---------- */
+#lead-form select{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#fff;color:var(--ink);font:inherit;margin-bottom:16px;appearance:auto}
+#lead-form select:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,107,44,.15)}
+@media (prefers-reduced-motion:reduce){.js .iv-dash:not(.go) .bars i{transform:none}}
+#how .step{background:#fff;border:1px solid var(--line)}
