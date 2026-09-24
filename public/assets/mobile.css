@@ -55,3 +55,11 @@ input,select{font-size:16px;min-height:48px}
 @media(max-width:380px){.hero h1{font-size:1.9rem}}
 .nav-links a.btn{color:#fff}
 @media(max-width:760px){.hero-cta .btn{font-size:1rem;padding-inline:16px}}
+
+/* Comfortable tap targets on phones (Google recommends about 48px) */
+@media(max-width:760px){
+  .footlinks{gap:4px 14px}
+  .footlinks a{min-height:44px;padding:0 4px}
+  .svc-card .go,.iv-textlink{display:inline-flex;align-items:center;min-height:44px}
+  .ctaalt a{display:inline-block;padding:12px 0}
+}

@@ -1,0 +1,16 @@
+/* Receptionist page: call log proof section */
+.rx-proof{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+.rx-log{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 60px rgba(11,31,51,.14);padding:20px 22px;font-size:.9rem}
+.rx-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.rx-tag{background:#E8F7EE;color:#0B6B35;font-size:.74rem;font-weight:800;border-radius:999px;padding:4px 10px;white-space:nowrap}
+.rx-meta{color:var(--muted);font-size:.8rem;margin:4px 0 14px}
+.rx-meta span{color:#E8551A;font-weight:700}
+.rx-lines{display:grid;gap:8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0}
+.rx-lines p{margin:0;color:var(--ink);line-height:1.45}
+.rx-lines b{display:block;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.rx-lines p.ai{background:#FFF7F2;border-radius:10px;padding:8px 10px}
+.rx-lines p.ai b{color:#C2440F}
+.rx-foot{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:12px;font-size:.8rem;font-weight:700;color:var(--navy)}
+.rx-cap{text-align:center;font-size:.8rem;color:var(--muted);margin-top:18px}
+.demo-card label span{color:inherit}
+@media(max-width:900px){.rx-proof{grid-template-columns:1fr;gap:28px}}

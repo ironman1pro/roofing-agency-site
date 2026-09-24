@@ -1,7 +1,4 @@
-/* Instant callback demo form. Submits name + phone to a backend endpoint that
-   triggers an outbound AI call (Vapi / Retell / Bland AI + Twilio, or similar).
-   NOTE for dev: /api/demo-call needs to be implemented server-side to actually
-   place the call. This front-end is ready to wire up once that endpoint exists. */
+/* Receptionist page: "Request a live demo" form in the hero. Sends to Formspree like the other lead forms. */
 (function () {
   var form = document.getElementById('demo-form');
   var errEl = document.getElementById('demo-err');
@@ -9,26 +6,33 @@
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     errEl.hidden = true;
+    var ok = true;
+    ['d-name', 'd-company', 'd-email'].forEach(function (id) {
+      var el = document.getElementById(id);
+      var bad = !el.value.trim() || (id === 'd-email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value.trim()));
+      if (bad) { el.style.borderColor = '#D93025'; ok = false; } else { el.style.borderColor = ''; }
+    });
+    if (!ok) return;
     var trap = form.querySelector('[name=website]');
-    if (trap && trap.value.trim()) return;
     var btn = form.querySelector('button[type="submit"]');
     var label = btn.textContent;
     btn.disabled = true;
-    btn.textContent = 'Calling you now...';
+    btn.textContent = 'Sending...';
     var fd = new FormData(form);
-    fetch('/api/demo-call', { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
-      .then(function (r) { if (!r.ok) throw new Error('Request failed'); return r.json().catch(function(){ return {}; }); })
-      .then(function () {
-        form.style.display = 'none';
-        var th = document.getElementById('demo-thanks');
-        th.style.display = 'block';
-        th.classList.add('show');
-      })
-      .catch(function () {
-        errEl.textContent = "Something went wrong placing the call. Please try again, or email us at info@adaptify.tech.";
-        errEl.hidden = false;
-        btn.disabled = false;
-        btn.textContent = label;
-      });
+    fd.append('_subject', 'Live demo request (receptionist): ' + document.getElementById('d-company').value.trim().slice(0, 80));
+    var send = (trap && trap.value.trim()) ? Promise.resolve() :
+      fetch('https://formspree.io/f/xvkgzgwd', { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); });
+    send.then(function () {
+      form.style.display = 'none';
+      var th = document.getElementById('demo-thanks');
+      th.style.display = 'block';
+      th.classList.add('show');
+    }).catch(function (e) {
+      errEl.textContent = 'Something went wrong (' + (e && e.message ? e.message : 'network error') + '). Please try again, or email us at info@adaptify.tech.';
+      errEl.hidden = false;
+      btn.disabled = false;
+      btn.textContent = label;
+    });
   });
 })();

@@ -1,23 +1,31 @@
 (function(){
   var form = document.getElementById('leadform');
   if(!form) return;
+  var err = document.getElementById('lf-err');
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    var name = document.getElementById('lf-name').value.trim();
-    var biz = document.getElementById('lf-biz').value.trim();
-    var tool = document.getElementById('lf-tool').value.trim();
-    var contact = document.getElementById('lf-contact').value.trim();
-    var pain = document.getElementById('lf-pain').value.trim();
-    var lines = [
-      "New Adaptify Builds call request",
-      "Name: " + name,
-      "Business: " + biz,
-      "Currently using: " + (tool || "-"),
-      "Reach me at: " + contact,
-      "Biggest headache: " + (pain || "-")
-    ];
-    var msg = encodeURIComponent(lines.join("\n"));
-    window.location.href = "mailto:contact.damir.1@gmail.com?subject=" + encodeURIComponent("Adaptify Builds call request from " + (biz || name)) + "&body=" + msg;
+    err.hidden = true;
+    var ok = true;
+    ['lf-name','lf-biz','lf-contact'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (!el.value.trim()) { el.style.borderColor = '#D93025'; ok = false; } else { el.style.borderColor = ''; }
+    });
+    if (!ok) return;
+    var btn = form.querySelector('button[type="submit"]'), label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending...';
+    var fd = new FormData(form);
+    fd.append('_subject', 'New Adaptify CRM lead: ' + document.getElementById('lf-biz').value.trim().slice(0, 80));
+    var trap = form.querySelector('[name=website]');
+    var send = (trap && trap.value.trim()) ? Promise.resolve() :
+      fetch('https://formspree.io/f/xvkgzgwd', { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+        .then(function(r){ if (!r.ok) throw new Error(String(r.status)); });
+    send.then(function(){
+      form.hidden = true;
+      document.getElementById('lf-thanks').hidden = false;
+    }).catch(function(e){
+      err.textContent = 'Something went wrong (' + (e && e.message ? e.message : 'network error') + '). Please try again, or email us at info@adaptify.tech.';
+      err.hidden = false; btn.disabled = false; btn.textContent = label;
+    });
   });
 })();
 
@@ -68,7 +76,7 @@
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if (entry.isIntersecting) {
-        entry.target.classList.add('in');
+        entry.target.classList.add('shown');
         activateFills(entry.target);
         io.unobserve(entry.target);
       }
@@ -80,7 +88,7 @@
 /* Testimonials: endless marquee. Cards are cloned once; CSS moves the strip left by exactly one set, so the loop is seamless. */
 (function () {
   var track = document.getElementById('tc-track');
-  if (!track) return;
+  if (!track || track.classList.contains('marquee')) return;
   var cards = Array.prototype.slice.call(track.children);
   var set = document.createElement('div'); set.className = 'tc-set';
   cards.forEach(function (c) { set.appendChild(c); });

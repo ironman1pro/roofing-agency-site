@@ -59,7 +59,7 @@ section{padding-block:84px;scroll-margin-top:78px}
 @media (max-width:760px){section{padding-block:56px}}
 @media (prefers-reduced-motion: no-preference){
   .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.2,.7,.3,1), transform .6s cubic-bezier(.2,.7,.3,1)}
-  .reveal.in{opacity:1;transform:none}
+  .reveal.shown{opacity:1;transform:none}
   .steps .step:nth-child(2){transition-delay:.06s}
   .steps .step:nth-child(3){transition-delay:.12s}
   .steps .step:nth-child(4){transition-delay:.18s}
@@ -393,6 +393,16 @@ footer{background:#081726;color:#8FA3B8;padding:36px 0;font-size:.9rem}
 .foot{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
 .foot .footlinks{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
 .foot .footlinks a{display:inline-flex;align-items:center}
+.intchips-sec{padding-block:0 64px}
+.intchips{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;font-size:.92rem;color:var(--text-muted,#5A6B7D)}
+.intchips span{font-weight:700;color:var(--text)}
+.intchips ul{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;list-style:none;margin:0;padding:0}
+.intchips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:.85rem}
+.lf-err{color:#D93025;font-size:.85rem;margin:10px 0 0}
+.lf-thanks{text-align:center;padding:40px 10px}
+.lf-thanks b{display:block;font-size:1.3rem;margin-bottom:6px}
+.lf-thanks span{color:var(--text-muted,#5A6B7D)}
+@media(max-width:760px){.foot .footlinks{gap:4px 14px}.foot .footlinks a{min-height:44px;padding:0 4px}.ctaalt a{display:inline-block;padding:12px 0}}
 .foot .footsocial{display:inline-flex;align-items:center;gap:16px;margin-left:4px;padding-left:14px;border-left:1px solid rgba(255,255,255,.14)}
 .foot .footsocial svg{width:17px;height:17px;display:block}
 footer a{text-decoration:none}
@@ -415,11 +425,10 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
   <div class="wrap nav">
     <a class="logo" href="/" aria-label="Adaptify home"><img src="../assets/adaptify-logo-dark-bg.svg" alt="Adaptify" width="123" height="34"></a>
     <nav class="nav-links" aria-label="Main">
-      <a href="#features">Features</a>
-      <a href="#integrations">Integrations</a>
-      <a href="#how">How it works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+      <a href="/automations/">AI Receptionist</a>
+      <a href="/invoice-follow-up/">Invoice Follow-up</a>
+      <a href="/crm/" class="active" aria-current="page">Custom CRM</a>
+      <a href="/websites/">Websites</a>
       <a href="#book" class="btn btn-primary">Book a discovery call</a>
     </nav>
   </div>
@@ -436,12 +445,12 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
   <div class="wrap heroin">
     <span class="kicker"><span class="livedot"></span> custom-coded for roofing companies</span>
     <h1>More than a CRM.<br>A growth system, <em>built once</em>, just for you.</h1>
-    <p class="lead">Adaptify designs and codes a CRM from scratch around how your roofing company already sells: your offers, your storm and referral leads, the way your crews talk about a job. Then it hands you the keys to your own Cloudflare account. This isn't a roofing CRM template with your logo dropped in. It's software built once, specifically for your business, by name.</p>
+    <p class="lead">We design and code a CRM around how your roofing company already sells: your offers, your storm and referral leads, your quote stages. Then we hand you the keys on your own Cloudflare account. No template, no per-seat fees.</p>
     <div class="herobtns">
       <a href="#book" class="btn btn-primary btn-lg">Book a discovery call</a>
       <a href="#features" class="btn btn-ghost btn-lg">See what's inside</a>
     </div>
-    <div class="herofoot">Built specifically for roofing companies that live on storm leads, referrals and door-knocking, not spreadsheets. Delivered in 15 days, guaranteed to match how you actually work.</div>
+    <div class="herofoot">Live in 15 days, guaranteed to match how you actually work.</div>
   </div>
   <div class="wrap">
     <div class="heroshot">
@@ -480,14 +489,6 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
   <div class="roofedge"></div>
 </section>
 
-<section class="bespoke">
-  <div class="wrap bgrid">
-    <div class="bitem"><div class="bic">✎</div><div><b>Coded for your company</b><span>Every screen is written for your roof types, your crews and your quote stages, not toggled on inside somebody else's settings panel.</span></div></div>
-    <div class="bitem"><div class="bic">◆</div><div><b>Named your way</b><span>"Offers", "Leads", "Outreach" are placeholders. Yours gets your terms, your stages, your pipeline shape.</span></div></div>
-    <div class="bitem"><div class="bic">⬡</div><div><b>One build, one owner</b><span>No app-store install, no plugin marketplace. What we hand over is the whole, finished thing, built for your company by name, and it's only used by you.</span></div></div>
-    <div class="bitem"><div class="bic">⏱</div><div><b>Live in 15 days</b><span>Most builds ship 15 days after the discovery call. We guarantee it matches your workflow exactly, or we keep refining it until it does, at no extra cost.</span></div></div>
-  </div>
-</section>
 
 <section id="problem">
   <div class="wrap">
@@ -689,52 +690,10 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
   </div>
 </section>
 
-<section id="fulllist">
-  <div class="wrap">
-    <div class="sechead">
-      <span class="eyebrow">The full list</span>
-      <h2>Everything above, plus everything else that ships with it.</h2>
-      <p>The five screens above are the core workflow. Every build also ships with all of this, included, not upsold.</p>
-    </div>
-    <div class="featgrid">
-      <div class="fgitem"><div class="fgic">★</div><b>Offer scoring</b><span>See which offer, price and proof is actually converting, ranked automatically.</span></div>
-      <div class="fgitem"><div class="fgic">▲</div><b>Lead tiering</b><span>A/B/C ranking so you always know which prospects to work first.</span></div>
-      <div class="fgitem"><div class="fgic">⇄</div><b>CSV import &amp; export</b><span>Bring your existing list in on day one, take your data out any day after.</span></div>
-      <div class="fgitem"><div class="fgic">⧉</div><b>Duplicate detection</b><span>Never message the same lead twice by accident.</span></div>
-      <div class="fgitem"><div class="fgic">☰</div><b>Full activity history</b><span>Every call, text, note and status change, logged on the lead's own page.</span></div>
-      <div class="fgitem"><div class="fgic">✉</div><b>Multi-channel outreach</b><span>Call, text and email from the same lead card, one tap to send.</span></div>
-      <div class="fgitem"><div class="fgic">↻</div><b>Automatic follow-ups</b><span>Storm leads that go quiet get nudged again after N days, on autopilot.</span></div>
-      <div class="fgitem"><div class="fgic">▤</div><b>Live campaign stats</b><span>Reply rate and win rate per campaign, updated as replies come in.</span></div>
-      <div class="fgitem"><div class="fgic">❝</div><b>Message template library</b><span>Save your best-performing messages and reuse them in one click.</span></div>
-      <div class="fgitem"><div class="fgic">▦</div><b>Content kanban board</b><span>Ideas through published, organized by channel, drag to move.</span></div>
-      <div class="fgitem"><div class="fgic">◎</div><b>Paid ad tracking</b><span>Which ad, which offer, which result, tracked apart from organic.</span></div>
-      <div class="fgitem"><div class="fgic">◈</div><b>Client &amp; finance tracking</b><span>What happens after the sale closes, not just up to it.</span></div>
-      <div class="fgitem"><div class="fgic">◐</div><b>Daily focus dashboard</b><span>Today's follow-ups and to-dos in one screen when you log in.</span></div>
-      <div class="fgitem"><div class="fgic">⌕</div><b>Lead sourcing tools</b><span>Search and import new storm and referral leads without leaving the CRM.</span></div>
-      <div class="fgitem"><div class="fgic">⚙</div><b>Custom fields &amp; stages</b><span>Named and shaped the way you already work, not the other way around.</span></div>
-      <div class="fgitem"><div class="fgic">⭳</div><b>No lock-in</b><span>Your leads and messages, exportable in full, any time you want them.</span></div>
-    </div>
-  </div>
-</section>
 
-<section id="integrations">
+<section id="integrations" class="intchips-sec">
   <div class="wrap">
-    <div class="sechead center">
-      <span class="eyebrow">Integrations</span>
-      <h2>It fits into the tools you already use.</h2>
-      <p>Your CRM doesn't replace your inbox or your calendar, it plugs into them. Wire up what you need on the call and skip the rest.</p>
-    </div>
-    <div class="intgrid">
-      <div class="intitem"><div class="intic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg></div><b>Email</b><span>Your existing inbox</span></div>
-      <div class="intitem"><div class="intic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 3v3M16 3v3"/><circle cx="8.5" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="12" cy="14" r="1.1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="14" r="1.1" fill="currentColor" stroke="none"/></svg></div><b>Calendar</b><span>Your existing calendar</span></div>
-      <div class="intitem"><div class="intic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 1 1-3.2-6.4"/><path d="M4 12a8 8 0 0 1 13-6.2M20 5v4h-4"/></svg></div><b>Automation</b><span>Connect other tools you use</span></div>
-      <div class="intitem"><div class="intic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V8a2 2 0 0 1 1.4-1.9l6-2a2 2 0 0 1 1.4 0l6 2A2 2 0 0 1 20 8v9"/><path d="M4 17l8 3 8-3M12 11v3"/></svg></div><b>Payments</b><span>Online payments</span></div>
-      <div class="intitem"><div class="intic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V6a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M15 4v5h5M8 13h8M8 16.5h5"/></svg></div><b>Accounting</b><span>Your bookkeeping software</span></div>
-      <div class="intitem"><div class="intic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M3.5 9.5h17M9.5 9.5V20"/></svg></div><b>Spreadsheets</b><span>Import &amp; export your data</span></div>
-      <div class="intitem"><div class="intic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h4l1.5 4-2.5 1.8a12 12 0 0 0 5.2 5.2l1.8-2.5 4 1.5v4a1.5 1.5 0 0 1-1.6 1.5A17 17 0 0 1 5 5.1 1.5 1.5 0 0 1 6.5 3.5Z"/></svg></div><b>Calls</b><span>Click-to-call from any lead</span></div>
-      <div class="intitem"><div class="intic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 15.5a1.5 1.5 0 0 1-1.5 1.5h-11L4 20V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 20 6z"/><path d="M8 9.5h8M8 13h5"/></svg></div><b>Text &amp; SMS</b><span>Two-way texting</span></div>
-    </div>
-    <div class="intnote">Don't see a tool you rely on? Most integrations are a standard part of the build, just bring it up on the call.</div>
+    <div class="intchips"><span>Plugs into the tools you already use:</span><ul><li>Email</li><li>Calendar</li><li>Text &amp; SMS</li><li>Calls</li><li>Payments</li><li>Accounting</li><li>Spreadsheets</li><li>Automation tools</li></ul></div>
   </div>
 </section>
 
@@ -819,10 +778,6 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
         <p>No. This is a one-time build. We build it and deploy it to a Cloudflare account in your name, and you pay once for the build itself. There's no monthly licence to us, and nothing we can switch off.</p>
       </details>
       <details class="qa">
-        <summary>How long does a build take?<span class="plus">+</span></summary>
-        <p>15 days from the discovery call to handover, for every build regardless of scope. That's the timeline we commit to on the call.</p>
-      </details>
-      <details class="qa">
         <summary>What if the finished build isn't exactly what I asked for?<span class="plus">+</span></summary>
         <p>We guarantee it will be. Every build is scoped from the workflow blueprint you sign off on before we write any code, and if the delivered CRM doesn't match it, we keep refining it until it does, at no extra cost to you.</p>
       </details>
@@ -835,16 +790,8 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
         <p>We set up a Cloudflare account under your name (or use your existing one) and deploy the CRM there, using Cloudflare Workers for the app and D1 for your database. You hold the login. Running it typically costs nothing on the free tier for a business your size, and it isn't something we bill you for.</p>
       </details>
       <details class="qa">
-        <summary>What if my workflow changes after launch?<span class="plus">+</span></summary>
-        <p>Tell us what changed. Small tweaks and new features are billed hourly at $75/hr, and we'll always tell you the estimate before starting. You're never stuck waiting on a feature-request queue, and you're never forced into an ongoing contract to get it.</p>
-      </details>
-      <details class="qa">
         <summary>Can I export my data if I ever leave?<span class="plus">+</span></summary>
         <p>Yes, any time, in full. It's your database from day one, and we never hold your leads or messages hostage.</p>
-      </details>
-      <details class="qa">
-        <summary>Do you only build for roofing companies?<span class="plus">+</span></summary>
-        <p>Roofing is where we've done the most builds and know the workflow cold: storm leads, quotes, crews, insurance claims. The same approach works for other local trades too, but roofing companies are who we build for first. Bring your workflow to the call and we'll tell you honestly if it's a fit.</p>
       </details>
     </div>
   </div>
@@ -910,17 +857,21 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
         <div class="ctacard">
           <form id="leadform">
             <div class="row2">
-              <div class="field"><label for="lf-name">Your name</label><input id="lf-name" required placeholder="Jordan Lee"></div>
-              <div class="field"><label for="lf-biz">Business name</label><input id="lf-biz" required placeholder="Lee Roofing Co."></div>
+              <div class="field"><label for="lf-name">Your name</label><input id="lf-name" name="name" autocomplete="name" required placeholder="Jordan Lee"></div>
+              <div class="field"><label for="lf-biz">Business name</label><input id="lf-biz" name="company" autocomplete="organization" required placeholder="Lee Roofing Co."></div>
             </div>
             <div class="row2">
-              <div class="field"><label for="lf-tool">What do you use today?</label><input id="lf-tool" placeholder="Spreadsheet, nothing, HubSpot..."></div>
-              <div class="field"><label for="lf-contact">Phone or email</label><input id="lf-contact" required placeholder="For us to reply"></div>
+              <div class="field"><label for="lf-tool">What do you use today?</label><input id="lf-tool" name="current_tools" placeholder="Spreadsheet, nothing, HubSpot..."></div>
+              <div class="field"><label for="lf-contact">Phone or email</label><input id="lf-contact" name="contact" required placeholder="For us to reply"></div>
             </div>
-            <div class="field"><label for="lf-pain">Biggest headache in your workflow right now</label><textarea id="lf-pain" rows="3" placeholder="e.g. Storm leads come in on 3 different apps and half of them go cold"></textarea></div>
+            <div class="field"><label for="lf-pain">Biggest headache in your workflow right now</label><textarea id="lf-pain" name="biggest_headache" rows="3" placeholder="e.g. Storm leads come in on 3 different apps and half of them go cold"></textarea></div>
+            <input type="hidden" name="service" value="crm">
+            <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
             <button type="submit" class="btn btn-primary ctasubmit">Send &amp; get times for a call</button>
-            <div class="ctaalt">Prefer to just talk? <a href="mailto:contact.damir.1@gmail.com" id="lf-mailfallback">Email us directly</a></div>
+            <p class="lf-err" id="lf-err" role="alert" hidden></p>
+            <div class="ctaalt">Prefer to just talk? <a href="mailto:info@adaptify.tech" id="lf-mailfallback">Email us directly</a></div>
           </form>
+          <div class="lf-thanks" id="lf-thanks" role="status" aria-live="polite" hidden><b>Thanks, that's in.</b><span>We'll reply within one business day with times for a call.</span></div>
         </div>
       </div>
     </div>
@@ -932,7 +883,7 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
 <footer>
   <div class="wrap foot">
     <span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span>
-    <span class="footlinks"><a href="/">Home</a><a href="/websites/">Websites</a><a href="/automations/">Receptionist</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"></path></svg></a></span></span>
+    <span class="footlinks"><a href="/automations/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/crm/">Custom CRM</a><a href="/websites/">Websites</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"></path></svg></a></span></span>
   </div>
   <div class="wrap"><p class="fine">Adaptify Builds is a done-for-you CRM build service by Adaptify LLC, built for roofing companies. Product screens on this page are illustrative recreations of the real interface, shown with a fictional roofing company's data, not a customer's actual business or live data. Pricing shown is a typical range and confirmed on your discovery call.</p></div>
 </footer>

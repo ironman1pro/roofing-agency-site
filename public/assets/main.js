@@ -52,7 +52,7 @@ form.addEventListener('submit', function (e) {
 /* Testimonials: endless marquee. Cards are cloned once; CSS moves the strip left by exactly one set, so the loop is seamless. */
 (function () {
   var track = document.getElementById('tc-track');
-  if (!track) return;
+  if (!track || track.classList.contains('marquee')) return;
   var cards = Array.prototype.slice.call(track.children);
   var set = document.createElement('div'); set.className = 'tc-set';
   cards.forEach(function (c) { set.appendChild(c); });
