@@ -50,10 +50,10 @@
   /* ---------- Reveals for page-specific blocks ---------- */
   if (reduce) return;
   var els = [];
-  document.querySelectorAll('.iv-scen, .iv-tl, .featgrid, .intgrid, .hlrow').forEach(function (g) {
+  document.querySelectorAll('.iv-scen, .iv-tl, .iv-split').forEach(function (g) {
     Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty('--d', Math.min(i, 5) * 0.08 + 's'); els.push(c); });
   });
-  document.querySelectorAll('.iv-calc, .iv-vs, .iv-pilot, .ownbox, .iv-col').forEach(function (e) { els.push(e); });
+  document.querySelectorAll('.iv-calc, .iv-vs, .iv-approve, .iv-works').forEach(function (e) { els.push(e); });
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (e) {
       if (!e.isIntersecting) return;
