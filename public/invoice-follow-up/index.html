@@ -3,28 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Invoice Follow-Up Agent for Contractors | Adaptify</title>
-<meta name="description" content="An AI agent that follows up on every unpaid invoice by text and email, in your voice, until it's paid. Built for roofers, contractors and home service businesses.">
+<title>AI Invoice Follow-Up Agent for Roofers &amp; Contractors | Adaptify</title>
+<meta name="description" content="Stop chasing homeowners for checks. An AI agent that follows up on every unpaid invoice by text and email, in your voice, until it's paid. Built for roofers and contractors.">
 <link rel="canonical" href="https://adaptify.tech/invoice-follow-up/">
 <meta name="robots" content="noindex,follow">
 <meta property="og:site_name" content="Adaptify">
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://adaptify.tech/invoice-follow-up/">
-<meta property="og:title" content="Get paid for the jobs you already finished | Adaptify">
+<meta property="og:title" content="Stop chasing homeowners for checks | Adaptify">
 <meta property="og:description" content="An AI agent that follows up on every unpaid invoice by text and email, in your voice, until it's paid.">
 <meta property="og:image" content="https://adaptify.tech/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Get paid for the jobs you already finished | Adaptify">
+<meta name="twitter:title" content="Stop chasing homeowners for checks | Adaptify">
 <meta name="twitter:description" content="An AI agent that follows up on every unpaid invoice by text and email, in your voice, until it's paid.">
 <meta name="theme-color" content="#0B1F33">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://adaptify.tech/#org", "name": "Adaptify LLC", "alternateName": "Adaptify", "url": "https://adaptify.tech/"}, {"@type": "Service", "@id": "https://adaptify.tech/invoice-follow-up/#service", "name": "Adaptify AI Invoice Follow-Up Agent", "url": "https://adaptify.tech/invoice-follow-up/", "provider": {"@id": "https://adaptify.tech/#org"}, "description": "An AI agent that follows up on unpaid invoices by text and email for contractors and home service businesses, handles replies, and escalates disputes to the owner.", "areaServed": "US", "serviceType": "Accounts receivable automation"}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://adaptify.tech/#org", "name": "Adaptify LLC", "alternateName": "Adaptify", "url": "https://adaptify.tech/"}, {"@type": "Service", "@id": "https://adaptify.tech/invoice-follow-up/#service", "name": "Adaptify AI Invoice Follow-Up Agent", "url": "https://adaptify.tech/invoice-follow-up/", "provider": {"@id": "https://adaptify.tech/#org"}, "description": "An AI agent that follows up on unpaid invoices by text and email for roofers and contractors, handles replies, and escalates disputes to the owner.", "areaServed": "US", "serviceType": "Accounts receivable automation"}]}
 </script>
 <link rel="stylesheet" href="../assets/site.css?v=1">
+<link rel="stylesheet" href="../assets/motion.css?v=1">
+<link rel="stylesheet" href="../assets/mobile.css?v=1">
+<link rel="stylesheet" href="invoice.css?v=1">
+<script src="../assets/motion-init.js"></script>
 </head>
 <body>
 
@@ -32,8 +36,8 @@
   <div class="wrap nav">
     <a class="logo" href="/" aria-label="Adaptify home"><img src="../assets/adaptify-logo-dark-bg.svg" alt="Adaptify" width="123" height="34"></a>
     <nav class="nav-links" aria-label="Page">
+      <a href="#calc">What's owed</a>
       <a href="#how">How it works</a>
-      <a href="#features">Features</a>
       <a href="#faq">FAQ</a>
       <a class="btn" href="#start">Book a free demo →</a>
     </nav>
@@ -43,36 +47,40 @@
 <main id="top">
 
 <!-- HERO -->
-<section class="hero center-hero">
-  <div class="wrap">
-    <span class="eyebrow">AI Invoice Follow-Up Agent</span>
-    <h1>Get paid for the jobs you already finished.</h1>
-    <p class="lead">An AI agent that follows up on every unpaid invoice by text and email, in your voice, until it's paid. Polite first, firmer when it needs to be, and it stops the second the money lands. You never have to write another "just checking in" message.</p>
-    <div class="hero-cta">
-      <a class="btn" href="#start">Book a free demo →</a>
-      <a class="btn btn-ghost" href="#how">See how it works</a>
+<section class="hero iv-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">AI invoice follow-up for roofers &amp; contractors</span>
+      <h1>Stop chasing homeowners <span>for checks.</span></h1>
+      <p class="lead">An AI agent follows up on every unpaid invoice by text and email, from your business, in your voice. It answers their replies, remembers "I'll pay Friday", checks in on Friday, and stops the second the money lands.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#start">Book a free demo →</a>
+        <a class="btn btn-ghost" href="#start">Send us one overdue invoice</a>
+      </div>
+      <p class="hero-note">Try it on your 5 oldest unpaid invoices. No results, no charge.</p>
+      <ul class="hero-points">
+        <li>Texts from your number</li>
+        <li>You approve every message at first</li>
+        <li>Disputes go straight to you</li>
+      </ul>
     </div>
-    <ul class="hero-points">
-      <li>Follows up on every invoice, automatically</li>
-      <li>Sounds like you, not a collections agency</li>
-      <li>Disputes go straight to you</li>
-    </ul>
 
-    <!-- Product mock: one invoice, start to paid -->
-    <div style="max-width:560px;margin:44px auto 0;background:#fff;color:var(--ink);border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.28);text-align:left;overflow:hidden" aria-label="Example: how the agent follows up on one invoice">
-      <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--line);gap:12px;flex-wrap:wrap">
-        <div><b style="font-size:15px">Invoice #1042 · Miller residence</b><div style="font-size:13px;color:var(--muted)">Roof replacement · due Sep 12</div></div>
-        <div style="font-weight:800;font-size:20px">$8,400</div>
+    <div class="iv-stage" aria-label="Example conversation: the agent follows up on a roofing invoice until it's paid">
+      <div class="iv-chip">Insurance check found · <b>Day 7</b></div>
+      <div class="iv-phone">
+        <div class="iv-phone-top"><div class="iv-av">HC</div><div><b>Hill Country Roofing</b><small>Invoice #1042 · $8,400</small></div></div>
+        <div class="iv-thread">
+          <span class="iv-day iv-s1">Day 1</span>
+          <div class="iv-msg out iv-s2">Hi Sarah, it's the office at Hill Country Roofing. Hope the new roof is treating you well! Your final invoice is ready here: <span class="pl">pay link</span></div>
+          <span class="iv-day iv-s3">Day 7</span>
+          <div class="iv-msg out iv-s4">Quick check-in on the roof invoice. Did the insurance check come through yet? Happy to help if the adjuster needs anything from us.</div>
+          <div class="iv-typing iv-s5" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="iv-msg in iv-s6">Yes it came Tuesday, paying tonight!</div>
+          <div class="iv-msg out iv-s7">Perfect, thanks Sarah. I'll let Mike know.</div>
+        </div>
       </div>
-      <div style="padding:18px 20px;display:grid;gap:14px;font-size:14px;line-height:1.45">
-        <div style="display:flex;gap:12px"><span style="flex:none;width:54px;color:var(--muted);font-size:12px;padding-top:2px">Day 1</span><div style="background:var(--soft);border-radius:12px;padding:10px 12px">Hi Sarah, hope the new roof is holding up great. Quick reminder that invoice #1042 is due. You can pay here in a minute: <span style="color:#E8551A;font-weight:600">pay link</span></div></div>
-        <div style="display:flex;gap:12px"><span style="flex:none;width:54px;color:var(--muted);font-size:12px;padding-top:2px">Day 5</span><div style="background:var(--soft);border-radius:12px;padding:10px 12px">Just following up on #1042. Any questions about the invoice I can answer for you?</div></div>
-        <div style="display:flex;gap:12px;justify-content:flex-end"><div style="background:var(--navy);color:#fff;border-radius:12px;padding:10px 12px;max-width:80%">Sorry! Been crazy. I'll pay Friday.</div></div>
-        <div style="display:flex;gap:12px"><span style="flex:none;width:54px;color:var(--muted);font-size:12px;padding-top:2px">Agent</span><div style="background:var(--soft);border-radius:12px;padding:10px 12px">No problem at all, thanks Sarah. I'll note Friday on our side. <span style="color:var(--muted)">(promise logged, reminder set for Friday)</span></div></div>
-        <div style="display:flex;align-items:center;gap:10px;background:#E8F7EE;color:#0B6B35;border-radius:12px;padding:10px 12px;font-weight:700"><span aria-hidden="true">✓</span> Paid Friday · follow-ups stopped automatically</div>
-      </div>
+      <div class="iv-paid"><span class="ok">✓</span><div><b>$8,400 paid</b><small>Follow-ups stopped automatically</small></div></div>
     </div>
-    <p style="font-size:12px;opacity:.65;margin-top:12px">Illustrative example. Messages are written to match your tone and your customers.</p>
   </div>
 </section>
 
@@ -80,43 +88,132 @@
 <section style="padding:0">
   <div class="wrap">
     <div class="hlrow hl4">
-      <div class="hlitem"><div class="hic">↻</div><div><b>Never forgets an invoice</b><span>Every open invoice gets followed up on schedule, not only when someone remembers.</span></div></div>
-      <div class="hlitem"><div class="hic">✎</div><div><b>Writes like you</b><span>Friendly, specific messages in your voice, so customer relationships stay intact.</span></div></div>
-      <div class="hlitem"><div class="hic">↩</div><div><b>Handles the replies</b><span>Answers simple questions, resends the invoice, and logs promises to pay.</span></div></div>
-      <div class="hlitem"><div class="hic">⚑</div><div><b>You stay in control</b><span>Disputes and anything sensitive get handed to you, never argued by a bot.</span></div></div>
+      <div class="hlitem"><div class="hic">↻</div><div><b>Every invoice, every time</b><span>No invoice slips through because the office got busy or the owner was on a roof.</span></div></div>
+      <div class="hlitem"><div class="hic">✎</div><div><b>Sounds like your office</b><span>Friendly, specific texts that mention the job, not a collections agency script.</span></div></div>
+      <div class="hlitem"><div class="hic">↩</div><div><b>Actually has the conversation</b><span>Answers "how do I pay?", resends the invoice, and remembers promises to pay.</span></div></div>
+      <div class="hlitem"><div class="hic">⚑</div><div><b>You stay in control</b><span>Complaints and disputes go to you with the full thread. The agent never argues.</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="problem" id="problem">
+<!-- CALCULATOR -->
+<section id="calc" style="background:var(--soft)">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">Why cash gets stuck</span>
-      <h2>The work is done. The money is sitting in someone's inbox.</h2>
-      <p class="lead">Most late invoices aren't customers refusing to pay. They're customers who forgot, got busy, or lost the email, and nobody on your side had time to chase them.</p>
+      <span class="eyebrow">Do the math</span>
+      <h2>How much of your money is sitting in other people's accounts?</h2>
+      <p class="lead">Move the sliders to match your business right now. That number is work you've already done and already paid for.</p>
     </div>
-    <div class="cards3">
-      <div class="card"><div class="ico">😬</div><h3>Chasing money is awkward</h3><p>Nobody wants to text a happy customer asking where the payment is, so it gets put off another week.</p></div>
-      <div class="card"><div class="ico">📂</div><h3>No one owns follow-up</h3><p>The office is busy, the owner is on a roof, and open invoices sit until someone opens the books at month end.</p></div>
-      <div class="card"><div class="ico">💸</div><h3>Your cash funds their delay</h3><p>Materials, payroll and fuel still get paid on time. Every late invoice is you floating someone else's bill.</p></div>
+    <div class="iv-calc">
+      <div class="iv-calc-in">
+        <div class="iv-field">
+          <label for="iv-n">Unpaid invoices right now <output id="iv-n-o">12</output></label>
+          <input type="range" id="iv-n" min="1" max="60" step="1" value="12">
+        </div>
+        <div class="iv-field">
+          <label for="iv-amt">Average invoice size <output id="iv-amt-o">$6,500</output></label>
+          <input type="range" id="iv-amt" min="500" max="25000" step="250" value="6500">
+        </div>
+        <div class="iv-field">
+          <label for="iv-days">Average days past due <output id="iv-days-o">38 days</output></label>
+          <input type="range" id="iv-days" min="5" max="120" step="1" value="38">
+        </div>
+      </div>
+      <div class="iv-calc-out" aria-live="polite">
+        <span class="k">Money waiting on you</span>
+        <div class="iv-big" id="iv-total">$78,000</div>
+        <div class="iv-sub">
+          <div><span>Follow-ups to send by hand (about 4 each)</span><b id="iv-msgs">48</b></div>
+          <div><span>Your time chasing it (about 25 min each)</span><b id="iv-hrs">5 hrs</b></div>
+          <div><span>Floating it for</span><b id="iv-late">38 days</b></div>
+        </div>
+        <p class="note">Estimate based on the numbers you entered.</p>
+      </div>
+    </div>
+    <div class="mid-cta"><a class="btn" href="#start">Get that money moving →</a><span>Free demo · 20 minutes · no obligation</span></div>
+  </div>
+</section>
+
+<!-- ROOFING SCENARIOS -->
+<section id="scenarios">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Built for how roofers actually get paid</span>
+      <h2>The late money is rarely a normal invoice.</h2>
+      <p class="lead">It's the insurance check sitting on the kitchen counter. The deductible nobody wants to bring up. The agent knows how to ask about each one, politely and on time.</p>
+    </div>
+    <div class="iv-scen">
+      <div class="iv-sc"><span class="tag">Insurance</span><h3>The check is with the homeowner</h3><p>The insurer paid out, but the check hasn't been endorsed or sent to you yet.</p><q>"Did the insurance check come through yet? Happy to help if you need anything from us."</q></div>
+      <div class="iv-sc"><span class="tag">Depreciation</span><h3>Recoverable depreciation</h3><p>The final payment waits on paperwork the homeowner has to send to their insurer.</p><q>"Just a reminder to send the completion paperwork so the insurer can release the final payment."</q></div>
+      <div class="iv-sc"><span class="tag">Deductible</span><h3>The deductible conversation</h3><p>The awkward one your team puts off. The agent asks, kindly and on schedule.</p><q>"Your deductible balance of $1,000 is the last piece. Here's a link whenever you're ready."</q></div>
+      <div class="iv-sc"><span class="tag">Final payment</span><h3>After the punch list</h3><p>The job is done, the crew has moved on, and the last payment quietly slips.</p><q>"Everything on the punch list is wrapped up. Here's your final invoice, thanks again for choosing us."</q></div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- COMPARISON -->
+<section id="compare" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">"My invoicing app already sends reminders"</span>
+      <h2>A reminder email isn't a follow-up.</h2>
+      <p class="lead">Built-in reminders send the same email and hope. Homeowners ignore them. The agent works the invoice the way your best office manager would.</p>
+    </div>
+    <div class="iv-vs" role="table" aria-label="Built-in reminders compared with the Adaptify agent">
+      <div class="iv-vs-row" role="row"><div role="columnheader"></div><div role="columnheader">Typical built-in reminders</div><div role="columnheader">Adaptify agent</div></div>
+      <div class="iv-vs-row" role="row"><div role="cell">Reaches them by text</div><div role="cell" class="iv-no">Email only</div><div role="cell" class="iv-yes">Text and email</div></div>
+      <div class="iv-vs-row" role="row"><div role="cell">Mentions the actual job</div><div role="cell" class="iv-no">Generic template</div><div role="cell" class="iv-yes">Personal, in your voice</div></div>
+      <div class="iv-vs-row" role="row"><div role="cell">Answers their replies</div><div role="cell" class="iv-no">No</div><div role="cell" class="iv-yes">Yes</div></div>
+      <div class="iv-vs-row" role="row"><div role="cell">Remembers "I'll pay Friday"</div><div role="cell" class="iv-no">No</div><div role="cell" class="iv-yes">Follows up on Friday</div></div>
+      <div class="iv-vs-row" role="row"><div role="cell">Handles insurance and deductibles</div><div role="cell" class="iv-no">No</div><div role="cell" class="iv-yes">Yes</div></div>
+      <div class="iv-vs-row" role="row"><div role="cell">Flags disputes to you</div><div role="cell" class="iv-no">No</div><div role="cell" class="iv-yes">Instantly</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
 <section id="how">
   <div class="wrap">
     <div class="center">
-      <span class="eyebrow">How it works</span>
-      <h2>Set it up once. It works every open invoice from then on.</h2>
-      <p class="lead">No new software for your team to learn. The agent connects to the tools you already invoice from and does the chasing in the background.</p>
+      <span class="eyebrow">How it follows up</span>
+      <h2>Friendly first. Firmer when it has to be. Never rude.</h2>
+      <p class="lead">You set the timing and tone. Here's a typical sequence, and it stops the moment the invoice is paid.</p>
     </div>
-    <div class="steps steps4">
-      <div class="step"><h3>Connect your invoicing</h3><p>We hook the agent up to where your invoices already live, so it sees what's open, what's due and what's been paid.</p></div>
-      <div class="step"><h3>Set the tone and timing</h3><p>You pick how friendly, how often and when it gets firmer. You approve the message style before anything goes out.</p></div>
-      <div class="step"><h3>The agent follows up</h3><p>It sends reminders by text and email with a pay link, answers simple replies, and logs every promise to pay.</p></div>
-      <div class="step"><h3>You get paid, and a summary</h3><p>Follow-ups stop the moment an invoice is paid. You get a weekly recap of what came in and what still needs you.</p></div>
+    <div class="iv-tl">
+      <div class="iv-tn"><div class="dot">1</div><div><b>Day 1</b><span class="tone">Friendly</span><div class="bub">"Hope the new roof is treating you well! Here's your invoice and a quick pay link."</div></div></div>
+      <div class="iv-tn"><div class="dot">7</div><div><b>Day 7</b><span class="tone">Check-in</span><div class="bub">"Just checking in on the invoice. Any questions I can answer for you?"</div></div></div>
+      <div class="iv-tn"><div class="dot">14</div><div><b>Day 14</b><span class="tone">Firmer</span><div class="bub">"Your balance is now two weeks past due. Can you let me know when to expect payment?"</div></div></div>
+      <div class="iv-tn"><div class="dot">21</div><div><b>Day 21</b><span class="tone">Handed to you</span><div class="bub">You get a summary and the full thread, so you can make the call personally.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROVAL MODE -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="ownbox">
+      <span class="eyebrow" style="color:#37e6f4">Approval mode</span>
+      <h2>Nothing goes to your customers without your OK. Until you say so.</h2>
+      <p>For the first weeks, every message waits for your approval, one tap on your phone. Once you trust how it sounds, switch it to automatic. Most of your customers are also your referrals and reviews, so we built it to protect that.</p>
+      <div class="owncards">
+        <div class="owncard"><b>Approve with one tap</b><span>Every draft lands on your phone first. Approve, edit or skip it.</span></div>
+        <div class="owncard"><b>Humans handle disputes</b><span>If a customer is unhappy with the work, the agent stops and hands it to you.</span></div>
+        <div class="owncard"><b>Sensible hours only</b><span>Messages go out during normal hours, never late at night or on Sunday morning.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILOT -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="iv-pilot">
+      <div class="iv-seal"><span>Risk<br>free<br>pilot</span></div>
+      <div>
+        <h2>Start with your 5 oldest unpaid invoices.</h2>
+        <p>We set the agent up on the five invoices you've given up on. If it doesn't get at least one of them paid within 30 days, you don't pay a cent.</p>
+      </div>
+      <a class="btn" href="#start">Start the pilot →</a>
     </div>
   </div>
 </section>
@@ -129,30 +226,14 @@
       <h2>Everything it takes to stop chasing payments by hand.</h2>
     </div>
     <div class="featgrid">
-      <div class="fgitem"><div class="fgic">⏱</div><b>Smart reminder schedule</b><span>Before the due date, on the due date, and after, on a cadence you choose.</span></div>
+      <div class="fgitem"><div class="fgic">⏱</div><b>Your follow-up schedule</b><span>Before the due date, on it, and after, on a cadence you choose.</span></div>
       <div class="fgitem"><div class="fgic">✉</div><b>Text and email</b><span>Reaches customers where they actually answer, with one tap to pay.</span></div>
-      <div class="fgitem"><div class="fgic">✎</div><b>Your voice</b><span>Messages reference the job and the customer by name, not a generic template.</span></div>
-      <div class="fgitem"><div class="fgic">↩</div><b>Reply handling</b><span>Resends invoices, answers "how do I pay?", and records "I'll pay Friday".</span></div>
-      <div class="fgitem"><div class="fgic">📈</div><b>Escalation steps</b><span>Gets gradually firmer over time, within limits you set.</span></div>
-      <div class="fgitem"><div class="fgic">⚑</div><b>Dispute handoff</b><span>Complaints or pushback are flagged to you right away, with the full thread.</span></div>
-      <div class="fgitem"><div class="fgic">■</div><b>Auto-stop on payment</b><span>The second an invoice is marked paid, every follow-up stops.</span></div>
-      <div class="fgitem"><div class="fgic">▤</div><b>Log and weekly recap</b><span>Every message saved against the invoice, plus a weekly view of what's paid, promised and stuck.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- GUARDRAILS -->
-<section>
-  <div class="wrap">
-    <div class="ownbox">
-      <span class="eyebrow" style="color:#37e6f4">Built to protect relationships</span>
-      <h2>Firm about the money. Never rude to your customers.</h2>
-      <p>Most of your customers are also your referrals and reviews. The agent is designed to get you paid without burning that goodwill.</p>
-      <div class="owncards">
-        <div class="owncard"><b>You approve the tone</b><span>You sign off on how the agent sounds before a single message is sent.</span></div>
-        <div class="owncard"><b>Humans handle disputes</b><span>If a customer is unhappy with the work, the agent hands it to you instead of pushing for payment.</span></div>
-        <div class="owncard"><b>Sensible hours only</b><span>Messages go out at reasonable times, never late at night or first thing on a Sunday.</span></div>
-      </div>
+      <div class="fgitem"><div class="fgic">✎</div><b>Your voice</b><span>Mentions the job and the customer by name, never a generic template.</span></div>
+      <div class="fgitem"><div class="fgic">↩</div><b>Reply handling</b><span>Resends invoices, answers "how do I pay?", records "I'll pay Friday".</span></div>
+      <div class="fgitem"><div class="fgic">✓</div><b>Approval mode</b><span>Approve every message at first, then switch to automatic when ready.</span></div>
+      <div class="fgitem"><div class="fgic">⚑</div><b>Dispute handoff</b><span>Complaints and pushback are flagged to you right away, with the thread.</span></div>
+      <div class="fgitem"><div class="fgic">■</div><b>Auto-stop on payment</b><span>The second an invoice is paid, every follow-up stops.</span></div>
+      <div class="fgitem"><div class="fgic">▤</div><b>Weekly cash recap</b><span>What got paid, what's promised, and what needs a personal call.</span></div>
     </div>
   </div>
 </section>
@@ -183,14 +264,15 @@
   <div class="wrap">
     <div class="center">
       <span class="eyebrow">Questions</span>
-      <h2>Before you book the demo.</h2>
+      <h2>What contractors ask us first.</h2>
     </div>
     <div class="faq-list">
-      <details open><summary>Will this annoy my customers?</summary><p>It's built not to. You choose the tone and how often it follows up, messages go out at sensible hours, and it stops the moment an invoice is paid. Most customers just needed the reminder.</p></details>
+      <details open><summary>Will this annoy my customers?</summary><p>It's built not to. You approve how it sounds, messages only go out at sensible hours, and it stops the moment an invoice is paid. In approval mode, nothing goes out without your OK at all. Most customers just needed the reminder.</p></details>
+      <details><summary>My invoicing software already sends reminders. Why do I need this?</summary><p>Built-in reminders send the same email on a schedule and stop there. The agent texts from your business, mentions the actual job, answers replies, remembers when someone promises to pay, and follows up on that day. That conversation is what gets invoices paid.</p></details>
+      <details><summary>A lot of my customers are older and don't text much. Does it still work?</summary><p>Yes. It can follow up by email only for those customers, and anyone who prefers a phone call gets flagged to you so your office can call them personally.</p></details>
+      <details><summary>Can it handle insurance jobs?</summary><p>Yes. It can check in on insurance checks, completion paperwork for recoverable depreciation, and deductible balances, with wording written for each situation. Anything complicated goes to you.</p></details>
       <details><summary>What happens if a customer disputes an invoice?</summary><p>The agent doesn't argue. Anything that looks like a complaint or a dispute is handed straight to you with the full conversation, so you can handle it personally.</p></details>
-      <details><summary>Do I need to change how I invoice?</summary><p>No. The agent works on top of the tools you already use to send invoices and take payments. We'll confirm how it connects to your setup on the demo.</p></details>
-      <details><summary>Does it only work for roofers?</summary><p>It's built for contractors and home service businesses: roofing, HVAC, plumbing, remodeling and similar trades. If you send invoices after finishing a job, it's likely a fit.</p></details>
-      <details><summary>Can I see and edit the messages?</summary><p>Yes. You approve the message style before launch and can see every message and reply in the activity log. Changes to tone or timing are easy to make later.</p></details>
+      <details><summary>How does the risk-free pilot work?</summary><p>We set the agent up on your 5 oldest unpaid invoices. If it doesn't get at least one of them paid within 30 days, you don't pay anything for the pilot.</p></details>
       <details><summary>How much does it cost?</summary><p>It depends on your invoice volume and the tools you use. On the demo we'll look at your setup and give you one clear price before you commit to anything.</p></details>
     </div>
   </div>
@@ -200,34 +282,38 @@
 <section class="cta" id="start">
   <div class="wrap cta-grid">
     <div>
-      <span class="eyebrow">Free demo</span>
-      <h2>See the agent follow up on a real invoice.</h2>
-      <p class="lead">Send this over and we'll reply with times for a 20-minute demo. We'll show you the agent working, look at how you invoice today, and tell you straight whether it's a fit.</p>
+      <span class="eyebrow">Get started</span>
+      <h2>See the agent work on your own invoices.</h2>
+      <p class="lead">Pick how you want to start. Either way, you'll see exactly what your customers would receive before anything is set up.</p>
       <ul>
         <li>20 minutes, no obligation</li>
-        <li>See real follow-up messages in your tone</li>
+        <li>Real messages written in your tone</li>
+        <li>Risk-free pilot on your 5 oldest invoices</li>
         <li>Clear price before you commit</li>
-        <li>Works with the tools you already use</li>
       </ul>
+      <p class="iv-alt">Prefer email? Write to <a href="mailto:info@adaptify.tech?subject=Invoice%20follow-up%20agent">info@adaptify.tech</a></p>
     </div>
     <form id="lead-form" action="/api/lead" method="post" novalidate>
       <div id="form-fields">
-        <h3>Book a free demo</h3>
-        <p class="sub">Just two fields. Takes 15 seconds.</p>
+        <h3>How do you want to start?</h3>
+        <div class="iv-choice" role="radiogroup" aria-label="How do you want to start?">
+          <label><input type="radio" name="request" value="Book a free demo" checked><span>Book a free 20-minute demo<small>We'll show you the agent working and look at your setup.</small></span></label>
+          <label><input type="radio" name="request" value="See my overdue invoice rewritten"><span>See the texts for one overdue invoice<small>We'll reply with the exact messages the agent would send.</small></span></label>
+        </div>
         <label for="company">Company name</label>
         <input id="company" name="company" autocomplete="organization" placeholder="Hill Country Roofers" required>
         <label for="email">Your email</label>
         <input id="email" name="email" type="email" autocomplete="email" placeholder="you@yourcompany.com" required>
         <input type="hidden" name="service" value="invoice-follow-up">
         <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <button class="btn" type="submit">Send &amp; get demo times →</button>
+        <button class="btn" type="submit">Send &amp; get started →</button>
         <p class="form-err" id="form-err" role="alert" hidden>Something went wrong. Please try again, or email us at info@adaptify.tech.</p>
         <p class="fine">Free, no obligation. We reply within 1 business day and never share your info.</p>
       </div>
       <div class="thanks" id="thanks" role="status" aria-live="polite">
         <svg class="tick" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28"/><circle class="ring" cx="32" cy="32" r="28"/><path d="M20 33l8 8 16-17"/></svg>
         <h3>Thanks, that's in.</h3>
-        <p>We'll be in touch within one business day with times for your demo.</p>
+        <p>We'll be in touch within one business day.</p>
       </div>
     </form>
   </div>
@@ -245,5 +331,6 @@
 <div class="sticky" id="sticky"><a class="btn" href="#start">Book a free demo →</a><span>Free · 20 minutes · no obligation</span></div>
 
 <script src="../assets/main.js" defer></script>
+<script src="invoice.js" defer></script>
 </body>
 </html>
