@@ -1,0 +1,20 @@
+/* Homepage-only refinements */
+.hero.center-hero.home-hero{padding-bottom:170px}
+.hero.center-hero.home-hero .wrap{max-width:1000px}
+.home-hero h1{text-wrap:balance}
+.home-svc{padding-top:0;padding-bottom:24px}
+.home-svc .svc-grid{grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-104px;position:relative;z-index:2}
+.home-svc .svc-card{padding:26px 24px;border-color:transparent;box-shadow:0 18px 44px rgba(11,31,51,.14);border-radius:18px}
+.home-svc .svc-card h3{font-size:1.1rem;line-height:1.25}
+.home-svc .svc-card:hover{border-color:#FFD3BF;box-shadow:0 26px 60px rgba(11,31,51,.18)}
+.home-svc .svc-card .go{transition:gap .2s,color .2s}
+.home-svc .svc-card:hover .go{gap:10px;color:var(--orange)}
+.svc-card .svc-tag.new{color:#C2440F;background:#FFF1EA;border-radius:999px;padding:4px 10px;align-self:flex-start}
+.home-own{padding-top:48px}
+@media(max-width:1100px){.home-svc .svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+  .hero.center-hero.home-hero{padding-bottom:120px}
+  .home-svc .svc-grid{grid-template-columns:1fr;margin-top:-72px;gap:14px}
+  .home-svc .svc-card{padding:22px}
+  .home-own{padding-top:24px}
+}
