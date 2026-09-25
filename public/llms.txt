@@ -1,26 +1,30 @@
 # Adaptify
 
-> Adaptify LLC builds AI-powered infrastructure for roofing companies: websites, CRMs and an after-hours AI receptionist. Every build is deployed to the client's own Cloudflare account and fully owned by them, never a rented SaaS tool.
+> Adaptify LLC builds AI-powered tools for roofing companies: sales-focused websites, a custom-coded CRM, an after-hours AI receptionist and an AI invoice follow-up agent. Every build is deployed to the client's own Cloudflare account and fully owned by them, never a rented SaaS tool.
 
 ## Services
-- AI Powered Websites: fast, SEO- and AI-search-optimized static sites built only for roofing companies, free hosting for life, delivered in the client's own Cloudflare and GitHub accounts. Live in 7 days or it's free.
-- AI Powered CRM: a custom-coded CRM built from scratch around how a roofing company already works, deployed to the client's own Cloudflare account, delivered in 10 days. One-time build, $1,500 to $4,000 typical range, no subscription.
-- After-Hours AI Receptionist (The After-Hours Booking Line): a custom AI receptionist that answers after-hours calls and books the estimate directly onto the calendar, with escalation routing for urgent jobs. Test it with a free instant callback demo before paying anything. $1,500 one-time setup, plus separate minute packages ($99/mo for 200 min, $199/mo for 500 min, $349/mo for 1,000 min, overage billed per minute).
+- [Roofing websites](https://adaptify.tech/websites/): fast, SEO- and AI-search-optimized static websites built only for roofing companies, with free hosting for life, delivered in the client's own Cloudflare and GitHub accounts. Live in 7 days or it's free. Preview first, pay later.
+- [After-hours AI receptionist](https://adaptify.tech/automations/) ("The After-Hours Booking Line"): a custom AI receptionist that answers after-hours calls, escalates urgent jobs such as active leaks to whoever is on call, and books the estimate directly onto the calendar. Usually live within about a week of the build call. Free 20-minute live demo.
+- [Custom roofing CRM](https://adaptify.tech/crm/): a CRM designed and coded around how a roofing company already sells (offers, storm and referral leads, quote stages), deployed to the client's own Cloudflare account. Ships 15 days after the discovery call, guaranteed to match the agreed workflow.
+- [AI invoice follow-up agent](https://adaptify.tech/invoice-follow-up/): follows up on every unpaid invoice by text and email, in the company's voice, until it is paid, including insurance-check, recoverable-depreciation, deductible and final-payment scenarios. Runs on the client's own cloud account with a live dashboard and an approval mode. For roofers and other contractors.
 
-## Websites offer
-- Launch: $1,200 one-time. Custom 5-page site, local SEO and AI-search setup, free hosting for life, SSL and security. Live in 7 days or it's free. Includes free domain setup, a Google Business Profile audit and a launch-week review-request system. Optional: +$90/month for 5 small edits.
-- Growth: $1,200 setup plus a required $600/month growth plan. Adds 6 SEO blog posts a month, AI search optimization, Google Business Profile optimization, 8 small edits per month (48-hour turnaround) and a monthly performance report.
-- Custom package: for anything outside Launch and Growth (multiple locations, bigger builds, etc). Scoped on request.
-- Preview first, pay later: no payment until the homepage preview is approved. Clients keep their site, domain and content.
+## Pricing
+- Websites, Launch: $1,200 one-time. Custom 5-page site, local SEO and AI-search setup, free hosting for life, SSL and security, free domain setup, a Google Business Profile audit and a launch-week review-request system. Optional $90/month for 5 small edits.
+- Websites, Growth: $1,200 setup plus a required $600/month plan. Adds 6 SEO blog posts a month, AI search optimization, Google Business Profile optimization, 8 small edits a month (48-hour turnaround) and a monthly performance report.
+- Websites, custom package: multiple locations, bigger builds and anything else, scoped on request.
+- AI receptionist: $1,200 one-time setup including 250 free call minutes, then a monthly plan from $299 (500 minutes; +$100 per extra 300 minutes, up to 2,000 minutes). Unused minutes roll over. Cancel anytime.
+- Custom CRM: typically $1,500 to $4,000, one-time, no monthly fee.
+- Invoice follow-up agent: $1,200 one-time setup plus $199/month maintenance, cancel anytime. Cloud hosting and texting are billed to the client's account at cost.
 
 ## Ownership philosophy
 Every Adaptify service is built once and deployed into infrastructure the client owns outright (their own Cloudflare account), not a tool they rent from Adaptify. The goal of every service is the same: bring the roofing company more customers and make running it easier.
 
 ## Pages
-- [Home](https://adaptify.tech/): short overview of all three services, linking to each
-- [AI Powered Websites](https://adaptify.tech/websites/): websites offer, pricing, portfolio, FAQ and free preview request form
-- [AI Powered CRM](https://adaptify.tech/crm/): CRM build details, pricing, integrations and discovery call form
-- [After-Hours AI Receptionist](https://adaptify.tech/automations/): receptionist offer, instant callback demo, pricing and FAQ
+- [Home](https://adaptify.tech/): overview of all four services, how it works, FAQ
+- [Roofing websites](https://adaptify.tech/websites/): offer, pricing, portfolio, FAQ and free preview request form
+- [After-hours AI receptionist](https://adaptify.tech/automations/): offer, call dashboard, pricing, FAQ and live demo request
+- [Custom roofing CRM](https://adaptify.tech/crm/): features, integrations, pricing and discovery call form
+- [AI invoice follow-up agent](https://adaptify.tech/invoice-follow-up/): scenarios, dashboard, follow-up sequence, calculator, pricing and FAQ
 - [Contact](https://adaptify.tech/contact/): general contact form
 
 ## Contact
