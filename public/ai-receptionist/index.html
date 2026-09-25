@@ -27,10 +27,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://adaptify.tech/#org","name":"Adaptify LLC","alternateName":"Adaptify","url":"https://adaptify.tech/","logo":{"@type":"ImageObject","url":"https://adaptify.tech/assets/adaptify-logo-512.png","width":512,"height":512},"image":"https://adaptify.tech/assets/og.png","email":"info@adaptify.tech","description":"Adaptify builds an after-hours AI receptionist, an AI invoice follow-up agent, custom CRMs and websites for roofing companies, deployed to accounts the client owns.","knowsAbout":["Roofing websites","Local SEO for roofers","AI search optimization","Roofing CRM","AI receptionist","Invoice follow-up automation"],"sameAs":["https://x.com/adaptify_tech"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"info@adaptify.tech","areaServed":"US","availableLanguage":"English"}},{"@type":"Service","@id":"https://adaptify.tech/ai-receptionist/#service","name":"Adaptify After-Hours AI Receptionist","url":"https://adaptify.tech/ai-receptionist/","provider":{"@id":"https://adaptify.tech/#org"},"description":"A custom AI receptionist that answers after-hours calls for a roofing company and books the estimate directly onto the calendar, with escalation routing for urgent jobs.","areaServed":"US","serviceType":"AI phone receptionist for roofing companies","offers":{"@type":"Offer","name":"After-Hours Booking Line setup","description":"One-time build: custom greeting and script, calendar booking, escalation routing for urgent jobs, and a call transcripts and recordings dashboard. Includes 250 free call minutes. Monthly maintenance from $299 with 500 call minutes; unused minutes roll over.","price":"1200","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it sound robotic or say the wrong thing?","acceptedAnswer":{"@type":"Answer","text":"See it live before you pay anything. On a free demo we call it in front of you so you can hear exactly how it sounds and how it handles a real conversation."}},{"@type":"Question","name":"Does this replace my staff?","acceptedAnswer":{"@type":"Answer","text":"No. It only picks up when nobody else can, nights, weekends, and while your team is on a roof or off the clock. During business hours, calls go wherever they already go."}},{"@type":"Question","name":"What happens with an urgent call, like an active leak?","acceptedAnswer":{"@type":"Answer","text":"Urgent jobs get escalated and routed to whoever is on call, not left to wait until the next business day like a normal voicemail would."}},{"@type":"Question","name":"What happens when I run out of minutes?","acceptedAnswer":{"@type":"Answer","text":"You will get a heads-up before you run out. Setup includes 250 free minutes, your plan adds 500 a month, and unused minutes roll over. Need more? Switch to a bigger plan any time, so a busy month never just stops working."}},{"@type":"Question","name":"Do I need a new phone number?","acceptedAnswer":{"@type":"Answer","text":"No. It's wired to pick up your existing business line outside your hours, or however you want calls routed to it. Nothing changes for your customers."}}]},{"@type":"BreadcrumbList","@id":"https://adaptify.tech/ai-receptionist/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://adaptify.tech/"},{"@type":"ListItem","position":2,"name":"After-Hours AI Receptionist","item":"https://adaptify.tech/ai-receptionist/"}]}]}
 </script>
-<link rel="stylesheet" href="/assets/site.css?v=4">
+<link rel="stylesheet" href="/assets/site.css?v=6">
 <link rel="stylesheet" href="/assets/receptionist.css?v=4">
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 
 <header>
   <div class="wrap nav">
@@ -43,7 +44,7 @@
       <a class="m-only" href="/contact/">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn" href="#demo">Request a live demo →</a>
+      <a class="btn" href="#demo">Request a live demo<span class="arr" aria-hidden="true"> →</span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
   </div>
@@ -59,7 +60,7 @@
       <h1>Every after-hours call gets answered. And <span>booked.</span></h1>
       <p class="lead">A custom AI receptionist for roofers. It picks up nights, weekends and storm surges, flags active leaks to whoever's on call, and books the estimate straight onto your calendar. Your team goes home. Your phone keeps booking.</p>
       <div class="hero-cta">
-        <a class="btn" href="#demo">Request a live demo →</a>
+        <a class="btn" href="#demo">Request a live demo<span class="arr" aria-hidden="true"> →</span></a>
         <a class="btn btn-ghost" href="#pricing">See pricing</a>
       </div>
       <ul class="hero-points">
@@ -82,7 +83,7 @@
         <input type="hidden" name="service" value="receptionist">
         <input type="hidden" name="request" value="Live demo">
         <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <button class="btn" type="submit" style="width:100%;margin-top:6px">Request my live demo →</button>
+        <button class="btn" type="submit" style="width:100%;margin-top:6px">Request my live demo<span class="arr" aria-hidden="true"> →</span></button>
         <p class="form-err" id="demo-err" role="alert" hidden>Something went wrong. Please try again, or email us at info@adaptify.tech.</p>
         <p style="color:#8FA3B8;font-size:.78rem;margin-top:10px;text-align:center">Free, no obligation. We reply within 1 business day.</p>
       </form>
@@ -104,9 +105,9 @@
       <p class="lead">A leak at 9pm or storm damage on a Sunday doesn't wait for business hours. The homeowner calls, hits voicemail, and calls the next roofer on Google instead. That lead is gone before your team is even back at a desk.</p>
     </div>
     <div class="cards3">
-      <div class="card"><div class="ico">📵</div><h3>Voicemail loses the lead</h3><p>Nobody leaves a message and waits for a callback tomorrow when three other roofers are one search away.</p></div>
-      <div class="card"><div class="ico">⛈</div><h3>The worst calls happen after hours</h3><p>Active leaks and storm damage, the jobs with the most urgency and the best margin, are exactly the calls most likely to hit voicemail.</p></div>
-      <div class="card"><div class="ico">😓</div><h3>Your team shouldn't be on call 24/7</h3><p>Someone has to go home. The choice shouldn't be between missing the lead and never having a life outside the business.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="12" r="3.5"/><circle cx="18" cy="12" r="3.5"/><path d="M6 15.5h12"/></svg></div><h3>Voicemail loses the lead</h3><p>Nobody leaves a message and waits for a callback tomorrow when three other roofers are one search away.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16a4 4 0 1 1 .6-7.95A5.5 5.5 0 0 1 18 9a3.5 3.5 0 0 1-.5 7"/><path d="m12.5 12-2 4h3l-2 4"/></svg></div><h3>The worst calls happen after hours</h3><p>Active leaks and storm damage, the jobs with the most urgency and the best margin, are exactly the calls most likely to hit voicemail.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></div><h3>Your team shouldn't be on call 24/7</h3><p>Someone has to go home. The choice shouldn't be between missing the lead and never having a life outside the business.</p></div>
     </div>
   </div>
 </section>
@@ -173,7 +174,7 @@
       <div class="feat"><div class="ck">✓</div><div><h3>Call transcripts and recordings dashboard</h3><p>Included free. Every call, logged and recorded, so you can hear exactly what was said and never wonder what happened after hours.</p></div></div>
       <div class="feat"><div class="ck">✓</div><div><h3>Only picks up when your team can't</h3><p>Runs on your existing business line, after hours or however you want it routed. During the day, calls go wherever they already go.</p></div></div>
     </div>
-    <div class="center" style="margin-top:34px"><a class="btn" href="#demo">Hear it handle a call →</a></div>
+    <div class="center" style="margin-top:34px"><a class="btn" href="#demo">Hear it handle a call<span class="arr" aria-hidden="true"> →</span></a></div>
   </div>
 </section>
 
@@ -225,7 +226,7 @@
       </div>
     </div>
     <p class="rx-cap">Example dashboard with sample data. Click a call to see its transcript.</p>
-    <div class="center" style="margin-top:22px"><a class="btn" href="#demo">See the dashboard on a demo →</a></div>
+    <div class="center" style="margin-top:22px"><a class="btn" href="#demo">See the dashboard on a demo<span class="arr" aria-hidden="true"> →</span></a></div>
   </div>
 </section>
 
@@ -306,7 +307,7 @@
           <li>Wired to your existing business line</li>
           <li>Your call dashboard, set up and connected</li>
         </ul>
-        <a class="btn alt" href="#demo">Request a live demo →</a>
+        <a class="btn alt" href="#demo">Request a live demo<span class="arr" aria-hidden="true"> →</span></a>
       </div>
       <div class="plan pop">
         <span class="badge">Includes your minutes</span>
@@ -332,7 +333,7 @@
           <li>Script updates and fixes, handled for you</li>
           <li>Cancel anytime</li>
         </ul>
-        <a class="btn" href="#demo">Request a live demo →</a>
+        <a class="btn" href="#demo">Request a live demo<span class="arr" aria-hidden="true"> →</span></a>
       </div>
     </div>
     <p class="guarantee">Unused minutes roll over, and you can switch to more minutes any time. <b>Limited onboarding slots each week,</b> since every build is custom and personally set up.</p>
@@ -383,7 +384,7 @@
         <input type="hidden" name="service" value="receptionist">
         <input type="hidden" name="request" value="Live demo">
         <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <button class="btn" type="submit">Request my live demo →</button>
+        <button class="btn" type="submit">Request my live demo<span class="arr" aria-hidden="true"> →</span></button>
         <p class="form-err" id="form-err" role="alert" hidden>Something went wrong. Please try again, or email us at info@adaptify.tech.</p>
         <p class="fine">We reply within 1 business day with times for your demo.</p>
       </div>
@@ -398,16 +399,23 @@
 
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span>
-    <span class="footlinks"><a href="/ai-receptionist/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/roofing-crm/">Custom CRM</a><a href="/roofing-websites/">Websites</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"></path></svg></a></span></span>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/" aria-label="Adaptify home"><img src="/assets/adaptify-logo-dark-bg.svg?v=2" alt="Adaptify" width="123" height="34" loading="lazy"></a>
+      <p>AI tools for roofing companies: an after-hours receptionist, invoice follow-up, a custom CRM and websites. Built once, deployed to your own account.</p>
+      <a class="foot-mail" href="mailto:info@adaptify.tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg>info@adaptify.tech</a>
+    </div>
+    <nav class="foot-col" aria-label="Services"><b>Services</b><a href="/ai-receptionist/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/roofing-crm/">Custom CRM</a><a href="/roofing-websites/">Websites</a></nav>
+    <nav class="foot-col" aria-label="Company"><b>Company</b><a href="/contact/">Contact</a><a href="/privacy/">Privacy policy</a><a href="https://x.com/adaptify_tech" target="_blank" rel="noopener noreferrer">X (Twitter)</a></nav>
+    <div class="foot-cta"><b>Not sure where to start?</b><p>Tell us what's costing you jobs. We reply within 1 business day.</p><a class="btn" href="/contact/">Get in touch<span class="arr" aria-hidden="true"> →</span></a></div>
   </div>
+  <div class="wrap foot-bottom"><span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg></a></span></div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="#demo">Request a live demo →</a><span>Free · 20 minutes · no obligation</span></div>
+<div class="sticky" id="sticky"><a class="btn" href="#demo">Request a live demo<span class="arr" aria-hidden="true"> →</span></a><span>Free · 20 minutes · no obligation</span></div>
 
-<script src="/assets/main.js?v=2" defer></script>
+<script src="/assets/main.js?v=3" defer></script>
 <script src="/assets/automations.js?v=1" defer></script>
 </body>
 </html>

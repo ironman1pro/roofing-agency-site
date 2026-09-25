@@ -27,7 +27,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://adaptify.tech/#org","name":"Adaptify LLC","alternateName":"Adaptify","url":"https://adaptify.tech/","logo":{"@type":"ImageObject","url":"https://adaptify.tech/assets/adaptify-logo-512.png","width":512,"height":512},"image":"https://adaptify.tech/assets/og.png","email":"info@adaptify.tech","description":"Adaptify builds an after-hours AI receptionist, an AI invoice follow-up agent, custom CRMs and websites for roofing companies, deployed to accounts the client owns.","knowsAbout":["Roofing websites","Local SEO for roofers","AI search optimization","Roofing CRM","AI receptionist","Invoice follow-up automation"],"sameAs":["https://x.com/adaptify_tech"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"info@adaptify.tech","areaServed":"US","availableLanguage":"English"}},{"@type":"WebSite","@id":"https://adaptify.tech/#site","url":"https://adaptify.tech/","name":"Adaptify","publisher":{"@id":"https://adaptify.tech/#org"},"inLanguage":"en-US"},{"@type":"FAQPage","@id":"https://adaptify.tech/#faq","mainEntity":[{"@type":"Question","name":"What does Adaptify do?","acceptedAnswer":{"@type":"Answer","text":"Adaptify builds four things for roofing companies: an after-hours AI receptionist that books estimates, an AI agent that follows up on unpaid invoices, a custom-coded CRM and sales-focused websites. Each one is built once and deployed to an account in your name."}},{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"The after-hours AI receptionist is a $1,200 one-time setup (including 250 free call minutes) plus a monthly plan from $299 that includes 500 minutes. The invoice follow-up agent is a $1,200 setup plus $199/month maintenance. Custom CRM builds typically land between $1,500 and $4,000, paid once, and roofing websites start at $1,200 one-time with free hosting for life."}},{"@type":"Question","name":"Who owns what you build?","acceptedAnswer":{"@type":"Answer","text":"You do. Every build is deployed to your own Cloudflare account, under your login. You keep your site, your data and your code, and there's nothing we can switch off."}},{"@type":"Question","name":"How fast can it be live?","acceptedAnswer":{"@type":"Answer","text":"The AI receptionist is usually live within about a week of the build call, a custom CRM ships 15 days after the discovery call, and websites go live in 7 days once we have your details, or the build is free."}},{"@type":"Question","name":"Will my new website rank on Google and in AI search?","acceptedAnswer":{"@type":"Answer","text":"Every website ships with local SEO, schema markup and service-area pages, and we test it with Google's own tools before launch. The Growth plan adds 6 SEO blog posts a month, Google Business Profile optimization and ongoing AI search optimization for tools like ChatGPT and Perplexity."}},{"@type":"Question","name":"Do you only work with roofing companies?","acceptedAnswer":{"@type":"Answer","text":"Our AI receptionist, CRM and websites are designed only for roofing companies, around how roofers get leads, book estimates and handle storm work. The invoice follow-up agent also works for other contractors."}}]},{"@type":"ItemList","@id":"https://adaptify.tech/#services","name":"Adaptify services for roofing companies","itemListElement":[{"@type":"ListItem","position":1,"name":"After-hours AI receptionist for roofers","url":"https://adaptify.tech/ai-receptionist/"},{"@type":"ListItem","position":2,"name":"Roofing websites","url":"https://adaptify.tech/roofing-websites/"},{"@type":"ListItem","position":3,"name":"Custom roofing CRM","url":"https://adaptify.tech/roofing-crm/"},{"@type":"ListItem","position":4,"name":"AI invoice follow-up agent","url":"https://adaptify.tech/invoice-follow-up/"}]}]}
 </script>
-<link rel="stylesheet" href="/assets/site.css?v=4">
+<link rel="stylesheet" href="/assets/site.css?v=6">
 <style>
 /* Homepage-only refinements (inlined: saves a request) */
 /* Homepage-only refinements */
@@ -56,6 +56,7 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 
 <header>
   <div class="wrap nav">
@@ -68,7 +69,7 @@
       <a class="m-only" href="/contact/">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn" href="/contact/">Get in touch →</a>
+      <a class="btn" href="/contact/">Get in touch<span class="arr" aria-hidden="true"> →</span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
   </div>
@@ -83,7 +84,7 @@
     <h1>Close <span>more roofing jobs</span> with AI tools built around your workflows.</h1>
     <p class="lead home-lead">Adaptify builds AI tools that help roofing companies win and close more jobs: an after-hours AI receptionist that books estimates, an agent that chases unpaid invoices, a custom CRM and a website that converts. Every build is deployed to your own account, so you own it outright.</p>
     <div class="hero-cta" style="margin-top:28px">
-      <a class="btn" href="/contact/">Get in touch →</a>
+      <a class="btn" href="/contact/">Get in touch<span class="arr" aria-hidden="true"> →</span></a>
       <a class="btn btn-ghost" href="#services">See what we build</a>
     </div>
     <ul class="hero-points">
@@ -196,7 +197,7 @@
           <div class="who"><div class="avatar">A</div><div><b>Ali A.</b></div></div>
         </div>
       </div>
-      <div class="mid-cta" style="margin-top:34px"><a class="btn" href="/contact/">Get in touch →</a><span>Free, no obligation. We reply within 1 business day.</span></div>
+      <div class="mid-cta" style="margin-top:34px"><a class="btn" href="/contact/">Get in touch<span class="arr" aria-hidden="true"> →</span></a><span>Free, no obligation. We reply within 1 business day.</span></div>
     </div>
   </div>
 </section>
@@ -225,19 +226,26 @@
     <span class="eyebrow">Not sure where to start?</span>
     <h2>Tell us what's costing you jobs. We'll show you what to build first.</h2>
     <p class="lead">Free, no obligation. We reply within 1 business day.</p>
-    <div class="hero-cta"><a class="btn" href="/contact/">Get in touch →</a><a class="btn btn-ghost" href="#services">Compare services</a></div>
+    <div class="hero-cta"><a class="btn" href="/contact/">Get in touch<span class="arr" aria-hidden="true"> →</span></a><a class="btn btn-ghost" href="#services">Compare services</a></div>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span>
-    <span class="footlinks"><a href="/ai-receptionist/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/roofing-crm/">Custom CRM</a><a href="/roofing-websites/">Websites</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"></path></svg></a></span></span>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/" aria-label="Adaptify home"><img src="/assets/adaptify-logo-dark-bg.svg?v=2" alt="Adaptify" width="123" height="34" loading="lazy"></a>
+      <p>AI tools for roofing companies: an after-hours receptionist, invoice follow-up, a custom CRM and websites. Built once, deployed to your own account.</p>
+      <a class="foot-mail" href="mailto:info@adaptify.tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg>info@adaptify.tech</a>
+    </div>
+    <nav class="foot-col" aria-label="Services"><b>Services</b><a href="/ai-receptionist/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/roofing-crm/">Custom CRM</a><a href="/roofing-websites/">Websites</a></nav>
+    <nav class="foot-col" aria-label="Company"><b>Company</b><a href="/contact/">Contact</a><a href="/privacy/">Privacy policy</a><a href="https://x.com/adaptify_tech" target="_blank" rel="noopener noreferrer">X (Twitter)</a></nav>
+    <div class="foot-cta"><b>Not sure where to start?</b><p>Tell us what's costing you jobs. We reply within 1 business day.</p><a class="btn" href="/contact/">Get in touch<span class="arr" aria-hidden="true"> →</span></a></div>
   </div>
+  <div class="wrap foot-bottom"><span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg></a></span></div>
 </footer>
 
-<script src="/assets/main.js?v=2" defer></script>
+<script src="/assets/main.js?v=3" defer></script>
 </body>
 </html>
