@@ -154,20 +154,26 @@ section{padding:96px 0}
 .gi p{color:var(--muted);margin-top:6px;font-size:.96rem}
 .gi.main p{color:#B7BCCB;font-size:1.02rem}
 
-/* custom design examples */
-.tpls{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:48px}
-.tpl{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 20px 40px -30px rgba(20,22,31,.4)}
-.tpl .v{height:170px;padding:12px;display:flex;flex-direction:column;gap:7px}
-.tpl .v i{display:block;border-radius:5px;background:currentColor;opacity:.9}
-.tpl .v .h{height:10px;width:80%}.tpl .v .h2{height:10px;width:55%}.tpl .v .b{height:16px;width:44%;border-radius:6px;margin-top:4px}
-.tpl .v .g{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:auto}.tpl .v .g i{height:34px;opacity:.18}
-.tpl p{padding:12px 14px;font-weight:700;font-size:.92rem;border-top:1px solid var(--line)}
-.tpl p span{display:block;font-weight:600;color:var(--muted);font-size:.8rem}
-.t1 .v{background:linear-gradient(160deg,#1F4D3A,#15352A);color:#EAF7EF}.t1 .v .b{background:#FFC857;opacity:1}
-.t2 .v{background:#F6F1FF;color:#3B2A7A}.t2 .v .b{background:#6D4AE0;opacity:1}
-.t3 .v{background:#FFF3E6;color:#7A3B12}.t3 .v .b{background:#D9531E;opacity:1}
-.t4 .v{background:#111;color:#F4F4F4}.t4 .v .b{background:#F4F4F4;opacity:1}
-.t5 .v{background:linear-gradient(160deg,#E8F1FF,#fff);color:#153A7A}.t5 .v .b{background:#2D6BFF;opacity:1}
+/* custom design showcase */
+.shows{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:52px}
+.show{display:block;color:inherit;text-decoration:none;border-radius:18px;background:#fff;border:1px solid var(--line);padding:8px;box-shadow:0 30px 60px -40px rgba(20,22,31,.45);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.show:hover{transform:translateY(-6px);box-shadow:0 40px 70px -40px rgba(20,22,31,.55)}
+.show:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.show .fr{border-radius:12px;overflow:hidden;background:var(--cream-2);position:relative}
+.show .fr b{display:flex;gap:5px;align-items:center;height:22px;padding:0 10px;background:#F1EEE9;border-bottom:1px solid var(--line)}
+.show .fr b i{width:7px;height:7px;border-radius:50%;background:#D8D2C8}
+.show img{display:block;width:100%;height:auto;aspect-ratio:16/10;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.show:hover img{transform:scale(1.03)}
+.show .zm{position:absolute;right:10px;bottom:10px;background:rgba(20,22,31,.78);color:#fff;font-size:.74rem;font-weight:700;padding:6px 10px;border-radius:99px;opacity:0;transition:opacity .25s}
+.show:hover .zm{opacity:1}
+.show p{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:14px 8px 6px;font-weight:700;font-size:.98rem}
+.show p span{color:var(--muted);font-weight:600;font-size:.84rem;text-align:right}
+.shows-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:26px}
+.lb{border:0;padding:0;background:transparent;max-width:min(1200px,94vw);width:100%;margin:auto}
+.lb::backdrop{background:rgba(12,13,18,.92)}
+.lb img{display:block;width:100%;height:auto;border-radius:12px;box-shadow:0 40px 90px -30px rgba(0,0,0,.7)}
+.lb p{color:#fff;text-align:center;margin-top:14px;font-weight:600}
+.lb button{position:fixed;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer}
 
 /* compare */
 .cmp-wrap{margin-top:48px;overflow-x:auto;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow)}
@@ -259,7 +265,7 @@ footer .legal{flex-basis:100%;font-size:.8rem;color:#8A90A2;margin-top:8px}
   .probs,.need{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr}
   .get-grid{grid-template-columns:1fr 1fr}.gi.main{grid-column:span 2}
-  .tpls{grid-template-columns:repeat(3,1fr)}
+  .shows{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:600px){
   section{padding:64px 0}
@@ -267,7 +273,11 @@ footer .legal{flex-basis:100%;font-size:.8rem;color:#8A90A2;margin-top:8px}
   .hero{padding:40px 0 72px}
   .hero-cta .btn{width:100%}
   .probs,.need,.get-grid{grid-template-columns:1fr}.gi.main{grid-column:auto;grid-template-columns:1fr}
-  .tpls{grid-template-columns:1fr 1fr}
+  .shows{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;align-items:flex-start;gap:14px;margin:40px -16px 0;padding:4px 16px 18px;scrollbar-width:none}
+  .shows::-webkit-scrollbar{display:none}
+  .show{flex:0 0 86%;scroll-snap-align:center}
+  .show:hover{transform:none}
+  .show .zm{display:none}
   .scores{grid-template-columns:repeat(2,1fr);gap:18px}
   .proof-card,.pcard{padding:26px 20px}
   .bar .brand small{display:none}
@@ -434,15 +444,18 @@ footer .legal{flex-basis:100%;font-size:.8rem;color:#8A90A2;margin-top:8px}
     <div class="center">
       <span class="kick">Custom, not cookie-cutter</span>
       <h2>Designed around your business.</h2>
-      <p class="sub">Every site is designed from your answers: your business, your customers, your words, your colors and your photos. Here are a few directions it can take.</p>
+      <p class="sub">Every site is designed from your answers: your business, your customers, your words, your colors and your photos. Here are a few examples of the look you can get.</p>
     </div>
-    <div class="tpls" aria-label="Example design directions">
-      <div class="tpl t1"><div class="v" aria-hidden="true"><i class="h"></i><i class="h2"></i><i class="b"></i><div class="g"><i></i><i></i></div></div><p>Local service<span>Cleaners, groomers, trades</span></p></div>
-      <div class="tpl t2"><div class="v" aria-hidden="true"><i class="h"></i><i class="h2"></i><i class="b"></i><div class="g"><i></i><i></i></div></div><p>Coach &amp; consultant<span>Book a call, testimonials</span></p></div>
-      <div class="tpl t3"><div class="v" aria-hidden="true"><i class="h"></i><i class="h2"></i><i class="b"></i><div class="g"><i></i><i></i></div></div><p>Shop &amp; restaurant<span>Menu, hours, directions</span></p></div>
-      <div class="tpl t4"><div class="v" aria-hidden="true"><i class="h"></i><i class="h2"></i><i class="b"></i><div class="g"><i></i><i></i></div></div><p>Portfolio &amp; creator<span>Photographers, artists</span></p></div>
-      <div class="tpl t5"><div class="v" aria-hidden="true"><i class="h"></i><i class="h2"></i><i class="b"></i><div class="g"><i></i><i></i></div></div><p>Product launch<span>One page that sells</span></p></div>
+    <div class="shows" aria-label="Example designs">
+      <a class="show" href="/own-your-website/showcase/pet-1600.webp" data-cap="Pet grooming: Warm &amp; playful"><div class="fr"><b aria-hidden="true"><i></i><i></i><i></i></b><img src="/own-your-website/showcase/pet-800.webp" srcset="/own-your-website/showcase/pet-800.webp 800w, /own-your-website/showcase/pet-1600.webp 1600w" sizes="(max-width:600px) 86vw, (max-width:1000px) 46vw, 370px" width="800" height="500" loading="lazy" decoding="async" alt="Example homepage design for a pet grooming"><span class="zm" aria-hidden="true">View larger</span></div><p>Pet grooming<span>Warm &amp; playful</span></p></a>
+      <a class="show" href="/own-your-website/showcase/restaurant-1600.webp" data-cap="Restaurant: Dark &amp; luxurious"><div class="fr"><b aria-hidden="true"><i></i><i></i><i></i></b><img src="/own-your-website/showcase/restaurant-800.webp" srcset="/own-your-website/showcase/restaurant-800.webp 800w, /own-your-website/showcase/restaurant-1600.webp 1600w" sizes="(max-width:600px) 86vw, (max-width:1000px) 46vw, 370px" width="800" height="500" loading="lazy" decoding="async" alt="Example homepage design for a restaurant"><span class="zm" aria-hidden="true">View larger</span></div><p>Restaurant<span>Dark &amp; luxurious</span></p></a>
+      <a class="show" href="/own-your-website/showcase/spa-1600.webp" data-cap="Day spa: Calm &amp; elegant"><div class="fr"><b aria-hidden="true"><i></i><i></i><i></i></b><img src="/own-your-website/showcase/spa-800.webp" srcset="/own-your-website/showcase/spa-800.webp 800w, /own-your-website/showcase/spa-1600.webp 1600w" sizes="(max-width:600px) 86vw, (max-width:1000px) 46vw, 370px" width="800" height="500" loading="lazy" decoding="async" alt="Example homepage design for a day spa"><span class="zm" aria-hidden="true">View larger</span></div><p>Day spa<span>Calm &amp; elegant</span></p></a>
+      <a class="show" href="/own-your-website/showcase/fitness-1600.webp" data-cap="Personal trainer: Bold &amp; energetic"><div class="fr"><b aria-hidden="true"><i></i><i></i><i></i></b><img src="/own-your-website/showcase/fitness-800.webp" srcset="/own-your-website/showcase/fitness-800.webp 800w, /own-your-website/showcase/fitness-1600.webp 1600w" sizes="(max-width:600px) 86vw, (max-width:1000px) 46vw, 370px" width="800" height="500" loading="lazy" decoding="async" alt="Example homepage design for a personal trainer"><span class="zm" aria-hidden="true">View larger</span></div><p>Personal trainer<span>Bold &amp; energetic</span></p></a>
+      <a class="show" href="/own-your-website/showcase/coach-1600.webp" data-cap="Consultant: Editorial &amp; sharp"><div class="fr"><b aria-hidden="true"><i></i><i></i><i></i></b><img src="/own-your-website/showcase/coach-800.webp" srcset="/own-your-website/showcase/coach-800.webp 800w, /own-your-website/showcase/coach-1600.webp 1600w" sizes="(max-width:600px) 86vw, (max-width:1000px) 46vw, 370px" width="800" height="500" loading="lazy" decoding="async" alt="Example homepage design for a consultant"><span class="zm" aria-hidden="true">View larger</span></div><p>Consultant<span>Editorial &amp; sharp</span></p></a>
+      <a class="show" href="/own-your-website/showcase/roofing-1600.webp" data-cap="Roofing company: Trusted &amp; local"><div class="fr"><b aria-hidden="true"><i></i><i></i><i></i></b><img src="/own-your-website/showcase/roofing-800.webp" srcset="/own-your-website/showcase/roofing-800.webp 800w, /own-your-website/showcase/roofing-1600.webp 1600w" sizes="(max-width:600px) 86vw, (max-width:1000px) 46vw, 370px" width="800" height="500" loading="lazy" decoding="async" alt="Example homepage design for a roofing company"><span class="zm" aria-hidden="true">View larger</span></div><p>Roofing company<span>Trusted &amp; local</span></p></a>
     </div>
+    <p class="cmp-swipe" aria-hidden="true">Swipe to see more →</p>
+    <p class="shows-note">Example designs for made-up businesses. Yours is designed around you.</p>
   </div>
 </section>
 
@@ -587,6 +600,6 @@ footer .legal{flex-basis:100%;font-size:.8rem;color:#8A90A2;margin-top:8px}
 
 <div class="mbar" id="mbar" aria-hidden="true"><div><b>$47 one-time</b>14-day money-back</div><a class="btn" href="#pricing" tabindex="-1">Get the kit</a></div>
 
-<script src="/own-your-website/lp.js?v=1" defer></script>
+<script src="/own-your-website/lp.js?v=2" defer></script>
 </body>
 </html>
