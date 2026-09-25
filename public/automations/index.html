@@ -169,28 +169,56 @@
   </div>
 </section>
 
-<!-- PROOF: CALL LOG -->
-<section style="background:var(--soft)">
-  <div class="wrap rx-proof">
-    <div>
-      <span class="eyebrow">What you see the next morning</span>
-      <h2>Every call, written down. Every booking, on your calendar.</h2>
-      <p class="lead">Your dashboard logs each after-hours call with a recording, a transcript and what happened next. No guessing what was said at 9pm.</p>
-      <a class="btn" href="#demo" style="margin-top:18px">Request a live demo →</a>
+<!-- PROOF: DASHBOARD -->
+<section class="rx-dash-sec" id="dashboard">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Your dashboard</span>
+      <h2>See every call, hear every word, and know what it booked.</h2>
+      <p class="lead">Log in any time to track how your receptionist is performing, listen to recordings, read transcripts, and top up minutes when you need more.</p>
     </div>
-    <div class="rx-log" aria-label="Example after-hours call log">
-      <div class="rx-head"><b>Call · Tue 9:14 PM</b><span class="rx-tag">Estimate booked</span></div>
-      <div class="rx-meta">(512) 555-0147 · 3 min 12 s · <span>▶ Recording</span></div>
-      <div class="rx-lines">
-        <p><b>Caller</b>Hi, water's coming through my ceiling after the storm.</p>
-        <p class="ai"><b>Receptionist</b>Sorry to hear that. Is it actively leaking right now?</p>
-        <p><b>Caller</b>Yes, into the upstairs bedroom.</p>
-        <p class="ai"><b>Receptionist</b>I'm alerting our on-call tech now, and I've booked you for an inspection tomorrow at 8 AM. Does that work?</p>
+    <ul class="rx-dfeat">
+      <li><b>Track performance</b><span>Calls answered, estimates booked, urgent jobs escalated.</span></li>
+      <li><b>Listen to every call</b><span>Full recording of every conversation.</span></li>
+      <li><b>Read the transcript</b><span>Skim what was said in seconds.</span></li>
+      <li><b>Top up minutes</b><span>See what's left and request more in one click.</span></li>
+    </ul>
+    <div class="rx-dash" aria-label="Example receptionist dashboard with sample data">
+      <div class="rx-dbar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <b>Receptionist dashboard</b>
+        <span class="rx-dper">September</span>
       </div>
-      <div class="rx-foot"><span>⚑ Urgent: on-call tech notified</span><span>📅 Wed 8:00 AM inspection</span></div>
+      <div class="rx-dbody">
+        <div class="rx-kpis">
+          <div><span>Calls answered</span><b>64</b><em>+18 vs Aug</em></div>
+          <div><span>Estimates booked</span><b>23</b><em>36% of calls</em></div>
+          <div><span>Urgent escalations</span><b>5</b><em>All reached on-call</em></div>
+          <div class="rx-mins"><span>Minutes left</span><b>438 <small>/ 750</small></b><div class="rx-meter"><i style="width:58%"></i></div><button type="button" class="rx-topup">+ Request more minutes</button></div>
+        </div>
+        <div class="rx-dmain">
+          <div class="rx-calls" role="list">
+            <div class="rx-call on" role="listitem" data-i="0" tabindex="0"><div><b>Tue 9:14 PM</b><span>(512) 555-0147 · 3:12</span></div><em class="t-book">Estimate booked</em></div>
+            <div class="rx-call" role="listitem" data-i="1" tabindex="0"><div><b>Tue 7:02 PM</b><span>(512) 555-0193 · 4:40</span></div><em class="t-urg">Urgent · escalated</em></div>
+            <div class="rx-call" role="listitem" data-i="2" tabindex="0"><div><b>Sun 10:31 AM</b><span>(737) 555-0118 · 2:05</span></div><em class="t-book">Estimate booked</em></div>
+            <div class="rx-call" role="listitem" data-i="3" tabindex="0"><div><b>Sat 8:47 PM</b><span>(512) 555-0162 · 1:18</span></div><em class="t-info">Question answered</em></div>
+          </div>
+          <div class="rx-detail">
+            <div class="rx-player"><button type="button" class="rx-play" aria-label="Play recording">▶</button><div class="rx-wave" aria-hidden="true"></div><span class="rx-dur">3:12</span></div>
+            <div class="rx-lines" id="rx-lines">
+              <p><b>Caller</b>Hi, water's coming through my ceiling after the storm.</p>
+              <p class="ai"><b>Receptionist</b>Sorry to hear that. Is it actively leaking right now?</p>
+              <p><b>Caller</b>Yes, into the upstairs bedroom.</p>
+              <p class="ai"><b>Receptionist</b>I'm alerting our on-call tech now, and I've booked you for an inspection tomorrow at 8 AM. Does that work?</p>
+            </div>
+            <div class="rx-foot" id="rx-foot"><span>⚑ On-call tech notified</span><span>📅 Wed 8:00 AM inspection</span></div>
+          </div>
+        </div>
+      </div>
     </div>
+    <p class="rx-cap">Example dashboard with sample data. Click a call to see its transcript.</p>
+    <div class="center" style="margin-top:22px"><a class="btn" href="#demo">See the dashboard on a demo →</a></div>
   </div>
-  <p class="rx-cap">Example call with sample details.</p>
 </section>
 
 <!-- HOW IT WORKS -->
@@ -268,7 +296,7 @@
           <li>Books estimates on your calendar</li>
           <li>Escalation routing for urgent jobs</li>
           <li>Wired to your existing business line</li>
-          <li>Call transcripts and recordings dashboard</li>
+          <li>Your call dashboard, set up and connected</li>
         </ul>
         <a class="btn alt" href="#demo">Request a live demo →</a>
       </div>
@@ -291,6 +319,7 @@
         <ul>
           <li><span><b id="rx-min-li">500</b> minutes a month (~<b id="rx-calls-li">100</b> calls)<button type="button" class="rx-tip" aria-label="Assuming each call is 5 minutes on average" data-tip="Assuming each call is 5 minutes on average">?</button></span></li>
           <li>Unused minutes roll over to next month</li>
+          <li>Dashboard access: stats, recordings, transcripts</li>
           <li>Hosting and uptime monitoring</li>
           <li>Script updates and fixes, handled for you</li>
           <li>Cancel anytime</li>

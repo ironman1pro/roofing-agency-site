@@ -85,3 +85,39 @@
   if (!('IntersectionObserver' in window)) { start(); return; }
   new IntersectionObserver(function (es) { es[0].isIntersecting ? start() : stop(); }, { threshold: 0.35 }).observe(flow);
 })();
+
+/* Dashboard mock: click a call to see its transcript, play button animates the waveform */
+(function () {
+  var dash = document.querySelector('.rx-dash');
+  if (!dash) return;
+  var C = [
+    { d: '3:12', l: [['c', "Hi, water's coming through my ceiling after the storm."], ['a', 'Sorry to hear that. Is it actively leaking right now?'], ['c', 'Yes, into the upstairs bedroom.'], ['a', "I'm alerting our on-call tech now, and I've booked you for an inspection tomorrow at 8 AM. Does that work?"]], f: ['⚑ On-call tech notified', '📅 Wed 8:00 AM inspection'] },
+    { d: '4:40', l: [['c', 'A tree limb came down on my roof and there are shingles in the yard.'], ['a', 'Is anyone hurt, and is water getting inside?'], ['c', 'No one is hurt, but the attic is wet.'], ['a', "Understood. I'm sending this to our on-call crew now so they can call you back within 15 minutes."]], f: ['⚑ Escalated to Mike (on call)', '📞 Callback in 15 min'] },
+    { d: '2:05', l: [['c', "I'd like a quote on replacing my roof, it's about 20 years old."], ['a', "Happy to help. Is this for a single-family home, and what's the address?"], ['c', '1820 Ridge Rd, single family.'], ['a', "Thanks. I've booked a free estimate for Monday at 10 AM."]], f: ['📅 Mon 10:00 AM estimate', '✉ Confirmation texted'] },
+    { d: '1:18', l: [['c', 'Do you work with insurance claims for hail damage?'], ['a', 'Yes, we help with the inspection and the paperwork for your insurance claim.'], ['c', "Great, I'll call back Monday to set it up."], ['a', "Sounds good. I've noted your number so the office can follow up."]], f: ['ℹ Question answered', '📝 Follow-up noted'] }
+  ];
+  var lines = document.getElementById('rx-lines'), foot = document.getElementById('rx-foot');
+  var dur = dash.querySelector('.rx-dur'), wave = dash.querySelector('.rx-wave'), play = dash.querySelector('.rx-play');
+  var t = 0;
+  function esc(x) { var d = document.createElement('div'); d.textContent = x; return d.innerHTML; }
+  function stop() { clearInterval(t); t = 0; play.textContent = '▶'; play.setAttribute('aria-label', 'Play recording'); }
+  function pick(el) {
+    var c = C[+el.getAttribute('data-i')];
+    dash.querySelectorAll('.rx-call').forEach(function (r) { r.classList.toggle('on', r === el); });
+    lines.innerHTML = c.l.map(function (x) { return '<p' + (x[0] === 'a' ? ' class="ai"' : '') + '><b>' + (x[0] === 'a' ? 'Receptionist' : 'Caller') + '</b>' + esc(x[1]) + '</p>'; }).join('');
+    foot.innerHTML = c.f.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('');
+    dur.textContent = c.d; stop(); wave.style.setProperty('--p', '0%');
+  }
+  dash.querySelectorAll('.rx-call').forEach(function (r) {
+    r.addEventListener('click', function () { pick(r); });
+    r.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(r); } });
+  });
+  play.addEventListener('click', function () {
+    if (t) { stop(); return; }
+    var p = parseFloat(wave.style.getPropertyValue('--p')) || 0; if (p >= 100) p = 0;
+    play.textContent = '❚❚'; play.setAttribute('aria-label', 'Pause recording');
+    t = setInterval(function () { p += 1.5; wave.style.setProperty('--p', Math.min(p, 100) + '%'); if (p >= 100) stop(); }, 100);
+  });
+  var up = dash.querySelector('.rx-topup');
+  up.addEventListener('click', function () { up.textContent = '✓ Request sent'; setTimeout(function () { up.textContent = '+ Request more minutes'; }, 2200); });
+})();
