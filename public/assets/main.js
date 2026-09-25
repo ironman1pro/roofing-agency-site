@@ -20,18 +20,35 @@ if (yr) yr.textContent = new Date().getFullYear();
 var form = document.getElementById('lead-form');
 var errEl = document.getElementById('form-err');
 
+/* Inline field errors: message under the field, announced to screen readers, cleared as you type */
+function setFieldError(el, msg) {
+  var id = el.id + '-err', p = document.getElementById(id);
+  if (msg) {
+    if (!p) { p = document.createElement('p'); p.id = id; p.className = 'field-err'; el.insertAdjacentElement('afterend', p); }
+    p.textContent = msg;
+    el.setAttribute('aria-invalid', 'true'); el.setAttribute('aria-describedby', id);
+  } else {
+    if (p) p.remove();
+    el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby');
+  }
+}
+
 if (form) {
+form.addEventListener('input', function (e) { if (e.target.getAttribute('aria-invalid') === 'true') setFieldError(e.target, ''); });
 form.addEventListener('submit', function (e) {
   e.preventDefault();
   errEl.hidden = true;
 
-  var ok = true;
+  var firstBad = null;
   ['company', 'email'].forEach(function (id) {
     var el = document.getElementById(id);
-    var bad = !el.value.trim() || (id === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(el.value.trim()));
-    if (bad) { el.style.borderColor = '#D93025'; ok = false; } else { el.style.borderColor = ''; }
+    var v = el.value.trim();
+    var msg = !v ? (id === 'email' ? 'Please enter your email.' : 'Please fill this in.')
+      : (id === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v)) ? 'That email doesn\'t look right. Check for typos.' : '';
+    setFieldError(el, msg);
+    if (msg && !firstBad) firstBad = el;
   });
-  if (!ok) { form.classList.remove('shake'); void form.offsetWidth; form.classList.add('shake'); return; }
+  if (firstBad) { form.classList.remove('shake'); void form.offsetWidth; form.classList.add('shake'); firstBad.focus(); return; }
 
   var btn = form.querySelector('button[type="submit"]');
   var label = btn.textContent;

@@ -27,10 +27,11 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://adaptify.tech/#org","name":"Adaptify LLC","alternateName":"Adaptify","url":"https://adaptify.tech/","logo":{"@type":"ImageObject","url":"https://adaptify.tech/assets/adaptify-logo-512.png","width":512,"height":512},"image":"https://adaptify.tech/assets/og.png","email":"info@adaptify.tech","description":"Adaptify builds an after-hours AI receptionist, an AI invoice follow-up agent, custom CRMs and websites for roofing companies, deployed to accounts the client owns.","knowsAbout":["Roofing websites","Local SEO for roofers","AI search optimization","Roofing CRM","AI receptionist","Invoice follow-up automation"],"sameAs":["https://x.com/adaptify_tech"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"info@adaptify.tech","areaServed":"US","availableLanguage":"English"}},{"@type":"Service","@id":"https://adaptify.tech/invoice-follow-up/#service","name":"Adaptify AI Invoice Follow-Up Agent","url":"https://adaptify.tech/invoice-follow-up/","provider":{"@id":"https://adaptify.tech/#org"},"description":"An AI agent that follows up on unpaid invoices by text and email for roofers and contractors, handles replies, and escalates disputes to the owner.","areaServed":"US","serviceType":"Accounts receivable automation"},{"@type":"BreadcrumbList","@id":"https://adaptify.tech/invoice-follow-up/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://adaptify.tech/"},{"@type":"ListItem","position":2,"name":"AI Invoice Follow-Up Agent","item":"https://adaptify.tech/invoice-follow-up/"}]}]}
 </script>
-<link rel="stylesheet" href="/assets/site.css?v=5">
+<link rel="stylesheet" href="/assets/site.css?v=6">
 <link rel="stylesheet" href="invoice.css?v=1">
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 
 <header>
   <div class="wrap nav">
@@ -43,7 +44,7 @@
       <a class="m-only" href="/contact/">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn" href="#start">Book a free call →</a>
+      <a class="btn" href="#start">Book a free call<span class="arr" aria-hidden="true"> →</span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
   </div>
@@ -59,7 +60,7 @@
       <h1>Stop chasing homeowners <span>for checks.</span></h1>
       <p class="lead">We build you an AI agent that follows up on every unpaid invoice by text and email, in your voice, until it's paid. It runs on your own cloud account, you own it, and a simple dashboard shows every dollar owed, promised and paid.</p>
       <div class="hero-cta">
-        <a class="btn" href="#start">Book a free call →</a>
+        <a class="btn" href="#start">Book a free call<span class="arr" aria-hidden="true"> →</span></a>
         <a class="iv-textlink" href="#dashboard">See the dashboard ↓</a>
       </div>
       <p class="hero-note">See it follow up on a real invoice, live on a 20-minute call.</p>
@@ -234,7 +235,7 @@
         <div class="spamount"><b>$1,200</b><span>one-time setup</span></div>
         <div class="spamount" style="margin-top:6px"><b>+ $199/mo</b><span>maintenance, cancel anytime</span></div>
         <div class="spnote">Starting price for most roofing and contracting businesses. Very high invoice volumes are quoted on the call. <b>No long-term contract.</b> Cloud hosting and texting are billed to your account directly, at cost.</div>
-        <a href="#start" class="btn">Book a free call →</a>
+        <a href="#start" class="btn">Book a free call<span class="arr" aria-hidden="true"> →</span></a>
       </div>
       <div class="scopefactors">
         <h3>Everything that's included</h3>
@@ -286,7 +287,7 @@
           <div class="who"><div class="avatar">A</div><div><b>Ali A.</b></div></div>
         </div>
       </div>
-      <div class="mid-cta" style="margin-top:34px"><a class="btn" href="#start">Book a free call →</a><span>Free, no obligation. We reply within 1 business day.</span></div>
+      <div class="mid-cta" style="margin-top:34px"><a class="btn" href="#start">Book a free call<span class="arr" aria-hidden="true"> →</span></a><span>Free, no obligation. We reply within 1 business day.</span></div>
     </div>
   </div>
 </section>
@@ -339,7 +340,7 @@
         </select>
         <input type="hidden" name="service" value="invoice-follow-up">
         <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <button class="btn" type="submit">Book my free call →</button>
+        <button class="btn" type="submit">Book my free call<span class="arr" aria-hidden="true"> →</span></button>
         <p class="form-err" id="form-err" role="alert" hidden>Something went wrong. Please try again, or email us at info@adaptify.tech.</p>
         <p class="fine">We reply within 1 business day with times for a call.</p>
       </div>
@@ -354,16 +355,23 @@
 
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span>
-    <span class="footlinks"><a href="/ai-receptionist/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/roofing-crm/">Custom CRM</a><a href="/roofing-websites/">Websites</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"></path></svg></a></span></span>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/" aria-label="Adaptify home"><img src="/assets/adaptify-logo-dark-bg.svg?v=2" alt="Adaptify" width="123" height="34" loading="lazy"></a>
+      <p>AI tools for roofing companies: an after-hours receptionist, invoice follow-up, a custom CRM and websites. Built once, deployed to your own account.</p>
+      <a class="foot-mail" href="mailto:info@adaptify.tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg>info@adaptify.tech</a>
+    </div>
+    <nav class="foot-col" aria-label="Services"><b>Services</b><a href="/ai-receptionist/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/roofing-crm/">Custom CRM</a><a href="/roofing-websites/">Websites</a></nav>
+    <nav class="foot-col" aria-label="Company"><b>Company</b><a href="/contact/">Contact</a><a href="/privacy/">Privacy policy</a><a href="https://x.com/adaptify_tech" target="_blank" rel="noopener noreferrer">X (Twitter)</a></nav>
+    <div class="foot-cta"><b>Not sure where to start?</b><p>Tell us what's costing you jobs. We reply within 1 business day.</p><a class="btn" href="/contact/">Get in touch<span class="arr" aria-hidden="true"> →</span></a></div>
   </div>
+  <div class="wrap foot-bottom"><span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg></a></span></div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="#start">Book a free call →</a><span>Free · 20 minutes · no obligation</span></div>
+<div class="sticky" id="sticky"><a class="btn" href="#start">Book a free call<span class="arr" aria-hidden="true"> →</span></a><span>Free · 20 minutes · no obligation</span></div>
 
-<script src="/assets/main.js?v=2" defer></script>
+<script src="/assets/main.js?v=3" defer></script>
 <script src="invoice.js?v=1" defer></script>
 </body>
 </html>

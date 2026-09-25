@@ -27,9 +27,32 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://adaptify.tech/#org","name":"Adaptify LLC","alternateName":"Adaptify","url":"https://adaptify.tech/","logo":{"@type":"ImageObject","url":"https://adaptify.tech/assets/adaptify-logo-512.png","width":512,"height":512},"image":"https://adaptify.tech/assets/og.png","email":"info@adaptify.tech","description":"Adaptify builds an after-hours AI receptionist, an AI invoice follow-up agent, custom CRMs and websites for roofing companies, deployed to accounts the client owns.","knowsAbout":["Roofing websites","Local SEO for roofers","AI search optimization","Roofing CRM","AI receptionist","Invoice follow-up automation"],"sameAs":["https://x.com/adaptify_tech"],"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"info@adaptify.tech","areaServed":"US","availableLanguage":"English"}},{"@type":"ContactPage","@id":"https://adaptify.tech/contact/#page","url":"https://adaptify.tech/contact/","name":"Contact Adaptify","about":{"@id":"https://adaptify.tech/#org"}},{"@type":"BreadcrumbList","@id":"https://adaptify.tech/contact/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://adaptify.tech/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://adaptify.tech/contact/"}]}]}
 </script>
-<link rel="stylesheet" href="/assets/site.css?v=5">
+<link rel="stylesheet" href="/assets/site.css?v=6">
+<style>
+/* Contact page layout */
+.contact-sec{padding-top:56px}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
+.contact-grid form{box-shadow:0 24px 60px rgba(11,31,51,.12);border:1px solid var(--line)}
+.contact-side h2{font-size:1.35rem;letter-spacing:-.01em}
+.next-steps{list-style:none;counter-reset:n;margin:18px 0 26px;display:grid;gap:16px}
+.next-steps li{counter-increment:n;display:grid;grid-template-columns:34px 1fr;column-gap:14px}
+.next-steps li::before{content:counter(n);grid-row:span 2;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center;font-size:.9rem}
+.next-steps b{display:block}.next-steps span{color:var(--muted);font-size:.93rem}
+.contact-mail{display:flex;gap:14px;align-items:center;background:var(--soft);border-radius:14px;padding:16px 18px}
+.contact-mail svg{width:24px;height:24px;color:var(--orange-ink);flex:none}
+.contact-mail b{display:block;font-size:.9rem}.contact-mail a{color:var(--orange-ink);font-weight:700;text-decoration:none}
+.jump-h{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:28px 0 12px}
+.jump{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.jump a{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;min-height:60px;transition:border-color .25s,transform .25s,box-shadow .25s}
+.jump a:hover{border-color:#FFD2BB;transform:translateY(-2px);box-shadow:var(--shadow)}
+.jump svg{width:22px;height:22px;color:var(--orange-ink);flex:none}
+.jump span{font-size:.82rem;color:var(--muted);line-height:1.35}.jump b{display:block;color:var(--ink);font-size:.93rem}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:36px}}
+@media(max-width:480px){.jump{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 
 <header>
   <div class="wrap nav">
@@ -42,7 +65,7 @@
       <a class="m-only" href="/contact/" aria-current="page">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn" href="mailto:info@adaptify.tech">Email us →</a>
+      <a class="btn" href="mailto:info@adaptify.tech">Email us<span class="arr" aria-hidden="true"> →</span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
   </div>
@@ -60,12 +83,12 @@
 </section>
 
 <!-- CONTACT FORM -->
-<section id="start" style="padding-top:56px">
-  <div class="wrap" style="max-width:640px">
+<section id="start" class="contact-sec">
+  <div class="wrap contact-grid">
     <form id="lead-form" action="/api/lead" method="post" novalidate>
       <div id="form-fields">
         <h2 style="font-size:1.2rem;letter-spacing:-.01em;margin-bottom:4px">Send us a message</h2>
-        <p class="sub">Takes about 30 seconds.</p>
+        <p class="sub">Takes about 30 seconds. No sales pitch, just a straight answer.</p>
         <label for="company">Your name or company</label>
         <input id="company" name="company" autocomplete="name" placeholder="Jordan Lee, or your company name" required>
         <label for="email">Email</label>
@@ -74,7 +97,7 @@
         <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your business and what you're looking for"></textarea>
         <input type="hidden" name="service" value="contact">
         <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave blank<input name="website" tabindex="-1" autocomplete="off"></label></div>
-        <button class="btn" type="submit">Send message →</button>
+        <button class="btn" type="submit">Send message<span class="arr" aria-hidden="true"> →</span></button>
         <p class="form-err" id="form-err" role="alert" hidden>Something went wrong. Please try again, or email us at info@adaptify.tech.</p>
         <p class="fine">We reply within 1 business day and never share your info.</p>
       </div>
@@ -84,19 +107,41 @@
         <p>We'll be in touch within one business day.</p>
       </div>
     </form>
-    <p style="text-align:center;margin-top:28px;color:var(--muted)">Prefer email? Reach us directly at <a href="mailto:info@adaptify.tech" style="color:var(--orange-ink);font-weight:700">info@adaptify.tech</a></p>
+    <aside class="contact-side">
+      <h2>What happens next</h2>
+      <ol class="next-steps">
+        <li><b>We read every message ourselves</b><span>No bots and no call centre. A real person looks at your business and what you asked for.</span></li>
+        <li><b>You hear back within 1 business day</b><span>With a straight answer, or a few times for a short call if it's easier to talk.</span></li>
+        <li><b>You get a clear price before anything is built</b><span>No obligation. If it isn't a fit, we'll tell you.</span></li>
+      </ol>
+      <div class="contact-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg><div><b>Prefer email?</b><a href="mailto:info@adaptify.tech">info@adaptify.tech</a></div></div>
+      <h3 class="jump-h">Or go straight to a service</h3>
+      <ul class="jump">
+        <li><a href="/ai-receptionist/#demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><rect x="2.5" y="13" width="5" height="7" rx="2"/><rect x="16.5" y="13" width="5" height="7" rx="2"/></svg><span><b>AI Receptionist</b>Request a live demo</span></a></li>
+        <li><a href="/invoice-follow-up/#start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14l-2.5-1.5L14 21l-2-1.5L10 21l-2.5-1.5L5 21V4a1 1 0 0 1 1-1Z"/><path d="M9 12l2 2 4-4"/></svg><span><b>Invoice Follow-up</b>Book a free call</span></a></li>
+        <li><a href="/roofing-crm/#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/></svg><span><b>Custom CRM</b>Book a discovery call</span></a></li>
+        <li><a href="/roofing-websites/#start"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="2"/><path d="M3 8.5h18M7 12.5h10M7 15.5h6"/></svg><span><b>Websites</b>Get a free homepage preview</span></a></li>
+      </ul>
+    </aside>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span>
-    <span class="footlinks"><a href="/ai-receptionist/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/roofing-crm/">Custom CRM</a><a href="/roofing-websites/">Websites</a><a href="/contact/">Contact</a><a href="/privacy/">Privacy</a><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"></path></svg></a></span></span>
+<footer class="site-foot">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <a class="logo" href="/" aria-label="Adaptify home"><img src="/assets/adaptify-logo-dark-bg.svg?v=2" alt="Adaptify" width="123" height="34" loading="lazy"></a>
+      <p>AI tools for roofing companies: an after-hours receptionist, invoice follow-up, a custom CRM and websites. Built once, deployed to your own account.</p>
+      <a class="foot-mail" href="mailto:info@adaptify.tech"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg>info@adaptify.tech</a>
+    </div>
+    <nav class="foot-col" aria-label="Services"><b>Services</b><a href="/ai-receptionist/">AI Receptionist</a><a href="/invoice-follow-up/">Invoice Follow-up</a><a href="/roofing-crm/">Custom CRM</a><a href="/roofing-websites/">Websites</a></nav>
+    <nav class="foot-col" aria-label="Company"><b>Company</b><a href="/contact/">Contact</a><a href="/privacy/">Privacy policy</a><a href="https://x.com/adaptify_tech" target="_blank" rel="noopener noreferrer">X (Twitter)</a></nav>
+    <div class="foot-cta"><b>Not sure where to start?</b><p>Tell us what's costing you jobs. We reply within 1 business day.</p><a class="btn" href="/contact/">Get in touch<span class="arr" aria-hidden="true"> →</span></a></div>
   </div>
+  <div class="wrap foot-bottom"><span>© <span id="yr">2026</span> Adaptify LLC. All rights reserved.</span><span class="footsocial"><a href="https://x.com/adaptify_tech" aria-label="Adaptify on X" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="mailto:info@adaptify.tech" aria-label="Email Adaptify"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5L11 13a1.6 1.6 0 0 0 2 0l8-6.5"/></svg></a></span></div>
 </footer>
 
-<script src="/assets/main.js?v=2" defer></script>
+<script src="/assets/main.js?v=3" defer></script>
 </body>
 </html>
