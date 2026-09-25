@@ -350,10 +350,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,31,51,.96);backdrop-f
 @keyframes tc-scroll{to{transform:translateX(-50%)}}
 .tc-track.marquee:hover .tc-move,.tc-track.marquee:focus-within .tc-move,.tc-track.marquee.held .tc-move{animation-play-state:paused}
 @media (max-width:860px){.tc-set .testicard{flex-basis:280px;width:280px}.tc-set{gap:14px;padding-right:14px}}
-.testicard{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+.testicard{background:var(--paper-2);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
 .testicard .stars{color:var(--accent);font-size:13px;letter-spacing:2px;margin-bottom:10px}
 .testicard blockquote{margin:0 0 16px;font-size:14.5px;line-height:1.55;color:var(--text)}
-.testiwho{display:flex;align-items:center;gap:10px}
+.testiwho{display:flex;align-items:center;gap:10px;margin-top:auto}
 .testiavatar{width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;font-weight:700;font-size:13px;display:grid;place-items:center;flex:none}
 .testiwho b{display:block;font-size:13.5px}
 .testiwho span{display:block;font-size:12px;color:var(--text-faint)}
@@ -793,7 +793,7 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
   </div>
 </section>
 
-<!-- TESTIMONIALS (real quotes from past web design clients) -->
+<!-- TESTIMONIALS (real quotes from past Adaptify clients, excerpted) -->
 <section id="proof">
   <div class="wrap">
     <div class="sechead center">
@@ -803,33 +803,28 @@ footer .fine{color:#5E7488;font-size:12.5px;max-width:760px;margin-top:18px;line
     <div class="tc-track" id="tc-track">
       <div class="testicard">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>“Efficient, knowledgeable, and incredibly easy to work with. Redesigned our website, added an SEO sitemap, and made everything responsive across devices.”</blockquote>
-        <div class="testiwho"><div class="testiavatar">A</div><div><b>Angela Cacace</b><span>Co-founder, Moveoverbob</span></div></div>
-      </div>
-      <div class="testicard">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>“The perfect combination of skills for our Webflow redesign. Experienced developer, custom code, beautiful designs across all devices, website accessibility, SEO. Our go-to Webflow developer for future projects.”</blockquote>
-        <div class="testiwho"><div class="testiavatar">C</div><div><b>Caroline Desrosiers</b><span>Founder, Scribely</span></div></div>
-      </div>
-      <div class="testicard">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>“Absolutely nailed it. The website turned out even better than I had envisioned. Fast, responsive, and super easy to work with.”</blockquote>
-        <div class="testiwho"><div class="testiavatar">D</div><div><b>Dan D'Aquisto</b><span>Co-founder and CEO, 2ULaundry</span></div></div>
-      </div>
-      <div class="testicard">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>“Seamless communication and a deep understanding of our vision. The best collaborative experience I have ever had with a designer.”</blockquote>
-        <div class="testiwho"><div class="testiavatar">L</div><div><b>Lindsay Morton</b><span>Chief Growth Officer, Oncentive</span></div></div>
-      </div>
-      <div class="testicard">
-        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
         <blockquote>“Consistently exceptional quality with a level of attention to detail that is hard to find. Delivered everything ahead of schedule, exactly as promised.”</blockquote>
-        <div class="testiwho"><div class="testiavatar">C</div><div><b>Chris Wright</b><span>Entrepreneur</span></div></div>
+        <div class="testiwho"><div class="testiavatar">C</div><div><b>Chris Wright</b></div></div>
       </div>
       <div class="testicard">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>“Technical expertise in Webflow plus a sharp design sensibility that elevated the entire project. Delivered with precision, speed, and strong attention to detail.”</blockquote>
-        <div class="testiwho"><div class="testiavatar">A</div><div><b>Ali A.</b><span>CTO, Saudi Aramco</span></div></div>
+        <blockquote>“Efficient, knowledgeable, and incredibly easy to work with.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">A</div><div><b>Angela Cacace</b></div></div>
+      </div>
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Seamless communication and a deep understanding of our vision.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">L</div><div><b>Lindsay Morton</b></div></div>
+      </div>
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Absolutely nailed it. Fast, responsive, and super easy to work with.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">D</div><div><b>Dan D'Aquisto</b></div></div>
+      </div>
+      <div class="testicard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Delivered with precision, speed, and strong attention to detail.”</blockquote>
+        <div class="testiwho"><div class="testiavatar">A</div><div><b>Ali A.</b></div></div>
       </div>
     </div>
   </div>
