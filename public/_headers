@@ -12,7 +12,7 @@
 #
 # /assets/ and /portfolio/thumbs/ are cached for a year. Pages link these files with a
 # ?v= number, so whenever you change one, bump its ?v= everywhere it's linked
-# (e.g. site.css?v=3 -> site.css?v=3). For og.png or adaptify-logo-512.png, use a new file name.
+# (e.g. site.css?v=4 -> site.css?v=5). For og.png or adaptify-logo-512.png, use a new file name.
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 

@@ -5,9 +5,9 @@
   --navy:#0B1F33; --navy-2:#12314F; --ink:#0F1C2B; --muted:#5A6B7D;
   --orange:#FF6B2C; --orange-d:#E8551A; --bg:#FFFFFF; --soft:#F4F6F9; --line:#E2E7EE;
   --green:#12A150; --radius:14px;
-  /* AA-contrast variants: --orange-ink for orange text on light backgrounds,
-     --cta for filled buttons with white text. Keep --orange for accents on navy. */
-  --orange-ink:#C2410C; --cta:#C94A10; --cta-d:#A93C0B;
+  /* Buttons keep the brand orange with dark navy text (5.9:1 contrast).
+     --orange-ink is for orange text on light backgrounds; --orange for accents on navy. */
+  --orange-ink:#C2410C; --cta:#FF6B2C; --cta-d:#FF8350; --cta-ink:#0B1F33;
   --shadow:0 10px 30px rgba(11,31,51,.10);
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -28,7 +28,7 @@ h3{font-size:1.2rem;letter-spacing:-.01em}
 section{padding:88px 0}
 .center{text-align:center}.center .lead{margin-inline:auto}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:#fff;font-weight:700;font-size:1.05rem;padding:16px 28px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s;box-shadow:0 8px 22px rgba(255,107,44,.35)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:var(--cta-ink);font-weight:700;font-size:1.05rem;padding:16px 28px;border-radius:12px;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s;box-shadow:0 8px 22px rgba(255,107,44,.35)}
 .btn:hover{background:var(--cta-d);transform:translateY(-2px)}
 .btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #FFB58F;outline-offset:2px}
 .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35);box-shadow:none}
@@ -195,7 +195,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,31,51,.96);backdrop-f
 .plans{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:860px;margin:0 auto}
 .plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px;position:relative;display:flex;flex-direction:column}
 .plan.pop{border:2px solid var(--orange);box-shadow:var(--shadow)}
-.plan .badge{position:absolute;top:-13px;left:34px;background:var(--cta);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.plan .badge{position:absolute;top:-13px;left:34px;background:var(--cta);color:var(--cta-ink);font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
 .plan h3{font-size:1.35rem}
 .plan .sub{color:var(--muted);font-size:.95rem;margin-top:4px}
 .price{margin:22px 0 4px;font-size:2.8rem;font-weight:800;letter-spacing:-.03em;line-height:1;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 8px}
@@ -206,10 +206,10 @@ header{position:sticky;top:0;z-index:50;background:rgba(11,31,51,.96);backdrop-f
 .plan li{display:flex;gap:10px}
 .plan li::before{content:"✓";color:var(--green);font-weight:800}
 .plan .btn{margin-top:auto;width:100%}
-.plan .btn.alt{background:var(--navy);box-shadow:none}
+.plan .btn.alt{background:var(--navy);color:#fff;box-shadow:none}
 .plan .btn.alt:hover{background:var(--navy-2)}
 @media(max-width:760px){.plans{grid-template-columns:1fr}}
-.addon{max-width:860px;margin:24px auto 0;background:#fff;border:1px dashed var(--line);border-radius:18px;padding:22px 28px;display:flex;gap:24px;align-items:center;justify-content:space-between}.addon h3{font-size:1.1rem}.addon p{color:var(--muted);font-size:.95rem;margin-top:6px}.addon .btn{flex:none;white-space:nowrap;width:auto;padding:14px 24px;background:var(--navy);box-shadow:none}@media(max-width:760px){.addon{flex-direction:column;align-items:stretch;gap:16px}.addon .btn{width:100%}}
+.addon{max-width:860px;margin:24px auto 0;background:#fff;border:1px dashed var(--line);border-radius:18px;padding:22px 28px;display:flex;gap:24px;align-items:center;justify-content:space-between}.addon h3{font-size:1.1rem}.addon p{color:var(--muted);font-size:.95rem;margin-top:6px}.addon .btn{flex:none;white-space:nowrap;width:auto;padding:14px 24px;background:var(--navy);color:#fff;box-shadow:none}@media(max-width:760px){.addon{flex-direction:column;align-items:stretch;gap:16px}.addon .btn{width:100%}}
 .guarantee{max-width:760px;margin:34px auto 0;text-align:center;color:var(--muted);font-size:.98rem}
 .guarantee b{color:var(--ink)}
 
@@ -538,7 +538,7 @@ input,select{font-size:16px;min-height:48px}
   footer{padding-bottom:110px}
 }
 @media(max-width:380px){.hero h1{font-size:1.9rem}}
-.nav-links a.btn{color:#fff}
+.nav-links a.btn{color:var(--cta-ink)}
 @media(max-width:760px){.hero-cta .btn{font-size:1rem;padding-inline:16px}}
 
 /* Comfortable tap targets on phones (Google recommends about 48px) */

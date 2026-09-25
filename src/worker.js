@@ -117,10 +117,28 @@ async function serveAsset(request, env) {
   });
 }
 
+// Old page URLs, permanently redirected (301) to their keyword-rich replacements so
+// existing links and search rankings carry over. Keep these entries indefinitely.
+const REDIRECTS = {
+  '/automations': '/ai-receptionist/',
+  '/crm': '/roofing-crm/',
+  '/websites': '/roofing-websites/',
+};
+
+function legacyRedirect(url) {
+  const path = url.pathname.replace(/\/(index\.html)?$/, '');
+  const target = REDIRECTS[path];
+  if (!target) return null;
+  return Response.redirect(new URL(target + url.search, url.origin).toString(), 301);
+}
+
 export default {
   async fetch(request, env) {
-    const { pathname } = new URL(request.url);
+    const url = new URL(request.url);
+    const { pathname } = url;
     if (pathname === '/api/lead') return handleLead(request, env);
+    const redirect = legacyRedirect(url);
+    if (redirect) return redirect;
     return serveAsset(request, env);
   },
 };
