@@ -14,7 +14,7 @@
     var btn = form.querySelector('button[type="submit"]'), label = btn.textContent;
     btn.disabled = true; btn.textContent = 'Sending...';
     var fd = new FormData(form);
-    fd.append('_subject', 'New Adaptify CRM lead: ' + document.getElementById('lf-biz').value.trim().slice(0, 80));
+    fd.append('_subject', '[Custom CRM discovery call request] ' + document.getElementById('lf-biz').value.trim().slice(0, 80));
     var trap = form.querySelector('[name=website]');
     var send = (trap && trap.value.trim()) ? Promise.resolve() :
       fetch('https://formspree.io/f/xvkgzgwd', { method: 'POST', body: fd, headers: { Accept: 'application/json' } })

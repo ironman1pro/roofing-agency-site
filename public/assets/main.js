@@ -67,7 +67,16 @@ form.addEventListener('submit', function (e) {
   btn.textContent = 'Sending...';
 
   var fd = new FormData(form);
-  fd.append('_subject', 'New Adaptify lead: ' + document.getElementById('company').value.trim().slice(0, 80));
+  // Every form posts to the same Formspree inbox; the subject line says which page it came from.
+  var SUBJECTS = {
+    'websites': 'Website preview request', 'receptionist': 'AI Receptionist demo request',
+    'invoice-follow-up': 'Invoice Follow-Up call request', 'estimate-follow-up': 'Estimate Follow-Up call request',
+    'reviews-updates': 'Reviews & Updates call request', 'storm-alerts': 'Storm Alerts call request',
+    'contact': 'Contact form message'
+  };
+  var svc = (form.querySelector('[name=service]') || {}).value || '';
+  fd.append('_subject', '[' + (SUBJECTS[svc] || 'Website lead') + '] ' + document.getElementById('company').value.trim().slice(0, 80));
+  fd.append('page', location.pathname);
   var trap = document.querySelector('[name=website]');
   var send = (trap && trap.value.trim())
     ? Promise.resolve()
@@ -149,7 +158,7 @@ form.addEventListener('submit', function (e) {
 
   /* reveal on scroll, staggered inside each group */
   var groups = ['.cards3', '.grid2', '.work-grid', '.steps', '.plans', '.specs-grid', '.faq-list'];
-  var singles = 'section .center > *, .founding, .addon, .guarantee, .tc-track, .tc-ctrl, .work-note, .cta-grid > *:first-child, #lead-form';
+  var singles = 'section .center > *, .rv, .founding, .addon, .guarantee, .tc-track, .tc-ctrl, .work-note, .cta-grid > *:first-child, #lead-form';
   var targets = [];
   document.querySelectorAll(groups.join(',')).forEach(function (g) {
     Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty('--d', Math.min(i, 5) * 0.08 + 's'); targets.push(c); });
