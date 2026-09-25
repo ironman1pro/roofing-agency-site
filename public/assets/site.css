@@ -5,8 +5,9 @@
   --navy:#0B1F33; --navy-2:#12314F; --ink:#0F1C2B; --muted:#5A6B7D;
   --orange:#FF6B2C; --orange-d:#E8551A; --bg:#FFFFFF; --soft:#F4F6F9; --line:#E2E7EE;
   --green:#12A150; --radius:14px;
-  /* Brand orange everywhere: accent text, and buttons with white text. */
-  --orange-ink:var(--orange); --cta:var(--orange); --cta-d:var(--orange-d); --cta-ink:#fff;
+  /* Buttons keep the brand orange with dark navy text (5.9:1 contrast).
+     --orange-ink is for orange text on light backgrounds; --orange for accents on navy. */
+  --orange-ink:#C2410C; --cta:#FF6B2C; --cta-d:#FF8350; --cta-ink:#0B1F33;
   --shadow:0 10px 30px rgba(11,31,51,.10);
 }
 *{box-sizing:border-box;margin:0;padding:0}
