@@ -36,3 +36,17 @@
     });
   });
 })();
+
+/* Pricing: maintenance price updates with the minutes dropdown ($299 incl. 500 min, +$100 per 300 min) */
+(function () {
+  var sel = document.getElementById('rx-minutes');
+  if (!sel) return;
+  var price = document.getElementById('rx-price'), li = document.getElementById('rx-min-li');
+  function upd() {
+    var m = +sel.value;
+    price.textContent = '$' + (299 + (m - 500) / 300 * 100);
+    li.textContent = m.toLocaleString('en-US');
+  }
+  sel.addEventListener('change', upd);
+  upd();
+})();

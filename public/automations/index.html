@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#0B1F33">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://adaptify.tech/#org", "name": "Adaptify LLC", "alternateName": "Adaptify", "url": "https://adaptify.tech/"}, {"@type": "Service", "@id": "https://adaptify.tech/automations/#service", "name": "Adaptify After-Hours AI Receptionist", "url": "https://adaptify.tech/automations/", "provider": {"@id": "https://adaptify.tech/#org"}, "description": "A custom AI receptionist that answers after-hours calls for a roofing company and books the estimate directly onto the calendar, with escalation routing for urgent jobs.", "areaServed": "US", "serviceType": "AI phone receptionist for roofing companies", "offers": {"@type": "Offer", "name": "After-Hours Booking Line setup", "description": "One-time build: custom greeting and script, calendar booking, escalation routing for urgent jobs, and a call transcripts and recordings dashboard. Minute packages purchased separately.", "price": "800", "priceCurrency": "USD"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will it sound robotic or say the wrong thing?", "acceptedAnswer": {"@type": "Answer", "text": "See it live before you pay anything. On a free demo we call it in front of you so you can hear exactly how it sounds and how it handles a real conversation."}}, {"@type": "Question", "name": "Does this replace my staff?", "acceptedAnswer": {"@type": "Answer", "text": "No. It only picks up when nobody else can, nights, weekends, and while your team is on a roof or off the clock. During business hours, calls go wherever they already go."}}, {"@type": "Question", "name": "What happens with an urgent call, like an active leak?", "acceptedAnswer": {"@type": "Answer", "text": "Urgent jobs get escalated and routed to whoever is on call, not left to wait until the next business day like a normal voicemail would."}}, {"@type": "Question", "name": "What happens when I run out of minutes?", "acceptedAnswer": {"@type": "Answer", "text": "You will get a heads-up before you run out. You can add more minutes any time, and overage beyond your package is billed per minute so a busy month never just stops working."}}, {"@type": "Question", "name": "Do I need a new phone number?", "acceptedAnswer": {"@type": "Answer", "text": "No. It's wired to pick up your existing business line outside your hours, or however you want calls routed to it. Nothing changes for your customers."}}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://adaptify.tech/#org", "name": "Adaptify LLC", "alternateName": "Adaptify", "url": "https://adaptify.tech/"}, {"@type": "Service", "@id": "https://adaptify.tech/automations/#service", "name": "Adaptify After-Hours AI Receptionist", "url": "https://adaptify.tech/automations/", "provider": {"@id": "https://adaptify.tech/#org"}, "description": "A custom AI receptionist that answers after-hours calls for a roofing company and books the estimate directly onto the calendar, with escalation routing for urgent jobs.", "areaServed": "US", "serviceType": "AI phone receptionist for roofing companies", "offers": {"@type": "Offer", "name": "After-Hours Booking Line setup", "description": "One-time build: custom greeting and script, calendar booking, escalation routing for urgent jobs, and a call transcripts and recordings dashboard. Monthly maintenance from $299 with 500 call minutes included.", "price": "1200", "priceCurrency": "USD"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will it sound robotic or say the wrong thing?", "acceptedAnswer": {"@type": "Answer", "text": "See it live before you pay anything. On a free demo we call it in front of you so you can hear exactly how it sounds and how it handles a real conversation."}}, {"@type": "Question", "name": "Does this replace my staff?", "acceptedAnswer": {"@type": "Answer", "text": "No. It only picks up when nobody else can, nights, weekends, and while your team is on a roof or off the clock. During business hours, calls go wherever they already go."}}, {"@type": "Question", "name": "What happens with an urgent call, like an active leak?", "acceptedAnswer": {"@type": "Answer", "text": "Urgent jobs get escalated and routed to whoever is on call, not left to wait until the next business day like a normal voicemail would."}}, {"@type": "Question", "name": "What happens when I run out of minutes?", "acceptedAnswer": {"@type": "Answer", "text": "You will get a heads-up before you run out. Your plan includes 500 minutes a month, and you can add 300 more for $100 a month any time, so a busy month never just stops working."}}, {"@type": "Question", "name": "Do I need a new phone number?", "acceptedAnswer": {"@type": "Answer", "text": "No. It's wired to pick up your existing business line outside your hours, or however you want calls routed to it. Nothing changes for your customers."}}]}]}
 </script>
 <link rel="stylesheet" href="../assets/site.css?v=1">
 <link rel="stylesheet" href="../assets/motion.css?v=1">
@@ -168,55 +168,52 @@
   <div class="wrap">
     <div class="center">
       <span class="eyebrow">Simple pricing</span>
-      <h2>One build price. Pay for the minutes you actually use.</h2>
-      <p class="lead">A one-time setup fee for the custom build, then minute packages you buy separately based on your call volume. No forced bundle that's wrong for your business.</p>
+      <h2>One setup. One monthly plan. No surprises.</h2>
+      <p class="lead">A one-time fee for the custom build, then a monthly maintenance plan that keeps it running and includes your call minutes.</p>
     </div>
     <div style="height:34px"></div>
-    <div class="plan" style="max-width:460px;margin-inline:auto">
-      <h3>Setup</h3>
-      <p class="sub">The custom build, once.</p>
-      <div class="price"><span class="strike">$3,000</span>$800 <small>one-time</small></div>
-      <p class="price-note">Includes the call transcripts and recordings dashboard, free.</p>
-      <ul>
-        <li>Custom greeting and script for your business</li>
-        <li>Calendar integration, books the estimate directly</li>
-        <li>Escalation routing for urgent jobs</li>
-        <li>Fully customizable to how you want calls handled</li>
-        <li>Call transcripts and recordings dashboard, included free</li>
-        <li>Wired to your existing business line</li>
-      </ul>
-      <a class="btn alt" href="#demo">Request a live demo →</a>
-    </div>
-    <div style="height:44px"></div>
-    <div class="center" style="margin-bottom:24px">
-      <span class="eyebrow">Then, pick your minutes</span>
-      <h3>Buy only the call volume you need.</h3>
-    </div>
-    <div class="plans">
+    <div class="rx-plans">
       <div class="plan">
-        <h3>Starter</h3>
-        <p class="sub">Light after-hours call volume.</p>
-        <div class="price">$99 <small>/month</small></div>
-        <p class="price-note">200 minutes included</p>
+        <h3>Setup</h3>
+        <p class="sub">The custom build, once.</p>
+        <div class="price"><span class="strike">$3,000</span>$1,200 <small>one-time</small></div>
+        <p class="price-note">Includes the call transcripts and recordings dashboard.</p>
+        <ul>
+          <li>Custom greeting and script for your business</li>
+          <li>Calendar integration, books the estimate directly</li>
+          <li>Escalation routing for urgent jobs</li>
+          <li>Fully customizable to how you want calls handled</li>
+          <li>Wired to your existing business line</li>
+        </ul>
         <a class="btn alt" href="#demo">Request a live demo →</a>
       </div>
       <div class="plan pop">
-        <span class="badge">Most common</span>
-        <h3>Growth</h3>
-        <p class="sub">A steady stream of after-hours calls.</p>
-        <div class="price">$199 <small>/month</small></div>
-        <p class="price-note">500 minutes included</p>
+        <span class="badge">Keeps it running</span>
+        <h3>Maintenance</h3>
+        <p class="sub">Monitoring, updates and your call minutes.</p>
+        <div class="price"><span id="rx-price">$299</span> <small>/month</small></div>
+        <label class="rx-min" for="rx-minutes">Minutes per month
+          <select id="rx-minutes">
+            <option value="500" selected>500 minutes (included)</option>
+            <option value="800">800 minutes (+$100)</option>
+            <option value="1100">1,100 minutes (+$200)</option>
+            <option value="1400">1,400 minutes (+$300)</option>
+            <option value="1700">1,700 minutes (+$400)</option>
+            <option value="2000">2,000 minutes (+$500)</option>
+          </select>
+        </label>
+        <p class="price-note">500 minutes included. Add 300 more for $100/month.</p>
+        <ul>
+          <li><span><b id="rx-min-li">500</b> call minutes every month</span></li>
+          <li>Hosting and uptime monitoring</li>
+          <li>Script and greeting updates when you need them</li>
+          <li>Fixes and tweaks, handled for you</li>
+          <li>Cancel anytime</li>
+        </ul>
         <a class="btn" href="#demo">Request a live demo →</a>
       </div>
-      <div class="plan">
-        <h3>Scale</h3>
-        <p class="sub">High call volume, multiple lines.</p>
-        <div class="price">$349 <small>/month</small></div>
-        <p class="price-note">1,000 minutes included</p>
-        <a class="btn alt" href="#demo">Request a live demo →</a>
-      </div>
     </div>
-    <p class="guarantee">Need more than your package in a busy month? Overage is billed per minute, so it never just stops working. <b>Limited onboarding slots each week,</b> since every build is custom and personally set up.</p>
+    <p class="guarantee">Busy month? You get a heads-up before you run out, and you can move up a tier any time so it never just stops working. <b>Limited onboarding slots each week,</b> since every build is custom and personally set up.</p>
   </div>
 </section>
 
@@ -231,7 +228,7 @@
       <details open><summary>Will it sound robotic or say the wrong thing?</summary><p>See for yourself before you pay anything. On the live demo we call it in front of you, and you can ask it anything to hear exactly how it sounds and how it handles a real conversation.</p></details>
       <details><summary>Does this replace my staff?</summary><p>No. It only picks up when nobody else can, nights, weekends, and while your team is on a roof or off the clock. During business hours, calls go wherever they already go.</p></details>
       <details><summary>What happens with an urgent call, like an active leak?</summary><p>Urgent jobs get escalated and routed to whoever is on call, not left to wait until the next business day like a normal voicemail would.</p></details>
-      <details><summary>What happens when I run out of minutes?</summary><p>You'll get a heads-up before you run out. Add more any time, and overage beyond your package is billed per minute so a busy month never just stops working.</p></details>
+      <details><summary>What happens when I run out of minutes?</summary><p>You'll get a heads-up before you run out. Your plan includes 500 minutes a month, and you can add 300 more for $100 a month any time, so a busy month never just stops working.</p></details>
       <details><summary>Do I need a new phone number?</summary><p>No. It's wired to pick up your existing business line outside your hours, or however you want calls routed to it. Nothing changes for your customers.</p></details>
       <details><summary>Can I see what it actually said on a call?</summary><p>Yes. Every call is logged with a transcript and recording in your dashboard, included free, so you can check exactly what was said.</p></details>
     </div>

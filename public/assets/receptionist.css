@@ -14,3 +14,12 @@
 .rx-cap{text-align:center;font-size:.8rem;color:var(--muted);margin-top:18px}
 .demo-card label span{color:inherit}
 @media(max-width:900px){.rx-proof{grid-template-columns:1fr;gap:28px}}
+
+/* Pricing: setup + maintenance cards with minutes selector */
+.rx-plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin-inline:auto;align-items:stretch}
+.rx-plans .plan{display:flex;flex-direction:column}
+.rx-plans .plan .btn{margin-top:auto}
+.rx-plans .plan ul{margin-bottom:22px}
+.rx-min{display:block;font-size:.85rem;font-weight:600;margin:10px 0 6px}
+.rx-min select{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid #D5DEE8;border-radius:10px;font:inherit;font-weight:500;background:#fff;color:inherit;cursor:pointer;min-height:44px}
+@media(max-width:800px){.rx-plans{grid-template-columns:1fr}}
