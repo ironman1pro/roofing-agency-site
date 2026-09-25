@@ -2,6 +2,17 @@ document.documentElement.classList.add('js');
 var yr = document.getElementById('yr');
 if (yr) yr.textContent = new Date().getFullYear();
 
+/* Services dropdown: opens on hover (desktop), click/tap or keyboard; closes on outside click, Escape or tabbing away */
+(function () {
+  var dd = document.querySelector('.nav-dd'), b = dd && dd.querySelector('.nav-dd-btn');
+  if (!b) return;
+  function set(open) { dd.classList.toggle('open', open); b.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  b.addEventListener('click', function (e) { e.stopPropagation(); set(!dd.classList.contains('open')); });
+  document.addEventListener('click', function (e) { if (!dd.contains(e.target)) set(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && dd.classList.contains('open')) { set(false); b.focus(); } });
+  dd.addEventListener('focusout', function (e) { if (!dd.contains(e.relatedTarget)) set(false); });
+})();
+
 /* Mobile menu: the toggle shows the service links under 960px */
 (function () {
   var header = document.querySelector('header'), btn = header && header.querySelector('.nav-toggle');

@@ -602,3 +602,32 @@ input[aria-invalid=true],textarea[aria-invalid=true]{border-color:#D93025;backgr
 }
 /* room for the sticky mobile CTA bar */
 @media(max-width:760px){body:has(.sticky) .site-foot{padding-bottom:84px}}
+
+/* ============ Services dropdown ============ */
+.nav-dd{position:relative}
+.nav-dd-btn{display:inline-flex;align-items:center;gap:5px;background:none;border:0;color:#C9D5E3;font:inherit;font-size:.95rem;font-weight:500;cursor:pointer;padding:8px 0}
+.nav-dd-btn:hover,.nav-dd.open .nav-dd-btn,.nav-dd-btn[data-current]{color:#fff}
+.nav-dd-btn .chev{width:15px;height:15px;transition:transform .25s}
+.nav-dd.open .chev{transform:rotate(180deg)}
+.dd-new{font-style:normal;font-size:.62rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:#FFF1EA;color:#C2440F;border-radius:999px;padding:2px 7px}
+.nav-links .nav-dd-panel a::after{content:none}
+@media(min-width:961px){
+  .nav-dd-panel{position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,6px);width:min(640px,92vw);display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;background:#fff;border-radius:18px;padding:16px;box-shadow:0 30px 60px rgba(11,31,51,.28),0 0 0 1px rgba(11,31,51,.06);opacity:0;visibility:hidden;transition:opacity .2s,transform .2s,visibility .2s;z-index:60}
+  .nav-dd-panel::before{content:"";position:absolute;left:0;right:0;top:-18px;height:18px}
+  .nav-dd.open .nav-dd-panel{opacity:1;visibility:visible;transform:translate(-50%,0)}
+  .dd-h{display:block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#5A6B7D;padding:6px 12px 6px}
+  .nav-links .nav-dd-panel a{display:block;color:#0F1C2B;padding:10px 12px;border-radius:12px;transition:background .2s}
+  .nav-links .nav-dd-panel a:hover,.nav-links .nav-dd-panel a[aria-current=page]{background:#F4F6F9;color:#0F1C2B}
+  .nav-dd-panel b{display:flex;align-items:center;gap:8px;font-size:.95rem}
+  .nav-dd-panel a span{display:block;font-size:.82rem;color:#5A6B7D;line-height:1.4;margin-top:2px}
+}
+@media(min-width:961px) and (hover:hover){.nav-dd:hover .nav-dd-panel{opacity:1;visibility:visible;transform:translate(-50%,0)}.nav-dd:hover .chev{transform:rotate(180deg)}}
+@media(max-width:960px){
+  .nav-links{max-height:calc(100vh - 64px);overflow-y:auto}
+  .nav-dd-btn{display:none}
+  .nav-dd-panel{display:block}
+  .dd-h{display:block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8FA3B8;padding:14px 0 4px}
+  .nav-links .nav-dd-panel a{flex-direction:column;align-items:flex-start;justify-content:center}
+  .nav-dd-panel b{display:flex;align-items:center;gap:8px;font-weight:500}
+  .nav-dd-panel a span{display:none}
+}

@@ -1,4 +1,4 @@
-/* Invoice follow-up page: calculator, timeline progress, page-specific reveals. */
+/* Done-for-you agent pages (invoice, estimate, reviews, storm): calculators, timeline progress, page-specific reveals. */
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -31,6 +31,38 @@
     }
     [n, amt, days].forEach(function (el) { el.addEventListener('input', calc); });
     calc();
+  }
+
+
+  /* ---------- Estimate calculator ---------- */
+  var en = document.getElementById('es-n'), ea = document.getElementById('es-amt'), ew = document.getElementById('es-win');
+  if (en && ea && ew) {
+    var money = function (v) { return '$' + Math.round(v).toLocaleString('en-US'); };
+    var eb = document.getElementById('es-total'), eshown = 0, eraf = 0;
+    function eAnimate(target) {
+      if (reduce) { eb.textContent = money(target); eshown = target; return; }
+      cancelAnimationFrame(eraf);
+      var from = eshown, t0 = performance.now(), dur = 450;
+      (function step(t) {
+        var p = Math.min(1, (t - t0) / dur), k = 1 - Math.pow(1 - p, 3);
+        eshown = from + (target - from) * k;
+        eb.textContent = money(eshown);
+        if (p < 1) eraf = requestAnimationFrame(step);
+      })(t0);
+    }
+    function ecalc() {
+      var count = +en.value, avg = +ea.value, win = +ew.value;
+      var jobs = count * win / 100;
+      document.getElementById('es-n-o').textContent = count;
+      document.getElementById('es-amt-o').textContent = money(avg);
+      document.getElementById('es-win-o').textContent = win;
+      eAnimate(jobs * avg * 12);
+      document.getElementById('es-jobs').textContent = (Math.round(jobs * 10) / 10).toLocaleString('en-US');
+      document.getElementById('es-msgs').textContent = (count * 4).toLocaleString('en-US') + ' / mo';
+      document.getElementById('es-hrs').textContent = Math.round(count * 20 / 60) + ' hrs / mo';
+    }
+    [en, ea, ew].forEach(function (el) { el.addEventListener('input', ecalc); });
+    ecalc();
   }
 
   if (!('IntersectionObserver' in window)) {
