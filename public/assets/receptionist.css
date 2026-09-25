@@ -17,9 +17,20 @@
 
 /* Pricing: setup + maintenance cards with minutes selector */
 .rx-plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:880px;margin-inline:auto;align-items:stretch}
-.rx-plans .plan{display:flex;flex-direction:column}
-.rx-plans .plan .btn{margin-top:auto}
-.rx-plans .plan ul{margin-bottom:22px}
-.rx-min{display:block;font-size:.85rem;font-weight:600;margin:10px 0 6px}
-.rx-min select{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid #D5DEE8;border-radius:10px;font:inherit;font-weight:500;background:#fff;color:inherit;cursor:pointer;min-height:44px}
-@media(max-width:800px){.rx-plans{grid-template-columns:1fr}}
+.rx-plans .plan{padding:34px 32px}
+.rx-plans .price{white-space:nowrap;margin-top:24px}
+.rx-plans .price span#rx-price{display:inline-block;min-width:3.6ch;transition:color .3s}
+.rx-plans .price span#rx-price.bump{color:var(--orange)}
+.rx-ctl{height:88px;margin-top:14px;display:flex;flex-direction:column;justify-content:flex-start}
+.rx-ctl .price-note{max-width:none;width:100%;margin:0;line-height:1.5}
+.rx-min{font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.rx-ctl select{width:100%;min-height:46px;padding:10px 40px 10px 14px;border:1.5px solid #D5DEE8;border-radius:12px;font:inherit;font-weight:600;color:inherit;cursor:pointer;
+  -webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23FF6B2C' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center}
+.rx-ctl select:hover,.rx-ctl select:focus{border-color:var(--orange);outline:none}
+.rx-plans .plan ul{margin:22px 0 28px}
+.rx-total{max-width:880px;margin:22px auto 0;display:flex;flex-wrap:wrap;gap:6px 8px;justify-content:center;align-items:baseline;padding:16px 20px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:1.02rem}
+.rx-total span{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.rx-total b{font-size:1.15rem}
+@media(max-width:800px){.rx-plans{grid-template-columns:1fr}.rx-ctl{height:auto}.rx-plans .plan{padding:28px 22px}}
+.rx-plans .plan li,.rx-ctl .price-note{text-wrap:wrap}
+.rx-total .rx-nw{white-space:nowrap;font-size:inherit;font-weight:inherit;letter-spacing:0;text-transform:none;color:inherit;margin:0}

@@ -37,16 +37,27 @@
   });
 })();
 
-/* Pricing: maintenance price updates with the minutes dropdown ($299 incl. 500 min, +$100 per 300 min) */
+/* Pricing: maintenance price follows the minutes dropdown ($299 incl. 500 min, +$100 per 300 min) */
 (function () {
   var sel = document.getElementById('rx-minutes');
   if (!sel) return;
-  var price = document.getElementById('rx-price'), li = document.getElementById('rx-min-li');
+  var price = document.getElementById('rx-price'), li = document.getElementById('rx-min-li'), tot = document.getElementById('rx-total-mo');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var shown = 299, raf = 0;
+  function paint(v) { price.textContent = '$' + Math.round(v); }
   function upd() {
-    var m = +sel.value;
-    price.textContent = '$' + (299 + (m - 500) / 300 * 100);
+    var m = +sel.value, target = 299 + (m - 500) / 300 * 100;
     li.textContent = m.toLocaleString('en-US');
+    tot.textContent = '$' + target;
+    cancelAnimationFrame(raf);
+    if (reduce) { shown = target; paint(target); return; }
+    price.classList.add('bump');
+    var from = shown, t0 = performance.now();
+    (function step(t) {
+      var p = Math.min(1, (t - t0) / 380), e = 1 - Math.pow(1 - p, 3);
+      shown = from + (target - from) * e; paint(shown);
+      if (p < 1) raf = requestAnimationFrame(step); else setTimeout(function () { price.classList.remove('bump'); }, 250);
+    })(t0);
   }
   sel.addEventListener('change', upd);
-  upd();
 })();

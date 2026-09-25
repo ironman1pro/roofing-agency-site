@@ -175,45 +175,47 @@
     <div class="rx-plans">
       <div class="plan">
         <h3>Setup</h3>
-        <p class="sub">The custom build, once.</p>
+        <p class="sub">The custom build, done once.</p>
         <div class="price"><span class="strike">$3,000</span>$1,200 <small>one-time</small></div>
-        <p class="price-note">Includes the call transcripts and recordings dashboard.</p>
+        <div class="rx-ctl"><p class="price-note">Paid once. Includes the call transcripts and recordings dashboard.</p></div>
         <ul>
-          <li>Custom greeting and script for your business</li>
-          <li>Calendar integration, books the estimate directly</li>
+          <li>Custom greeting and script</li>
+          <li>Books estimates on your calendar</li>
           <li>Escalation routing for urgent jobs</li>
-          <li>Fully customizable to how you want calls handled</li>
           <li>Wired to your existing business line</li>
         </ul>
         <a class="btn alt" href="#demo">Request a live demo →</a>
       </div>
       <div class="plan pop">
-        <span class="badge">Keeps it running</span>
+        <span class="badge">Includes your minutes</span>
         <h3>Maintenance</h3>
-        <p class="sub">Monitoring, updates and your call minutes.</p>
+        <p class="sub">Keeps it running, month to month.</p>
         <div class="price"><span id="rx-price">$299</span> <small>/month</small></div>
-        <label class="rx-min" for="rx-minutes">Minutes per month
+        <div class="rx-ctl">
+          <label class="rx-min" for="rx-minutes">Call minutes</label>
           <select id="rx-minutes">
-            <option value="500" selected>500 minutes (included)</option>
-            <option value="800">800 minutes (+$100)</option>
-            <option value="1100">1,100 minutes (+$200)</option>
-            <option value="1400">1,400 minutes (+$300)</option>
-            <option value="1700">1,700 minutes (+$400)</option>
-            <option value="2000">2,000 minutes (+$500)</option>
+            <option value="500" selected>500 minutes / month</option>
+            <option value="800">800 minutes / month</option>
+            <option value="1100">1,100 minutes / month</option>
+            <option value="1400">1,400 minutes / month</option>
+            <option value="1700">1,700 minutes / month</option>
+            <option value="2000">2,000 minutes / month</option>
           </select>
-        </label>
-        <p class="price-note">500 minutes included. Add 300 more for $100/month.</p>
+        </div>
         <ul>
           <li><span><b id="rx-min-li">500</b> call minutes every month</span></li>
           <li>Hosting and uptime monitoring</li>
-          <li>Script and greeting updates when you need them</li>
-          <li>Fixes and tweaks, handled for you</li>
+          <li>Script updates and fixes, handled for you</li>
           <li>Cancel anytime</li>
         </ul>
         <a class="btn" href="#demo">Request a live demo →</a>
       </div>
     </div>
-    <p class="guarantee">Busy month? You get a heads-up before you run out, and you can move up a tier any time so it never just stops working. <b>Limited onboarding slots each week,</b> since every build is custom and personally set up.</p>
+    <div class="rx-total" aria-live="polite">
+      <span>Your total</span>
+      <span class="rx-nw"><b>$1,200</b> today,</span> <span class="rx-nw">then <b id="rx-total-mo">$299</b>/month</span>
+    </div>
+    <p class="guarantee">Busy month? Switch to more minutes any time. <b>Limited onboarding slots each week,</b> since every build is custom and personally set up.</p>
   </div>
 </section>
 
