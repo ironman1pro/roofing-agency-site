@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#0B1F33">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://adaptify.tech/#org", "name": "Adaptify LLC", "alternateName": "Adaptify", "url": "https://adaptify.tech/"}, {"@type": "Service", "@id": "https://adaptify.tech/automations/#service", "name": "Adaptify After-Hours AI Receptionist", "url": "https://adaptify.tech/automations/", "provider": {"@id": "https://adaptify.tech/#org"}, "description": "A custom AI receptionist that answers after-hours calls for a roofing company and books the estimate directly onto the calendar, with escalation routing for urgent jobs.", "areaServed": "US", "serviceType": "AI phone receptionist for roofing companies", "offers": {"@type": "Offer", "name": "After-Hours Booking Line setup", "description": "One-time build: custom greeting and script, calendar booking, escalation routing for urgent jobs, and a call transcripts and recordings dashboard. Monthly maintenance from $299 with 500 call minutes included.", "price": "1200", "priceCurrency": "USD"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will it sound robotic or say the wrong thing?", "acceptedAnswer": {"@type": "Answer", "text": "See it live before you pay anything. On a free demo we call it in front of you so you can hear exactly how it sounds and how it handles a real conversation."}}, {"@type": "Question", "name": "Does this replace my staff?", "acceptedAnswer": {"@type": "Answer", "text": "No. It only picks up when nobody else can, nights, weekends, and while your team is on a roof or off the clock. During business hours, calls go wherever they already go."}}, {"@type": "Question", "name": "What happens with an urgent call, like an active leak?", "acceptedAnswer": {"@type": "Answer", "text": "Urgent jobs get escalated and routed to whoever is on call, not left to wait until the next business day like a normal voicemail would."}}, {"@type": "Question", "name": "What happens when I run out of minutes?", "acceptedAnswer": {"@type": "Answer", "text": "You will get a heads-up before you run out. Your plan includes 500 minutes a month, and you can add 300 more for $100 a month any time, so a busy month never just stops working."}}, {"@type": "Question", "name": "Do I need a new phone number?", "acceptedAnswer": {"@type": "Answer", "text": "No. It's wired to pick up your existing business line outside your hours, or however you want calls routed to it. Nothing changes for your customers."}}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://adaptify.tech/#org", "name": "Adaptify LLC", "alternateName": "Adaptify", "url": "https://adaptify.tech/"}, {"@type": "Service", "@id": "https://adaptify.tech/automations/#service", "name": "Adaptify After-Hours AI Receptionist", "url": "https://adaptify.tech/automations/", "provider": {"@id": "https://adaptify.tech/#org"}, "description": "A custom AI receptionist that answers after-hours calls for a roofing company and books the estimate directly onto the calendar, with escalation routing for urgent jobs.", "areaServed": "US", "serviceType": "AI phone receptionist for roofing companies", "offers": {"@type": "Offer", "name": "After-Hours Booking Line setup", "description": "One-time build: custom greeting and script, calendar booking, escalation routing for urgent jobs, and a call transcripts and recordings dashboard. Includes 250 free call minutes. Monthly maintenance from $299 with 500 call minutes; unused minutes roll over.", "price": "1200", "priceCurrency": "USD"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Will it sound robotic or say the wrong thing?", "acceptedAnswer": {"@type": "Answer", "text": "See it live before you pay anything. On a free demo we call it in front of you so you can hear exactly how it sounds and how it handles a real conversation."}}, {"@type": "Question", "name": "Does this replace my staff?", "acceptedAnswer": {"@type": "Answer", "text": "No. It only picks up when nobody else can, nights, weekends, and while your team is on a roof or off the clock. During business hours, calls go wherever they already go."}}, {"@type": "Question", "name": "What happens with an urgent call, like an active leak?", "acceptedAnswer": {"@type": "Answer", "text": "Urgent jobs get escalated and routed to whoever is on call, not left to wait until the next business day like a normal voicemail would."}}, {"@type": "Question", "name": "What happens when I run out of minutes?", "acceptedAnswer": {"@type": "Answer", "text": "You will get a heads-up before you run out. Setup includes 250 free minutes, your plan adds 500 a month, and unused minutes roll over. Need more? Switch to a bigger plan any time, so a busy month never just stops working."}}, {"@type": "Question", "name": "Do I need a new phone number?", "acceptedAnswer": {"@type": "Answer", "text": "No. It's wired to pick up your existing business line outside your hours, or however you want calls routed to it. Nothing changes for your customers."}}]}]}
 </script>
 <link rel="stylesheet" href="../assets/site.css?v=1">
 <link rel="stylesheet" href="../assets/motion.css?v=1">
@@ -169,7 +169,7 @@
     <div class="center">
       <span class="eyebrow">Simple pricing</span>
       <h2>One setup. One monthly plan. No surprises.</h2>
-      <p class="lead">A one-time fee for the custom build, then a monthly maintenance plan that keeps it running and includes your call minutes.</p>
+      <p class="lead">The build comes with 250 free call minutes. Then a monthly plan keeps it running and tops up your minutes, and unused minutes roll over.</p>
     </div>
     <div style="height:34px"></div>
     <div class="rx-plans">
@@ -177,12 +177,13 @@
         <h3>Setup</h3>
         <p class="sub">The custom build, done once.</p>
         <div class="price"><span class="strike">$3,000</span>$1,200 <small>one-time</small></div>
-        <div class="rx-ctl"><p class="price-note">Paid once. Includes the call transcripts and recordings dashboard.</p></div>
+        <div class="rx-ctl"><p class="rx-free"><b>250 free call minutes included</b><span>About 50 calls to get you started</span></p></div>
         <ul>
           <li>Custom greeting and script</li>
           <li>Books estimates on your calendar</li>
           <li>Escalation routing for urgent jobs</li>
           <li>Wired to your existing business line</li>
+          <li>Call transcripts and recordings dashboard</li>
         </ul>
         <a class="btn alt" href="#demo">Request a live demo →</a>
       </div>
@@ -192,18 +193,19 @@
         <p class="sub">Keeps it running, month to month.</p>
         <div class="price"><span id="rx-price">$299</span> <small>/month</small></div>
         <div class="rx-ctl">
-          <label class="rx-min" for="rx-minutes">Call minutes</label>
+          <label class="rx-min" for="rx-minutes">Minutes per month</label>
           <select id="rx-minutes">
-            <option value="500" selected>500 minutes / month</option>
-            <option value="800">800 minutes / month</option>
-            <option value="1100">1,100 minutes / month</option>
-            <option value="1400">1,400 minutes / month</option>
-            <option value="1700">1,700 minutes / month</option>
-            <option value="2000">2,000 minutes / month</option>
+            <option value="500" selected>500 minutes  ·  ~100 calls</option>
+            <option value="800">800 minutes  ·  ~160 calls</option>
+            <option value="1100">1,100 minutes  ·  ~220 calls</option>
+            <option value="1400">1,400 minutes  ·  ~280 calls</option>
+            <option value="1700">1,700 minutes  ·  ~340 calls</option>
+            <option value="2000">2,000 minutes  ·  ~400 calls</option>
           </select>
         </div>
         <ul>
-          <li><span><b id="rx-min-li">500</b> call minutes every month</span></li>
+          <li><span><b id="rx-min-li">500</b> minutes a month (~<b id="rx-calls-li">100</b> calls)</span></li>
+          <li>Unused minutes roll over to next month</li>
           <li>Hosting and uptime monitoring</li>
           <li>Script updates and fixes, handled for you</li>
           <li>Cancel anytime</li>
@@ -211,11 +213,7 @@
         <a class="btn" href="#demo">Request a live demo →</a>
       </div>
     </div>
-    <div class="rx-total" aria-live="polite">
-      <span>Your total</span>
-      <span class="rx-nw"><b>$1,200</b> today,</span> <span class="rx-nw">then <b id="rx-total-mo">$299</b>/month</span>
-    </div>
-    <p class="guarantee">Busy month? Switch to more minutes any time. <b>Limited onboarding slots each week,</b> since every build is custom and personally set up.</p>
+    <p class="guarantee">Unused minutes roll over, and you can switch to more minutes any time. <b>Limited onboarding slots each week,</b> since every build is custom and personally set up.</p>
   </div>
 </section>
 
@@ -230,7 +228,7 @@
       <details open><summary>Will it sound robotic or say the wrong thing?</summary><p>See for yourself before you pay anything. On the live demo we call it in front of you, and you can ask it anything to hear exactly how it sounds and how it handles a real conversation.</p></details>
       <details><summary>Does this replace my staff?</summary><p>No. It only picks up when nobody else can, nights, weekends, and while your team is on a roof or off the clock. During business hours, calls go wherever they already go.</p></details>
       <details><summary>What happens with an urgent call, like an active leak?</summary><p>Urgent jobs get escalated and routed to whoever is on call, not left to wait until the next business day like a normal voicemail would.</p></details>
-      <details><summary>What happens when I run out of minutes?</summary><p>You'll get a heads-up before you run out. Your plan includes 500 minutes a month, and you can add 300 more for $100 a month any time, so a busy month never just stops working.</p></details>
+      <details><summary>What happens when I run out of minutes?</summary><p>You'll get a heads-up before you run out. Setup includes 250 free minutes, your plan adds 500 a month, and unused minutes roll over. Need more? Switch to a bigger plan any time, so a busy month never just stops working.</p></details>
       <details><summary>Do I need a new phone number?</summary><p>No. It's wired to pick up your existing business line outside your hours, or however you want calls routed to it. Nothing changes for your customers.</p></details>
       <details><summary>Can I see what it actually said on a call?</summary><p>Yes. Every call is logged with a transcript and recording in your dashboard, included free, so you can check exactly what was said.</p></details>
     </div>

@@ -28,9 +28,8 @@
   -webkit-appearance:none;appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23FF6B2C' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center}
 .rx-ctl select:hover,.rx-ctl select:focus{border-color:var(--orange);outline:none}
 .rx-plans .plan ul{margin:22px 0 28px}
-.rx-total{max-width:880px;margin:22px auto 0;display:flex;flex-wrap:wrap;gap:6px 8px;justify-content:center;align-items:baseline;padding:16px 20px;border-radius:14px;background:#fff;border:1px solid var(--line);font-size:1.02rem}
-.rx-total span{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
-.rx-total b{font-size:1.15rem}
 @media(max-width:800px){.rx-plans{grid-template-columns:1fr}.rx-ctl{height:auto}.rx-plans .plan{padding:28px 22px}}
 .rx-plans .plan li,.rx-ctl .price-note{text-wrap:wrap}
-.rx-total .rx-nw{white-space:nowrap;font-size:inherit;font-weight:inherit;letter-spacing:0;text-transform:none;color:inherit;margin:0}
+.rx-free{margin:0;padding:12px 14px;border-radius:12px;background:#E9F8EF;border:1px solid #BFE8CF;display:flex;flex-direction:column;gap:2px}
+.rx-free b{color:#137A3B;font-size:.98rem}
+.rx-free span{color:var(--muted);font-size:.86rem}

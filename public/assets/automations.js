@@ -41,14 +41,14 @@
 (function () {
   var sel = document.getElementById('rx-minutes');
   if (!sel) return;
-  var price = document.getElementById('rx-price'), li = document.getElementById('rx-min-li'), tot = document.getElementById('rx-total-mo');
+  var price = document.getElementById('rx-price'), li = document.getElementById('rx-min-li'), calls = document.getElementById('rx-calls-li');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var shown = 299, raf = 0;
   function paint(v) { price.textContent = '$' + Math.round(v); }
   function upd() {
     var m = +sel.value, target = 299 + (m - 500) / 300 * 100;
     li.textContent = m.toLocaleString('en-US');
-    tot.textContent = '$' + target;
+    calls.textContent = Math.round(m / 5).toLocaleString('en-US');
     cancelAnimationFrame(raf);
     if (reduce) { shown = target; paint(target); return; }
     price.classList.add('bump');
