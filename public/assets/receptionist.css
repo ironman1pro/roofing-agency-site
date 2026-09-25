@@ -33,3 +33,53 @@
 .rx-free{margin:0;padding:12px 14px;border-radius:12px;background:#E9F8EF;border:1px solid #BFE8CF;display:flex;flex-direction:column;gap:2px}
 .rx-free b{color:#137A3B;font-size:.98rem}
 .rx-free span{color:var(--muted);font-size:.86rem}
+
+/* "?" tooltips on call estimates */
+.rx-tip{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;margin-left:6px;border-radius:50%;border:1.5px solid currentColor;background:none;color:var(--muted);font:700 .68rem/1 inherit;cursor:help;position:relative;vertical-align:1px;padding:0;opacity:.8}
+.rx-tip:hover,.rx-tip:focus-visible{opacity:1;color:var(--orange);outline:none}
+.rx-tip::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);right:-10px;transform:translateY(4px);width:max-content;max-width:min(220px,70vw);background:var(--navy);color:#fff;font-size:.78rem;font-weight:500;line-height:1.35;text-transform:none;letter-spacing:0;padding:8px 10px;border-radius:8px;box-shadow:0 10px 24px rgba(11,31,51,.25);opacity:0;pointer-events:none;transition:.18s;z-index:5;white-space:normal;text-align:left}
+.rx-tip:hover::after,.rx-tip:focus-visible::after{opacity:1;transform:none}
+.rx-min{display:flex;align-items:center}
+.rx-min label{font:inherit;color:inherit;letter-spacing:inherit;margin:0}
+
+/* Offer section: animated after-hours roofing call */
+.rx-flow{display:grid;grid-template-columns:1fr 1.05fr;gap:40px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px;box-shadow:0 24px 60px rgba(11,31,51,.08);margin:34px auto 40px;max-width:1040px}
+.rx-scene{position:relative}
+.rx-scene svg{display:block;width:100%;height:auto;border-radius:18px}
+.rx-clock{position:absolute;left:14px;top:14px;background:rgba(11,31,51,.75);color:#fff;font-size:.76rem;font-weight:700;padding:5px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+.rx-rain{animation:rxRain .7s linear infinite}
+@keyframes rxRain{from{transform:translate(0,-14px)}to{transform:translate(-6px,14px)}}
+.rx-flash{opacity:0;animation:rxFlash 6s infinite}
+.rx-bolt{opacity:0;animation:rxBolt 6s infinite}
+@keyframes rxFlash{0%,86%,90%,94%,100%{opacity:0}88%,92%{opacity:.18}}
+@keyframes rxBolt{0%,86%,96%,100%{opacity:0}87%,94%{opacity:1}}
+.rx-cloud{animation:rxDrift 9s ease-in-out infinite alternate}
+.rx-cloud.c2{animation-duration:12s}
+@keyframes rxDrift{to{transform:translateX(14px)}}
+.rx-drip{animation:rxDrip 1.6s ease-in infinite}
+@keyframes rxDrip{0%{transform:translateY(0);opacity:0}15%{opacity:1}100%{transform:translateY(22px);opacity:0}}
+.rx-phone .ph{opacity:0;transition:opacity .35s}
+.rx-ring{opacity:0;transform-origin:center;transform-box:fill-box}
+.rx-flow[data-s="0"] .ph0,.rx-flow[data-s="1"] .ph1,.rx-flow[data-s="2"] .ph2,.rx-flow[data-s="3"] .ph3{opacity:1}
+.rx-flow[data-s="0"] .rx-ring{animation:rxRing 1.2s ease-out infinite}
+.rx-flow[data-s="0"] .rx-ring.r2{animation-delay:.6s}
+@keyframes rxRing{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(1.5)}}
+.rx-flow[data-s="0"] .rx-phone{animation:rxBuzz .5s ease-in-out infinite}
+@keyframes rxBuzz{0%,100%{transform:translate(292px,150px)}25%{transform:translate(290px,150px) rotate(-2deg)}75%{transform:translate(294px,150px) rotate(2deg)}}
+.wv{transform-box:fill-box;transform-origin:center;animation:rxWave .7s ease-in-out infinite alternate}
+.wv:nth-child(2){animation-delay:.15s}.wv:nth-child(3){animation-delay:.3s}.wv:nth-child(4){animation-delay:.1s}.wv:nth-child(5){animation-delay:.25s}
+@keyframes rxWave{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+.rx-steps{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:none}
+.rx-steps li{display:flex;gap:14px;padding:12px 14px;border-radius:14px;border:1px solid transparent;opacity:.45;transition:opacity .4s,background .4s,border-color .4s,transform .4s}
+.rx-steps li.done{opacity:.8}
+.rx-steps li.on{opacity:1;background:#FFF7F2;border-color:#FFD9C4;transform:translateX(4px)}
+.rx-n{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;font-weight:800;background:#EEF2F6;color:var(--navy);transition:.4s}
+.rx-steps li.on .rx-n{background:var(--orange);color:#fff}
+.rx-steps li.done .rx-n{background:#1FA85A;color:#fff}
+.rx-steps b{display:block;font-size:1rem;color:var(--ink)}
+.rx-steps p{margin:3px 0 0;color:var(--muted);font-size:.9rem;line-height:1.45}
+.rx-chip{display:inline-block;margin-top:8px;font-size:.8rem;font-weight:700;padding:5px 10px;border-radius:8px;background:#EEF2F6;color:var(--navy);max-width:100%}
+.rx-chip.warn{background:#FFF1D6;color:#8A5A00}
+.rx-chip.ok{background:#E8F7EE;color:#0B6B35}
+@media(max-width:900px){.rx-flow{grid-template-columns:1fr;gap:18px;padding:16px}.rx-steps li{padding:10px 12px}.rx-steps li.on{transform:none}}
+@media(prefers-reduced-motion:reduce){.rx-rain,.rx-flash,.rx-bolt,.rx-cloud,.rx-drip,.wv,.rx-ring,.rx-phone{animation:none!important}.rx-steps li{opacity:1}}

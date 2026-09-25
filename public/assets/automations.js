@@ -61,3 +61,27 @@
   }
   sel.addEventListener('change', upd);
 })();
+
+/* Offer section: step through the after-hours call story while it's on screen */
+(function () {
+  var flow = document.getElementById('rx-flow');
+  if (!flow) return;
+  var steps = flow.querySelectorAll('.rx-steps li');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(i) {
+    flow.setAttribute('data-s', i);
+    Array.prototype.forEach.call(steps, function (li, k) {
+      li.classList.toggle('on', k === i);
+      li.classList.toggle('done', k < i);
+    });
+  }
+  if (reduce) { show(3); return; }
+  var i = 0, timer = 0, running = false;
+  var hold = [2600, 2600, 2600, 4200];
+  function tick() { show(i); timer = setTimeout(function () { i = (i + 1) % steps.length; tick(); }, hold[i]); }
+  function start() { if (running) return; running = true; tick(); }
+  function stop() { running = false; clearTimeout(timer); }
+  show(0);
+  if (!('IntersectionObserver' in window)) { start(); return; }
+  new IntersectionObserver(function (es) { es[0].isIntersecting ? start() : stop(); }, { threshold: 0.35 }).observe(flow);
+})();

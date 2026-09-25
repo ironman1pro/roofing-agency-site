@@ -113,6 +113,54 @@
       <h2>Not a bot that takes a message. A receptionist that books the job.</h2>
       <p class="lead">Built and scripted around your business, not a generic voice assistant read off a template.</p>
     </div>
+    <div class="rx-flow" id="rx-flow">
+      <div class="rx-scene" aria-hidden="true">
+        <svg viewBox="0 0 400 300" role="presentation">
+          <defs>
+            <linearGradient id="rxSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1F33"/><stop offset="1" stop-color="#1B3A5C"/></linearGradient>
+            <linearGradient id="rxGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD58A"/><stop offset="1" stop-color="#FF9F4A"/></linearGradient>
+          </defs>
+          <rect width="400" height="300" rx="18" fill="url(#rxSky)"/>
+          <rect class="rx-flash" width="400" height="300" rx="18" fill="#DDEBFF"/>
+          <g fill="#fff" opacity=".7"><circle cx="40" cy="36" r="1.4"/><circle cx="92" cy="22" r="1"/><circle cx="150" cy="48" r="1.2"/><circle cx="330" cy="30" r="1.3"/><circle cx="372" cy="62" r="1"/></g>
+          <path class="rx-cloud" d="M40 70a22 22 0 0 1 40-12 26 26 0 0 1 48 6 18 18 0 0 1 2 36H44a16 16 0 0 1-4-30z" fill="#2B4A6E"/>
+          <path class="rx-cloud c2" d="M250 58a20 20 0 0 1 36-10 24 24 0 0 1 44 6 16 16 0 0 1 2 32H254a14 14 0 0 1-4-28z" fill="#264466"/>
+          <path class="rx-bolt" d="M112 100l-14 28h12l-8 24 24-34h-13l9-18z" fill="#FFE27A"/>
+          <g class="rx-rain" stroke="#8FB3DA" stroke-width="2" stroke-linecap="round" opacity=".55">
+            <path d="M30 110l-6 14M70 120l-6 14M110 160l-6 14M150 108l-6 14M200 126l-6 14M240 104l-6 14M290 118l-6 14M330 110l-6 14M370 124l-6 14M60 170l-6 14M180 176l-6 14M260 160l-6 14M350 168l-6 14"/>
+          </g>
+          <rect x="0" y="262" width="400" height="38" fill="#0A1A2B"/>
+          <g transform="translate(58 142)">
+            <path d="M0 64L90 4l90 60z" fill="#3A2A22"/>
+            <path d="M0 64L90 4l90 60" fill="none" stroke="#6B4A38" stroke-width="5" stroke-linejoin="round"/>
+            <rect x="16" y="62" width="148" height="60" fill="#E9EEF4"/>
+            <rect x="34" y="78" width="34" height="28" rx="3" fill="url(#rxGlow)"/>
+            <rect x="112" y="78" width="34" height="28" rx="3" fill="url(#rxGlow)"/>
+            <rect x="76" y="86" width="28" height="36" rx="2" fill="#6B4A38"/>
+            <path class="rx-drip" d="M129 82c0 0-5 7-5 10a5 5 0 0 0 10 0c0-3-5-10-5-10z" fill="#4FA3FF"/>
+            <path d="M100 30l12 -6 4 10" fill="none" stroke="#FF6B2C" stroke-width="3" stroke-linecap="round"/>
+          </g>
+          <g class="rx-phone" transform="translate(292 150)">
+            <circle class="rx-ring r1" cx="34" cy="50" r="30" fill="none" stroke="#FF6B2C" stroke-width="3"/>
+            <circle class="rx-ring r2" cx="34" cy="50" r="30" fill="none" stroke="#FF6B2C" stroke-width="3"/>
+            <rect x="8" y="0" width="52" height="100" rx="10" fill="#0F2640" stroke="#4B6B8F" stroke-width="2"/>
+            <rect x="13" y="10" width="42" height="80" rx="5" fill="#16314F"/>
+            <g class="ph ph0"><circle cx="34" cy="42" r="11" fill="#FF6B2C"/><path d="M29 38c1 6 4 9 10 10l2-3-4-2-2 2c-2-1-3-2-4-4l2-2-2-4z" fill="#fff"/><rect x="20" y="62" width="28" height="4" rx="2" fill="#8FA3B8"/></g>
+            <g class="ph ph1"><rect class="wv" x="20" y="44" width="4" height="12" rx="2" fill="#37E6F4"/><rect class="wv" x="27" y="38" width="4" height="24" rx="2" fill="#37E6F4"/><rect class="wv" x="34" y="41" width="4" height="18" rx="2" fill="#37E6F4"/><rect class="wv" x="41" y="36" width="4" height="28" rx="2" fill="#37E6F4"/><rect class="wv" x="48" y="45" width="4" height="10" rx="2" fill="#37E6F4"/></g>
+            <g class="ph ph2"><path d="M34 30l14 26H20z" fill="#FFB020"/><rect x="33" y="38" width="2.4" height="10" rx="1" fill="#0F2640"/><circle cx="34.2" cy="52" r="1.6" fill="#0F2640"/><rect x="20" y="64" width="28" height="4" rx="2" fill="#8FA3B8"/></g>
+            <g class="ph ph3"><circle cx="34" cy="46" r="13" fill="#1FA85A"/><path d="M28 46l4 4 8-9" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>
+          </g>
+        </svg>
+        <div class="rx-clock">Tue · 9:14 PM · office closed</div>
+      </div>
+      <ol class="rx-steps">
+        <li><span class="rx-n">1</span><div><b>A homeowner calls about a leak</b><p>Storm just rolled through. Your office closed four hours ago.</p><div class="rx-chip">📞 Incoming · (512) 555-0147</div></div></li>
+        <li><span class="rx-n">2</span><div><b>It answers on the first ring</b><p>"Thanks for calling Hill Country Roofing. Is water coming in right now?"</p></div></li>
+        <li><span class="rx-n">3</span><div><b>Flags it urgent and texts your on-call tech</b><div class="rx-chip warn">SMS to Mike (on call): active leak, 412 Oak St</div></div></li>
+        <li><span class="rx-n">4</span><div><b>Books the inspection on your calendar</b><div class="rx-chip ok">📅 Wed 8:00 AM · Roof inspection · Dana R.</div></div></li>
+      </ol>
+    </div>
+    <p class="rx-cap" style="margin:-18px 0 34px">Illustration with sample details.</p>
     <div class="grid2">
       <div class="feat"><div class="ck">✓</div><div><h3>Books the estimate on your calendar</h3><p>It doesn't just log a message, it schedules the appointment directly, the same way a person answering the phone would.</p></div></div>
       <div class="feat"><div class="ck">✓</div><div><h3>Custom script, written for your business</h3><p>The greeting and conversation are tailored to how you actually operate, not a generic robotic read.</p></div></div>
@@ -177,7 +225,7 @@
         <h3>Setup</h3>
         <p class="sub">The custom build, done once.</p>
         <div class="price"><span class="strike">$3,000</span>$1,200 <small>one-time</small></div>
-        <div class="rx-ctl"><p class="rx-free"><b>250 free call minutes included</b><span>About 50 calls to get you started</span></p></div>
+        <div class="rx-ctl"><p class="rx-free"><b>250 free call minutes included</b><span>About 50 calls to get you started<button type="button" class="rx-tip" aria-label="Assuming each call is 5 minutes on average" data-tip="Assuming each call is 5 minutes on average">?</button></span></p></div>
         <ul>
           <li>Custom greeting and script</li>
           <li>Books estimates on your calendar</li>
@@ -193,7 +241,7 @@
         <p class="sub">Keeps it running, month to month.</p>
         <div class="price"><span id="rx-price">$299</span> <small>/month</small></div>
         <div class="rx-ctl">
-          <label class="rx-min" for="rx-minutes">Minutes per month</label>
+          <div class="rx-min"><label for="rx-minutes">Minutes per month</label><button type="button" class="rx-tip" aria-label="Assuming each call is 5 minutes on average" data-tip="Assuming each call is 5 minutes on average">?</button></div>
           <select id="rx-minutes">
             <option value="500" selected>500 minutes  ·  ~100 calls</option>
             <option value="800">800 minutes  ·  ~160 calls</option>
@@ -204,7 +252,7 @@
           </select>
         </div>
         <ul>
-          <li><span><b id="rx-min-li">500</b> minutes a month (~<b id="rx-calls-li">100</b> calls)</span></li>
+          <li><span><b id="rx-min-li">500</b> minutes a month (~<b id="rx-calls-li">100</b> calls)<button type="button" class="rx-tip" aria-label="Assuming each call is 5 minutes on average" data-tip="Assuming each call is 5 minutes on average">?</button></span></li>
           <li>Unused minutes roll over to next month</li>
           <li>Hosting and uptime monitoring</li>
           <li>Script updates and fixes, handled for you</li>
