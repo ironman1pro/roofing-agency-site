@@ -123,6 +123,8 @@ const REDIRECTS = {
   '/automations': '/ai-receptionist/',
   '/crm': '/roofing-crm/',
   '/websites': '/roofing-websites/',
+  '/storm-reactivation': '/storm-alerts/',
+  '/job-updates-and-reviews': '/reviews-and-updates/',
 };
 
 function legacyRedirect(url) {

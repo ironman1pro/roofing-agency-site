@@ -19,7 +19,7 @@
     btn.disabled = true;
     btn.textContent = 'Sending...';
     var fd = new FormData(form);
-    fd.append('_subject', 'Live demo request (receptionist): ' + document.getElementById('d-name').value.trim().slice(0, 80));
+    fd.append('_subject', '[AI Receptionist live demo request] ' + document.getElementById('d-name').value.trim().slice(0, 80));
     var send = (trap && trap.value.trim()) ? Promise.resolve() :
       fetch('https://formspree.io/f/xvkgzgwd', { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
         .then(function (r) { if (!r.ok) throw new Error(String(r.status)); });
