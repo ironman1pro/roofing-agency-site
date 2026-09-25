@@ -1,4 +1,21 @@
-document.getElementById('yr').textContent = new Date().getFullYear();
+document.documentElement.classList.add('js');
+var yr = document.getElementById('yr');
+if (yr) yr.textContent = new Date().getFullYear();
+
+/* Mobile menu: the toggle shows the service links under 960px */
+(function () {
+  var header = document.querySelector('header'), btn = header && header.querySelector('.nav-toggle');
+  if (!btn) return;
+  function set(open) {
+    header.classList.toggle('nav-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function () { set(!header.classList.contains('nav-open')); });
+  header.querySelectorAll('.nav-links a').forEach(function (a) { a.addEventListener('click', function () { set(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && header.classList.contains('nav-open')) { set(false); btn.focus(); } });
+  document.addEventListener('click', function (e) { if (!header.contains(e.target)) set(false); });
+})();
 
 var form = document.getElementById('lead-form');
 var errEl = document.getElementById('form-err');
