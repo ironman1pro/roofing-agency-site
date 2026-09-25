@@ -1,10 +1,13 @@
 # Adaptify
 
-> Adaptify LLC builds AI-powered tools for roofing companies: an after-hours AI receptionist, an AI invoice follow-up agent, a custom-coded CRM and sales-focused websites. Every build is deployed to the client's own Cloudflare account and fully owned by them, never a rented SaaS tool.
+> Adaptify LLC builds done-for-you AI agents for roofing companies: an after-hours AI receptionist, estimate follow-up, invoice follow-up, job updates and Google reviews, and storm alerts with customer reactivation, plus a custom-coded CRM and sales-focused websites. Every build is deployed to the client's own Cloudflare account and fully owned by them, never a rented SaaS tool.
 
 ## Services
 - [After-hours AI receptionist](https://adaptify.tech/ai-receptionist/) ("The After-Hours Booking Line"): a custom AI receptionist that answers after-hours calls, escalates urgent jobs such as active leaks to whoever is on call, and books the estimate directly onto the calendar. Usually live within about a week of the build call. Free 20-minute live demo.
 - [Custom roofing CRM](https://adaptify.tech/roofing-crm/): a CRM designed and coded around how a roofing company already sells (offers, storm and referral leads, quote stages), deployed to the client's own Cloudflare account. Ships 15 days after the discovery call, guaranteed to match the agreed workflow.
+- [AI estimate follow-up agent](https://adaptify.tech/estimate-follow-up/): follows up on every open roofing estimate by text and email, in the company's voice, answers homeowner questions (three-quote comparisons, insurance, financing) and books the next appointment, until a yes or a clear no. Hot replies are handed to the owner or sales rep. Approval mode and a pipeline dashboard.
+- [AI job updates and reviews agent](https://adaptify.tech/job-updates-and-reviews/): texts every homeowner at each step of the job (welcome, day-before, weather delays, completion photos), asks every finished job for a Google review and drafts a reply to every review for one-tap approval, with instant alerts for low ratings. Never offers incentives or filters out unhappy customers.
+- [AI storm and reactivation agent](https://adaptify.tech/storm-reactivation/): watches public storm reports for the company's ZIP codes and, after hail or high wind, texts past customers, old estimates and past leads (only people who already have a relationship with the company, with opt-out on every message) with a free inspection offer and books inspections on the calendar. Seasonal check-ins between storms.
 - [AI invoice follow-up agent](https://adaptify.tech/invoice-follow-up/): follows up on every unpaid invoice by text and email, in the company's voice, until it is paid, including insurance-check, recoverable-depreciation, deductible and final-payment scenarios. Runs on the client's own cloud account with a live dashboard and an approval mode. For roofers and other contractors.
 - [Roofing websites](https://adaptify.tech/roofing-websites/): fast, SEO- and AI-search-optimized static websites built only for roofing companies, with free hosting for life, delivered in the client's own Cloudflare and GitHub accounts. Live in 7 days or it's free. Preview first, pay later.
 
@@ -14,16 +17,22 @@
 - Websites, custom package: multiple locations, bigger builds and anything else, scoped on request.
 - AI receptionist: $1,200 one-time setup including 250 free call minutes, then a monthly plan from $299 (500 minutes; +$100 per extra 300 minutes, up to 2,000 minutes). Unused minutes roll over. Cancel anytime.
 - Custom CRM: typically $1,500 to $4,000, one-time, no monthly fee.
+- Estimate follow-up agent: $1,200 one-time setup plus $249/month maintenance, cancel anytime. Texting billed to the client's account at cost.
+- Job updates and reviews agent: $900 one-time setup plus $149/month maintenance, cancel anytime. Texting billed at cost.
+- Storm and reactivation agent: $1,200 one-time setup plus $199/month maintenance, cancel anytime. Texting billed at cost.
 - Invoice follow-up agent: $1,200 one-time setup plus $199/month maintenance, cancel anytime. Cloud hosting and texting are billed to the client's account at cost.
 
 ## Ownership philosophy
 Every Adaptify service is built once and deployed into infrastructure the client owns outright (their own Cloudflare account), not a tool they rent from Adaptify. The goal of every service is the same: bring the roofing company more customers and make running it easier.
 
 ## Pages
-- [Home](https://adaptify.tech/): overview of all four services, how it works, FAQ
+- [Home](https://adaptify.tech/): overview of all services, how it works, FAQ
 - [Roofing websites](https://adaptify.tech/roofing-websites/): offer, pricing, portfolio, FAQ and free preview request form
 - [After-hours AI receptionist](https://adaptify.tech/ai-receptionist/): offer, call dashboard, pricing, FAQ and live demo request
 - [Custom roofing CRM](https://adaptify.tech/roofing-crm/): features, integrations, pricing and discovery call form
+- [AI estimate follow-up agent](https://adaptify.tech/estimate-follow-up/): scenarios, pipeline dashboard, follow-up sequence, calculator, pricing and FAQ
+- [AI job updates and reviews agent](https://adaptify.tech/job-updates-and-reviews/): job-stage updates, review requests and replies, dashboard, pricing and FAQ
+- [AI storm and reactivation agent](https://adaptify.tech/storm-reactivation/): storm-day workflow, contact types, dashboard, pricing and FAQ
 - [AI invoice follow-up agent](https://adaptify.tech/invoice-follow-up/): scenarios, dashboard, follow-up sequence, calculator, pricing and FAQ
 - [Contact](https://adaptify.tech/contact/): general contact form
 

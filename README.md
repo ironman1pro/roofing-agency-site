@@ -6,6 +6,8 @@ The lead form runs on a small **Cloudflare Worker** that forwards to your automa
 ```
 public/                     ← everything published (Cloudflare "build output directory")
   index.html                ← agency landing page
+  ai-receptionist/ estimate-follow-up/ storm-reactivation/ job-updates-and-reviews/ invoice-follow-up/ roofing-crm/ roofing-websites/   ← service pages
+  assets/agents.css + agents.js   ← shared styles/script for the AI agent pages
   assets/main.js            ← landing form logic (external so the CSP can block inline scripts)
   portfolio/
     summitridge/ redwood/ northline/ brightpeak/ heritage/ fairwind/   ← 6 concept sites, 4 pages each (home, services/, estimate/, contact/)
@@ -70,7 +72,7 @@ The form posts JSON like this to your webhook:
 ## Notes
 
 - **Concept sites** in `public/portfolio/` use fictional company names, sample reviews (labelled as samples) and carry `noindex` so they don't compete with your real site in search. Swap in real client sites as you win them.
-- **Caching**: `/assets/*` and `/portfolio/thumbs/*` are cached for a year (see `public/_headers`). Pages link them with a `?v=` number, so **whenever you edit a CSS/JS/image file there, bump its `?v=` in every page that links it** (e.g. `site.css?v=6` → `?v=7`), or visitors keep the old copy. All global styles live in one file, `public/assets/site.css`.
+- **Caching**: `/assets/*` and `/portfolio/thumbs/*` are cached for a year (see `public/_headers`). Pages link them with a `?v=` number, so **whenever you edit a CSS/JS/image file there, bump its `?v=` in every page that links it** (e.g. `site.css?v=8` → `?v=9`), or visitors keep the old copy. All global styles live in one file, `public/assets/site.css`.
 - **SEO**: every page has a unique title/description, canonical, Open Graph tags and JSON-LD (Organization, BreadcrumbList, Service, FAQPage). When you add a page, copy an existing page's `<head>` and header, then add the URL to `sitemap.xml` and `llms.txt`.
 - **Security headers** are in `public/_headers`. The CSP allows only your own scripts (no inline JS). If you add analytics or a chat widget later, add its domain to `script-src` / `connect-src`.
 - **Costs**: Workers static-asset hosting (static files are free and unlimited) and Worker requests on the free plan are enough to start; check Cloudflare's current limits before scaling.
