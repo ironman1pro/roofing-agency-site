@@ -1,12 +1,12 @@
 # Adaptify
 
-> Adaptify LLC builds AI-powered tools for roofing companies: sales-focused websites, a custom-coded CRM, an after-hours AI receptionist and an AI invoice follow-up agent. Every build is deployed to the client's own Cloudflare account and fully owned by them, never a rented SaaS tool.
+> Adaptify LLC builds AI-powered tools for roofing companies: an after-hours AI receptionist, an AI invoice follow-up agent, a custom-coded CRM and sales-focused websites. Every build is deployed to the client's own Cloudflare account and fully owned by them, never a rented SaaS tool.
 
 ## Services
-- [Roofing websites](https://adaptify.tech/websites/): fast, SEO- and AI-search-optimized static websites built only for roofing companies, with free hosting for life, delivered in the client's own Cloudflare and GitHub accounts. Live in 7 days or it's free. Preview first, pay later.
-- [After-hours AI receptionist](https://adaptify.tech/automations/) ("The After-Hours Booking Line"): a custom AI receptionist that answers after-hours calls, escalates urgent jobs such as active leaks to whoever is on call, and books the estimate directly onto the calendar. Usually live within about a week of the build call. Free 20-minute live demo.
-- [Custom roofing CRM](https://adaptify.tech/crm/): a CRM designed and coded around how a roofing company already sells (offers, storm and referral leads, quote stages), deployed to the client's own Cloudflare account. Ships 15 days after the discovery call, guaranteed to match the agreed workflow.
+- [After-hours AI receptionist](https://adaptify.tech/ai-receptionist/) ("The After-Hours Booking Line"): a custom AI receptionist that answers after-hours calls, escalates urgent jobs such as active leaks to whoever is on call, and books the estimate directly onto the calendar. Usually live within about a week of the build call. Free 20-minute live demo.
+- [Custom roofing CRM](https://adaptify.tech/roofing-crm/): a CRM designed and coded around how a roofing company already sells (offers, storm and referral leads, quote stages), deployed to the client's own Cloudflare account. Ships 15 days after the discovery call, guaranteed to match the agreed workflow.
 - [AI invoice follow-up agent](https://adaptify.tech/invoice-follow-up/): follows up on every unpaid invoice by text and email, in the company's voice, until it is paid, including insurance-check, recoverable-depreciation, deductible and final-payment scenarios. Runs on the client's own cloud account with a live dashboard and an approval mode. For roofers and other contractors.
+- [Roofing websites](https://adaptify.tech/roofing-websites/): fast, SEO- and AI-search-optimized static websites built only for roofing companies, with free hosting for life, delivered in the client's own Cloudflare and GitHub accounts. Live in 7 days or it's free. Preview first, pay later.
 
 ## Pricing
 - Websites, Launch: $1,200 one-time. Custom 5-page site, local SEO and AI-search setup, free hosting for life, SSL and security, free domain setup, a Google Business Profile audit and a launch-week review-request system. Optional $90/month for 5 small edits.
@@ -21,9 +21,9 @@ Every Adaptify service is built once and deployed into infrastructure the client
 
 ## Pages
 - [Home](https://adaptify.tech/): overview of all four services, how it works, FAQ
-- [Roofing websites](https://adaptify.tech/websites/): offer, pricing, portfolio, FAQ and free preview request form
-- [After-hours AI receptionist](https://adaptify.tech/automations/): offer, call dashboard, pricing, FAQ and live demo request
-- [Custom roofing CRM](https://adaptify.tech/crm/): features, integrations, pricing and discovery call form
+- [Roofing websites](https://adaptify.tech/roofing-websites/): offer, pricing, portfolio, FAQ and free preview request form
+- [After-hours AI receptionist](https://adaptify.tech/ai-receptionist/): offer, call dashboard, pricing, FAQ and live demo request
+- [Custom roofing CRM](https://adaptify.tech/roofing-crm/): features, integrations, pricing and discovery call form
 - [AI invoice follow-up agent](https://adaptify.tech/invoice-follow-up/): scenarios, dashboard, follow-up sequence, calculator, pricing and FAQ
 - [Contact](https://adaptify.tech/contact/): general contact form
 
