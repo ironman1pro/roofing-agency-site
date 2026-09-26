@@ -286,6 +286,24 @@ tr:last-child th,tr:last-child td{border-bottom:0}
 .pay .btn-c::after{display:none}
 .pay .btn-c:hover{box-shadow:inset 0 0 0 1.5px var(--ink);background:#fff}
 .pay-note{text-align:center;font-size:.85rem;color:var(--faint);margin-top:4px}
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.badge{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:12px;background:var(--soft-2);box-shadow:inset 0 0 0 1px var(--line);font-size:.8rem;line-height:1.25;color:var(--ink-2)}
+.badge svg{width:18px;height:18px;flex:none;color:var(--green)}
+.badge b{display:block;font-size:.84rem;color:var(--ink)}
+.fix .mini-trust{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-size:.84rem;color:#D4D4D8}
+.fix .mini-trust span{display:inline-flex;align-items:center;gap:6px}
+.fix .mini-trust svg{width:15px;height:15px;color:#4ADE80}
+/* reviews (filled with real tester reviews only) */
+.revs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.rev{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:26px;box-shadow:0 0 0 1px var(--line)}
+.rev .stars{color:#F59E0B;letter-spacing:2px;font-size:.95rem}
+.rev blockquote{margin-top:12px;font-size:1rem;color:var(--ink-2);line-height:1.6}
+.rev figcaption{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:20px}
+.rev figcaption img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.rev figcaption b{display:block;font-size:.94rem}
+.rev figcaption span{font-size:.84rem;color:var(--faint)}
+.rev figcaption a{color:var(--accent-ink);font-weight:600;text-decoration:none}
+.revs-note{text-align:center;color:var(--faint);font-size:.84rem;margin-top:22px}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .guar{display:flex;gap:14px;align-items:center;margin-top:24px;padding:18px;border-radius:18px;background:var(--green-soft)}
@@ -324,6 +342,7 @@ footer a:hover{color:#fff}
 @media(max-width:1000px){
   .bar nav{display:none}
   .need{grid-template-columns:1fr 1fr}
+  .revs{grid-template-columns:1fr 1fr}
   .fix{grid-template-columns:1fr;gap:32px}
   .steps{grid-template-columns:1fr;max-width:560px;margin-inline:auto}
   .easy-grid,.proof-card{grid-template-columns:1fr}
@@ -348,7 +367,8 @@ footer a:hover{color:#fff}
   .wall{height:300px;margin-top:56px}
   .track img{width:240px;margin-right:12px;border-radius:10px}
   .wall-in{gap:12px}
-  .need,.get-grid{grid-template-columns:1fr}
+  .need,.get-grid,.revs{grid-template-columns:1fr}
+  .badge{padding:8px 9px;gap:7px;font-size:.74rem}.badge b{font-size:.78rem}.badge svg{width:16px;height:16px}
   .probs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:40px -16px 0;padding:4px 16px 12px;scrollbar-width:none}
   .probs::-webkit-scrollbar{display:none}
   .prob{flex:0 0 82%;scroll-snap-align:center}
@@ -449,6 +469,7 @@ footer a:hover{color:#fff}
         <h3>Or pay <em>$47 once</em>. Own it forever.</h3>
         <p>Claude designs it, it stays online for free, and every change is just a message. No rent, no invoices, no credits.</p>
         <a class="btn" href="#pricing">Get the kit · $47<span class="arr" aria-hidden="true">→</span></a>
+        <p class="mini-trust"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>14-day money-back guarantee</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Instant access</span></p>
       </div>
       <div class="bars" role="img" aria-label="What you pay over 3 years: website builder about $1,044, web designer often thousands of dollars, Own Your Website $47">
         <small>What you pay over 3 years</small>
@@ -578,6 +599,26 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<!-- REVIEWS: real tester reviews only, in their own words, with their permission.
+     To publish: uncomment this section, add one <figure class="rev"> per review, and keep the disclosure note.
+<section id="reviews">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kick">From early testers</span>
+      <h2>Real business owners, real websites.</h2>
+    </div>
+    <div class="revs rv">
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>"EXACT WORDS FROM THE TESTER"</blockquote>
+        <figcaption><img src="/own-your-website/reviews/NAME.webp" width="84" height="84" alt="" loading="lazy" decoding="async"><span><b>FULL NAME</b><span>ROLE, BUSINESS · <a href="https://THEIR-SITE" rel="noopener">their site</a></span></span></figcaption>
+      </figure>
+    </div>
+    <p class="revs-note">Early testers received the kit for free in exchange for honest feedback.</p>
+  </div>
+</section>
+-->
+
 <!-- WHAT YOU NEED -->
 <section id="need" style="padding-top:0">
   <div class="wrap">
@@ -620,8 +661,14 @@ footer a:hover{color:#fff}
       <!-- Card checkout: Gumroad. Crypto: NOWPayments invoice; its success URL is the private download page (see src/worker.js). -->
       <div class="pay">
         <a class="btn" href="https://damirone.gumroad.com/l/own-your-website?wanted=true" rel="noopener">Get the kit · $47<span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn btn-c" href="https://nowpayments.io/payment/?iid=5252781835" rel="noopener">Pay with crypto (USDC and more)</a>
-        <p class="pay-note">Instant access · Card, PayPal, Apple Pay and Google Pay via Gumroad · Crypto via NOWPayments</p>
+        <a class="btn btn-c" href="https://nowpayments.io/payment/?iid=5252781835" rel="noopener">Pay with crypto</a>
+        <div class="badges">
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><b>Secure checkout</b>Powered by Gumroad</span></div>
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7v6c0 4.5 3.4 7.7 8 8 4.6-.3 8-3.5 8-8V7z"/><path d="m9 12 2 2 4-4"/></svg><span><b>14-day money-back</b>Live, or refunded</span></div>
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><span><b>Instant access</b>Download right away</span></div>
+          <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg><span><b>Pay your way</b>Card, PayPal, Apple Pay</span></div>
+        </div>
+        <p class="pay-note">Crypto: USDC and more, via NOWPayments</p>
       </div>
       <div class="guar"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7v6c0 4.5 3.4 7.7 8 8 4.6-.3 8-3.5 8-8V7z"/><path d="m9 12 2 2 4-4"/></svg></i><div><b>Live in a weekend, or your money back</b><span>Follow the steps. If your site isn't live, email us within 14 days and we'll help you finish or refund you in full. <a href="/own-your-website/refunds/">Refund policy</a></span></div>
       </div>
