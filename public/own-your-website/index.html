@@ -117,13 +117,25 @@ section{padding:120px 0}
 /* problem bento */
 #problem{background:var(--soft-2);border-block:1px solid var(--line)}
 .probs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:56px}
-.prob{background:#fff;border-radius:var(--r);padding:28px;box-shadow:0 0 0 1px var(--line)}
-.prob b{display:block;font-size:2.6rem;font-weight:800;letter-spacing:-.05em;line-height:1;color:var(--ink)}
+.prob{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:26px;box-shadow:0 0 0 1px var(--line)}
+.ptag{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:#FEF2F2;color:#B91C1C;font-size:.74rem;font-weight:700;letter-spacing:.02em;padding:4px 10px 4px 8px;border-radius:99px;margin-bottom:18px}
+.ptag svg{width:13px;height:13px}
+.pv{margin-top:auto;padding-top:20px}
+.rc{background:var(--soft-2);border:1px dashed #D4D4D8;border-radius:12px;padding:10px 12px;font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.rc div{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.rc .fade{opacity:.45}
+.rc .tot{border-top:1px solid #E4E4E7;margin-top:4px;padding-top:7px;font-weight:700;color:#B91C1C}
+.meter{height:8px;background:#F4F4F5;border-radius:99px;overflow:hidden;margin:8px 0 6px}
+.meter i{display:block;width:6%;height:100%;background:#DC2626;border-radius:99px}
+.prob b{display:block;font-size:2.6rem;font-weight:800;letter-spacing:-.05em;line-height:1;color:#B91C1C}
 .prob h3{font-size:1.05rem;margin-top:18px}
 .prob p{color:var(--muted);font-size:.94rem;margin-top:6px}
 .prob.hl{background:var(--dark);color:#fff;box-shadow:none;position:relative;overflow:hidden}
 .prob.hl::before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;background:radial-gradient(closest-side,rgba(255,107,44,.5),transparent)}
 .prob.hl p{color:var(--dark-muted)}
+.prob.hl .ptag{background:rgba(74,222,128,.14);color:#86EFAC}
+.prob.hl .rc{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#D4D4D8}
+.prob.hl .rc .tot{border-color:rgba(255,255,255,.14);color:#86EFAC}
 .prob.hl b{background:linear-gradient(92deg,#FF8A50,#FFD0B5);-webkit-background-clip:text;background-clip:text;color:transparent}
 
 /* steps */
@@ -378,10 +390,14 @@ footer a:hover{color:#fff}
       <p class="sub">Most business owners are stuck choosing between paying every month forever, paying a lot upfront, or wrestling with tools built for tech people.</p>
     </div>
     <div class="probs rv">
-      <div class="prob"><b>$17–$35</b><h3>Every month, forever</h3><p>Popular Wix and Squarespace plans. And Squarespace raised prices by up to 26% this year.</p></div>
-      <div class="prob"><b>$1,000s</b><h3>For a web designer</h3><p>Plus waiting weeks, and paying again every time you want a change.</p></div>
-      <div class="prob"><b>Credits</b><h3>AI builders that nickel-and-dime</h3><p>Every fix uses credits, and your site is stuck on their hosting.</p></div>
-      <div class="prob hl"><b>$47</b><h3>Own Your Website</h3><p>Pay once. Host free. Change it anytime by asking Claude.</p></div>
+      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The rent trap</span><b>$17–$35</b><h3>Every month, forever</h3><p>Popular Wix and Squarespace plans. And Squarespace raised prices by up to 26% this year.</p>
+        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Jan</span><span>$29</span></div><div><span>Feb</span><span>$29</span></div><div class="fade"><span>Mar … forever</span><span>$29</span></div><div class="tot"><span>After 3 years</span><span>$1,044</span></div></div></div></div>
+      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The big invoice</span><b>$1,000s</b><h3>For a web designer</h3><p>Plus waiting weeks, and paying again every time you want a change.</p>
+        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Website design</span><span>$2,400</span></div><div><span>Change photos</span><span>$150</span></div><div><span>Update prices</span><span>$150</span></div><div class="tot"><span>Ready in</span><span>4–6 weeks</span></div></div></div></div>
+      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The meter</span><b>Credits</b><h3>AI builders that nickel-and-dime</h3><p>Every fix uses credits, and your site is stuck on their hosting.</p>
+        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Fix a typo</span><span>−5 credits</span></div><div><span>Move a button</span><span>−8 credits</span></div><div class="meter"><i></i></div><div class="tot"><span>Credits left</span><span>3 of 100</span></div></div></div></div>
+      <div class="prob hl"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>The fix</span><b>$47</b><h3>Own Your Website</h3><p>Pay once. Host free. Change it anytime by asking Claude.</p>
+        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Paid once</span><span>$47</span></div><div><span>Hosting</span><span>$0/mo</span></div><div><span>Every change</span><span>$0</span></div><div class="tot"><span>After 3 years</span><span>$47</span></div></div></div></div>
     </div>
   </div>
 </section>
