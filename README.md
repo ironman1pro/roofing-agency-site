@@ -76,3 +76,14 @@ The form posts JSON like this to your webhook:
 - **SEO**: every page has a unique title/description, canonical, Open Graph tags and JSON-LD (Organization, BreadcrumbList, Service, FAQPage). When you add a page, copy an existing page's `<head>` and header, then add the URL to `sitemap.xml` and `llms.txt`.
 - **Security headers** are in `public/_headers`. The CSP allows only your own scripts (no inline JS). If you add analytics or a chat widget later, add its domain to `script-src` / `connect-src`.
 - **Costs**: Workers static-asset hosting (static files are free and unlimited) and Worker requests on the free plan are enough to start; check Cloudflare's current limits before scaling.
+
+## Own Your Website: crypto delivery
+
+Crypto buyers pay through a NOWPayments invoice, whose success URL is a private download page served by the Worker at `/own-your-website/access/<token>`. The token and the kit's download link are Cloudflare secrets, never committed (this repo is public):
+
+```
+npx wrangler secret put KIT_ACCESS_TOKEN
+npx wrangler secret put KIT_DOWNLOAD_URL
+```
+
+Without both secrets, or with a wrong token, the path returns the normal 404 page. To revoke a leaked link, set a new `KIT_ACCESS_TOKEN` and update the success URL in NOWPayments.
