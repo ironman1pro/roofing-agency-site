@@ -196,6 +196,25 @@ section{padding:120px 0}
 .tags span{font-size:.76rem;font-weight:600;border-radius:999px;padding:4px 11px;background:var(--soft);color:var(--ink-2)}
 .tags span.t{background:var(--accent-soft);color:#9A3412}
 
+/* who it's for (example stories) */
+.whos{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:56px}
+.who{grid-column:span 2;display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:26px;box-shadow:0 0 0 1px var(--line);transition:transform .35s var(--ease),box-shadow .35s}
+.who:nth-child(4),.who:nth-child(5){grid-column:span 3}
+.who:hover{transform:translateY(-3px);box-shadow:0 0 0 1px #D4D4D8,0 24px 40px -30px rgba(10,10,11,.4)}
+.who-k{display:flex;align-items:center;gap:10px;font-size:.78rem;font-weight:700;color:var(--accent-ink);letter-spacing:.02em}
+.who-k i{width:36px;height:36px;border-radius:11px;background:var(--accent-soft);display:grid;place-items:center}
+.who-k svg{width:19px;height:19px}
+.who h3{font-size:1.15rem;margin-top:14px}
+.who .ba{display:grid;gap:10px;margin-top:12px;font-size:.93rem;line-height:1.5}
+.who .ba p{position:relative;padding-left:18px;color:var(--muted)}
+.who .ba p::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:#FCA5A5}
+.who .ba p.af{color:var(--ink-2)}
+.who .ba p.af::before{background:#22C55E}
+.who .ba b{color:var(--ink)}
+.who-r{align-self:flex-start;margin-top:auto;padding-top:18px}
+.who-r span{display:inline-block;font-size:.76rem;font-weight:700;border-radius:99px;padding:5px 11px;background:var(--green-soft);color:var(--green)}
+.whos-note{text-align:center;color:var(--faint);font-size:.84rem;margin-top:22px}
+
 /* easy */
 #easy{padding-top:0}
 .easy-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
@@ -290,16 +309,25 @@ tr:last-child th,tr:last-child td{border-bottom:0}
 .badge{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:12px;background:var(--soft-2);box-shadow:inset 0 0 0 1px var(--line);font-size:.8rem;line-height:1.25;color:var(--ink-2)}
 .badge svg{width:18px;height:18px;flex:none;color:var(--green)}
 .badge b{display:block;font-size:.84rem;color:var(--ink)}
+.proofline{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:7px 14px;border-radius:99px;font-size:.88rem;color:#E4E4E7;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.proofline svg{width:17px;height:17px;color:#FFB38A;flex:none}
+.proofline span{text-align:left;line-height:1.35}
+.proofline b{color:#fff}
+.proofline.pl-light{display:flex;justify-content:center;margin:2px 0 4px;background:var(--accent-soft);box-shadow:none;color:#7C2D12;font-size:.84rem}
+.proofline.pl-light svg{color:var(--accent-ink)}
+.proofline.pl-light b{color:#7C2D12}
 .fix .mini-trust{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-size:.84rem;color:#D4D4D8}
 .fix .mini-trust span{display:inline-flex;align-items:center;gap:6px}
 .fix .mini-trust svg{width:15px;height:15px;color:#4ADE80}
 /* reviews (filled with real tester reviews only) */
+#reviews{background:var(--soft-2);border-block:1px solid var(--line)}
 .revs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
 .rev{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:26px;box-shadow:0 0 0 1px var(--line)}
 .rev .stars{color:#F59E0B;letter-spacing:2px;font-size:.95rem}
 .rev blockquote{margin-top:12px;font-size:1rem;color:var(--ink-2);line-height:1.6}
 .rev figcaption{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:20px}
-.rev figcaption img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.rev figcaption img,.rev .av{width:42px;height:42px;border-radius:50%;object-fit:cover;flex:none}
+.rev .av{display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);font-weight:800}
 .rev figcaption b{display:block;font-size:.94rem}
 .rev figcaption span{font-size:.84rem;color:var(--faint)}
 .rev figcaption a{color:var(--accent-ink);font-weight:600;text-decoration:none}
@@ -342,6 +370,7 @@ footer a:hover{color:#fff}
 @media(max-width:1000px){
   .bar nav{display:none}
   .need{grid-template-columns:1fr 1fr}
+  .whos{grid-template-columns:1fr 1fr}.who,.who:nth-child(4),.who:nth-child(5){grid-column:auto}
   .revs{grid-template-columns:1fr 1fr}
   .fix{grid-template-columns:1fr;gap:32px}
   .steps{grid-template-columns:1fr;max-width:560px;margin-inline:auto}
@@ -368,6 +397,9 @@ footer a:hover{color:#fff}
   .track img{width:240px;margin-right:12px;border-radius:10px}
   .wall-in{gap:12px}
   .need,.get-grid,.revs{grid-template-columns:1fr}
+  .whos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:40px -16px 0;padding:4px 16px 12px;scrollbar-width:none}
+  .whos::-webkit-scrollbar{display:none}
+  .who{flex:0 0 84%;scroll-snap-align:center}.who:hover{transform:none}
   .badge{padding:8px 9px;gap:7px;font-size:.74rem}.badge b{font-size:.78rem}.badge svg{width:16px;height:16px}
   .probs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:40px -16px 0;padding:4px 16px 12px;scrollbar-width:none}
   .probs::-webkit-scrollbar{display:none}
@@ -419,6 +451,7 @@ footer a:hover{color:#fff}
       <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$0 a month to keep it online</li>
       <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>14-day money-back guarantee</li>
     </ul>
+    <p class="proofline up d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg><span>Built on the design standards behind <b>100+ client websites</b></span></p>
   </div>
   <div class="wall" aria-hidden="true"><div class="wall-in">
     <div class="track"><img src="/own-your-website/showcase/pet-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/restaurant-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/spa-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/fitness-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/coach-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/roofing-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/pet-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/restaurant-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/spa-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/fitness-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/coach-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/roofing-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"></div>
@@ -512,6 +545,36 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<!-- WHO IT'S FOR (off for now; to publish, remove the comment markers around this section)
+<section id="who">
+  <div class="wrap">
+    <div class="center rv">
+      <span class="kick">Who it's for</span>
+      <h2>Made for people like you.</h2>
+      <p class="sub">A few examples of how different businesses can use the kit.</p>
+    </div>
+    <div class="whos rv">
+      <article class="who"><div class="who-k"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg></i>Local service business</div><h3>Maya, mobile dog groomer</h3>
+        <div class="ba"><p><b>Before:</b> Gets by with a Facebook page. No time to learn web design, and no budget for monthly fees.</p><p class="af"><b>With the kit:</b> Chats with Claude for 10 minutes and gets a warm, friendly site with her services, the areas she covers and a big <b>“Book now”</b> button. Online the same afternoon, and ready to show up on Google.</p></div>
+        <div class="who-r"><span>Online in an afternoon</span></div></article>
+      <article class="who"><div class="who-k"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></i>Coach or consultant</div><h3>David, career coach</h3>
+        <div class="ba"><p><b>Before:</b> Active on LinkedIn, but no real home base. Every template he tried looked like everyone else's.</p><p class="af"><b>With the kit:</b> Claude asks about his approach and ideal client like a real designer would, then builds a site with his story, his offers and his colors. <b>Finally, a link he's proud to send.</b></p></div>
+        <div class="who-r"><span>Feels like him, not a template</span></div></article>
+      <article class="who"><div class="who-k"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></i>Restaurant or café</div><h3>Sofia, brunch café owner</h3>
+        <div class="ba"><p><b>Before:</b> Just opened. She needs her hours, location and photos that make people hungry, fast.</p><p class="af"><b>With the kit:</b> A beautiful one-page site that looks great on phones. The setup agent helps her get on <b>Google Maps</b>, step by step. She can update the menu anytime by chatting with Claude.</p></div>
+        <div class="who-r"><span>No monthly fees</span></div></article>
+      <article class="who"><div class="who-k"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></i>Trades</div><h3>James, solo electrician</h3>
+        <div class="ba"><p><b>Before:</b> His competitors have websites, he doesn't. Every option he looked at felt confusing or expensive.</p><p class="af"><b>With the kit:</b> He answers simple questions and says “yes” or “change this.” Claude makes every design decision, and the setup agent shows him exactly what to click. <b>Within a day, he looks established.</b></p></div>
+        <div class="who-r"><span>Zero tech skills needed</span></div></article>
+      <article class="who"><div class="who-k"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5"/></svg></i>Creators</div><h3>Priya, podcaster</h3>
+        <div class="ba"><p><b>Before:</b> Testing a new course idea. She doesn't want to pay monthly while she's still finding out if it works.</p><p class="af"><b>With the kit:</b> A focused page for her course with her branding and story, online for free. If the idea grows, <b>she already owns her site</b>; if it changes, she just asks Claude to update it.</p></div>
+        <div class="who-r"><span>Test ideas for $0 a month</span></div></article>
+    </div>
+    <p class="whos-note">Example stories to show how the kit works for different businesses.</p>
+  </div>
+</section>
+-->
+
 <!-- EASY -->
 <section id="easy">
   <div class="wrap easy-grid">
@@ -599,19 +662,44 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- REVIEWS: real tester reviews only, in their own words, with their permission.
-     To publish: uncomment this section, add one <figure class="rev"> per review, and keep the disclosure note.
+<!-- REVIEWS (off: placeholders only). Replace every [bracketed] item with a real tester's own words and details, then remove the comment markers.
 <section id="reviews">
   <div class="wrap">
     <div class="center rv">
       <span class="kick">From early testers</span>
       <h2>Real business owners, real websites.</h2>
+      <p class="sub">What people said after building their site with the kit.</p>
     </div>
     <div class="revs rv">
       <figure class="rev">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>"EXACT WORDS FROM THE TESTER"</blockquote>
-        <figcaption><img src="/own-your-website/reviews/NAME.webp" width="84" height="84" alt="" loading="lazy" decoding="async"><span><b>FULL NAME</b><span>ROLE, BUSINESS · <a href="https://THEIR-SITE" rel="noopener">their site</a></span></span></figcaption>
+        <blockquote>[Review 1: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">1</span><span><b>[Name]</b><span>[Small business owner] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 2: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">2</span><span><b>[Name]</b><span>[Coach / consultant] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 3: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">3</span><span><b>[Name]</b><span>[Launched a new offer] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 4: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">4</span><span><b>[Name]</b><span>[Personal website] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 5: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">5</span><span><b>[Name]</b><span>[Small business owner] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 6: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">6</span><span><b>[Name]</b><span>[Creator] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
       </figure>
     </div>
     <p class="revs-note">Early testers received the kit for free in exchange for honest feedback.</p>
@@ -662,6 +750,7 @@ footer a:hover{color:#fff}
       <div class="pay">
         <a class="btn" href="https://damirone.gumroad.com/l/own-your-website?wanted=true" rel="noopener">Get the kit · $47<span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-c" href="https://nowpayments.io/payment/?iid=5252781835" rel="noopener">Pay with crypto</a>
+        <p class="proofline pl-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg><span>Built on the design standards behind <b>100+ client websites</b></span></p>
         <div class="badges">
           <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><b>Secure checkout</b>Powered by Gumroad</span></div>
           <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7v6c0 4.5 3.4 7.7 8 8 4.6-.3 8-3.5 8-8V7z"/><path d="m9 12 2 2 4-4"/></svg><span><b>14-day money-back</b>Live, or refunded</span></div>
