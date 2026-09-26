@@ -313,12 +313,14 @@ tr:last-child th,tr:last-child td{border-bottom:0}
 .fix .mini-trust span{display:inline-flex;align-items:center;gap:6px}
 .fix .mini-trust svg{width:15px;height:15px;color:#4ADE80}
 /* reviews (filled with real tester reviews only) */
+#reviews{background:var(--soft-2);border-block:1px solid var(--line)}
 .revs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
 .rev{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:26px;box-shadow:0 0 0 1px var(--line)}
 .rev .stars{color:#F59E0B;letter-spacing:2px;font-size:.95rem}
 .rev blockquote{margin-top:12px;font-size:1rem;color:var(--ink-2);line-height:1.6}
 .rev figcaption{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:20px}
-.rev figcaption img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.rev figcaption img,.rev .av{width:42px;height:42px;border-radius:50%;object-fit:cover;flex:none}
+.rev .av{display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-ink);font-weight:800}
 .rev figcaption b{display:block;font-size:.94rem}
 .rev figcaption span{font-size:.84rem;color:var(--faint)}
 .rev figcaption a{color:var(--accent-ink);font-weight:600;text-decoration:none}
@@ -651,28 +653,52 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- REVIEWS: real tester reviews only, in their own words, with their permission.
-     To publish: uncomment this section, add one <figure class="rev"> per review, and keep the disclosure note.
+<!-- REVIEWS: PLACEHOLDERS. Do not merge to main until every [bracketed] placeholder is replaced with a real tester's own words, name and details. -->
 <section id="reviews">
   <div class="wrap">
     <div class="center rv">
       <span class="kick">From early testers</span>
       <h2>Real business owners, real websites.</h2>
+      <p class="sub">What people said after building their site with the kit.</p>
     </div>
     <div class="revs rv">
       <figure class="rev">
         <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>"EXACT WORDS FROM THE TESTER"</blockquote>
-        <figcaption><img src="/own-your-website/reviews/NAME.webp" width="84" height="84" alt="" loading="lazy" decoding="async"><span><b>FULL NAME</b><span>ROLE, BUSINESS · <a href="https://THEIR-SITE" rel="noopener">their site</a></span></span></figcaption>
+        <blockquote>[Review 1: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">1</span><span><b>[Name]</b><span>[Small business owner] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 2: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">2</span><span><b>[Name]</b><span>[Coach / consultant] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 3: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">3</span><span><b>[Name]</b><span>[Launched a new offer] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 4: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">4</span><span><b>[Name]</b><span>[Personal website] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 5: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">5</span><span><b>[Name]</b><span>[Small business owner] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
+      </figure>
+      <figure class="rev">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>[Review 6: the tester's own words go here. Best: before → worry → result → recommendation, 2 to 4 sentences.]</blockquote>
+        <figcaption><span class="av" aria-hidden="true">6</span><span><b>[Name]</b><span>[Creator] · <a href="#" rel="noopener">[their site]</a></span></span></figcaption>
       </figure>
     </div>
     <p class="revs-note">Early testers received the kit for free in exchange for honest feedback.</p>
   </div>
 </section>
--->
 
 <!-- WHAT YOU NEED -->
-<section id="need" style="padding-top:0">
+<section id="need">
   <div class="wrap">
     <div class="center rv">
       <span class="kick">No surprises</span>
