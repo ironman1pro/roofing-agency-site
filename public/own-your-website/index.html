@@ -309,6 +309,13 @@ tr:last-child th,tr:last-child td{border-bottom:0}
 .badge{display:flex;align-items:center;gap:9px;padding:9px 11px;border-radius:12px;background:var(--soft-2);box-shadow:inset 0 0 0 1px var(--line);font-size:.8rem;line-height:1.25;color:var(--ink-2)}
 .badge svg{width:18px;height:18px;flex:none;color:var(--green)}
 .badge b{display:block;font-size:.84rem;color:var(--ink)}
+.proofline{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:7px 14px;border-radius:99px;font-size:.88rem;color:#E4E4E7;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+.proofline svg{width:17px;height:17px;color:#FFB38A;flex:none}
+.proofline span{text-align:left;line-height:1.35}
+.proofline b{color:#fff}
+.proofline.pl-light{display:flex;justify-content:center;margin:2px 0 4px;background:var(--accent-soft);box-shadow:none;color:#7C2D12;font-size:.84rem}
+.proofline.pl-light svg{color:var(--accent-ink)}
+.proofline.pl-light b{color:#7C2D12}
 .fix .mini-trust{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:14px;font-size:.84rem;color:#D4D4D8}
 .fix .mini-trust span{display:inline-flex;align-items:center;gap:6px}
 .fix .mini-trust svg{width:15px;height:15px;color:#4ADE80}
@@ -444,6 +451,7 @@ footer a:hover{color:#fff}
       <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$0 a month to keep it online</li>
       <li><svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>14-day money-back guarantee</li>
     </ul>
+    <p class="proofline up d4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg><span>Built on the design standards behind <b>100+ client websites</b></span></p>
   </div>
   <div class="wall" aria-hidden="true"><div class="wall-in">
     <div class="track"><img src="/own-your-website/showcase/pet-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/restaurant-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/spa-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/fitness-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/coach-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/roofing-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/pet-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/restaurant-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/spa-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/fitness-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/coach-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"><img src="/own-your-website/showcase/roofing-800.webp" width="800" height="500" alt="" decoding="async" loading="lazy" fetchpriority="low"></div>
@@ -537,7 +545,7 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- WHO IT'S FOR: example stories, clearly labelled as examples (not customer reviews) -->
+<!-- WHO IT'S FOR (off for now; to publish, remove the comment markers around this section)
 <section id="who">
   <div class="wrap">
     <div class="center rv">
@@ -565,6 +573,7 @@ footer a:hover{color:#fff}
     <p class="whos-note">Example stories to show how the kit works for different businesses.</p>
   </div>
 </section>
+-->
 
 <!-- EASY -->
 <section id="easy">
@@ -653,7 +662,7 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<!-- REVIEWS: PLACEHOLDERS. Do not merge to main until every [bracketed] placeholder is replaced with a real tester's own words, name and details. -->
+<!-- REVIEWS (off: placeholders only). Replace every [bracketed] item with a real tester's own words and details, then remove the comment markers.
 <section id="reviews">
   <div class="wrap">
     <div class="center rv">
@@ -696,9 +705,10 @@ footer a:hover{color:#fff}
     <p class="revs-note">Early testers received the kit for free in exchange for honest feedback.</p>
   </div>
 </section>
+-->
 
 <!-- WHAT YOU NEED -->
-<section id="need">
+<section id="need" style="padding-top:0">
   <div class="wrap">
     <div class="center rv">
       <span class="kick">No surprises</span>
@@ -740,6 +750,7 @@ footer a:hover{color:#fff}
       <div class="pay">
         <a class="btn" href="https://damirone.gumroad.com/l/own-your-website?wanted=true" rel="noopener">Get the kit · $47<span class="arr" aria-hidden="true">→</span></a>
         <a class="btn btn-c" href="https://nowpayments.io/payment/?iid=5252781835" rel="noopener">Pay with crypto</a>
+        <p class="proofline pl-light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg><span>Built on the design standards behind <b>100+ client websites</b></span></p>
         <div class="badges">
           <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span><b>Secure checkout</b>Powered by Gumroad</span></div>
           <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 7v6c0 4.5 3.4 7.7 8 8 4.6-.3 8-3.5 8-8V7z"/><path d="m9 12 2 2 4-4"/></svg><span><b>14-day money-back</b>Live, or refunded</span></div>
