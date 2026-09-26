@@ -114,29 +114,39 @@ section{padding:120px 0}
 .lb p{color:#fff;text-align:center;margin-top:14px;font-weight:600}
 .lb button{position:fixed;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer}
 
-/* problem bento */
+/* problem: three pains, then the fix */
 #problem{background:var(--soft-2);border-block:1px solid var(--line)}
-.probs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:56px}
-.prob{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:26px;box-shadow:0 0 0 1px var(--line)}
-.ptag{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:#FEF2F2;color:#B91C1C;font-size:.74rem;font-weight:700;letter-spacing:.02em;padding:4px 10px 4px 8px;border-radius:99px;margin-bottom:18px}
+.probs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.prob{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);padding:24px;box-shadow:0 0 0 1px var(--line)}
+.ptag{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:#FEF2F2;color:#B91C1C;font-size:.74rem;font-weight:700;letter-spacing:.02em;padding:4px 10px 4px 8px;border-radius:99px}
 .ptag svg{width:13px;height:13px}
-.pv{margin-top:auto;padding-top:20px}
+.prob b{display:block;font-size:2.7rem;font-weight:800;letter-spacing:-.05em;line-height:1;color:#B91C1C;margin-top:16px}
+.prob h3{font-size:1.02rem;margin-top:10px;line-height:1.35}
+.pv{margin-top:auto;padding-top:18px}
 .rc{background:var(--soft-2);border:1px dashed #D4D4D8;border-radius:12px;padding:10px 12px;font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .rc div{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
 .rc .fade{opacity:.45}
 .rc .tot{border-top:1px solid #E4E4E7;margin-top:4px;padding-top:7px;font-weight:700;color:#B91C1C}
 .meter{height:8px;background:#F4F4F5;border-radius:99px;overflow:hidden;margin:8px 0 6px}
 .meter i{display:block;width:6%;height:100%;background:#DC2626;border-radius:99px}
-.prob b{display:block;font-size:2.6rem;font-weight:800;letter-spacing:-.05em;line-height:1;color:#B91C1C}
-.prob h3{font-size:1.05rem;margin-top:18px}
-.prob p{color:var(--muted);font-size:.94rem;margin-top:6px}
-.prob.hl{background:var(--dark);color:#fff;box-shadow:none;position:relative;overflow:hidden}
-.prob.hl::before{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;background:radial-gradient(closest-side,rgba(255,107,44,.5),transparent)}
-.prob.hl p{color:var(--dark-muted)}
-.prob.hl .ptag{background:rgba(74,222,128,.14);color:#86EFAC}
-.prob.hl .rc{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);color:#D4D4D8}
-.prob.hl .rc .tot{border-color:rgba(255,255,255,.14);color:#86EFAC}
-.prob.hl b{background:linear-gradient(92deg,#FF8A50,#FFD0B5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fix{position:relative;overflow:hidden;isolation:isolate;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center;margin-top:16px;padding:44px;border-radius:28px;background:var(--dark);color:#fff}
+.fix::before{content:"";position:absolute;z-index:-1;left:-120px;top:-160px;width:520px;height:420px;background:radial-gradient(closest-side,rgba(255,107,44,.42),transparent)}
+.fix .ptag{background:rgba(74,222,128,.14);color:#86EFAC}
+.fix h3{font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.05;letter-spacing:-.04em;margin-top:16px}
+.fix h3 em{font-style:normal;background:linear-gradient(92deg,#FF8A50,#FFD0B5);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fix p{color:var(--dark-muted);margin-top:12px;max-width:40ch}
+.fix .btn{margin-top:24px}
+.bars small{display:block;font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--dark-muted);margin-bottom:14px}
+.cbar{display:grid;grid-template-columns:172px 1fr auto;align-items:center;gap:14px;padding:9px 0;font-size:.95rem}
+.cbar span{color:#D4D4D8}
+.cbar i{display:block;height:14px;border-radius:99px;background:linear-gradient(90deg,#B91C1C,#EF4444);transform-origin:left;width:var(--w)}
+.cbar b{font-variant-numeric:tabular-nums;min-width:74px;text-align:right}
+.cbar.us span,.cbar.us b{color:#fff;font-weight:700}
+.cbar.us i{background:linear-gradient(90deg,#FF6B2C,#FFB38A);min-width:12px}
+.js .fix.rv .cbar i{transform:scaleX(0);transition:transform 1.1s var(--ease)}
+.js .fix.rv.in .cbar i{transform:none}
+.js .fix.rv.in .cbar:nth-child(3) i{transition-delay:.12s}
+.js .fix.rv.in .cbar:nth-child(4) i{transition-delay:.24s}
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:64px}
@@ -283,7 +293,8 @@ footer a:hover{color:#fff}
 .mbar{display:none}
 @media(max-width:1000px){
   .bar nav{display:none}
-  .probs,.need{grid-template-columns:1fr 1fr}
+  .need{grid-template-columns:1fr 1fr}
+  .fix{grid-template-columns:1fr;gap:32px}
   .steps{grid-template-columns:1fr;max-width:560px;margin-inline:auto}
   .easy-grid,.proof-card{grid-template-columns:1fr}
   .get-grid{grid-template-columns:1fr 1fr}
@@ -307,7 +318,12 @@ footer a:hover{color:#fff}
   .wall{height:300px;margin-top:56px}
   .track img{width:240px;margin-right:12px;border-radius:10px}
   .wall-in{gap:12px}
-  .probs,.need,.get-grid{grid-template-columns:1fr}.gi.main{grid-column:auto}
+  .need,.get-grid{grid-template-columns:1fr}
+  .probs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:40px -16px 0;padding:4px 16px 12px;scrollbar-width:none}
+  .probs::-webkit-scrollbar{display:none}
+  .prob{flex:0 0 82%;scroll-snap-align:center}
+  .fix{padding:28px 22px;border-radius:24px}
+  .cbar{grid-template-columns:1fr auto;gap:6px 12px}.cbar i{grid-column:1/-1;grid-row:2}.gi.main{grid-column:auto}
   .gi:not(.main){display:grid;grid-template-columns:44px 1fr;column-gap:16px;padding:20px}
   .gi:not(.main) i{grid-row:span 2}.gi:not(.main) h3{margin-top:0}.gi:not(.main) p{margin-top:2px}
   .shows{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;align-items:flex-start;gap:14px;margin:40px -16px 0;padding:4px 16px 18px;scrollbar-width:none}
@@ -390,14 +406,26 @@ footer a:hover{color:#fff}
       <p class="sub">Most business owners are stuck choosing between paying every month forever, paying a lot upfront, or wrestling with tools built for tech people.</p>
     </div>
     <div class="probs rv">
-      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The rent trap</span><b>$17–$35</b><h3>Every month, forever</h3><p>Popular Wix and Squarespace plans. And Squarespace raised prices by up to 26% this year.</p>
-        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Jan</span><span>$29</span></div><div><span>Feb</span><span>$29</span></div><div class="fade"><span>Mar … forever</span><span>$29</span></div><div class="tot"><span>After 3 years</span><span>$1,044</span></div></div></div></div>
-      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The big invoice</span><b>$1,000s</b><h3>For a web designer</h3><p>Plus waiting weeks, and paying again every time you want a change.</p>
-        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Website design</span><span>$2,400</span></div><div><span>Change photos</span><span>$150</span></div><div><span>Update prices</span><span>$150</span></div><div class="tot"><span>Ready in</span><span>4–6 weeks</span></div></div></div></div>
-      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The meter</span><b>Credits</b><h3>AI builders that nickel-and-dime</h3><p>Every fix uses credits, and your site is stuck on their hosting.</p>
+      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The rent trap</span><b>$1,044</b><h3>after 3 years on a website builder. And it's still not yours.</h3>
+        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Jan</span><span>$29</span></div><div><span>Feb</span><span>$29</span></div><div class="fade"><span>Mar … forever</span><span>$29</span></div><div class="tot"><span>Stop paying</span><span>Site gone</span></div></div></div></div>
+      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The big invoice</span><b>$1,000s</b><h3>upfront for a web designer, then more for every change.</h3>
+        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Change photos</span><span>$150</span></div><div><span>Update prices</span><span>$150</span></div><div><span>New section</span><span>$300</span></div><div class="tot"><span>Ready in</span><span>4–6 weeks</span></div></div></div></div>
+      <div class="prob"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>The meter</span><b>Credits</b><h3>for every fix on AI builders, and you're stuck on their hosting.</h3>
         <div class="pv" aria-hidden="true"><div class="rc"><div><span>Fix a typo</span><span>−5 credits</span></div><div><span>Move a button</span><span>−8 credits</span></div><div class="meter"><i></i></div><div class="tot"><span>Credits left</span><span>3 of 100</span></div></div></div></div>
-      <div class="prob hl"><span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>The fix</span><b>$47</b><h3>Own Your Website</h3><p>Pay once. Host free. Change it anytime by asking Claude.</p>
-        <div class="pv" aria-hidden="true"><div class="rc"><div><span>Paid once</span><span>$47</span></div><div><span>Hosting</span><span>$0/mo</span></div><div><span>Every change</span><span>$0</span></div><div class="tot"><span>After 3 years</span><span>$47</span></div></div></div></div>
+    </div>
+    <div class="fix rv">
+      <div>
+        <span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>The fix</span>
+        <h3>Or pay <em>$47 once</em>. Own it forever.</h3>
+        <p>Claude builds it, Cloudflare hosts it for free, and every change is just a message. No rent, no invoices, no credits.</p>
+        <a class="btn" href="#pricing">Get the kit · $47<span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <div class="bars" role="img" aria-label="What you pay over 3 years: website builder about $1,044, web designer often thousands of dollars, Own Your Website $47">
+        <small>What you pay over 3 years</small>
+        <div class="cbar"><span>Website builder</span><i style="--w:44%"></i><b>$1,044</b></div>
+        <div class="cbar"><span>Web designer</span><i style="--w:100%"></i><b>$1,000s+</b></div>
+        <div class="cbar us"><span>Own Your Website</span><i style="--w:2%"></i><b>$47</b></div>
+      </div>
     </div>
   </div>
 </section>
