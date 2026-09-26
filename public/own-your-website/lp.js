@@ -38,3 +38,32 @@
     });
   });
 })();
+
+// Launch list: sends the email to the shared Formspree inbox (form-action is locked to 'self' by the CSP, so this posts with fetch).
+(function () {
+  var form = document.getElementById('wl');
+  if (!form) return;
+  var input = document.getElementById('wl-email'), err = document.getElementById('wl-err'), ok = document.getElementById('wl-ok');
+  var btn = form.querySelector('button[type="submit"]');
+  function fail(msg) { err.textContent = msg; err.hidden = false; input.setAttribute('aria-invalid', 'true'); input.focus(); }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = input.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail('Please enter a valid email address.');
+    err.hidden = true; input.removeAttribute('aria-invalid');
+    var label = btn.innerHTML; btn.disabled = true; btn.textContent = 'Joining...';
+    var fd = new FormData(form);
+    fd.append('_subject', '[Own Your Website – launch list] ' + email.slice(0, 80));
+    fd.append('page', location.pathname);
+    var trap = form.querySelector('[name=website]');
+    var send = trap && trap.value.trim() ? Promise.resolve() :
+      fetch('https://formspree.io/f/xvkgzgwd', { method: 'POST', body: fd, headers: { Accept: 'application/json' } })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); });
+    send.then(function () {
+      form.hidden = true; ok.hidden = false;
+    }).catch(function () {
+      btn.disabled = false; btn.innerHTML = label;
+      fail('Something went wrong. Please try again, or email us at info@adaptify.tech.');
+    });
+  });
+})();
