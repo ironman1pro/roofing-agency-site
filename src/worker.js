@@ -134,11 +134,64 @@ function legacyRedirect(url) {
   return Response.redirect(new URL(target + url.search, url.origin).toString(), 301);
 }
 
+// Own Your Website: download page for crypto buyers (NOWPayments has no file delivery).
+// NOWPayments' success URL points to /own-your-website/access/<KIT_ACCESS_TOKEN>. The token
+// and the kit's download link (KIT_DOWNLOAD_URL) are Cloudflare secrets, never in this repo:
+//   npx wrangler secret put KIT_ACCESS_TOKEN
+//   npx wrangler secret put KIT_DOWNLOAD_URL
+// Anything else under /own-your-website/access/ gets the normal 404 page.
+const ACCESS_PREFIX = '/own-your-website/access/';
+
+function sameString(a, b) {
+  if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+async function kitAccess(request, env, url) {
+  const token = url.pathname.slice(ACCESS_PREFIX.length).replace(/\/$/, '');
+  const ok = env.KIT_ACCESS_TOKEN && env.KIT_DOWNLOAD_URL && sameString(token, env.KIT_ACCESS_TOKEN);
+  if (!ok) {
+    const notFound = await env.ASSETS.fetch(new Request(new URL('/404.html', url.origin)));
+    return new Response(notFound.body, { status: 404, headers: { 'content-type': 'text/html; charset=utf-8', 'x-robots-tag': 'noindex, nofollow' } });
+  }
+  const link = escapeHtml(env.KIT_DOWNLOAD_URL);
+  const html = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your kit | Own Your Website</title><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>*{box-sizing:border-box;margin:0}body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#09090B;color:#fff;line-height:1.6;min-height:100vh;display:grid;place-items:center;padding:24px}
+.c{max-width:560px;width:100%;background:#fff;color:#0A0A0B;border-radius:28px;padding:40px 32px;box-shadow:0 60px 120px -40px rgba(255,107,44,.45)}
+h1{font-size:2rem;letter-spacing:-.035em;line-height:1.1}p{color:#52525B;margin-top:12px}
+a.b{display:block;text-align:center;margin-top:26px;background:#FF6B2C;color:#0A0A0B;font-weight:700;text-decoration:none;padding:16px;border-radius:999px}
+ol{margin:22px 0 0 20px;color:#27272A}li{margin:6px 0}small{display:block;margin-top:22px;color:#71717A;font-size:.85rem}</style></head>
+<body><main class="c"><h1>Thank you! Your kit is ready 🎉</h1>
+<p>Your crypto payment went through. Download your kit below. Bookmark this page in case you need the files again.</p>
+<a class="b" href="${link}" rel="noopener noreferrer">Download your kit →</a>
+<ol><li>Open <b>1-Start-Here.pdf</b> first. It takes you from zero to live in 3 steps.</li>
+<li><b>own-your-website.zip</b> is your Claude Skill. Upload it to Claude as-is; don't unzip it.</li>
+<li>Stuck? Type <b>help</b> in Claude, or email <b>info@adaptify.tech</b> with your payment ID.</li></ol>
+<small>Please don't share this page. It's for your purchase only.</small></main></body></html>`;
+  return new Response(html, {
+    headers: {
+      'content-type': 'text/html; charset=utf-8',
+      'cache-control': 'no-store',
+      'x-robots-tag': 'noindex, nofollow',
+      'referrer-policy': 'no-referrer',
+      'x-content-type-options': 'nosniff',
+      'x-frame-options': 'DENY',
+      'content-security-policy': "default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none'; base-uri 'none'",
+    },
+  });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const { pathname } = url;
     if (pathname === '/api/lead') return handleLead(request, env);
+    if (pathname.startsWith(ACCESS_PREFIX)) return kitAccess(request, env, url);
     const redirect = legacyRedirect(url);
     if (redirect) return redirect;
     return serveAsset(request, env);
